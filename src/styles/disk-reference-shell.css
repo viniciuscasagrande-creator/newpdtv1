@@ -165,3 +165,47 @@ html[data-ui-framework='limitless'] .app-shell #main-app-content .disk-content-c
 @media (prefers-reduced-motion: reduce) {
   .app-shell, .app-shell .module-sidebar, .app-shell .module-nav-item { transition: none !important; }
 }
+/* Espaçamento e contraste dos componentes que já existem nas páginas. */
+html[data-ui-framework='limitless'] .app-shell #main-app-content .disk-limitless-page {
+  padding: 0 !important;
+  max-width: none !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-app-content h1 {
+  font-size: 22px !important;
+  line-height: 1.35 !important;
+  letter-spacing: -.02em !important;
+}
+html[data-ui-framework='limitless'] .app-shell .event-sidebar-header .event-back {
+  height: 36px !important;
+  min-height: 36px !important;
+  padding: 6px 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .safesaff-sidebar-home {
+  background: transparent !important;
+  color: var(--disk-text-primary) !important;
+  font-size: 15px !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .safesaff-sidebar-toggle {
+  border-radius: 50% !important;
+  background: var(--disk-bg-hover) !important;
+}
+html.dark[data-ui-framework='limitless'] .event-context-sidebar [data-testid='event-sidebar-switcher-wrap'] {
+  background: #131415 !important;
+  border-color: #303134 !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .module-nav-item.active .module-nav-icon {
+  color: var(--disk-text-primary) !important;
+}
+@media (max-width: 1023px) {
+  html[data-ui-framework='limitless'] .app-shell .sidebar-mobile-main-toggle { display: inline-flex !important; }
+}
+/* A gaveta possui seu próprio fundo: o overlay legado não pode cobri-la. */
+html[data-ui-framework='limitless'] .app-shell > .mobile-nav-backdrop { display: none !important; }
+html[data-ui-framework='limitless'] .disk-mobile-drawer { z-index: 1100 !important; }
+html[data-ui-framework='limitless'] .disk-mobile-drawer > .relative {
+  background: var(--disk-bg-surface) !important;
+  color: var(--disk-text-primary) !important;
+}

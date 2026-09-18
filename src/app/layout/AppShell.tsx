@@ -132,6 +132,7 @@ export const AppShell: React.FC<AppShellProps> = ({
 
   // Fecha o drawer mobile ao trocar de página se não for controlado externamente
   useEffect(() => {
+    document.getElementById('main-app-content')?.scrollTo({ top: 0, left: 0 })
     if (!isMobileNavControlled) {
       setInternalMobileNavOpen(false)
     }
