@@ -195,7 +195,7 @@ export const AppShell: React.FC<AppShellProps> = ({
       />
 
       {/* Área Central: Sidebar Global + Conteúdo Principal */}
-      <div className="flex flex-1 relative w-full overflow-x-hidden">
+      <div className="disk-shell-body flex flex-1 relative w-full overflow-x-hidden">
         {/* Sidebar Global Fixa / Recolhível */}
         <AppSidebar
           module={module}

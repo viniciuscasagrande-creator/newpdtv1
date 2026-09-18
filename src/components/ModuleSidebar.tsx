@@ -344,7 +344,7 @@ export default function ModuleSidebar({ module, page, onNavigate, onHome, canAdm
           icon={WalletCards}
           open={openFinance}
           keepOpen={isFinanceActive}
-          onToggle={() => setOpenFinance(!openFinance)}
+          onToggle={() => { if (collapsed) setCollapsed(false); setOpenFinance(collapsed || !openFinance) }}
           onClose={() => {
             if (!isFinanceActive) setOpenFinance(false)
           }}
@@ -374,7 +374,7 @@ export default function ModuleSidebar({ module, page, onNavigate, onHome, canAdm
           icon={BookOpenCheck}
           open={openAccounting}
           keepOpen={isAccountingActive}
-          onToggle={() => setOpenAccounting(!openAccounting)}
+          onToggle={() => { if (collapsed) setCollapsed(false); setOpenAccounting(collapsed || !openAccounting) }}
           onClose={() => {
             if (!isAccountingActive) setOpenAccounting(false)
           }}
@@ -396,7 +396,7 @@ export default function ModuleSidebar({ module, page, onNavigate, onHome, canAdm
           icon={Megaphone}
           open={openMarketing}
           keepOpen={isMarketingActive}
-          onToggle={() => setOpenMarketing(!openMarketing)}
+          onToggle={() => { if (collapsed) setCollapsed(false); setOpenMarketing(collapsed || !openMarketing) }}
           onClose={() => {
             if (!isMarketingActive) setOpenMarketing(false)
           }}
@@ -419,7 +419,7 @@ export default function ModuleSidebar({ module, page, onNavigate, onHome, canAdm
           icon={Repeat2}
           open={openRemarketing}
           keepOpen={isRemarketingActive}
-          onToggle={() => setOpenRemarketing(!openRemarketing)}
+          onToggle={() => { if (collapsed) setCollapsed(false); setOpenRemarketing(collapsed || !openRemarketing) }}
           onClose={() => {
             if (!isRemarketingActive) setOpenRemarketing(false)
           }}
@@ -442,7 +442,7 @@ export default function ModuleSidebar({ module, page, onNavigate, onHome, canAdm
             icon={Building2}
             open={openAdmin}
             keepOpen={isAdminActive}
-            onToggle={() => setOpenAdmin(!openAdmin)}
+            onToggle={() => { if (collapsed) setCollapsed(false); setOpenAdmin(collapsed || !openAdmin) }}
             onClose={() => {
               if (!isAdminActive) setOpenAdmin(false)
             }}
@@ -496,7 +496,7 @@ function CollapsibleSection({
           <ChevronRight size={14} />
         </span>
       </button>
-      <div className={`collapsible-section-body ${open ? 'open' : ''}`} aria-hidden={!open}>
+      <div className={`collapsible-section-body ${open ? 'open' : ''}`} aria-hidden={!open} inert={!open}>
         <div className="collapsible-section-inner">{children}</div>
       </div>
     </div>

@@ -1,8 +1,8 @@
-import type { ComponentType } from 'react'
+import { useEffect, useState, type ComponentType } from 'react'
 import {
   Activity, ArrowLeft, BarChart3, CalendarDays, ChevronRight, CircleGauge, FileBarChart2,
   Link2, MapPin, Megaphone, MousePointerClick, ScanLine, ScrollText, Settings2, ShieldCheck,
-  Tags, Ticket, UserCog, Users, WalletCards, Waves, Boxes, ContactRound, Siren, Brain, Search, Gauge, Network, ClipboardCheck, Shield, LineChart, RadioTower, Split, Scale
+  Tags, Ticket, UserCog, Users, WalletCards, Waves, Boxes, ContactRound, Siren, Brain, Search, Gauge, Network, ClipboardCheck, Shield, LineChart, RadioTower, Split, Scale, PanelLeftClose, PanelLeftOpen
 } from 'lucide-react'
 import type { EventItem } from '../data/events'
 import type { PageKey } from './ModuleSidebar'
@@ -17,6 +17,7 @@ type Props = {
   onBack: () => void
   onSelectOtherEvent?: (event: ProducerEvent) => void
   canAdmin?: boolean
+  onCollapsedChange?: (collapsed: boolean) => void
 }
 
 const eventItems: Item[] = [
@@ -70,14 +71,27 @@ export default function EventContextSidebar({
   onNavigate,
   onBack,
   onSelectOtherEvent,
-  canAdmin = true
+  canAdmin = true,
+  onCollapsedChange
 }: Props) {
+  const [collapsed, setCollapsed] = useState(() => localStorage.getItem('disk-sidebar-collapsed') === 'true')
+  useEffect(() => {
+    localStorage.setItem('disk-sidebar-collapsed', String(collapsed))
+    localStorage.setItem('safesaff.sidebar.collapsed', String(collapsed))
+    onCollapsedChange?.(collapsed)
+  }, [collapsed, onCollapsedChange])
+
   return (
-    <aside className="module-sidebar event-context-sidebar" data-testid="event-context-sidebar">
+    <aside className={`module-sidebar event-context-sidebar ${collapsed ? 'event-sidebar-collapsed' : ''}`} data-testid="event-context-sidebar" aria-label="Navegação do evento">
+      <div className="event-sidebar-header">
       <button className="back-module event-back" onClick={onBack} title="Voltar a Todos os Eventos" data-testid="event-sidebar-back">
         <ArrowLeft size={18} />
         <span>← Todos os Eventos</span>
       </button>
+      <button type="button" className="event-sidebar-toggle" onClick={() => setCollapsed(value => !value)} aria-expanded={!collapsed} aria-label={collapsed ? 'Expandir menu lateral' : 'Recolher menu lateral'} title={collapsed ? 'Expandir menu lateral' : 'Recolher menu lateral'}>
+        {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
+      </button>
+      </div>
 
       {/* Seletor rápido de evento no topo da sidebar individual */}
       <div className="p-2 border-b border-[#1e293b] bg-[#0b1222]" data-testid="event-sidebar-switcher-wrap">
@@ -168,6 +182,8 @@ function Nav({ item, page, onNavigate }: { item: Item; page: PageKey; onNavigate
       className={`module-nav-item ${page === item.key ? 'active' : ''}`}
       onClick={() => onNavigate(item.key)}
       data-testid={`event-nav-${item.key}`}
+      title={item.label}
+      aria-current={page === item.key ? 'page' : undefined}
     >
       <Icon size={18} />
       <span>{item.label}</span>

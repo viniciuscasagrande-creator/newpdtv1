@@ -1,0 +1,167 @@
+/* Referência Disk: geometria única, rolagens independentes e superfícies grafite. */
+html[data-ui-framework='limitless'] {
+  --ll-sidebar: 284px;
+  --ll-sidebar-collapsed: 64px;
+  --ll-header: 64px;
+  --disk-shell-sidebar: 284px;
+  --disk-shell-sidebar-collapsed: 64px;
+  --disk-shell-header: 64px;
+  --disk-master-radius: 6px;
+}
+html.dark[data-ui-framework='limitless'] {
+  --disk-bg-app: #202124;
+  --disk-bg-surface: #2b2c33;
+  --disk-bg-elevated: #303138;
+  --disk-bg-muted: #25262c;
+  --disk-bg-hover: #36373b;
+  --disk-bg-active: #363739;
+  --disk-border-default: #46474d;
+  --disk-border-subtle: #383940;
+  --disk-border-strong: #606168;
+  --disk-text-primary: #f5f5f7;
+  --disk-text-secondary: #d6d7dc;
+  --disk-text-muted: #a6a7b0;
+  --background: 225 6% 13%;
+  --foreground: 240 11% 96%;
+  --card: 233 9% 18%;
+  --card-foreground: 240 11% 96%;
+  --popover: 233 8% 20%;
+  --popover-foreground: 240 11% 96%;
+  --muted: 231 9% 16%;
+  --muted-foreground: 234 6% 67%;
+  --border: 231 5% 29%;
+  --input: 231 5% 29%;
+}
+html[data-ui-framework='limitless'] .app-shell {
+  height: 100dvh;
+  min-height: 0 !important;
+  overflow: hidden;
+}
+html[data-ui-framework='limitless'] .app-shell .global-topbar {
+  flex: 0 0 var(--ll-header);
+  position: relative !important;
+  top: auto !important;
+  z-index: 80;
+}
+html.dark[data-ui-framework='limitless'] .app-shell .global-topbar,
+html.dark[data-ui-framework='limitless'] .app-shell #main-module-sidebar,
+html.dark[data-ui-framework='limitless'] .app-shell .event-context-sidebar {
+  background: #131415 !important;
+  color: #f5f5f7 !important;
+  border-color: #303134 !important;
+}
+html[data-ui-framework='limitless'] .disk-shell-body {
+  min-height: 0;
+  overflow: hidden;
+}
+html[data-ui-framework='limitless'] .app-shell #main-app-content {
+  height: 100%;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overscroll-behavior-y: contain;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar,
+html[data-ui-framework='limitless'] .app-shell .event-context-sidebar {
+  position: relative !important;
+  top: 0 !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column;
+  flex: 0 0 var(--ll-sidebar) !important;
+  width: var(--ll-sidebar) !important;
+  min-width: var(--ll-sidebar) !important;
+  max-width: var(--ll-sidebar) !important;
+  border-radius: 0 !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar.safesaff-sidebar--collapsed,
+html[data-ui-framework='limitless'] .app-shell .event-context-sidebar.event-sidebar-collapsed {
+  flex-basis: 64px !important;
+  width: 64px !important;
+  min-width: 64px !important;
+  max-width: 64px !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .module-nav,
+html[data-ui-framework='limitless'] .app-shell .event-context-nav {
+  flex: 1;
+  min-height: 0;
+  height: auto !important;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  padding: 8px 0 20px !important;
+  scrollbar-width: thin;
+  scrollbar-color: #606168 transparent;
+  overscroll-behavior: contain;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .module-nav-item,
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .collapsible-section-head,
+html[data-ui-framework='limitless'] .app-shell .event-context-sidebar .module-nav-item {
+  min-height: 43px !important;
+  width: 100%;
+  padding: 10px 16px !important;
+  gap: 14px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  font-size: 13px !important;
+  line-height: 20px !important;
+  font-weight: 500 !important;
+  color: var(--disk-text-secondary) !important;
+  background: transparent !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .module-nav-icon,
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .module-nav-icon svg {
+  width: 18px !important;
+  min-width: 18px !important;
+  height: 18px !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .module-nav-item.active,
+html[data-ui-framework='limitless'] .app-shell .event-context-sidebar .module-nav-item.active {
+  background: var(--disk-bg-active) !important;
+  color: var(--disk-text-primary) !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+html[data-ui-framework='limitless'] .app-shell .module-sidebar .module-nav-item:hover,
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .collapsible-section-head:hover {
+  background: var(--disk-bg-hover) !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .module-caption,
+html[data-ui-framework='limitless'] .app-shell .event-context-sidebar .module-caption {
+  margin: 0 !important;
+  padding: 16px 15px 8px !important;
+  font-size: 11px !important;
+  color: var(--disk-text-muted) !important;
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar .safesaff-sidebar-header,
+.event-sidebar-header {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: 64px !important;
+  padding: 10px 14px !important;
+  gap: 6px;
+}
+.event-sidebar-header .event-back { flex: 1; min-width: 0; margin: 0; }
+.event-sidebar-toggle {
+  display: grid; place-items: center; flex: 0 0 34px; width: 34px; height: 34px;
+  border: 0; border-radius: 50%; color: var(--disk-text-primary); background: var(--disk-bg-hover);
+}
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar.safesaff-sidebar--collapsed .safesaff-sidebar-home { display: none !important; }
+html[data-ui-framework='limitless'] .app-shell #main-module-sidebar.safesaff-sidebar--collapsed .safesaff-sidebar-header { justify-content: center !important; }
+.event-context-sidebar .event-context-summary { flex-shrink: 0; margin: 0; padding: 12px 15px 16px; }
+.event-sidebar-collapsed .event-context-summary,
+.event-sidebar-collapsed [data-testid='event-sidebar-switcher-wrap'],
+.event-sidebar-collapsed .event-back,
+.event-sidebar-collapsed .module-caption,
+.event-sidebar-collapsed .module-nav-item > span { display: none !important; }
+.event-sidebar-collapsed .event-sidebar-header { justify-content: center; }
+.event-sidebar-collapsed .module-nav-item { justify-content: center; }
+html[data-ui-framework='limitless'] .app-shell #main-app-content .disk-content-container { padding: 20px !important; }
+@media (max-width: 1023px) {
+  html[data-ui-framework='limitless'] .app-shell #main-module-sidebar,
+  html[data-ui-framework='limitless'] .app-shell .event-context-sidebar { display: none !important; }
+  html[data-ui-framework='limitless'] .app-shell #main-app-content .disk-content-container { padding: 12px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-shell, .app-shell .module-sidebar, .app-shell .module-nav-item { transition: none !important; }
+}

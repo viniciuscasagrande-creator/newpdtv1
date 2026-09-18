@@ -13,6 +13,7 @@ import './styles/limitless-disk-bridge.css'
 import './styles/limitless-disk-global.css'
 import './styles/disk-limitless-shell-v6.css'
 import './styles/disk-limitless-v7.css'
+import './styles/disk-reference-shell.css'
 
 document.documentElement.dataset.uiFramework = 'limitless'
 document.documentElement.dataset.marketingIntegrationsRelease = '25.7-marketing-integrations-360-2026-09-02'

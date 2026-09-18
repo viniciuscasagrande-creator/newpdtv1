@@ -53,6 +53,7 @@ export default function AppSidebar({
         onBack={onBackToProducer}
         onSelectOtherEvent={onSelectOtherEvent}
         canAdmin={canAdmin}
+        onCollapsedChange={onCollapsedChange}
       />
     )
   }

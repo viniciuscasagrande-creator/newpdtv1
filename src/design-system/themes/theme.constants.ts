@@ -2,7 +2,7 @@ import type { ThemeMode, ThemeOption } from './theme.types'
 
 export const THEME_STORAGE_KEY = 'disk-theme'
 
-export const DEFAULT_THEME: ThemeMode = 'system'
+export const DEFAULT_THEME: ThemeMode = 'dark'
 
 export const THEME_OPTIONS: readonly ThemeOption[] = [
   {

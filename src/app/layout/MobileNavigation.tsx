@@ -44,7 +44,7 @@ export const MobileNavigation: React.FC<MobileNavigationProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex md:hidden"
+      className="disk-mobile-drawer fixed inset-0 z-[100] flex lg:hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Menu de Navegação Principal"
