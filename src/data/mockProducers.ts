@@ -1,0 +1,48 @@
+import type { Producer } from '../types/core'
+
+export const mockProducers: Producer[] = [
+  {
+    id: 'prod-01',
+    name: 'Rock Eventos LTDA',
+    tradeName: 'Rock Eventos Promoções',
+    cnpj: '12.345.678/0001-90',
+    email: 'financeiro@rockeventos.com.br',
+    phone: '(41) 3222-1000',
+    city: 'Curitiba',
+    state: 'PR',
+    activeEventsCount: 4,
+  },
+  {
+    id: 'prod-02',
+    name: 'Opus Entretenimento S/A',
+    tradeName: 'Opus Entretenimento',
+    cnpj: '98.765.432/0001-11',
+    email: 'contato@opusentretenimento.com.br',
+    phone: '(51) 3210-4000',
+    city: 'Porto Alegre',
+    state: 'RS',
+    activeEventsCount: 6,
+  },
+  {
+    id: 'prod-03',
+    name: 'Prime Entretenimento e Eventos',
+    tradeName: 'Prime Promoções',
+    cnpj: '33.444.555/0001-22',
+    email: 'operacoes@primeeventos.com.br',
+    phone: '(41) 3315-0808',
+    city: 'Curitiba',
+    state: 'PR',
+    activeEventsCount: 3,
+  },
+  {
+    id: 'prod-04',
+    name: 'Teatro Positivo Produções',
+    tradeName: 'Grupo Positivo Cultura',
+    cnpj: '44.555.666/0001-33',
+    email: 'eventos@teatropositivo.com.br',
+    phone: '(41) 3317-3000',
+    city: 'Curitiba',
+    state: 'PR',
+    activeEventsCount: 5,
+  },
+]
