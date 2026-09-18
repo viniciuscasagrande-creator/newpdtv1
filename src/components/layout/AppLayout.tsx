@@ -17,8 +17,11 @@ export function AppLayout() {
   const location = useLocation()
   const [isCollapsed, setIsCollapsed] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
-
-  // Global modals and drawers
+  // Auto-scroll to top and close mobile drawer on navigation
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, left: 0 })
+    setIsMobileOpen(false)
+  }, [location.pathname])
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false)
   const [isAuditOpen, setIsAuditOpen] = useState(false)
