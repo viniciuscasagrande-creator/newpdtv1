@@ -50,16 +50,16 @@
   border-radius: 8px;
   font-size: 12px;
   font-weight: 700;
-  background: #ffffff;
-  color: #334155;
+  background: var(--disk-bg-surface);
+  color: var(--disk-text-secondary);
   border: 1px solid var(--di-border);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .di-back-btn:hover {
-  background: #f8fafc;
-  color: #0f172a;
+  background: var(--disk-bg-muted);
+  color: var(--disk-text-primary);
 }
 
 .di-page-head {
@@ -92,7 +92,7 @@
 
 .di-btn {
   border: 1px solid var(--di-border);
-  background: #fff;
+  background: var(--disk-bg-surface);
   color: var(--di-text);
   padding: 11px 16px;
   border-radius: 9px;
@@ -121,15 +121,15 @@
 }
 
 .di-btn-danger {
-  background: #fff1f2;
+  background: var(--disk-color-danger-subtle);
   border-color: #fecdd3;
   color: #be123c;
 }
 
 .di-btn-success {
-  background: #ecfdf5;
-  border-color: #a7f3d0;
-  color: #047857;
+  background: var(--disk-color-success-subtle);
+  border-color: var(--disk-color-success-border);
+  color: var(--disk-color-success-text);
 }
 
 .di-btn-small {
@@ -140,7 +140,7 @@
 
 /* Filtros */
 .di-filters {
-  background: #fff;
+  background: var(--disk-bg-surface);
   border: 1px solid var(--di-border);
   border-radius: var(--di-radius);
   padding: 13px;
@@ -167,7 +167,7 @@
   border: 1px solid var(--di-border);
   border-radius: 8px;
   padding: 9px 10px;
-  background: #fff;
+  background: var(--disk-bg-surface);
   color: var(--di-text);
   outline: none;
   font-size: 13px;
@@ -189,7 +189,7 @@
 }
 
 .di-kpi {
-  background: #fff;
+  background: var(--disk-bg-surface);
   border: 1px solid var(--di-border);
   border-radius: var(--di-radius);
   padding: 17px;
@@ -259,7 +259,7 @@
 }
 
 .di-card {
-  background: #fff;
+  background: var(--disk-bg-surface);
   border: 1px solid var(--di-border);
   border-radius: var(--di-radius);
   box-shadow: var(--di-shadow);
@@ -308,7 +308,7 @@
 
 .di-table-wrap th {
   text-align: left;
-  background: #f7f8fb;
+  background: var(--disk-bg-muted);
   color: #586579;
   font-size: 10px;
   text-transform: uppercase;
@@ -321,7 +321,7 @@
 
 .di-table-wrap td {
   padding: 12px 11px;
-  border-bottom: 1px solid #edf0f4;
+  border-bottom: 1px solid var(--disk-border-default);
   font-size: 12px;
   vertical-align: middle;
 }
@@ -357,11 +357,11 @@
   white-space: nowrap;
 }
 
-.di-badge.yellow { background: #fffbeb; color: #a16207; }
-.di-badge.green { background: #ecfdf5; color: #047857; }
-.di-badge.red { background: #fef2f2; color: #b91c1c; }
-.di-badge.blue { background: #eff6ff; color: #1d4ed8; }
-.di-badge.gray { background: #f1f5f9; color: #475569; }
+.di-badge.yellow { background: var(--disk-color-warning-subtle); color: #a16207; }
+.di-badge.green { background: var(--disk-color-success-subtle); color: var(--disk-color-success-text); }
+.di-badge.red { background: var(--disk-color-danger-subtle); color: var(--disk-color-danger-text); }
+.di-badge.blue { background: var(--disk-color-info-subtle); color: var(--disk-color-info-text); }
+.di-badge.gray { background: var(--disk-bg-muted); color: var(--disk-text-secondary); }
 
 /* Risco & Gauge */
 .di-risk {
@@ -386,7 +386,7 @@
   content: "";
   position: absolute;
   inset: 10px;
-  background: #fff;
+  background: var(--disk-bg-surface);
   border-radius: 50%;
 }
 
@@ -455,8 +455,8 @@
   padding: 11px;
   border-radius: 10px;
   background: #fff8eb;
-  border: 1px solid #fde68a;
-  color: #92400e;
+  border: 1px solid var(--disk-color-warning-border);
+  color: var(--disk-color-warning-text);
   font-size: 11px;
   margin-top: 14px;
   line-height: 1.4;
@@ -544,7 +544,7 @@
   width: min(640px, 94vw);
   max-height: 88vh;
   margin: auto;
-  background: #fff;
+  background: var(--disk-bg-surface);
   border-radius: 16px;
   border: 1px solid var(--di-border);
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
@@ -562,7 +562,7 @@
   align-items: center;
   position: sticky;
   top: 0;
-  background: #fff;
+  background: var(--disk-bg-surface);
   z-index: 2;
 }
 
@@ -574,7 +574,7 @@
 
 .di-close {
   border: 0;
-  background: #f1f5f9;
+  background: var(--disk-bg-muted);
   border-radius: 8px;
   width: 34px;
   height: 34px;
@@ -582,13 +582,13 @@
   display: grid;
   place-items: center;
   cursor: pointer;
-  color: #475569;
+  color: var(--disk-text-secondary);
   transition: background 0.15s ease;
 }
 
 .di-close:hover {
-  background: #e2e8f0;
-  color: #0f172a;
+  background: var(--disk-bg-active);
+  color: var(--disk-text-primary);
 }
 
 .di-drawer-body {
@@ -621,10 +621,10 @@
 }
 
 .di-info {
-  background: #f8fafc;
+  background: var(--disk-bg-muted);
   border-radius: 9px;
   padding: 10px;
-  border: 1px solid #edf2f7;
+  border: 1px solid var(--disk-border-default);
 }
 
 .di-info span {
@@ -672,7 +672,7 @@
 .di-footer-actions {
   position: sticky;
   bottom: 0;
-  background: #fff;
+  background: var(--disk-bg-surface);
   border-top: 1px solid var(--di-border);
   padding: 14px 20px;
   display: flex;
@@ -700,7 +700,7 @@
   max-height: 90vh;
   margin: auto;
   overflow: auto;
-  background: #fff;
+  background: var(--disk-bg-surface);
   border-radius: 16px;
   border: 1px solid var(--di-border);
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
@@ -715,7 +715,7 @@
   align-items: center;
   position: sticky;
   top: 0;
-  background: #fff;
+  background: var(--disk-bg-surface);
   z-index: 2;
 }
 
@@ -801,7 +801,7 @@
   gap: 9px;
   position: sticky;
   bottom: 0;
-  background: #fff;
+  background: var(--disk-bg-surface);
 }
 
 /* Toast Notification */
@@ -809,7 +809,7 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
-  background: #111827;
+  background: var(--disk-legacy-dark-surface, #111827);
   color: #fff;
   padding: 12px 16px;
   border-radius: 10px;

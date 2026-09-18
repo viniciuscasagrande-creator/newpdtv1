@@ -622,7 +622,7 @@ export default function EventRevenueIntelPage({ event, onNavigate, notify }: Pro
         </div>
 
         {/* KPIs internos do motor */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px', background: '#f8fafc', padding: '12px', borderRadius: '8px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px', background: "var(--disk-bg-muted)", padding: '12px', borderRadius: '8px' }}>
           <div><small className="text-slate-500 font-bold">VENDAS / HORA</small><div className="font-extrabold text-slate-800 text-lg">{currentData.velocityEngine.currentHourly} ing/h</div></div>
           <div><small className="text-slate-500 font-bold">VENDAS / DIA</small><div className="font-extrabold text-slate-800 text-lg">{currentData.velocityEngine.currentDaily} vendas</div></div>
           <div><small className="text-slate-500 font-bold">RECEITA / HORA</small><div className="font-extrabold text-slate-800 text-lg">{formatBrl(currentData.velocityEngine.hourlyRevenueCents)}</div></div>
@@ -828,7 +828,7 @@ export default function EventRevenueIntelPage({ event, onNavigate, notify }: Pro
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', gap: '12px', fontSize: '12px', color: '#475569' }}>
+                <div style={{ display: 'flex', gap: '12px', fontSize: '12px', color: "var(--disk-text-secondary)" }}>
                   <span><b>{rec.soldPct}%</b> vendido</span>
                   <span>•</span>
                   <span>Velocidade <b>+{rec.velocityChangePct}%</b></span>
@@ -977,7 +977,7 @@ export default function EventRevenueIntelPage({ event, onNavigate, notify }: Pro
                     Receita Projetada: <b>{formatBrl(simResult.projectedRevenueCents)}</b>
                   </p>
                   <p>
-                    Impacto Estimado: <b style={{ color: '#15803d' }}>+{formatBrl(simResult.estimatedImpactCents)}</b>
+                    Impacto Estimado: <b style={{ color: "var(--disk-color-success-text)" }}>+{formatBrl(simResult.estimatedImpactCents)}</b>
                   </p>
                   <small className="text-slate-500 mt-1 italic">
                     A simulação roda em memória e não afeta nenhuma venda ou lote em produção.

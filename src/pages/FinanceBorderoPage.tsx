@@ -132,7 +132,7 @@ export default function FinanceBorderoPage({ events, notify, onNavigate }: Props
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '16px' }}>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                  <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>
+                  <h2 style={{ fontSize: '18px', fontWeight: 800, color: "var(--disk-text-primary)", margin: 0 }}>
                     {item.event}
                   </h2>
                   <span
@@ -145,7 +145,7 @@ export default function FinanceBorderoPage({ events, notify, onNavigate }: Props
                     {item.status}
                   </span>
                 </div>
-                <p style={{ color: '#64748B', fontSize: '13px', marginTop: '4px' }}>
+                <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', marginTop: '4px' }}>
                   Demonstrativo contábil e prestação de contas do evento encerrado.
                 </p>
               </div>
@@ -175,46 +175,46 @@ export default function FinanceBorderoPage({ events, notify, onNavigate }: Props
               style={{
                 marginTop: '20px',
                 padding: '16px',
-                background: '#F8FAFC',
+                background: "var(--disk-bg-muted)",
                 borderRadius: '8px',
-                border: '1px solid #E2E8F0',
+                border: "1px solid var(--disk-border-default)",
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))',
                 gap: '16px'
               }}
             >
               <div>
-                <span style={{ fontSize: '11px', color: '#64748B', display: 'block' }}>Receita Bruta</span>
-                <strong style={{ fontSize: '14px', color: '#0F172A' }}>{brl(item.grossRevenue)}</strong>
+                <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block' }}>Receita Bruta</span>
+                <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)" }}>{brl(item.grossRevenue)}</strong>
               </div>
 
               <div>
-                <span style={{ fontSize: '11px', color: '#64748B', display: 'block' }}>Taxas Plataforma</span>
+                <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block' }}>Taxas Plataforma</span>
                 <strong style={{ fontSize: '14px', color: '#EF4444' }}>- {brl(item.fees)}</strong>
               </div>
 
               <div>
-                <span style={{ fontSize: '11px', color: '#64748B', display: 'block' }}>Estornos & Reembolsos</span>
+                <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block' }}>Estornos & Reembolsos</span>
                 <strong style={{ fontSize: '14px', color: '#EF4444' }}>- {brl(item.refunds)}</strong>
               </div>
 
               <div>
-                <span style={{ fontSize: '11px', color: '#64748B', display: 'block' }}>Receita Líquida</span>
-                <strong style={{ fontSize: '14px', color: '#0F172A' }}>{brl(item.netRevenue)}</strong>
+                <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block' }}>Receita Líquida</span>
+                <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)" }}>{brl(item.netRevenue)}</strong>
               </div>
 
               <div>
-                <span style={{ fontSize: '11px', color: '#64748B', display: 'block' }}>Repasse Produtora</span>
+                <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block' }}>Repasse Produtora</span>
                 <strong style={{ fontSize: '14px', color: '#1C79EF' }}>{brl(item.producerShare)}</strong>
               </div>
 
               <div>
-                <span style={{ fontSize: '11px', color: '#64748B', display: 'block' }}>Retenção DiskIngressos</span>
+                <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block' }}>Retenção DiskIngressos</span>
                 <strong style={{ fontSize: '14px', color: '#10B981' }}>{brl(item.platformShare)}</strong>
               </div>
 
               <div>
-                <span style={{ fontSize: '11px', color: '#64748B', display: 'block' }}>Conformidade</span>
+                <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block' }}>Conformidade</span>
                 <strong style={{ fontSize: '13px', color: '#10B981', display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <CheckCircle2 size={13} /> Auditado
                 </strong>
@@ -271,9 +271,9 @@ export default function FinanceBorderoPage({ events, notify, onNavigate }: Props
                 </label>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px', background: '#ECFDF5', borderRadius: '8px', border: '1px solid #A7F3D0', marginTop: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '12px', background: "var(--disk-color-success-subtle)", borderRadius: '8px', border: "1px solid var(--disk-color-success-border)", marginTop: '14px' }}>
                 <ShieldCheck size={20} style={{ color: '#059669' }} />
-                <span style={{ fontSize: '12px', color: '#065F46' }}>
+                <span style={{ fontSize: '12px', color: "var(--disk-color-success-text)" }}>
                   Certificado digital padrão ICP-Brasil e log de auditoria com carimbo do tempo criptografado.
                 </span>
               </div>

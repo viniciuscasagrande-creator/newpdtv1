@@ -50,7 +50,7 @@ export default class ErrorBoundary extends Component<Props, State> {
       return (
         <div style={{
           minHeight: '100vh',
-          background: '#0F172A',
+          background: "var(--disk-legacy-dark-surface, #0F172A)",
           color: '#F8FAFC',
           display: 'flex',
           alignItems: 'center',
@@ -61,8 +61,8 @@ export default class ErrorBoundary extends Component<Props, State> {
           <div style={{
             maxWidth: '520px',
             width: '100%',
-            background: '#1E293B',
-            border: '1px solid #334155',
+            background: "var(--disk-legacy-dark-surface, #1E293B)",
+            border: "1px solid var(--disk-border-default)",
             borderRadius: '16px',
             padding: '32px',
             textAlign: 'center',
@@ -85,14 +85,14 @@ export default class ErrorBoundary extends Component<Props, State> {
             <h2 style={{ fontSize: '22px', fontWeight: 800, margin: '0 0 8px 0', color: '#FFFFFF' }}>
               Não foi possível carregar esta área.
             </h2>
-            <p style={{ fontSize: '14px', color: '#94A3B8', margin: '0 0 24px 0', lineHeight: 1.5 }}>
+            <p style={{ fontSize: '14px', color: "var(--disk-text-muted)", margin: '0 0 24px 0', lineHeight: 1.5 }}>
               Ocorreu uma instabilidade na renderização do componente. Você pode recarregar a aplicação ou retornar ao Dashboard inicial.
             </p>
 
             {import.meta.env.DEV && this.state.error && (
               <pre style={{
-                background: '#0F172A',
-                border: '1px solid #334155',
+                background: "var(--disk-legacy-dark-surface, #0F172A)",
+                border: "1px solid var(--disk-border-default)",
                 borderRadius: '8px',
                 padding: '12px',
                 fontSize: '11px',
@@ -135,7 +135,7 @@ export default class ErrorBoundary extends Component<Props, State> {
                   gap: '8px',
                   padding: '10px 18px',
                   borderRadius: '8px',
-                  border: '1px solid #475569',
+                  border: "1px solid var(--disk-border-default)",
                   background: '#334155',
                   color: '#F8FAFC',
                   fontSize: '13px',

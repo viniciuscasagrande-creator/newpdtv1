@@ -88,7 +88,7 @@ html[data-ui-framework="limitless"] :is(.eyebrow,.section-kicker,.menu-caption) 
 
 /* Limitless-compatible primitives for React */
 .ll-card {
-  background:#fff;
+  background:var(--disk-bg-surface);
   border:1px solid var(--ll-gray-300);
   border-radius:var(--ll-radius-lg);
   box-shadow:var(--ll-shadow-sm);
@@ -109,9 +109,9 @@ html[data-ui-framework="limitless"] :is(.eyebrow,.section-kicker,.menu-caption) 
 .ll-stat-value { display:block;margin-top:.2rem;color:var(--ll-gray-900);font-size:1.25rem;line-height:1.2;font-weight:650;font-variant-numeric:tabular-nums; }
 .ll-stat-meta { display:block;margin-top:.25rem;color:var(--ll-gray-500);font-size:.6875rem; }
 
-.ll-toolbar { min-height:3.25rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.625rem .75rem;background:#fff;border:1px solid var(--ll-gray-300);border-radius:var(--ll-radius-lg); }
+.ll-toolbar { min-height:3.25rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.625rem .75rem;background:var(--disk-bg-surface);border:1px solid var(--ll-gray-300);border-radius:var(--ll-radius-lg); }
 .ll-toolbar-group { display:flex;align-items:center;gap:.5rem;flex-wrap:wrap; }
-.ll-btn { min-height:2.375rem;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;border:1px solid var(--ll-gray-400);border-radius:var(--ll-radius);padding:.45rem .8rem;background:#fff;color:var(--ll-gray-800);font-size:.8125rem;font-weight:550;transition:.15s ease; }
+.ll-btn { min-height:2.375rem;display:inline-flex;align-items:center;justify-content:center;gap:.45rem;border:1px solid var(--ll-gray-400);border-radius:var(--ll-radius);padding:.45rem .8rem;background:var(--disk-bg-surface);color:var(--ll-gray-800);font-size:.8125rem;font-weight:550;transition:.15s ease; }
 .ll-btn:hover { background:var(--ll-gray-100);border-color:var(--ll-gray-500); }
 .ll-btn:focus-visible { outline:none;box-shadow:var(--ll-focus); }
 .ll-btn-primary { background:var(--ll-primary);border-color:var(--ll-primary);color:#fff; }
@@ -119,16 +119,16 @@ html[data-ui-framework="limitless"] :is(.eyebrow,.section-kicker,.menu-caption) 
 .ll-btn-danger { background:var(--ll-danger);border-color:var(--ll-danger);color:#fff; }
 
 .ll-badge { display:inline-flex;align-items:center;gap:.25rem;min-height:1.35rem;padding:.1rem .45rem;border-radius:999px;background:var(--ll-gray-200);color:var(--ll-gray-700);font-size:.625rem;font-weight:700;line-height:1;white-space:nowrap; }
-.ll-badge-primary{background:rgba(var(--ll-primary-rgb),.10);color:#086acb}.ll-badge-success{background:#ecfdf5;color:#047857}.ll-badge-warning{background:#fff7ed;color:#c2410c}.ll-badge-danger{background:#fef2f2;color:#b91c1c}
+.ll-badge-primary{background:rgba(var(--ll-primary-rgb),.10);color:#086acb}.ll-badge-success{background:var(--disk-color-success-subtle);color:var(--disk-color-success-text)}.ll-badge-warning{background:#fff7ed;color:#c2410c}.ll-badge-danger{background:var(--disk-color-danger-subtle);color:var(--disk-color-danger-text)}
 
 .ll-field { display:grid;gap:.35rem; }
 .ll-label { color:var(--ll-gray-700);font-size:.75rem;font-weight:550; }
-.ll-control { width:100%;min-height:2.5rem;border:1px solid var(--ll-gray-400);border-radius:var(--ll-radius);background:#fff;padding:.45rem .7rem;color:var(--ll-gray-900);font:inherit;outline:none; }
+.ll-control { width:100%;min-height:2.5rem;border:1px solid var(--ll-gray-400);border-radius:var(--ll-radius);background:var(--disk-bg-surface);padding:.45rem .7rem;color:var(--ll-gray-900);font:inherit;outline:none; }
 .ll-control:hover { border-color:var(--ll-gray-500); }
 .ll-control:focus { border-color:var(--ll-primary);box-shadow:var(--ll-focus); }
 .ll-help { color:var(--ll-gray-500);font-size:.6875rem; }
 
-.ll-table-frame { width:100%;overflow:auto;background:#fff;border:1px solid var(--ll-gray-300);border-radius:var(--ll-radius-lg); }
+.ll-table-frame { width:100%;overflow:auto;background:var(--disk-bg-surface);border:1px solid var(--ll-gray-300);border-radius:var(--ll-radius-lg); }
 .ll-table { width:100%;border-collapse:collapse;font-size:.8125rem; }
 .ll-table thead th { position:relative;padding:.7rem .8rem;background:var(--ll-gray-100);border-bottom:1px solid var(--ll-gray-300);color:var(--ll-gray-600);font-size:.6875rem;font-weight:650;letter-spacing:.035em;text-transform:uppercase;text-align:left;white-space:nowrap; }
 .ll-table tbody td { padding:.75rem .8rem;border-bottom:1px solid var(--ll-gray-200);color:var(--ll-gray-800);vertical-align:middle; }

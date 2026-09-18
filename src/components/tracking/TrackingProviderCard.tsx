@@ -31,11 +31,11 @@ const getProviderIcon = (key: string) => {
     case 'google':
       return <Search size={20} style={{ color: '#ea4335' }} />
     case 'tiktok':
-      return <Video size={20} style={{ color: '#0f172a' }} />
+      return <Video size={20} style={{ color: "var(--disk-text-primary)" }} />
     case 'spotify':
       return <Music size={20} style={{ color: '#1db954' }} />
     default:
-      return <Share2 size={20} style={{ color: '#64748b' }} />
+      return <Share2 size={20} style={{ color: "var(--disk-text-muted)" }} />
   }
 }
 
@@ -54,7 +54,7 @@ export default function TrackingProviderCard({ providers, onManage, onAdd }: Pro
                 {getProviderIcon(p.key)}
                 <div>
                   <strong>{p.name}</strong>
-                  <div style={{ fontSize: '11px', color: '#64748b' }}>
+                  <div style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>
                     {hasIntegrations
                       ? `${p.total} integração${p.total > 1 ? 'ões' : ''} · ${p.active} ativa${p.active > 1 ? 's' : ''}`
                       : 'Nenhuma integração neste evento'}
@@ -92,7 +92,7 @@ export default function TrackingProviderCard({ providers, onManage, onAdd }: Pro
                   </span>
                 ))
               ) : (
-                <span style={{ fontSize: '12px', color: '#94a3b8', fontStyle: 'italic' }}>
+                <span style={{ fontSize: '12px', color: "var(--disk-text-muted)", fontStyle: 'italic' }}>
                   Sem pixels configurados.
                 </span>
               )}

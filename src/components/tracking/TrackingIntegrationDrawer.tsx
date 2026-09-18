@@ -124,11 +124,11 @@ export default function TrackingIntegrationDrawer({
               <Sliders size={20} />
             </div>
             <div>
-              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 700, color: '#0f172a' }}>
+              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
                 {integration.name}
               </h3>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center', marginTop: '3px' }}>
-                <span style={{ fontSize: '12px', color: '#64748b' }}>
+                <span style={{ fontSize: '12px', color: "var(--disk-text-muted)" }}>
                   ID: ••••••{integration.pixelId ? integration.pixelId.slice(-4) : '****'}
                 </span>
                 <span className={`status-badge ${integration.status === 'ativo' ? 'green' : 'gray'}`}>
@@ -150,11 +150,11 @@ export default function TrackingIntegrationDrawer({
             aria-label="Fechar painel"
             style={{ border: 'none', background: 'transparent', cursor: 'pointer', padding: '6px' }}
           >
-            <X size={20} style={{ color: '#64748b' }} />
+            <X size={20} style={{ color: "var(--disk-text-muted)" }} />
           </button>
         </div>
 
-        <div className="tracking-tab-nav" style={{ padding: '0 24px', background: '#f8fafc' }}>
+        <div className="tracking-tab-nav" style={{ padding: '0 24px', background: "var(--disk-bg-muted)" }}>
           <button
             className={`tracking-tab-btn ${tab === 'rules' ? 'active' : ''}`}
             onClick={() => setTab('rules')}
@@ -185,12 +185,12 @@ export default function TrackingIntegrationDrawer({
           {tab === 'rules' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {isAssigned && (
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 18px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 18px', background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '10px' }}>
                   <div>
-                    <strong style={{ fontSize: '14px', color: '#0f172a', display: 'block' }}>
+                    <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)", display: 'block' }}>
                       Integração ativa neste evento
                     </strong>
-                    <small style={{ color: '#64748b' }}>
+                    <small style={{ color: "var(--disk-text-muted)" }}>
                       Desligar interrompe o envio de sinais apenas para este evento, sem excluir a integração.
                     </small>
                   </div>
@@ -206,7 +206,7 @@ export default function TrackingIntegrationDrawer({
               )}
 
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-                <span style={{ fontSize: '13px', fontWeight: 600, color: '#334155' }}>
+                <span style={{ fontSize: '13px', fontWeight: 600, color: "var(--disk-text-secondary)" }}>
                   Modelos Rápidos (Presets):
                 </span>
                 <div style={{ display: 'flex', gap: '8px' }}>
@@ -230,7 +230,7 @@ export default function TrackingIntegrationDrawer({
               </div>
 
               {dirty && (
-                <div style={{ padding: '10px 14px', background: '#fffbeb', border: '1px solid #fde68a', borderRadius: '8px', color: '#92400e', fontSize: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ padding: '10px 14px', background: "var(--disk-color-warning-subtle)", border: "1px solid var(--disk-color-warning-border)", borderRadius: '8px', color: "var(--disk-color-warning-text)", fontSize: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span>Você possui alterações não salvas.</span>
                   <button
                     className="btn primary"
@@ -251,8 +251,8 @@ export default function TrackingIntegrationDrawer({
                       key={r.eventName}
                       style={{
                         padding: '12px 14px',
-                        background: '#ffffff',
-                        border: '1px solid #e2e8f0',
+                        background: "var(--disk-bg-surface)",
+                        border: "1px solid var(--disk-border-default)",
                         borderRadius: '8px',
                         display: 'flex',
                         justifyContent: 'space-between',
@@ -267,14 +267,14 @@ export default function TrackingIntegrationDrawer({
                           id={`toggle-${r.eventName}`}
                           style={{ width: '16px', height: '16px', cursor: 'pointer' }}
                         />
-                        <label htmlFor={`toggle-${r.eventName}`} style={{ fontSize: '13px', fontWeight: 600, color: '#1e293b', cursor: 'pointer' }}>
+                        <label htmlFor={`toggle-${r.eventName}`} style={{ fontSize: '13px', fontWeight: 600, color: "var(--disk-text-primary)", cursor: 'pointer' }}>
                           {stageMeta?.label || r.eventName}
                         </label>
                       </div>
 
                       {r.enabled && (
                         <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                          <label style={{ fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', color: '#475569' }}>
+                          <label style={{ fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', color: "var(--disk-text-secondary)" }}>
                             <input
                               type="checkbox"
                               checked={r.browserEnabled}
@@ -282,7 +282,7 @@ export default function TrackingIntegrationDrawer({
                             />
                             Navegador
                           </label>
-                          <label style={{ fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', color: '#475569' }}>
+                          <label style={{ fontSize: '12px', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer', color: "var(--disk-text-secondary)" }}>
                             <input
                               type="checkbox"
                               checked={r.serverEnabled}
@@ -313,29 +313,29 @@ export default function TrackingIntegrationDrawer({
           {tab === 'overview' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '130px 1fr', gap: '10px', fontSize: '13px' }}>
-                <span style={{ color: '#64748b' }}>Plataforma:</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Plataforma:</span>
                 <strong style={{ textTransform: 'capitalize' }}>{integration.provider}</strong>
 
-                <span style={{ color: '#64748b' }}>Tipo da Integração:</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Tipo da Integração:</span>
                 <span>{friendlyIntegrationTypeLabel(integration.integrationType)}</span>
 
-                <span style={{ color: '#64748b' }}>Pixel ID:</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Pixel ID:</span>
                 <code>{integration.pixelId}</code>
 
-                <span style={{ color: '#64748b' }}>Token Server-Side:</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Token Server-Side:</span>
                 <span>{integration.apiTokenMasked ? `Configurado (${integration.apiTokenMasked})` : 'Não configurado'}</span>
 
-                <span style={{ color: '#64748b' }}>Modo de Disparo:</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Modo de Disparo:</span>
                 <span>{TRACKING_MODE_LABELS[assignment?.trackingMode || 'HYBRID']?.label || 'Híbrido'}</span>
 
-                <span style={{ color: '#64748b' }}>Pixel Principal:</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Pixel Principal:</span>
                 <span>{assignment?.isPrimary ? 'Sim, é o pixel principal deste evento.' : 'Não'}</span>
 
-                <span style={{ color: '#64748b' }}>Cadastrado em:</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Cadastrado em:</span>
                 <span>{new Date(integration.createdAt).toLocaleString('pt-BR')}</span>
               </div>
 
-              <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '16px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              <div style={{ borderTop: "1px solid var(--disk-border-default)", paddingTop: '16px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
                 {!assignment?.isPrimary && (
                   <button
                     type="button"
@@ -376,22 +376,22 @@ export default function TrackingIntegrationDrawer({
 
           {tab === 'health' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ padding: '16px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px' }}>
+              <div style={{ padding: '16px', background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '10px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
                   {integration.lastTestStatus === 'ok' ? (
                     <CheckCircle2 size={20} style={{ color: '#10b981' }} />
                   ) : (
                     <AlertCircle size={20} style={{ color: '#f59e0b' }} />
                   )}
-                  <strong style={{ fontSize: '14px', color: '#0f172a' }}>
+                  <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)" }}>
                     {integration.lastTestStatus === 'ok' ? 'Conexão e Autenticação Válidas' : 'Aguardando Teste / Atenção'}
                   </strong>
                 </div>
-                <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>
+                <p style={{ margin: 0, fontSize: '12px', color: "var(--disk-text-muted)" }}>
                   {integration.lastError || 'As credenciais criptografadas AES-256 e o identificador do provedor estão em conformidade.'}
                 </p>
                 {integration.lastTestAt && (
-                  <small style={{ display: 'block', marginTop: '8px', color: '#94a3b8' }}>
+                  <small style={{ display: 'block', marginTop: '8px', color: "var(--disk-text-muted)" }}>
                     Último teste realizado em: {new Date(integration.lastTestAt).toLocaleString('pt-BR')}
                   </small>
                 )}
@@ -411,7 +411,7 @@ export default function TrackingIntegrationDrawer({
           {tab === 'logs' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {logs.length === 0 ? (
-                <div style={{ padding: '24px', textAlign: 'center', color: '#64748b', background: '#f8fafc', borderRadius: '8px' }}>
+                <div style={{ padding: '24px', textAlign: 'center', color: "var(--disk-text-muted)", background: "var(--disk-bg-muted)", borderRadius: '8px' }}>
                   Nenhum log registrado recentemente para esta integração.
                 </div>
               ) : (
@@ -420,8 +420,8 @@ export default function TrackingIntegrationDrawer({
                     key={log.id}
                     style={{
                       padding: '10px 14px',
-                      background: '#ffffff',
-                      border: '1px solid #e2e8f0',
+                      background: "var(--disk-bg-surface)",
+                      border: "1px solid var(--disk-border-default)",
                       borderRadius: '8px',
                       display: 'flex',
                       justifyContent: 'space-between',
@@ -430,14 +430,14 @@ export default function TrackingIntegrationDrawer({
                     }}
                   >
                     <div>
-                      <b style={{ color: '#0f172a', display: 'block' }}>{log.eventName}</b>
-                      <span style={{ color: '#64748b' }}>{log.message || 'Disparo registrado'}</span>
+                      <b style={{ color: "var(--disk-text-primary)", display: 'block' }}>{log.eventName}</b>
+                      <span style={{ color: "var(--disk-text-muted)" }}>{log.message || 'Disparo registrado'}</span>
                     </div>
                     <div style={{ textAlign: 'right' }}>
                       <span className={`status-badge ${log.status === 'ok' ? 'green' : 'red'}`}>
                         {log.status === 'ok' ? 'Sucesso' : 'Erro'}
                       </span>
-                      <small style={{ display: 'block', color: '#94a3b8', marginTop: '2px' }}>
+                      <small style={{ display: 'block', color: "var(--disk-text-muted)", marginTop: '2px' }}>
                         {new Date(log.createdAt).toLocaleTimeString('pt-BR')}
                       </small>
                     </div>

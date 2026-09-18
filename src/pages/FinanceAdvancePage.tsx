@@ -169,7 +169,7 @@ export default function FinanceAdvancePage({ events, notify, onNavigate }: Props
       </section>
 
       {/* Simulator Section */}
-      <section className="finance-chart-box card-surface" style={{ border: '1px solid #BFDBFE', background: '#F8FAFC' }}>
+      <section className="finance-chart-box card-surface" style={{ border: "1px solid var(--disk-color-info-border)", background: "var(--disk-bg-muted)" }}>
         <div className="card-heading">
           <div>
             <h3>Simulador de Antecipação de Receitas</h3>
@@ -180,7 +180,7 @@ export default function FinanceAdvancePage({ events, notify, onNavigate }: Props
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', alignItems: 'center' }}>
           <div>
-            <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: '#475569', marginBottom: '8px' }}>
+            <label style={{ display: 'block', fontSize: '12px', fontWeight: 700, color: "var(--disk-text-secondary)", marginBottom: '8px' }}>
               Valor a Antecipar:
               <input
                 type="range"
@@ -191,18 +191,18 @@ export default function FinanceAdvancePage({ events, notify, onNavigate }: Props
                 onChange={e => setAdvanceAmount(Number(e.target.value))}
                 style={{ width: '100%', margin: '14px 0' }}
               />
-              <strong style={{ display: 'block', fontSize: '32px', color: '#0F172A', fontWeight: 800 }}>
+              <strong style={{ display: 'block', fontSize: '32px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
                 {brl(advanceAmount)}
               </strong>
             </label>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '14px' }}>
-              <label style={{ fontSize: '11px', color: '#64748B', fontWeight: 700 }}>
+              <label style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 700 }}>
                 Evento Vinculado:
                 <select
                   value={selectedEvent}
                   onChange={e => setSelectedEvent(e.target.value)}
-                  style={{ width: '100%', height: '36px', marginTop: '4px', border: '1px solid #CBD5E1', borderRadius: '6px' }}
+                  style={{ width: '100%', height: '36px', marginTop: '4px', border: "1px solid var(--disk-border-default)", borderRadius: '6px' }}
                 >
                   {events.map(ev => (
                     <option key={ev.id} value={ev.title}>{ev.title}</option>
@@ -210,12 +210,12 @@ export default function FinanceAdvancePage({ events, notify, onNavigate }: Props
                 </select>
               </label>
 
-              <label style={{ fontSize: '11px', color: '#64748B', fontWeight: 700 }}>
+              <label style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 700 }}>
                 Conta para Depósito:
                 <select
                   value={selectedBankId}
                   onChange={e => setSelectedBankId(Number(e.target.value))}
-                  style={{ width: '100%', height: '36px', marginTop: '4px', border: '1px solid #CBD5E1', borderRadius: '6px' }}
+                  style={{ width: '100%', height: '36px', marginTop: '4px', border: "1px solid var(--disk-border-default)", borderRadius: '6px' }}
                 >
                   {bankAccountsSeed.map(b => (
                     <option key={b.id} value={b.id}>{b.bankName} ({b.agency})</option>
@@ -225,23 +225,23 @@ export default function FinanceAdvancePage({ events, notify, onNavigate }: Props
             </div>
           </div>
 
-          <div className="card-surface" style={{ padding: '20px', border: '1px solid #E2E8F0', borderRadius: '10px', background: '#FFFFFF' }}>
+          <div className="card-surface" style={{ padding: '20px', border: "1px solid var(--disk-border-default)", borderRadius: '10px', background: "var(--disk-bg-surface)" }}>
             <span className="eyebrow">RESUMO DA OPERAÇÃO</span>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', margin: '14px 0' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-                <span style={{ color: '#64748B' }}>Valor Bruto Solicitado</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Valor Bruto Solicitado</span>
                 <strong>{brl(advanceAmount)}</strong>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-                <span style={{ color: '#64748B' }}>Taxa de Antecipação (3,5%)</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Taxa de Antecipação (3,5%)</span>
                 <strong style={{ color: '#EF4444' }}>- {brl(fee)}</strong>
               </div>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-                <span style={{ color: '#64748B' }}>Encargos / Tarifas Bancárias</span>
+                <span style={{ color: "var(--disk-text-muted)" }}>Encargos / Tarifas Bancárias</span>
                 <strong style={{ color: '#10B981' }}>R$ 0,00 (Gratuito)</strong>
               </div>
-              <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '10px', display: 'flex', justifyContent: 'space-between', fontSize: '16px' }}>
-                <span style={{ fontWeight: 800, color: '#0F172A' }}>Valor Líquido na Conta</span>
+              <div style={{ borderTop: "1px solid var(--disk-border-default)", paddingTop: '10px', display: 'flex', justifyContent: 'space-between', fontSize: '16px' }}>
+                <span style={{ fontWeight: 800, color: "var(--disk-text-primary)" }}>Valor Líquido na Conta</span>
                 <strong style={{ color: '#10B981', fontSize: '20px' }}>{brl(net)}</strong>
               </div>
             </div>

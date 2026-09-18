@@ -2,9 +2,9 @@
 
 .ecd-container {
   padding: 24px;
-  background-color: #F8FAFC;
+  background-color: var(--disk-bg-muted);
   min-height: 100vh;
-  color: #0F172A;
+  color: var(--disk-text-primary);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -14,12 +14,12 @@
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #64748B;
+  color: var(--disk-text-muted);
   margin-bottom: 12px;
 }
 
 .ecd-breadcrumb-link {
-  color: #64748B;
+  color: var(--disk-text-muted);
   text-decoration: none;
   cursor: pointer;
   transition: color 0.15s ease;
@@ -31,7 +31,7 @@
 
 .ecd-breadcrumb-current {
   font-weight: 600;
-  color: #1E293B;
+  color: var(--disk-text-primary);
 }
 
 .ecd-header {
@@ -82,7 +82,7 @@
 .ecd-title {
   font-size: 24px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--disk-text-primary);
   margin: 0;
   letter-spacing: -0.02em;
 }
@@ -96,28 +96,28 @@
 }
 
 .ecd-status-active {
-  background-color: #DCFCE7;
-  color: #15803D;
+  background-color: var(--disk-color-success-subtle);
+  color: var(--disk-color-success-text);
 }
 
 .ecd-status-inactive {
-  background-color: #F1F5F9;
-  color: #64748B;
+  background-color: var(--disk-bg-muted);
+  color: var(--disk-text-muted);
 }
 
 .ecd-more-btn {
   background: none;
   border: none;
   cursor: pointer;
-  color: #94A3B8;
+  color: var(--disk-text-muted);
   font-size: 18px;
   padding: 2px 6px;
   border-radius: 6px;
 }
 
 .ecd-more-btn:hover {
-  background: #E2E8F0;
-  color: #334155;
+  background: var(--disk-bg-active);
+  color: var(--disk-text-secondary);
 }
 
 .ecd-meta-line {
@@ -125,7 +125,7 @@
   align-items: center;
   gap: 14px;
   font-size: 13px;
-  color: #64748B;
+  color: var(--disk-text-muted);
   margin-top: 4px;
 }
 
@@ -149,16 +149,16 @@
   border-radius: 8px;
   font-size: 13px;
   font-weight: 600;
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  color: #334155;
+  background: var(--disk-bg-surface);
+  border: 1px solid var(--disk-border-default);
+  color: var(--disk-text-secondary);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .ecd-btn-secondary:hover {
-  background: #F1F5F9;
-  border-color: #CBD5E1;
+  background: var(--disk-bg-muted);
+  border-color: var(--disk-border-default);
 }
 
 .ecd-btn-primary {
@@ -202,18 +202,18 @@
   font-weight: 600;
   border: none;
   background: transparent;
-  color: #64748B;
+  color: var(--disk-text-muted);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .ecd-tab-pill:hover {
-  background: #E2E8F0;
-  color: #0F172A;
+  background: var(--disk-bg-active);
+  color: var(--disk-text-primary);
 }
 
 .ecd-tab-pill.active {
-  background: #0F172A;
+  background: var(--disk-legacy-dark-surface, #0F172A);
   color: #FFFFFF;
   font-weight: 700;
 }
@@ -340,8 +340,8 @@
 }
 
 .ecd-card {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  background: var(--disk-bg-surface);
+  border: 1px solid var(--disk-border-default);
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
@@ -359,13 +359,13 @@
 .ecd-card-title {
   font-size: 15px;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--disk-text-primary);
   margin: 0;
 }
 
 .ecd-card-subtitle {
   font-size: 12px;
-  color: #64748B;
+  color: var(--disk-text-muted);
   margin-top: 2px;
 }
 
@@ -377,10 +377,10 @@
 
 .ecd-pill-switch {
   display: inline-flex;
-  background: #F1F5F9;
+  background: var(--disk-bg-muted);
   padding: 2px;
   border-radius: 8px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--disk-border-default);
 }
 
 .ecd-pill-btn {
@@ -389,25 +389,25 @@
   padding: 4px 10px;
   font-size: 12px;
   font-weight: 600;
-  color: #64748B;
+  color: var(--disk-text-muted);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .ecd-pill-btn.active {
-  background: #0F172A;
+  background: var(--disk-legacy-dark-surface, #0F172A);
   color: #FFFFFF;
 }
 
 .ecd-select {
-  background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  background: var(--disk-bg-surface);
+  border: 1px solid var(--disk-border-default);
   padding: 4px 10px;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
-  color: #334155;
+  color: var(--disk-text-secondary);
   cursor: pointer;
 }
 
@@ -417,23 +417,23 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
   margin-bottom: 16px;
-  background: #F8FAFC;
+  background: var(--disk-bg-muted);
   padding: 12px;
   border-radius: 10px;
-  border: 1px solid #F1F5F9;
+  border: 1px solid var(--disk-border-default);
 }
 
 .ecd-vk-item small {
   display: block;
   font-size: 11px;
-  color: #64748B;
+  color: var(--disk-text-muted);
   font-weight: 600;
 }
 
 .ecd-vk-item strong {
   display: block;
   font-size: 15px;
-  color: #0F172A;
+  color: var(--disk-text-primary);
   font-weight: 800;
   margin: 2px 0;
 }
@@ -465,14 +465,14 @@
 .ecc-donut-total {
   font-size: 24px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--disk-text-primary);
   display: block;
   line-height: 1;
 }
 
 .ecc-donut-sub {
   font-size: 11px;
-  color: #64748B;
+  color: var(--disk-text-muted);
   font-weight: 600;
 }
 
@@ -495,7 +495,7 @@
 
 .ecc-legend-row:hover,
 .ecc-legend-row.selected {
-  background: #F1F5F9;
+  background: var(--disk-bg-muted);
 }
 
 .ecc-legend-dot {
@@ -506,17 +506,17 @@
 
 .ecc-legend-name {
   flex: 1;
-  color: #334155;
+  color: var(--disk-text-secondary);
   font-weight: 600;
 }
 
 .ecc-legend-pct {
-  color: #64748B;
+  color: var(--disk-text-muted);
   font-size: 11px;
 }
 
 .ecc-legend-count {
-  color: #0F172A;
+  color: var(--disk-text-primary);
   min-width: 20px;
   text-align: right;
 }
@@ -538,7 +538,7 @@
   width: 180px;
   font-size: 12px;
   font-weight: 600;
-  color: #1E293B;
+  color: var(--disk-text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -546,7 +546,7 @@
 
 .ecd-ticket-bar-wrap {
   flex: 1;
-  background: #F1F5F9;
+  background: var(--disk-bg-muted);
   height: 9px;
   border-radius: 9999px;
   overflow: hidden;
@@ -562,7 +562,7 @@
   width: 45px;
   text-align: right;
   font-size: 12px;
-  color: #64748B;
+  color: var(--disk-text-muted);
   font-weight: 600;
 }
 
@@ -571,7 +571,7 @@
   text-align: right;
   font-size: 13px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--disk-text-primary);
 }
 
 /* Gauge Chart styles */
@@ -592,13 +592,13 @@
 .ecc-gauge-pct {
   font-size: 26px;
   font-weight: 800;
-  color: #0F172A;
+  color: var(--disk-text-primary);
   display: block;
 }
 
 .ecc-gauge-ratio {
   font-size: 11px;
-  color: #64748B;
+  color: var(--disk-text-muted);
   font-weight: 600;
 }
 
@@ -615,7 +615,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: #475569;
+  color: var(--disk-text-secondary);
 }
 
 .ecc-g-dot {
@@ -625,7 +625,7 @@
 }
 
 .ecc-g-item b {
-  color: #0F172A;
+  color: var(--disk-text-primary);
   margin-left: auto;
 }
 
@@ -643,8 +643,8 @@
 .ecd-table th {
   text-align: left;
   padding: 10px 12px;
-  border-bottom: 1px solid #E2E8F0;
-  color: #64748B;
+  border-bottom: 1px solid var(--disk-border-default);
+  color: var(--disk-text-muted);
   font-weight: 700;
   font-size: 11px;
   text-transform: uppercase;
@@ -652,18 +652,18 @@
 
 .ecd-table td {
   padding: 12px;
-  border-bottom: 1px solid #F1F5F9;
-  color: #1E293B;
+  border-bottom: 1px solid var(--disk-border-default);
+  color: var(--disk-text-primary);
 }
 
 .ecd-table tr:hover td {
-  background: #F8FAFC;
+  background: var(--disk-bg-muted);
 }
 
 .ecd-table-client strong {
   display: block;
   font-weight: 700;
-  color: #0F172A;
+  color: var(--disk-text-primary);
 }
 
 .ecd-table-badge {
@@ -672,13 +672,13 @@
   font-weight: 700;
   padding: 2px 8px;
   border-radius: 6px;
-  background: #DCFCE7;
-  color: #15803D;
+  background: var(--disk-color-success-subtle);
+  color: var(--disk-color-success-text);
 }
 
 /* Floating Tooltip */
 .ecc-tooltip-box {
-  background: #0F172A;
+  background: var(--disk-legacy-dark-surface, #0F172A);
   color: #FFFFFF;
   padding: 8px 12px;
   border-radius: 8px;
@@ -689,7 +689,7 @@
 
 .ecc-tooltip-date {
   font-weight: 700;
-  color: #94A3B8;
+  color: var(--disk-text-muted);
   margin-bottom: 4px;
 }
 
@@ -700,8 +700,8 @@
 }
 
 .ecc-projection-badge {
-  background: #FFFFFF;
-  border: 1px solid #BFDBFE;
+  background: var(--disk-bg-surface);
+  border: 1px solid var(--disk-color-info-border);
   box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
   padding: 6px 10px;
   border-radius: 8px;
@@ -711,12 +711,12 @@
 .ecc-projection-badge small {
   display: block;
   font-size: 10px;
-  color: #64748B;
+  color: var(--disk-text-muted);
 }
 
 .ecc-projection-badge strong {
   display: block;
   font-size: 13px;
-  color: #1D4ED8;
+  color: var(--disk-color-info-text);
   font-weight: 800;
 }

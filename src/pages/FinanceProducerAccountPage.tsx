@@ -771,7 +771,7 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
                 <tbody>
                   {filteredSubaccounts.length === 0 ? (
                     <tr>
-                      <td colSpan={10} style={{ textAlign: 'center', padding: '30px', color: '#64748b' }}>
+                      <td colSpan={10} style={{ textAlign: 'center', padding: '30px', color: "var(--disk-text-muted)" }}>
                         Nenhuma subconta encontrada para os filtros selecionados.
                       </td>
                     </tr>
@@ -918,12 +918,12 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
                 <span>HISTÓRICO AUDITÁVEL DE TRANSFERÊNCIAS</span>
                 <h2>Lançamentos de Partidas Dobradas entre Eventos</h2>
               </div>
-              <small style={{ color: '#64748b' }}>Imutabilidade garantida pelo Ledger</small>
+              <small style={{ color: "var(--disk-text-muted)" }}>Imutabilidade garantida pelo Ledger</small>
             </div>
 
             <div style={{ padding: '16px' }}>
               {filteredTransfers.length === 0 ? (
-                <div style={{ textAlign: 'center', padding: '40px', color: '#64748b' }}>
+                <div style={{ textAlign: 'center', padding: '40px', color: "var(--disk-text-muted)" }}>
                   Nenhuma transferência registrada para os filtros selecionados.
                 </div>
               ) : (
@@ -932,14 +932,14 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
                     <div className="pa-transfer-row-top">
                       <div className="pa-transfer-route">
                         <span className="tag-source">Débito: {trf.sourceEventTitle}</span>
-                        <ArrowRight size={16} style={{ color: '#64748b' }} />
+                        <ArrowRight size={16} style={{ color: "var(--disk-text-muted)" }} />
                         <span className="tag-dest">Crédito: {trf.destinationEventTitle}</span>
                       </div>
                       <div className="pa-transfer-amount">{brl(trf.amountCents / 100)}</div>
                     </div>
 
                     <div style={{ fontSize: '13px', color: '#cbd5e1', display: 'flex', gap: '10px', alignItems: 'center' }}>
-                      <span className="pa-badge" style={{ background: '#1e293b', color: '#38bdf8' }}>
+                      <span className="pa-badge" style={{ background: "var(--disk-legacy-dark-surface, #1e293b)", color: '#38bdf8' }}>
                         {trf.categoryLabel || trf.category}
                       </span>
                       <span>{trf.reason}</span>
@@ -956,7 +956,7 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
                       </div>
 
                       <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                        <span style={{ fontSize: '11px', color: '#64748b' }}>
+                        <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>
                           {new Date(trf.occurredAt).toLocaleString('pt-BR')} por {trf.requestedBy?.name || 'Operador'}
                         </span>
                         <button
@@ -1192,7 +1192,7 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
                   <div className="pa-field-group">
                     <label>
                       <span>Evento de Destino (Subconta a Creditar)</span>
-                      <small style={{ color: '#94a3b8' }}>Mesmo produtor obrigatório</small>
+                      <small style={{ color: "var(--disk-text-muted)" }}>Mesmo produtor obrigatório</small>
                     </label>
                     <select
                       value={destEventId}
@@ -1248,7 +1248,7 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
                   <div className="pa-field-group">
                     <label>
                       <span>Motivo da Transferência (Auditoria Obrigatória)</span>
-                      <small style={{ color: '#64748b' }}>Mínimo 5 caracteres</small>
+                      <small style={{ color: "var(--disk-text-muted)" }}>Mínimo 5 caracteres</small>
                     </label>
                     <textarea
                       rows={2}
@@ -1355,7 +1355,7 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
                       ))}
                     </div>
 
-                    <div style={{ fontSize: '11px', color: '#64748b' }}>
+                    <div style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>
                       Idempotência: <code>{idempotencyKey}</code> · Proteção contra duplo clique ativa.
                     </div>
                   </>
@@ -1477,7 +1477,7 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
 
                 <footer className="pa-voucher-footer">
                   <span>Hash Criptográfico de Auditoria SHA-256:</span>
-                  <span style={{ wordBreak: 'break-all', color: '#1e293b' }}>
+                  <span style={{ wordBreak: 'break-all', color: "var(--disk-text-primary)" }}>
                     {activeVoucher.auditHash}
                   </span>
                   <span style={{ marginTop: '6px' }}>
@@ -1531,7 +1531,7 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
                   borderRadius: '10px',
                   padding: '12px',
                   fontSize: '12px',
-                  color: '#94a3b8',
+                  color: "var(--disk-text-muted)",
                 }}
               >
                 Serão criados automaticamente 2 novos lançamentos inversos no Ledger:
@@ -1544,7 +1544,7 @@ export default function FinanceProducerAccountPage({ events, producerId, notify,
               <div className="pa-field-group">
                 <label>
                   <span>Motivo do Estorno (Obrigatório)</span>
-                  <small style={{ color: '#64748b' }}>Mínimo 5 caracteres</small>
+                  <small style={{ color: "var(--disk-text-muted)" }}>Mínimo 5 caracteres</small>
                 </label>
                 <textarea
                   rows={3}

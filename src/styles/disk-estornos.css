@@ -75,7 +75,7 @@
 #disk-estornos-module .di-btn,
 .disk-estornos-wrapper .di-btn {
   border: 1px solid var(--di-border) !important;
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   color: var(--di-text) !important;
   padding: 11px 16px !important;
   border-radius: 9px !important;
@@ -111,16 +111,16 @@
 
 #disk-estornos-module .di-btn-danger,
 .disk-estornos-wrapper .di-btn-danger {
-  background: #fff1f2 !important;
+  background: var(--disk-color-danger-subtle) !important;
   border-color: #fecdd3 !important;
   color: #be123c !important;
 }
 
 #disk-estornos-module .di-btn-success,
 .disk-estornos-wrapper .di-btn-success {
-  background: #ecfdf5 !important;
-  border-color: #a7f3d0 !important;
-  color: #047857 !important;
+  background: var(--disk-color-success-subtle) !important;
+  border-color: var(--disk-color-success-border) !important;
+  color: var(--disk-color-success-text) !important;
 }
 
 #disk-estornos-module .di-btn-small,
@@ -131,7 +131,7 @@
 
 #disk-estornos-module .di-filters,
 .disk-estornos-wrapper .di-filters {
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   border: 1px solid var(--di-border) !important;
   border-radius: var(--di-radius) !important;
   padding: 13px !important;
@@ -162,7 +162,7 @@
   border: 1px solid var(--di-border) !important;
   border-radius: 8px !important;
   padding: 9px 10px !important;
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   color: var(--di-text) !important;
   outline: none !important;
   font-size: 12.5px !important;
@@ -186,7 +186,7 @@
 
 #disk-estornos-module .di-kpi,
 .disk-estornos-wrapper .di-kpi {
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   border: 1px solid var(--di-border) !important;
   border-radius: var(--di-radius) !important;
   padding: 17px !important;
@@ -266,7 +266,7 @@
 
 #disk-estornos-module .di-card,
 .disk-estornos-wrapper .di-card {
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   border: 1px solid var(--di-border) !important;
   border-radius: var(--di-radius) !important;
   box-shadow: var(--di-shadow) !important;
@@ -321,7 +321,7 @@
 #disk-estornos-module th,
 .disk-estornos-wrapper th {
   text-align: left !important;
-  background: #f7f8fb !important;
+  background: var(--disk-bg-muted) !important;
   color: #586579 !important;
   font-size: 10px !important;
   text-transform: uppercase !important;
@@ -335,7 +335,7 @@
 #disk-estornos-module td,
 .disk-estornos-wrapper td {
   padding: 12px 11px !important;
-  border-bottom: 1px solid #edf0f4 !important;
+  border-bottom: 1px solid var(--disk-border-default) !important;
   font-size: 12px !important;
   vertical-align: middle !important;
 }
@@ -376,11 +376,11 @@
   white-space: nowrap !important;
 }
 
-#disk-estornos-module .di-badge.yellow, .disk-estornos-wrapper .di-badge.yellow { background: #fffbeb !important; color: #a16207 !important; }
-#disk-estornos-module .di-badge.green, .disk-estornos-wrapper .di-badge.green { background: #ecfdf5 !important; color: #047857 !important; }
-#disk-estornos-module .di-badge.red, .disk-estornos-wrapper .di-badge.red { background: #fef2f2 !important; color: #b91c1c !important; }
-#disk-estornos-module .di-badge.blue, .disk-estornos-wrapper .di-badge.blue { background: #eff6ff !important; color: #1d4ed8 !important; }
-#disk-estornos-module .di-badge.gray, .disk-estornos-wrapper .di-badge.gray { background: #f1f5f9 !important; color: #475569 !important; }
+#disk-estornos-module .di-badge.yellow, .disk-estornos-wrapper .di-badge.yellow { background: var(--disk-color-warning-subtle) !important; color: #a16207 !important; }
+#disk-estornos-module .di-badge.green, .disk-estornos-wrapper .di-badge.green { background: var(--disk-color-success-subtle) !important; color: var(--disk-color-success-text) !important; }
+#disk-estornos-module .di-badge.red, .disk-estornos-wrapper .di-badge.red { background: var(--disk-color-danger-subtle) !important; color: var(--disk-color-danger-text) !important; }
+#disk-estornos-module .di-badge.blue, .disk-estornos-wrapper .di-badge.blue { background: var(--disk-color-info-subtle) !important; color: var(--disk-color-info-text) !important; }
+#disk-estornos-module .di-badge.gray, .disk-estornos-wrapper .di-badge.gray { background: var(--disk-bg-muted) !important; color: var(--disk-text-secondary) !important; }
 
 #disk-estornos-module .di-risk,
 .disk-estornos-wrapper .di-risk {
@@ -406,7 +406,7 @@
   content: "" !important;
   position: absolute !important;
   inset: 10px !important;
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   border-radius: 50% !important;
 }
 
@@ -525,8 +525,8 @@
   padding: 11px !important;
   border-radius: 10px !important;
   background: #fff8eb !important;
-  border: 1px solid #fde68a !important;
-  color: #92400e !important;
+  border: 1px solid var(--disk-color-warning-border) !important;
+  color: var(--disk-color-warning-text) !important;
   font-size: 11px !important;
   margin-top: 14px !important;
 }
@@ -560,7 +560,7 @@
   top: 0 !important;
   height: 100% !important;
   width: min(560px, 94vw) !important;
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   box-shadow: -15px 0 45px rgba(0,0,0,.18) !important;
   overflow: auto !important;
 }
@@ -574,7 +574,7 @@
   align-items: center !important;
   position: sticky !important;
   top: 0 !important;
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   z-index: 2 !important;
 }
 
@@ -589,7 +589,7 @@
 #disk-estornos-module .di-close,
 .disk-estornos-wrapper .di-close {
   border: 0 !important;
-  background: #f1f5f9 !important;
+  background: var(--disk-bg-muted) !important;
   border-radius: 8px !important;
   width: 34px !important;
   height: 34px !important;
@@ -628,7 +628,7 @@
 
 #disk-estornos-module .di-info,
 .disk-estornos-wrapper .di-info {
-  background: #f8fafc !important;
+  background: var(--disk-bg-muted) !important;
   border-radius: 9px !important;
   padding: 10px !important;
 }
@@ -684,7 +684,7 @@
 .disk-estornos-wrapper .di-footer-actions {
   position: sticky !important;
   bottom: 0 !important;
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   border-top: 1px solid var(--di-border) !important;
   padding: 14px 20px !important;
   display: flex !important;
@@ -714,7 +714,7 @@
   width: min(720px, 96vw) !important;
   max-height: 90vh !important;
   overflow: auto !important;
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
   border-radius: 16px !important;
   box-shadow: 0 25px 70px rgba(0,0,0,.25) !important;
 }
@@ -808,7 +808,7 @@
   border-radius: 8px !important;
   outline: none !important;
   font-size: 12.5px !important;
-  background: #fff !important;
+  background: var(--disk-bg-surface) !important;
 }
 
 #disk-estornos-module .di-form-grid textarea,
@@ -831,7 +831,7 @@
   position: fixed !important;
   right: 20px !important;
   bottom: 20px !important;
-  background: #111827 !important;
+  background: var(--disk-legacy-dark-surface, #111827) !important;
   color: #fff !important;
   padding: 12px 18px !important;
   border-radius: 10px !important;

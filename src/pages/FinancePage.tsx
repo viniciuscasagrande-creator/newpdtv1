@@ -288,7 +288,7 @@ export default function FinancePage({ events, initialTab = 'overview', notify, o
           <button className="modal-close" onClick={() => setSelectedPayout(null)}><X size={18} /></button>
           <h3>Detalhes do Repasse #{selectedPayout.id}</h3>
           <p>Comprovante e rastreamento da liquidação bancária.</p>
-          <div style={{ background: '#f8fafc', padding: 14, borderRadius: 8, fontSize: 13, display: 'flex', flexDirection: 'column', gap: 8, marginTop: 10 }}>
+          <div style={{ background: "var(--disk-bg-muted)", padding: 14, borderRadius: 8, fontSize: 13, display: 'flex', flexDirection: 'column', gap: 8, marginTop: 10 }}>
             <div><b>Evento:</b> {selectedPayout.event}</div>
             <div><b>Data de Solicitação:</b> {selectedPayout.requestedAt}</div>
             <div><b>Previsão de Crédito:</b> {selectedPayout.scheduledFor}</div>

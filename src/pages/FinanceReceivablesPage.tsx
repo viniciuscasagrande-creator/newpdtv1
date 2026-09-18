@@ -635,7 +635,7 @@ export default function FinanceReceivablesPage({ events, notify, onNavigate }: P
                     justifyContent: 'space-between',
                     marginTop: '8px',
                     fontSize: '11px',
-                    color: '#94a3b8',
+                    color: "var(--disk-text-muted)",
                     overflowX: 'auto',
                     gap: '4px',
                     paddingBottom: '4px',
@@ -686,7 +686,7 @@ export default function FinanceReceivablesPage({ events, notify, onNavigate }: P
                       -{brl((selectedReceivableTrace.grossAmountCents - selectedReceivableTrace.netAmountCents) / 100)}
                     </strong>
                   </div>
-                  <div className="pa-voucher-row" style={{ borderTop: '2px solid #e2e8f0', paddingTop: '8px' }}>
+                  <div className="pa-voucher-row" style={{ borderTop: "2px solid var(--disk-border-default)", paddingTop: '8px' }}>
                     <span>Receita Líquida do Produtor:</span>
                     <strong style={{ color: '#059669', fontSize: '15px' }}>
                       {brl(selectedReceivableTrace.netAmountCents / 100)}
@@ -750,11 +750,11 @@ export default function FinanceReceivablesPage({ events, notify, onNavigate }: P
                 </div>
                 <div className="breakdown-line">
                   <span>Taxa estimada (3,5%)</span>
-                  <strong style={{ color: '#b45309' }}>- {brl(advanceFee)}</strong>
+                  <strong style={{ color: "var(--disk-color-warning-text)" }}>- {brl(advanceFee)}</strong>
                 </div>
                 <div className="breakdown-line total">
                   <span>Líquido imediato</span>
-                  <strong style={{ color: '#047857' }}>{brl(advanceNet)}</strong>
+                  <strong style={{ color: "var(--disk-color-success-text)" }}>{brl(advanceNet)}</strong>
                 </div>
               </div>
             </div>

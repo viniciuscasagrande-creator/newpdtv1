@@ -167,7 +167,7 @@ export default function FinanceBankAccountsPage({ events, notify, onNavigate }: 
                 <span className="bank-code-badge">{b.bankCode}</span>
                 <div>
                   <strong style={{ fontSize: '15px' }}>{b.bankName}</strong>
-                  <small style={{ display: 'block', color: '#64748B' }}>Conta {b.accountType}</small>
+                  <small style={{ display: 'block', color: "var(--disk-text-muted)" }}>Conta {b.accountType}</small>
                 </div>
               </div>
               {b.isPrimary ? (
@@ -194,7 +194,7 @@ export default function FinanceBankAccountsPage({ events, notify, onNavigate }: 
                 <span>Chave PIX ({b.pixType}):</span> <code>{b.pixKey}</code>
               </div>
               <div className="bank-detail">
-                <span>Titular:</span> <small style={{ fontWeight: 700, color: '#0F172A' }}>{b.holderName}</small>
+                <span>Titular:</span> <small style={{ fontWeight: 700, color: "var(--disk-text-primary)" }}>{b.holderName}</small>
               </div>
               <div className="bank-detail">
                 <span>Documento (CNPJ/CPF):</span> <small>{b.holderDocument}</small>

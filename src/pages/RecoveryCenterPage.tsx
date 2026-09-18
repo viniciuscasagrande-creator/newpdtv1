@@ -238,11 +238,11 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
   return (
     <section className={embedded ? "growth-page recovery-center-embedded" : "growth-page"}>
       {/* 1. Header & Actions */}
-      <div className="growth-intro" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+      <div className="growth-intro" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
         <div>
           <p className="eyebrow remarketing" style={{ color: '#D97706', fontWeight: 800 }}>MOTOR DE RESGATE & CONVERSÃO</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>{title(mode)}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>{title(mode)}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>
             {mode === 'carts' && 'Recupere checkouts abandonados com lembretes automáticos e cupons dinâmicos.'}
             {mode === 'payments' && 'Monitore Pix e boletos pendentes de pagamento com timer de expiração.'}
             {mode === 'flows' && 'Configure réguas multicanais de recuperação com regras de tempo e desconto.'}
@@ -268,49 +268,49 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
 
       {/* 2. Top KPIs for this sub-module */}
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px', marginTop: '16px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px', borderRadius: '12px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px', borderRadius: '12px' }}>
           <div className="kpi-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748B' }}>Oportunidades Abertas</span>
-            <span style={{ padding: '6px', background: '#FEF3C7', color: '#D97706', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-muted)" }}>Oportunidades Abertas</span>
+            <span style={{ padding: '6px', background: "var(--disk-color-warning-subtle)", color: '#D97706', borderRadius: '8px' }}>
               <ShoppingCart size={18} />
             </span>
           </div>
-          <strong style={{ fontSize: '22px', fontWeight: 900, color: '#0F172A', display: 'block', margin: '4px 0 2px' }}>
+          <strong style={{ fontSize: '22px', fontWeight: 900, color: "var(--disk-text-primary)", display: 'block', margin: '4px 0 2px' }}>
             {displayRows.filter(r => r.status === 'aberto').length}
           </strong>
-          <small style={{ color: '#64748B' }}>Prontos para receber lembrete</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>Prontos para receber lembrete</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px', borderRadius: '12px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px', borderRadius: '12px' }}>
           <div className="kpi-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748B' }}>Em Recuperação</span>
-            <span style={{ padding: '6px', background: '#EFF6FF', color: '#2563EB', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-muted)" }}>Em Recuperação</span>
+            <span style={{ padding: '6px', background: "var(--disk-color-info-subtle)", color: '#2563EB', borderRadius: '8px' }}>
               <Clock3 size={18} />
             </span>
           </div>
           <strong style={{ fontSize: '22px', fontWeight: 900, color: '#2563EB', display: 'block', margin: '4px 0 2px' }}>
             {displayRows.filter(r => r.status === 'em_recuperacao').length}
           </strong>
-          <small style={{ color: '#64748B' }}>Aguardando pagamento do cliente</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>Aguardando pagamento do cliente</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px', borderRadius: '12px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px', borderRadius: '12px' }}>
           <div className="kpi-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748B' }}>Potencial Recuperável</span>
-            <span style={{ padding: '6px', background: '#F3E8FF', color: '#9333EA', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-muted)" }}>Potencial Recuperável</span>
+            <span style={{ padding: '6px', background: "var(--disk-color-purple-subtle)", color: '#9333EA', borderRadius: '8px' }}>
               <Target size={18} />
             </span>
           </div>
           <strong style={{ fontSize: '22px', fontWeight: 900, color: '#9333EA', display: 'block', margin: '4px 0 2px' }}>
             {money(displayRows.reduce((s, r) => s + (r.amountCents || 0), 0))}
           </strong>
-          <small style={{ color: '#64748B' }}>Valor total em risco de perda</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>Valor total em risco de perda</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px', borderRadius: '12px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px', borderRadius: '12px' }}>
           <div className="kpi-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748B' }}>Receita Recuperada</span>
-            <span style={{ padding: '6px', background: '#DCFCE7', color: '#16A34A', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-muted)" }}>Receita Recuperada</span>
+            <span style={{ padding: '6px', background: "var(--disk-color-success-subtle)", color: '#16A34A', borderRadius: '8px' }}>
               <TrendingUp size={18} />
             </span>
           </div>
@@ -322,22 +322,22 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
       </div>
 
       {/* 3. Filter Bar */}
-      <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '14px 18px', borderRadius: '12px', marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+      <div style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px 18px', borderRadius: '12px', marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
           {/* Event selector / locked event context */}
           {fixedEventId ? (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#EFF6FF', padding: '7px 12px', borderRadius: '8px', border: '1px solid #BFDBFE', fontSize: '13px', fontWeight: 800, color: '#1D4ED8' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: "var(--disk-color-info-subtle)", padding: '7px 12px', borderRadius: '8px', border: "1px solid var(--disk-color-info-border)", fontSize: '13px', fontWeight: 800, color: "var(--disk-color-info-text)" }}>
               <Filter size={14} />
               <span>{events.find(ev => ev.id === fixedEventId)?.title || `Evento ${fixedEventId}`}</span>
-              <span style={{ fontSize: '10px', background: '#DBEAFE', padding: '2px 6px', borderRadius: '999px' }}>ESCOPO FIXO</span>
+              <span style={{ fontSize: '10px', background: "var(--disk-color-info-subtle)", padding: '2px 6px', borderRadius: '999px' }}>ESCOPO FIXO</span>
             </div>
           ) : (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', background: '#F8FAFC', padding: '6px 12px', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '13px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', background: "var(--disk-bg-muted)", padding: '6px 12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)", fontSize: '13px' }}>
               <Filter size={14} color="#64748B" />
               <select
                 value={selectedEventId}
                 onChange={e => setSelectedEventId(e.target.value === '' ? '' : e.target.value === 'all' ? 'all' : Number(e.target.value))}
-                style={{ background: 'transparent', border: 0, fontWeight: 700, color: '#0F172A', cursor: 'pointer', outline: 'none', minWidth: '230px' }}
+                style={{ background: 'transparent', border: 0, fontWeight: 700, color: "var(--disk-text-primary)", cursor: 'pointer', outline: 'none', minWidth: '230px' }}
               >
                 {mode === 'carts' ? (
                   <>
@@ -361,7 +361,7 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
           )}
 
           {/* Status selector */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#F1F5F9', padding: '4px', borderRadius: '8px', fontSize: '12px', fontWeight: 600 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: "var(--disk-bg-muted)", padding: '4px', borderRadius: '8px', fontSize: '12px', fontWeight: 600 }}>
             {[
               ['all', 'Todos'],
               ['aberto', 'Abertos'],
@@ -388,13 +388,13 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
           </div>
         </div>
 
-        <span style={{ fontSize: '12px', color: '#64748B', fontWeight: 600 }}>
+        <span style={{ fontSize: '12px', color: "var(--disk-text-muted)", fontWeight: 600 }}>
           Exibindo <strong>{displayRows.length}</strong> registro(s)
         </span>
       </div>
 
       {mode === 'carts' && typeof selectedEventId !== 'number' && (
-        <div style={{ marginTop: '16px', padding: '18px', border: '1px solid #FDE68A', background: '#FFFBEB', borderRadius: '12px', display: 'flex', gap: '10px', alignItems: 'center', color: '#92400E' }}>
+        <div style={{ marginTop: '16px', padding: '18px', border: "1px solid var(--disk-color-warning-border)", background: "var(--disk-color-warning-subtle)", borderRadius: '12px', display: 'flex', gap: '10px', alignItems: 'center', color: "var(--disk-color-warning-text)" }}>
           <AlertTriangle size={18} />
           <div>
             <strong style={{ display: 'block', fontSize: '13px' }}>Selecione um evento para visualizar os abandonos.</strong>
@@ -404,11 +404,11 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
       )}
 
       {/* 4. Table of Recovery Opportunities */}
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', marginTop: '16px', overflow: 'hidden' }}>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '12px', marginTop: '16px', overflow: 'hidden' }}>
         <div className="table-scroll">
           <table className="growth-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
             <thead>
-              <tr style={{ background: '#F8FAFC', borderBottom: '1px solid #E2E8F0', textAlign: 'left', color: '#64748B', fontSize: '11px', textTransform: 'uppercase' }}>
+              <tr style={{ background: "var(--disk-bg-muted)", borderBottom: "1px solid var(--disk-border-default)", textAlign: 'left', color: "var(--disk-text-muted)", fontSize: '11px', textTransform: 'uppercase' }}>
                 <th style={{ padding: '12px 16px' }}>Cliente / Contato</th>
                 <th style={{ padding: '12px 16px' }}>Evento & Origem UTM</th>
                 <th style={{ padding: '12px 16px' }}>Itens do Carrinho / Valor</th>
@@ -422,26 +422,26 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
                 displayRows.map(r => {
                   const isPix = r.kind === 'pagamento'
                   return (
-                    <tr key={r.id} style={{ borderBottom: '1px solid #F1F5F9' }}>
+                    <tr key={r.id} style={{ borderBottom: "1px solid var(--disk-border-default)" }}>
                       {/* Cliente */}
                       <td style={{ padding: '12px 16px' }}>
-                        <div style={{ fontWeight: 800, color: '#0F172A' }}>{r.customerName}</div>
-                        <div style={{ fontSize: '11px', color: '#64748B' }}>{r.email || r.phone}</div>
-                        <small style={{ fontSize: '10px', color: '#94A3B8', fontFamily: 'monospace' }}>{r.code}</small>
+                        <div style={{ fontWeight: 800, color: "var(--disk-text-primary)" }}>{r.customerName}</div>
+                        <div style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>{r.email || r.phone}</div>
+                        <small style={{ fontSize: '10px', color: "var(--disk-text-muted)", fontFamily: 'monospace' }}>{r.code}</small>
                       </td>
 
                       {/* Evento & UTM */}
                       <td style={{ padding: '12px 16px' }}>
-                        <strong style={{ color: '#0F172A', display: 'block' }}>{r.event?.title || 'Sunset Eletrônico 2026'}</strong>
-                        <span style={{ fontSize: '11px', color: '#2563EB', background: '#EFF6FF', padding: '1px 6px', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '3px', marginTop: '2px' }}>
+                        <strong style={{ color: "var(--disk-text-primary)", display: 'block' }}>{r.event?.title || 'Sunset Eletrônico 2026'}</strong>
+                        <span style={{ fontSize: '11px', color: '#2563EB', background: "var(--disk-color-info-subtle)", padding: '1px 6px', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '3px', marginTop: '2px' }}>
                           <Link2 size={11} /> {r.trackingLink ? `${r.trackingLink.source} / ${r.trackingLink.campaign}` : 'utm_source=instagram'}
                         </span>
                       </td>
 
                       {/* Valor */}
                       <td style={{ padding: '12px 16px' }}>
-                        <strong style={{ color: '#0F172A', fontSize: '14px', display: 'block' }}>{money(r.amountCents)}</strong>
-                        <small style={{ color: '#64748B', fontSize: '11px' }}>
+                        <strong style={{ color: "var(--disk-text-primary)", fontSize: '14px', display: 'block' }}>{money(r.amountCents)}</strong>
+                        <small style={{ color: "var(--disk-text-muted)", fontSize: '11px' }}>
                           {isPix ? '1x Ingresso VIP + Taxa' : '2x Lote 1 Promocional'}
                         </small>
                       </td>
@@ -453,11 +453,11 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
                           <span>{r.preferredChannel === 'whatsapp' ? 'WhatsApp' : 'E-mail'}</span>
                         </div>
                         {isPix ? (
-                          <span style={{ fontSize: '10px', fontWeight: 800, color: '#DC2626', background: '#FEE2E2', padding: '1px 6px', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '3px', marginTop: '3px' }}>
+                          <span style={{ fontSize: '10px', fontWeight: 800, color: '#DC2626', background: "var(--disk-color-danger-subtle)", padding: '1px 6px', borderRadius: '4px', display: 'inline-flex', alignItems: 'center', gap: '3px', marginTop: '3px' }}>
                             <Clock3 size={10} /> Expira em 18 min
                           </span>
                         ) : (
-                          <small style={{ fontSize: '11px', color: '#94A3B8', display: 'block', marginTop: '2px' }}>
+                          <small style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block', marginTop: '2px' }}>
                             {r.attemptCount || 1} disparo(s)
                           </small>
                         )}
@@ -510,14 +510,14 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
                               disabled={busy === r.id}
                               onClick={() => recover(r)}
                               className="btn secondary"
-                              style={{ height: '32px', padding: '0 10px', fontSize: '11px', cursor: 'pointer', color: '#16A34A', borderColor: '#BBF7D0', background: '#F0FDF4' }}
+                              style={{ height: '32px', padding: '0 10px', fontSize: '11px', cursor: 'pointer', color: '#16A34A', borderColor: "var(--disk-color-success-border)", background: "var(--disk-color-success-subtle)" }}
                             >
                               <CheckCircle2 size={13} /> Confirmar Venda
                             </button>
                           )}
 
                           {r.status === 'recuperado' && (
-                            <span style={{ fontSize: '12px', fontWeight: 900, color: '#16A34A', background: '#DCFCE7', padding: '4px 10px', borderRadius: '6px' }}>
+                            <span style={{ fontSize: '12px', fontWeight: 900, color: '#16A34A', background: "var(--disk-color-success-subtle)", padding: '4px 10px', borderRadius: '6px' }}>
                               + {money(r.revenueCents || r.amountCents)}
                             </span>
                           )}
@@ -528,7 +528,7 @@ export default function RecoveryCenterPage({ producerId, events, mode, notify, f
                 })
               ) : (
                 <tr>
-                  <td colSpan={6} style={{ padding: '32px', textAlign: 'center', color: '#94A3B8' }}>
+                  <td colSpan={6} style={{ padding: '32px', textAlign: 'center', color: "var(--disk-text-muted)" }}>
                     <ShoppingCart size={32} style={{ margin: '0 auto 8px', opacity: 0.5 }} />
                     <p style={{ margin: 0, fontWeight: 700 }}>Nenhuma oportunidade pendente no filtro selecionado.</p>
                   </td>

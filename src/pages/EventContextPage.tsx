@@ -89,42 +89,42 @@ function Tickets({event,people,notify}:{event:EventItem;people:Participant[];not
 
     {selectedPerson && (
       <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setSelectedPerson(null)}>
-        <div className="utm-modal-card-v2" style={{ width: 'min(480px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+        <div className="utm-modal-card-v2" style={{ width: 'min(480px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
             <div>
               <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>DETALHES DO INGRESSO</span>
-              <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Pedido #{selectedPerson.order}</h3>
+              <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Pedido #{selectedPerson.order}</h3>
             </div>
             <button type="button" className="drawer-close-btn" onClick={() => setSelectedPerson(null)}><Plus size={16} style={{ transform: 'rotate(45deg)' }} /></button>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px' }}>
-            <div style={{ background: '#F8FAFC', padding: '12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-              <div style={{ color: '#64748B', fontSize: '11px', fontWeight: 700 }}>TITULAR</div>
-              <strong style={{ fontSize: '15px', color: '#0F172A' }}>{selectedPerson.name}</strong>
-              <div style={{ color: '#64748B' }}>{selectedPerson.email} • {selectedPerson.document || 'CPF: ***.458.919-**'}</div>
+            <div style={{ background: "var(--disk-bg-muted)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+              <div style={{ color: "var(--disk-text-muted)", fontSize: '11px', fontWeight: 700 }}>TITULAR</div>
+              <strong style={{ fontSize: '15px', color: "var(--disk-text-primary)" }}>{selectedPerson.name}</strong>
+              <div style={{ color: "var(--disk-text-muted)" }}>{selectedPerson.email} • {selectedPerson.document || 'CPF: ***.458.919-**'}</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-              <div style={{ background: '#F8FAFC', padding: '10px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                <div style={{ color: '#64748B', fontSize: '11px', fontWeight: 700 }}>TIPO DE INGRESSO</div>
-                <strong style={{ color: '#0F172A' }}>{selectedPerson.ticket}</strong>
+              <div style={{ background: "var(--disk-bg-muted)", padding: '10px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ color: "var(--disk-text-muted)", fontSize: '11px', fontWeight: 700 }}>TIPO DE INGRESSO</div>
+                <strong style={{ color: "var(--disk-text-primary)" }}>{selectedPerson.ticket}</strong>
               </div>
-              <div style={{ background: '#F8FAFC', padding: '10px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                <div style={{ color: '#64748B', fontSize: '11px', fontWeight: 700 }}>VALOR PAGO</div>
+              <div style={{ background: "var(--disk-bg-muted)", padding: '10px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ color: "var(--disk-text-muted)", fontSize: '11px', fontWeight: 700 }}>VALOR PAGO</div>
                 <strong style={{ color: '#16A34A' }}>R$ {selectedPerson.value.toFixed(2).replace('.', ',')}</strong>
               </div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-              <div style={{ background: '#F8FAFC', padding: '10px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                <div style={{ color: '#64748B', fontSize: '11px', fontWeight: 700 }}>STATUS CHECK-IN</div>
+              <div style={{ background: "var(--disk-bg-muted)", padding: '10px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ color: "var(--disk-text-muted)", fontSize: '11px', fontWeight: 700 }}>STATUS CHECK-IN</div>
                 <span className={`mini-status ${selectedPerson.checkin}`} style={{ marginTop: '4px', display: 'inline-block' }}>{selectedPerson.checkin}</span>
               </div>
-              <div style={{ background: '#F8FAFC', padding: '10px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                <div style={{ color: '#64748B', fontSize: '11px', fontWeight: 700 }}>RECONHECIMENTO FACIAL</div>
+              <div style={{ background: "var(--disk-bg-muted)", padding: '10px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ color: "var(--disk-text-muted)", fontSize: '11px', fontWeight: 700 }}>RECONHECIMENTO FACIAL</div>
                 <strong style={{ color: selectedPerson.facial === 'aprovado' ? '#16A34A' : '#D97706' }}>{selectedPerson.facial || 'Aprovado'}</strong>
               </div>
             </div>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '16px', borderTop: '1px solid #E2E8F0', paddingTop: '12px' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '16px', borderTop: "1px solid var(--disk-border-default)", paddingTop: '12px' }}>
             <button type="button" className="btn secondary" onClick={() => setSelectedPerson(null)}>Fechar</button>
             <button type="button" className="btn primary" onClick={() => { notify(`Ingresso #${selectedPerson.order} reenviado para ${selectedPerson.email}!`); setSelectedPerson(null) }}>Reenviar por E-mail</button>
           </div>

@@ -172,10 +172,10 @@ export default function TrackingRecentActivity({
     <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
         <div>
-          <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
+          <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
             Fluxo de Disparos & Telemetria
           </h4>
-          <small style={{ color: '#64748b' }}>
+          <small style={{ color: "var(--disk-text-muted)" }}>
             Motor assíncrono de conversões com Outbox, Circuit Breakers e Dead Letter Queue.
           </small>
         </div>
@@ -232,7 +232,7 @@ export default function TrackingRecentActivity({
             <button
               type="button"
               className="btn primary"
-              style={{ fontSize: '12px', padding: '6px 12px', display: 'flex', alignItems: 'center', gap: '6px', background: '#0f172a' }}
+              style={{ fontSize: '12px', padding: '6px 12px', display: 'flex', alignItems: 'center', gap: '6px', background: "var(--disk-legacy-dark-surface, #0f172a)" }}
               onClick={handleRunTickNow}
               disabled={runningTick}
               title="Processa lotes pendentes imediatamente via worker assíncrono"
@@ -256,29 +256,29 @@ export default function TrackingRecentActivity({
                 gap: '12px'
               }}
             >
-              <div style={{ background: '#ffffff', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 600 }}>Na Fila</div>
-                <div style={{ fontSize: '20px', fontWeight: 700, color: '#0f172a', marginTop: '2px' }}>
+              <div style={{ background: "var(--disk-bg-surface)", padding: '12px 14px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 600 }}>Na Fila</div>
+                <div style={{ fontSize: '20px', fontWeight: 700, color: "var(--disk-text-primary)", marginTop: '2px' }}>
                   {outboxStats.queued}
                 </div>
               </div>
 
-              <div style={{ background: '#ffffff', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 600 }}>Em Processamento</div>
+              <div style={{ background: "var(--disk-bg-surface)", padding: '12px 14px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 600 }}>Em Processamento</div>
                 <div style={{ fontSize: '20px', fontWeight: 700, color: '#2563eb', marginTop: '2px' }}>
                   {outboxStats.processing}
                 </div>
               </div>
 
-              <div style={{ background: '#ffffff', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 600 }}>Reprocessando (Retry)</div>
+              <div style={{ background: "var(--disk-bg-surface)", padding: '12px 14px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 600 }}>Reprocessando (Retry)</div>
                 <div style={{ fontSize: '20px', fontWeight: 700, color: '#d97706', marginTop: '2px' }}>
                   {outboxStats.retrying}
                 </div>
               </div>
 
-              <div style={{ background: '#ffffff', padding: '12px 14px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 600 }}>Entregues com Sucesso</div>
+              <div style={{ background: "var(--disk-bg-surface)", padding: '12px 14px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 600 }}>Entregues com Sucesso</div>
                 <div style={{ fontSize: '20px', fontWeight: 700, color: '#16a34a', marginTop: '2px' }}>
                   {outboxStats.completed}
                 </div>
@@ -306,8 +306,8 @@ export default function TrackingRecentActivity({
           {Object.keys(circuitBreakers).length > 0 && (
             <div
               style={{
-                background: '#f8fafc',
-                border: '1px solid #e2e8f0',
+                background: "var(--disk-bg-muted)",
+                border: "1px solid var(--disk-border-default)",
                 borderRadius: '8px',
                 padding: '12px 16px',
                 display: 'flex',
@@ -320,10 +320,10 @@ export default function TrackingRecentActivity({
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <ShieldCheck size={18} style={{ color: '#2563eb' }} />
                 <div>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#0f172a' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
                     Circuit Breakers por Provedor
                   </div>
-                  <div style={{ fontSize: '11px', color: '#64748b' }}>
+                  <div style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>
                     Proteção de backoff isolada: indisponibilidade em uma plataforma não afeta as demais.
                   </div>
                 </div>
@@ -344,10 +344,10 @@ export default function TrackingRecentActivity({
                         alignItems: 'center',
                         gap: '6px',
                         fontSize: '11px',
-                        background: '#ffffff',
+                        background: "var(--disk-bg-surface)",
                         padding: '4px 8px',
                         borderRadius: '6px',
-                        border: '1px solid #e2e8f0'
+                        border: "1px solid var(--disk-border-default)"
                       }}
                     >
                       <span
@@ -423,11 +423,11 @@ export default function TrackingRecentActivity({
 
           {/* Lista de Itens da Fila */}
           {loadingQueue ? (
-            <div style={{ padding: '36px', textAlign: 'center', color: '#64748b' }}>
+            <div style={{ padding: '36px', textAlign: 'center', color: "var(--disk-text-muted)" }}>
               Carregando registros da fila de conversão...
             </div>
           ) : queueItems.length === 0 ? (
-            <div style={{ padding: '36px', textAlign: 'center', color: '#64748b', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+            <div style={{ padding: '36px', textAlign: 'center', color: "var(--disk-text-muted)", background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
               Nenhum disparo pendente nesta visualização.
             </div>
           ) : (
@@ -443,7 +443,7 @@ export default function TrackingRecentActivity({
                   <div
                     key={item.id}
                     style={{
-                      background: '#ffffff',
+                      background: "var(--disk-bg-surface)",
                       border: `1px solid ${isFailed ? '#fca5a5' : '#e2e8f0'}`,
                       borderRadius: '8px',
                       padding: '12px 16px',
@@ -461,7 +461,7 @@ export default function TrackingRecentActivity({
 
                       <div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                          <b style={{ fontSize: '13px', color: '#0f172a' }}>
+                          <b style={{ fontSize: '13px', color: "var(--disk-text-primary)" }}>
                             {item.providerEventName}
                           </b>
                           <span className="status-badge blue" style={{ fontSize: '10px' }}>
@@ -474,7 +474,7 @@ export default function TrackingRecentActivity({
                           )}
                         </div>
 
-                        <small style={{ display: 'block', color: '#64748b', marginTop: '4px' }}>
+                        <small style={{ display: 'block', color: "var(--disk-text-muted)", marginTop: '4px' }}>
                           {item.errorMessageSanitized || item.responseMessage || 'Evento registrado com sucesso.'}
                         </small>
 
@@ -487,7 +487,7 @@ export default function TrackingRecentActivity({
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div style={{ textAlign: 'right', fontSize: '11px', color: '#94a3b8', marginRight: '6px' }}>
+                      <div style={{ textAlign: 'right', fontSize: '11px', color: "var(--disk-text-muted)", marginRight: '6px' }}>
                         <div>{date.toLocaleTimeString('pt-BR')}</div>
                         <div>{date.toLocaleDateString('pt-BR')}</div>
                       </div>
@@ -531,10 +531,10 @@ export default function TrackingRecentActivity({
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
             <div>
-              <h4 style={{ margin: 0, fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>
+              <h4 style={{ margin: 0, fontSize: '15px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
                 Telemetria de Comunicação Externa
               </h4>
-              <small style={{ color: '#64748b' }}>
+              <small style={{ color: "var(--disk-text-muted)" }}>
                 Registros técnicos sanitizados das chamadas efetuadas para Meta, Google, TikTok e Spotify.
               </small>
             </div>
@@ -568,7 +568,7 @@ export default function TrackingRecentActivity({
           </div>
 
           {filteredLogs.length === 0 ? (
-            <div style={{ padding: '36px', textAlign: 'center', color: '#64748b', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+            <div style={{ padding: '36px', textAlign: 'center', color: "var(--disk-text-muted)", background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
               Nenhum registro de telemetria encontrado.
             </div>
           ) : (
@@ -592,7 +592,7 @@ export default function TrackingRecentActivity({
                             {item.integrationName}
                           </span>
                         </div>
-                        <small style={{ display: 'block', color: '#64748b', marginTop: '2px' }}>
+                        <small style={{ display: 'block', color: "var(--disk-text-muted)", marginTop: '2px' }}>
                           {item.message || (isOk ? 'Disparo aceito pelo provedor.' : 'Erro de comunicação.')}
                         </small>
                       </div>
@@ -602,7 +602,7 @@ export default function TrackingRecentActivity({
                       <span className={`status-badge ${isOk ? 'green' : 'red'}`} style={{ fontSize: '10px' }}>
                         {isOk ? 'Aceito (200)' : `Erro ${item.responseCode || ''}`}
                       </span>
-                      <div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'flex-end' }}>
+                      <div style={{ fontSize: '11px', color: "var(--disk-text-muted)", marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px', justifyContent: 'flex-end' }}>
                         <Clock size={11} /> {date.toLocaleTimeString('pt-BR')} · {date.toLocaleDateString('pt-BR')}
                       </div>
                     </div>

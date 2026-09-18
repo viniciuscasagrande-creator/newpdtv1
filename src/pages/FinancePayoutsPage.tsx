@@ -641,7 +641,7 @@ export default function FinancePayoutsPage({ events, notify, onNavigate }: Props
                       required
                     />
                   </div>
-                  <small style={{ color: '#64748b', marginTop: '4px', display: 'block' }}>
+                  <small style={{ color: "var(--disk-text-muted)", marginTop: '4px', display: 'block' }}>
                     Saldo disponível: <b>{brl(availableBalance)}</b>
                   </small>
                 </label>

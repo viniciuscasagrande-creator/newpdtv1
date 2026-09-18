@@ -116,11 +116,11 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
       </div>
 
       {/* 1. Header & Actions */}
-      <div className="growth-intro" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+      <div className="growth-intro" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>INTELIGÊNCIA CONTÁBIL & EXECUTIVA</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Relatórios Financeiros & DRE</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Relatórios Financeiros & DRE</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>
             Demonstrativos de resultado, apuração de impostos e exportação executiva consolidada.
           </p>
         </div>
@@ -149,49 +149,49 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
 
       {/* 2. Top 4 Financial KPIs */}
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px', marginTop: '16px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px', borderRadius: '12px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px', borderRadius: '12px' }}>
           <div className="kpi-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748B' }}>Faturamento Bruto</span>
-            <span style={{ padding: '6px', background: '#EFF6FF', color: '#2563EB', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-muted)" }}>Faturamento Bruto</span>
+            <span style={{ padding: '6px', background: "var(--disk-color-info-subtle)", color: '#2563EB', borderRadius: '8px' }}>
               <DollarSign size={18} />
             </span>
           </div>
-          <strong style={{ fontSize: '22px', fontWeight: 900, color: '#0F172A', display: 'block', margin: '4px 0 2px' }}>
+          <strong style={{ fontSize: '22px', fontWeight: 900, color: "var(--disk-text-primary)", display: 'block', margin: '4px 0 2px' }}>
             {money(totals.gross)}
           </strong>
-          <small style={{ color: '#64748B' }}>{totals.tickets.toLocaleString('pt-BR')} ingressos emitidos</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>{totals.tickets.toLocaleString('pt-BR')} ingressos emitidos</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px', borderRadius: '12px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px', borderRadius: '12px' }}>
           <div className="kpi-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748B' }}>Deduções & Taxas</span>
-            <span style={{ padding: '6px', background: '#FEE2E2', color: '#DC2626', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-muted)" }}>Deduções & Taxas</span>
+            <span style={{ padding: '6px', background: "var(--disk-color-danger-subtle)", color: '#DC2626', borderRadius: '8px' }}>
               <Receipt size={18} />
             </span>
           </div>
           <strong style={{ fontSize: '22px', fontWeight: 900, color: '#DC2626', display: 'block', margin: '4px 0 2px' }}>
             - {money(totals.fees)}
           </strong>
-          <small style={{ color: '#64748B' }}>Gateway + Taxa de Conveniência</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>Gateway + Taxa de Conveniência</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px', borderRadius: '12px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px', borderRadius: '12px' }}>
           <div className="kpi-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748B' }}>Splits & Custos Operacionais</span>
-            <span style={{ padding: '6px', background: '#FEF3C7', color: '#D97706', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-muted)" }}>Splits & Custos Operacionais</span>
+            <span style={{ padding: '6px', background: "var(--disk-color-warning-subtle)", color: '#D97706', borderRadius: '8px' }}>
               <Scale size={18} />
             </span>
           </div>
           <strong style={{ fontSize: '22px', fontWeight: 900, color: '#D97706', display: 'block', margin: '4px 0 2px' }}>
             - {money(totals.splits + totals.costs)}
           </strong>
-          <small style={{ color: '#64748B' }}>Cachês, Espaço, Produção e Mídia</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>Cachês, Espaço, Produção e Mídia</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px', borderRadius: '12px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px', borderRadius: '12px' }}>
           <div className="kpi-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#64748B' }}>Lucro Líquido do Produtor</span>
-            <span style={{ padding: '6px', background: '#DCFCE7', color: '#16A34A', borderRadius: '8px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-muted)" }}>Lucro Líquido do Produtor</span>
+            <span style={{ padding: '6px', background: "var(--disk-color-success-subtle)", color: '#16A34A', borderRadius: '8px' }}>
               <TrendingUp size={18} />
             </span>
           </div>
@@ -205,15 +205,15 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
       </div>
 
       {/* 3. Filters & Tabs */}
-      <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '14px 18px', borderRadius: '12px', marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+      <div style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px 18px', borderRadius: '12px', marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
           {/* Event Filter */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', background: '#F8FAFC', padding: '6px 12px', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '13px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', background: "var(--disk-bg-muted)", padding: '6px 12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)", fontSize: '13px' }}>
             <Filter size={14} color="#64748B" />
             <select
               value={selectedEventId}
               onChange={e => setSelectedEventId(e.target.value === 'all' ? 'all' : Number(e.target.value))}
-              style={{ background: 'transparent', border: 0, fontWeight: 600, color: '#0F172A', cursor: 'pointer', outline: 'none' }}
+              style={{ background: 'transparent', border: 0, fontWeight: 600, color: "var(--disk-text-primary)", cursor: 'pointer', outline: 'none' }}
             >
               <option value="all">Todos os eventos ({events.length})</option>
               {events.map(ev => (
@@ -225,7 +225,7 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
           </div>
 
           {/* Period Filter */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#F1F5F9', padding: '4px', borderRadius: '8px', fontSize: '12px', fontWeight: 600 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: "var(--disk-bg-muted)", padding: '4px', borderRadius: '8px', fontSize: '12px', fontWeight: 600 }}>
             {[
               ['7d', '7 dias'],
               ['30d', '30 dias'],
@@ -253,7 +253,7 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
         </div>
 
         {/* Tab Navigation */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#F8FAFC', padding: '4px', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '12px', fontWeight: 700 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', background: "var(--disk-bg-muted)", padding: '4px', borderRadius: '8px', border: "1px solid var(--disk-border-default)", fontSize: '12px', fontWeight: 700 }}>
           {[
             ['dre', 'DRE por Evento'],
             ['taxes', 'Impostos & Retenções'],
@@ -281,13 +281,13 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
 
       {/* 4. Tab 1: DRE por Evento */}
       {tab === 'dre' && (
-        <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', marginTop: '16px', padding: '20px' }}>
+        <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '12px', marginTop: '16px', padding: '20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
             <div>
-              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 800, color: '#0F172A' }}>DRE — Demonstrativo do Resultado do Exercício</h3>
-              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748B' }}>Estrutura contábil detalhada por evento</p>
+              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 800, color: "var(--disk-text-primary)" }}>DRE — Demonstrativo do Resultado do Exercício</h3>
+              <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>Estrutura contábil detalhada por evento</p>
             </div>
-            <span style={{ fontSize: '11px', fontWeight: 800, color: '#16A34A', background: '#DCFCE7', padding: '3px 8px', borderRadius: '999px' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, color: '#16A34A', background: "var(--disk-color-success-subtle)", padding: '3px 8px', borderRadius: '999px' }}>
               ● Apuração Consolidada
             </span>
           </div>
@@ -295,7 +295,7 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
           <div className="table-scroll">
             <table className="growth-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
               <thead>
-                <tr style={{ background: '#F8FAFC', borderBottom: '1px solid #E2E8F0', textAlign: 'left', color: '#64748B', fontSize: '11px', textTransform: 'uppercase' }}>
+                <tr style={{ background: "var(--disk-bg-muted)", borderBottom: "1px solid var(--disk-border-default)", textAlign: 'left', color: "var(--disk-text-muted)", fontSize: '11px', textTransform: 'uppercase' }}>
                   <th style={{ padding: '12px 16px' }}>Evento</th>
                   <th style={{ padding: '12px 16px' }}>Receita Bruta</th>
                   <th style={{ padding: '12px 16px' }}>Taxas (Gateway + Conv)</th>
@@ -307,18 +307,18 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
               </thead>
               <tbody>
                 {filteredDre.map(d => (
-                  <tr key={d.eventId} style={{ borderBottom: '1px solid #F1F5F9' }}>
+                  <tr key={d.eventId} style={{ borderBottom: "1px solid var(--disk-border-default)" }}>
                     <td style={{ padding: '12px 16px' }}>
-                      <strong style={{ color: '#0F172A', display: 'block' }}>{d.title}</strong>
-                      <small style={{ color: '#64748B', fontSize: '11px' }}>{d.ticketsSold} ingressos (Ticket Médio: {money(d.ticketAvgPrice)})</small>
+                      <strong style={{ color: "var(--disk-text-primary)", display: 'block' }}>{d.title}</strong>
+                      <small style={{ color: "var(--disk-text-muted)", fontSize: '11px' }}>{d.ticketsSold} ingressos (Ticket Médio: {money(d.ticketAvgPrice)})</small>
                     </td>
-                    <td style={{ padding: '12px 16px', fontWeight: 800, color: '#0F172A' }}>{money(d.grossRevenue)}</td>
+                    <td style={{ padding: '12px 16px', fontWeight: 800, color: "var(--disk-text-primary)" }}>{money(d.grossRevenue)}</td>
                     <td style={{ padding: '12px 16px', color: '#DC2626', fontWeight: 700 }}>- {money(d.gatewayFees + d.convenienceFeeRetained)}</td>
                     <td style={{ padding: '12px 16px', color: '#D97706', fontWeight: 700 }}>- {money(d.splitArtist + d.splitVenue)}</td>
-                    <td style={{ padding: '12px 16px', color: '#64748B', fontWeight: 600 }}>- {money(d.operationalCosts + d.marketingSpend)}</td>
+                    <td style={{ padding: '12px 16px', color: "var(--disk-text-muted)", fontWeight: 600 }}>- {money(d.operationalCosts + d.marketingSpend)}</td>
                     <td style={{ padding: '12px 16px', color: '#16A34A', fontWeight: 900, fontSize: '14px' }}>{money(d.netProfit)}</td>
                     <td style={{ padding: '12px 16px', textAlign: 'right' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 800, padding: '3px 8px', borderRadius: '6px', background: '#DCFCE7', color: '#16A34A' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 800, padding: '3px 8px', borderRadius: '6px', background: "var(--disk-color-success-subtle)", color: '#16A34A' }}>
                         {d.marginPct}%
                       </span>
                     </td>
@@ -332,11 +332,11 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
 
       {/* 5. Tab 2: Impostos & Retenções */}
       {tab === 'taxes' && (
-        <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', marginTop: '16px', padding: '20px' }}>
+        <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '12px', marginTop: '16px', padding: '20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
             <div>
-              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 800, color: '#0F172A' }}>Apuração de Impostos & Retenções Tributárias</h3>
-              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748B' }}>Resumo para a contabilidade e escrituração fiscal</p>
+              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 800, color: "var(--disk-text-primary)" }}>Apuração de Impostos & Retenções Tributárias</h3>
+              <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>Resumo para a contabilidade e escrituração fiscal</p>
             </div>
             <button onClick={() => flash('Exportando guia fiscal de apuração...')} className="btn secondary" style={{ fontSize: '11px', height: '32px' }}>
               <Download size={13} /> Exportar Fiscal
@@ -346,7 +346,7 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
           <div className="table-scroll">
             <table className="growth-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
               <thead>
-                <tr style={{ background: '#F8FAFC', borderBottom: '1px solid #E2E8F0', textAlign: 'left', color: '#64748B', fontSize: '11px', textTransform: 'uppercase' }}>
+                <tr style={{ background: "var(--disk-bg-muted)", borderBottom: "1px solid var(--disk-border-default)", textAlign: 'left', color: "var(--disk-text-muted)", fontSize: '11px', textTransform: 'uppercase' }}>
                   <th style={{ padding: '12px 16px' }}>Tributo / Código</th>
                   <th style={{ padding: '12px 16px' }}>Descrição Legal</th>
                   <th style={{ padding: '12px 16px' }}>Base de Cálculo</th>
@@ -357,14 +357,14 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
               </thead>
               <tbody>
                 {taxData.map((t, idx) => (
-                  <tr key={idx} style={{ borderBottom: '1px solid #F1F5F9' }}>
-                    <td style={{ padding: '12px 16px', fontWeight: 800, color: '#0F172A' }}>{t.code}</td>
-                    <td style={{ padding: '12px 16px', color: '#64748B' }}>{t.name}</td>
-                    <td style={{ padding: '12px 16px', fontWeight: 600, color: '#0F172A' }}>{money(t.base)}</td>
+                  <tr key={idx} style={{ borderBottom: "1px solid var(--disk-border-default)" }}>
+                    <td style={{ padding: '12px 16px', fontWeight: 800, color: "var(--disk-text-primary)" }}>{t.code}</td>
+                    <td style={{ padding: '12px 16px', color: "var(--disk-text-muted)" }}>{t.name}</td>
+                    <td style={{ padding: '12px 16px', fontWeight: 600, color: "var(--disk-text-primary)" }}>{money(t.base)}</td>
                     <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2563EB' }}>{t.rate}</td>
                     <td style={{ padding: '12px 16px', fontWeight: 900, color: '#DC2626' }}>{money(t.amount)}</td>
                     <td style={{ padding: '12px 16px', textAlign: 'right' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '6px', background: '#F1F5F9', color: '#475569' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 700, padding: '3px 8px', borderRadius: '6px', background: "var(--disk-bg-muted)", color: "var(--disk-text-secondary)" }}>
                         {t.status}
                       </span>
                     </td>
@@ -378,31 +378,31 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
 
       {/* 6. Tab 3: Conciliação de Canais */}
       {tab === 'statement' && (
-        <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', marginTop: '16px', padding: '20px' }}>
+        <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '12px', marginTop: '16px', padding: '20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
             <div>
-              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 800, color: '#0F172A' }}>Conciliação de Vendas por Canal</h3>
-              <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748B' }}>Vendas online vs PDVs físicos vs Permutas corporativas</p>
+              <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 800, color: "var(--disk-text-primary)" }}>Conciliação de Vendas por Canal</h3>
+              <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>Vendas online vs PDVs físicos vs Permutas corporativas</p>
             </div>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '14px' }}>
-            <div style={{ padding: '16px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
-              <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', background: '#EFF6FF', padding: '2px 8px', borderRadius: '6px' }}>ONLINE (WEB & APP)</span>
-              <strong style={{ fontSize: '18px', fontWeight: 900, color: '#0F172A', display: 'block', margin: '8px 0 2px' }}>{money(totals.gross * 0.82)}</strong>
-              <small style={{ color: '#64748B' }}>82% do volume total · Pix (58%) e Cartão de Crédito (42%)</small>
+            <div style={{ padding: '16px', background: "var(--disk-bg-muted)", borderRadius: '10px', border: "1px solid var(--disk-border-default)" }}>
+              <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', background: "var(--disk-color-info-subtle)", padding: '2px 8px', borderRadius: '6px' }}>ONLINE (WEB & APP)</span>
+              <strong style={{ fontSize: '18px', fontWeight: 900, color: "var(--disk-text-primary)", display: 'block', margin: '8px 0 2px' }}>{money(totals.gross * 0.82)}</strong>
+              <small style={{ color: "var(--disk-text-muted)" }}>82% do volume total · Pix (58%) e Cartão de Crédito (42%)</small>
             </div>
 
-            <div style={{ padding: '16px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
-              <span style={{ fontSize: '11px', fontWeight: 800, color: '#16A34A', background: '#DCFCE7', padding: '2px 8px', borderRadius: '6px' }}>PDV FÍSICO / BILHETERIA</span>
-              <strong style={{ fontSize: '18px', fontWeight: 900, color: '#0F172A', display: 'block', margin: '8px 0 2px' }}>{money(totals.gross * 0.14)}</strong>
-              <small style={{ color: '#64748B' }}>14% do volume total · Máquinas POS DiskIngressos</small>
+            <div style={{ padding: '16px', background: "var(--disk-bg-muted)", borderRadius: '10px', border: "1px solid var(--disk-border-default)" }}>
+              <span style={{ fontSize: '11px', fontWeight: 800, color: '#16A34A', background: "var(--disk-color-success-subtle)", padding: '2px 8px', borderRadius: '6px' }}>PDV FÍSICO / BILHETERIA</span>
+              <strong style={{ fontSize: '18px', fontWeight: 900, color: "var(--disk-text-primary)", display: 'block', margin: '8px 0 2px' }}>{money(totals.gross * 0.14)}</strong>
+              <small style={{ color: "var(--disk-text-muted)" }}>14% do volume total · Máquinas POS DiskIngressos</small>
             </div>
 
-            <div style={{ padding: '16px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
-              <span style={{ fontSize: '11px', fontWeight: 800, color: '#9333EA', background: '#F3E8FF', padding: '2px 8px', borderRadius: '6px' }}>PERMUTAS & CORPORATIVO</span>
-              <strong style={{ fontSize: '18px', fontWeight: 900, color: '#0F172A', display: 'block', margin: '8px 0 2px' }}>{money(totals.gross * 0.04)}</strong>
-              <small style={{ color: '#64748B' }}>4% do volume total · Patrocinadores e Cortesias Pagas</small>
+            <div style={{ padding: '16px', background: "var(--disk-bg-muted)", borderRadius: '10px', border: "1px solid var(--disk-border-default)" }}>
+              <span style={{ fontSize: '11px', fontWeight: 800, color: '#9333EA', background: "var(--disk-color-purple-subtle)", padding: '2px 8px', borderRadius: '6px' }}>PERMUTAS & CORPORATIVO</span>
+              <strong style={{ fontSize: '18px', fontWeight: 900, color: "var(--disk-text-primary)", display: 'block', margin: '8px 0 2px' }}>{money(totals.gross * 0.04)}</strong>
+              <small style={{ color: "var(--disk-text-muted)" }}>4% do volume total · Patrocinadores e Cortesias Pagas</small>
             </div>
           </div>
         </article>
@@ -410,13 +410,13 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
 
       {/* 7. Tab 4: Central de Exportação */}
       {tab === 'export' && (
-        <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', borderRadius: '12px', marginTop: '16px', padding: '20px' }}>
-          <h3 style={{ margin: '0 0 12px', fontSize: '16px', fontWeight: 800, color: '#0F172A' }}>Central de Emissão de Relatórios Executivos</h3>
+        <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '12px', marginTop: '16px', padding: '20px' }}>
+          <h3 style={{ margin: '0 0 12px', fontSize: '16px', fontWeight: 800, color: "var(--disk-text-primary)" }}>Central de Emissão de Relatórios Executivos</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
-            <div style={{ padding: '18px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
+            <div style={{ padding: '18px', background: "var(--disk-bg-muted)", borderRadius: '10px', border: "1px solid var(--disk-border-default)" }}>
               <FileText size={28} color="#2563EB" style={{ marginBottom: '8px' }} />
-              <h4 style={{ margin: '0 0 4px', fontSize: '14px', fontWeight: 800, color: '#0F172A' }}>Relatório Executivo em PDF</h4>
-              <p style={{ margin: '0 0 12px', fontSize: '12px', color: '#64748B' }}>
+              <h4 style={{ margin: '0 0 4px', fontSize: '14px', fontWeight: 800, color: "var(--disk-text-primary)" }}>Relatório Executivo em PDF</h4>
+              <p style={{ margin: '0 0 12px', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                 Documento formatado com logotipo, DRE, conciliação e espaço para assinatura dos sócios e auditoria.
               </p>
               <button onClick={() => flash('Baixando PDF Executivo...')} className="btn primary" style={{ width: '100%', fontSize: '12px', height: '36px' }}>
@@ -424,10 +424,10 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
               </button>
             </div>
 
-            <div style={{ padding: '18px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
+            <div style={{ padding: '18px', background: "var(--disk-bg-muted)", borderRadius: '10px', border: "1px solid var(--disk-border-default)" }}>
               <FileSpreadsheet size={28} color="#16A34A" style={{ marginBottom: '8px' }} />
-              <h4 style={{ margin: '0 0 4px', fontSize: '14px', fontWeight: 800, color: '#0F172A' }}>Planilha Excel (.xlsx) Multi-Abas</h4>
-              <p style={{ margin: '0 0 12px', fontSize: '12px', color: '#64748B' }}>
+              <h4 style={{ margin: '0 0 4px', fontSize: '14px', fontWeight: 800, color: "var(--disk-text-primary)" }}>Planilha Excel (.xlsx) Multi-Abas</h4>
+              <p style={{ margin: '0 0 12px', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                 Planilha com abas de DRE, extrato detalhado por ingresso, retenções tributárias e centros de custos.
               </p>
               <button onClick={() => flash('Baixando Excel (.xlsx)...')} className="btn secondary" style={{ width: '100%', fontSize: '12px', height: '36px' }}>
@@ -435,10 +435,10 @@ export default function FinanceReportsExecutivePage({ events, producerId, produc
               </button>
             </div>
 
-            <div style={{ padding: '18px', background: '#F8FAFC', borderRadius: '10px', border: '1px solid #E2E8F0' }}>
+            <div style={{ padding: '18px', background: "var(--disk-bg-muted)", borderRadius: '10px', border: "1px solid var(--disk-border-default)" }}>
               <FileSpreadsheet size={28} color="#475569" style={{ marginBottom: '8px' }} />
-              <h4 style={{ margin: '0 0 4px', fontSize: '14px', fontWeight: 800, color: '#0F172A' }}>Arquivo CSV para BI & ERP</h4>
-              <p style={{ margin: '0 0 12px', fontSize: '12px', color: '#64748B' }}>
+              <h4 style={{ margin: '0 0 4px', fontSize: '14px', fontWeight: 800, color: "var(--disk-text-primary)" }}>Arquivo CSV para BI & ERP</h4>
+              <p style={{ margin: '0 0 12px', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                 Base de dados bruta em formato CSV padronizado para importação direta no PowerBI e sistemas ERP.
               </p>
               <button onClick={() => flash('Baixando CSV de Integração...')} className="btn secondary" style={{ width: '100%', fontSize: '12px', height: '36px' }}>

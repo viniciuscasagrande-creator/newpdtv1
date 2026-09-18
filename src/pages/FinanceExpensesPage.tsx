@@ -252,7 +252,7 @@ export default function FinanceExpensesPage({ events, notify, onNavigate }: Prop
                   <td><strong>{item.supplier}</strong></td>
                   <td><span className="bank-account-tag">{item.category}</span></td>
                   <td className="event-name-cell">{item.event}</td>
-                  <td><code style={{ fontSize: '11px', color: '#64748B' }}>{item.document}</code></td>
+                  <td><code style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>{item.document}</code></td>
                   <td><span className="badge-method">{item.paymentMethod}</span></td>
                   <td>
                     <span className={`finance-status ${item.status.toLowerCase()}`}>

@@ -184,7 +184,7 @@ export default function FinanceiroConsolidadoPage({ events, notify, onNavigate }
           <span className="eyebrow">CONTROLADORIA & DESEMPENHO CONSOLIDADO</span>
           <div className="finance-title-row">
             <h1>Resultado Consolidado do Produtor & Comparativo Multieventos</h1>
-            <span className="pipeline-status-badge" style={{ background: '#ECFDF5', color: '#059669', borderColor: '#A7F3D0' }}>
+            <span className="pipeline-status-badge" style={{ background: "var(--disk-color-success-subtle)", color: '#059669', borderColor: "var(--disk-color-success-border)" }}>
               <CheckCircle2 size={13} /> Visão 360° Homologada
             </span>
           </div>
@@ -439,7 +439,7 @@ export default function FinanceiroConsolidadoPage({ events, notify, onNavigate }
                       width: '40px',
                       height: '40px',
                       borderRadius: '8px',
-                      background: '#ECFDF5',
+                      background: "var(--disk-color-success-subtle)",
                       color: '#059669',
                       display: 'flex',
                       alignItems: 'center',
@@ -448,12 +448,12 @@ export default function FinanceiroConsolidadoPage({ events, notify, onNavigate }
                   >
                     <Icon size={20} />
                   </div>
-                  <span style={{ fontSize: '12px', fontWeight: 800, color: '#94A3B8' }}>
+                  <span style={{ fontSize: '12px', fontWeight: 800, color: "var(--disk-text-muted)" }}>
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#0F172A', marginTop: '16px', marginBottom: '6px' }}>
+                <h3 style={{ fontSize: '15px', fontWeight: 700, color: "var(--disk-text-primary)", marginTop: '16px', marginBottom: '6px' }}>
                   {item.label}
                 </h3>
 
@@ -486,10 +486,10 @@ export default function FinanceiroConsolidadoPage({ events, notify, onNavigate }
         }}
       >
         <div>
-          <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: 0 }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 800, color: "var(--disk-text-primary)", margin: 0 }}>
             Próxima Etapa: Fase 18 — Contabilidade Integrada
           </h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: '4px 0 0 0' }}>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: '4px 0 0 0' }}>
             Migração da Contabilidade para o padrão corporativo, conectando vendas, taxas, repasses e despesas diretamente aos lançamentos de partidas dobradas, Livro Diário, Livro Razão, DRE e Balancete.
           </p>
         </div>

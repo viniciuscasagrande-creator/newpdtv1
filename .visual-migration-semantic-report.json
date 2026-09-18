@@ -1,0 +1,171 @@
+{
+  "apply": true,
+  "files": 41,
+  "declarations": 688,
+  "report": [
+    {
+      "file": "src\\App.css",
+      "count": 10
+    },
+    {
+      "file": "src\\styles.css",
+      "count": 236
+    },
+    {
+      "file": "src\\components\\UtmConversionsCenter.tsx",
+      "count": 9
+    },
+    {
+      "file": "src\\pages\\AccountingChartPage.tsx",
+      "count": 3
+    },
+    {
+      "file": "src\\pages\\AccountingEntriesPage.tsx",
+      "count": 3
+    },
+    {
+      "file": "src\\pages\\AccountingJournalPage.tsx",
+      "count": 3
+    },
+    {
+      "file": "src\\pages\\AccountingLedgerPage.tsx",
+      "count": 3
+    },
+    {
+      "file": "src\\pages\\event-command-center.css",
+      "count": 19
+    },
+    {
+      "file": "src\\pages\\event-commercial-dashboard.css",
+      "count": 15
+    },
+    {
+      "file": "src\\pages\\event-customer-360.css",
+      "count": 21
+    },
+    {
+      "file": "src\\pages\\event-inventory.css",
+      "count": 20
+    },
+    {
+      "file": "src\\pages\\event-os-advanced.css",
+      "count": 2
+    },
+    {
+      "file": "src\\pages\\finance-reconciliation-erp.css",
+      "count": 29
+    },
+    {
+      "file": "src\\pages\\FinanceAdvancePage.tsx",
+      "count": 1
+    },
+    {
+      "file": "src\\pages\\FinanceBorderoPage.tsx",
+      "count": 3
+    },
+    {
+      "file": "src\\pages\\FinanceiroConsolidadoPage.tsx",
+      "count": 3
+    },
+    {
+      "file": "src\\pages\\FinanceReceivablesPage.tsx",
+      "count": 2
+    },
+    {
+      "file": "src\\pages\\MarketingPage.tsx",
+      "count": 10
+    },
+    {
+      "file": "src\\pages\\RecoveryCenterPage.tsx",
+      "count": 16
+    },
+    {
+      "file": "src\\pages\\RemarketingPage.tsx",
+      "count": 15
+    },
+    {
+      "file": "src\\pages\\SupportPage.tsx",
+      "count": 29
+    },
+    {
+      "file": "src\\styles\\disk-estornos.css",
+      "count": 14
+    },
+    {
+      "file": "src\\styles\\limitless-enterprise.css",
+      "count": 4
+    },
+    {
+      "file": "src\\styles\\tracking-premium.css",
+      "count": 27
+    },
+    {
+      "file": "src\\components\\marketing\\CampaignDeliveryMonitoringTable.tsx",
+      "count": 26
+    },
+    {
+      "file": "src\\components\\tracking\\TrackingIntegrationDrawer.tsx",
+      "count": 3
+    },
+    {
+      "file": "src\\pages\\eventos\\event-commercial-dashboard.css",
+      "count": 6
+    },
+    {
+      "file": "src\\pages\\eventos\\event-day-command.css",
+      "count": 12
+    },
+    {
+      "file": "src\\pages\\eventos\\event-global-search.css",
+      "count": 20
+    },
+    {
+      "file": "src\\pages\\eventos\\event-incidents.css",
+      "count": 16
+    },
+    {
+      "file": "src\\pages\\eventos\\event-live-ops.css",
+      "count": 5
+    },
+    {
+      "file": "src\\pages\\eventos\\event-revenue-intel.css",
+      "count": 23
+    },
+    {
+      "file": "src\\pages\\eventos\\EventRevenueIntelPage.tsx",
+      "count": 1
+    },
+    {
+      "file": "src\\pages\\finance\\finance-disputes-control-center.css",
+      "count": 10
+    },
+    {
+      "file": "src\\pages\\finance\\finance-disputes-hub.css",
+      "count": 14
+    },
+    {
+      "file": "src\\pages\\finance\\FinanceReportsExecutivePage.tsx",
+      "count": 9
+    },
+    {
+      "file": "src\\pages\\marketing\\marketing-attribution.css",
+      "count": 3
+    },
+    {
+      "file": "src\\pages\\marketing\\MarketingCampaignsPage.tsx",
+      "count": 12
+    },
+    {
+      "file": "src\\pages\\marketing\\MarketingHubOSPage.tsx",
+      "count": 3
+    },
+    {
+      "file": "src\\pages\\marketing\\ReadyCampaignsPage.tsx",
+      "count": 9
+    },
+    {
+      "file": "src\\pages\\marketing\\status-real\\CampaignRealStatusPage.tsx",
+      "count": 19
+    }
+  ]
+}

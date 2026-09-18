@@ -584,41 +584,41 @@ export default function EventOrderInvestigationPage({
       {/* Ticket Details Modal if clicked */}
       {selectedTicket && (
         <div className="modal-backdrop" style={{ zIndex: 1300 }} onClick={() => setSelectedTicket(null)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(480px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #E2E8F0', paddingBottom: '12px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(480px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '12px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>DETALHES DO INGRESSO</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>{selectedTicket.code}</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>{selectedTicket.code}</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setSelectedTicket(null)}>✕</button>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '13px' }}>
-              <div style={{ background: '#F8FAFC', padding: '12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                <div style={{ color: '#64748B', fontSize: '11px', fontWeight: 700 }}>TITULAR</div>
-                <strong style={{ fontSize: '15px', color: '#0F172A' }}>{selectedTicket.participantName}</strong>
-                <div style={{ color: '#64748B' }}>Vinculado ao Pedido #{order.code}</div>
+              <div style={{ background: "var(--disk-bg-muted)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ color: "var(--disk-text-muted)", fontSize: '11px', fontWeight: 700 }}>TITULAR</div>
+                <strong style={{ fontSize: '15px', color: "var(--disk-text-primary)" }}>{selectedTicket.participantName}</strong>
+                <div style={{ color: "var(--disk-text-muted)" }}>Vinculado ao Pedido #{order.code}</div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                <div style={{ background: '#F8FAFC', padding: '10px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                  <div style={{ color: '#64748B', fontSize: '11px', fontWeight: 700 }}>SETOR & LOTE</div>
-                  <strong style={{ color: '#0F172A' }}>{selectedTicket.lotName}</strong>
-                  <div style={{ color: '#64748B', fontSize: '11px' }}>{selectedTicket.sector}</div>
+                <div style={{ background: "var(--disk-bg-muted)", padding: '10px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                  <div style={{ color: "var(--disk-text-muted)", fontSize: '11px', fontWeight: 700 }}>SETOR & LOTE</div>
+                  <strong style={{ color: "var(--disk-text-primary)" }}>{selectedTicket.lotName}</strong>
+                  <div style={{ color: "var(--disk-text-muted)", fontSize: '11px' }}>{selectedTicket.sector}</div>
                 </div>
-                <div style={{ background: '#F8FAFC', padding: '10px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                  <div style={{ color: '#64748B', fontSize: '11px', fontWeight: 700 }}>VALOR</div>
+                <div style={{ background: "var(--disk-bg-muted)", padding: '10px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                  <div style={{ color: "var(--disk-text-muted)", fontSize: '11px', fontWeight: 700 }}>VALOR</div>
                   <strong style={{ color: '#16A34A' }}>{formatMoney(selectedTicket.priceCents)}</strong>
-                  <div style={{ color: '#64748B', fontSize: '11px' }}>{selectedTicket.type}</div>
+                  <div style={{ color: "var(--disk-text-muted)", fontSize: '11px' }}>{selectedTicket.type}</div>
                 </div>
               </div>
-              <div style={{ background: '#F8FAFC', padding: '10px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                <div style={{ color: '#64748B', fontSize: '11px', fontWeight: 700 }}>CÓDIGO QR SEGURO</div>
+              <div style={{ background: "var(--disk-bg-muted)", padding: '10px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <div style={{ color: "var(--disk-text-muted)", fontSize: '11px', fontWeight: 700 }}>CÓDIGO QR SEGURO</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '4px' }}>
                   <QrCode size={16} className="text-slate-600" />
                   <span className="font-mono text-xs text-slate-800">{selectedTicket.qrCode}</span>
                 </div>
               </div>
             </div>
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '16px', borderTop: '1px solid #E2E8F0', paddingTop: '12px' }}>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '16px', borderTop: "1px solid var(--disk-border-default)", paddingTop: '12px' }}>
               <button type="button" className="btn secondary" onClick={() => setSelectedTicket(null)}>Fechar</button>
               <button
                 type="button"

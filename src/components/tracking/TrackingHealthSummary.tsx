@@ -27,16 +27,16 @@ export default function TrackingHealthSummary({ healthScore, healthStatusText, b
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <ShieldCheck size={24} style={{ color: '#2563eb' }} />
           <div>
-            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
+            <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
               Saúde do Rastreamento
             </h4>
-            <small style={{ color: '#64748b' }}>Diagnóstico e estabilidade de mensuração em tempo real</small>
+            <small style={{ color: "var(--disk-text-muted)" }}>Diagnóstico e estabilidade de mensuração em tempo real</small>
           </div>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           <div className="health-score-pill">
-            <strong>{healthScore} <span style={{ fontSize: '14px', color: '#64748b', fontWeight: 500 }}>/ 100</span></strong>
+            <strong>{healthScore} <span style={{ fontSize: '14px', color: "var(--disk-text-muted)", fontWeight: 500 }}>/ 100</span></strong>
             <span className={getBadgeClass(healthScore)}>
               ● {healthStatusText}
             </span>

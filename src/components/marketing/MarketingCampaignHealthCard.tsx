@@ -70,9 +70,9 @@ export const MarketingCampaignHealthCard: React.FC<MarketingCampaignHealthCardPr
   return (
     <div
       style={{
-        background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+        background: "linear-gradient(135deg, var(--disk-legacy-dark-surface, #0F172A) 0%, var(--disk-legacy-dark-surface, #1E293B) 100%)",
         borderRadius: '14px',
-        border: '1px solid #334155',
+        border: "1px solid var(--disk-border-default)",
         padding: '20px 24px',
         color: '#FFFFFF',
         boxShadow: '0 4px 20px rgba(15, 23, 42, 0.25)',
@@ -126,14 +126,14 @@ export const MarketingCampaignHealthCard: React.FC<MarketingCampaignHealthCardPr
               <Activity size={12} className="animate-pulse" />
               TELEMETRIA OPERACIONAL · FASE 28.13.1
             </span>
-            <span style={{ fontSize: '11px', color: '#94A3B8' }}>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>
               Sincronizado: <b>{lastSync}</b>
             </span>
           </div>
           <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 800, color: '#FFFFFF', letterSpacing: '-0.02em' }}>
             Status Real das Campanhas (Meta, Google, TikTok e Spotify)
           </h3>
-          <p style={{ margin: '4px 0 0', fontSize: '12px', color: '#94A3B8' }}>
+          <p style={{ margin: '4px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
             Auditoria de entrega real: diferencia campanhas apenas marcadas como "Ativas" daquelas com veiculação e entrega efetiva.
           </p>
         </div>
@@ -232,7 +232,7 @@ export const MarketingCampaignHealthCard: React.FC<MarketingCampaignHealthCardPr
             <strong style={{ fontSize: '24px', fontWeight: 900, color: '#10B981' }}>
               {kpis.deliveringCount}
             </strong>
-            <small style={{ fontSize: '11px', color: '#94A3B8' }}>de {total} ({pctDelivering}%)</small>
+            <small style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>de {total} ({pctDelivering}%)</small>
           </div>
           <div style={{ fontSize: '11px', color: '#A7F3D0', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <CheckCircle2 size={12} />
@@ -273,7 +273,7 @@ export const MarketingCampaignHealthCard: React.FC<MarketingCampaignHealthCardPr
             <strong style={{ fontSize: '24px', fontWeight: 900, color: '#F59E0B' }}>
               {kpis.noDeliveryCount}
             </strong>
-            <small style={{ fontSize: '11px', color: '#94A3B8' }}>de {total} ({pctNoDelivery}%)</small>
+            <small style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>de {total} ({pctNoDelivery}%)</small>
           </div>
           <div style={{ fontSize: '11px', color: '#FDE68A', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <AlertTriangle size={12} />
@@ -314,7 +314,7 @@ export const MarketingCampaignHealthCard: React.FC<MarketingCampaignHealthCardPr
             <strong style={{ fontSize: '24px', fontWeight: 900, color: '#3B82F6' }}>
               {kpis.inReviewCount}
             </strong>
-            <small style={{ fontSize: '11px', color: '#94A3B8' }}>de {total} ({pctInReview}%)</small>
+            <small style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>de {total} ({pctInReview}%)</small>
           </div>
           <div style={{ fontSize: '11px', color: '#BFDBFE', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <Clock size={12} />
@@ -355,7 +355,7 @@ export const MarketingCampaignHealthCard: React.FC<MarketingCampaignHealthCardPr
             <strong style={{ fontSize: '24px', fontWeight: 900, color: '#EF4444' }}>
               {kpis.rejectedCount}
             </strong>
-            <small style={{ fontSize: '11px', color: '#94A3B8' }}>de {total} ({pctRejected}%)</small>
+            <small style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>de {total} ({pctRejected}%)</small>
           </div>
           <div style={{ fontSize: '11px', color: '#FECACA', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
             <XCircle size={12} />
@@ -408,35 +408,35 @@ export const MarketingCampaignHealthCard: React.FC<MarketingCampaignHealthCardPr
           fontSize: '11px'
         }}
       >
-        <span style={{ color: '#94A3B8', fontWeight: 600 }}>Distribuição por plataforma:</span>
+        <span style={{ color: "var(--disk-text-muted)", fontWeight: 600 }}>Distribuição por plataforma:</span>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px' }}>
           {/* Meta */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#0081FB' }} />
             <strong style={{ color: '#F1F5F9' }}>Meta Ads:</strong>
-            <span style={{ color: '#94A3B8' }}>12 entregando · 2 sem entrega · 2 fila · 2 erro</span>
+            <span style={{ color: "var(--disk-text-muted)" }}>12 entregando · 2 sem entrega · 2 fila · 2 erro</span>
           </div>
 
           {/* Google */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#EA4335' }} />
             <strong style={{ color: '#F1F5F9' }}>Google Ads:</strong>
-            <span style={{ color: '#94A3B8' }}>8 entregando · 2 sem entrega · 1 fila · 1 erro</span>
+            <span style={{ color: "var(--disk-text-muted)" }}>8 entregando · 2 sem entrega · 1 fila · 1 erro</span>
           </div>
 
           {/* TikTok */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#000000', border: '1px solid #64748B' }} />
             <strong style={{ color: '#F1F5F9' }}>TikTok Ads:</strong>
-            <span style={{ color: '#94A3B8' }}>4 entregando · 1 sem entrega · 3 fila</span>
+            <span style={{ color: "var(--disk-text-muted)" }}>4 entregando · 1 sem entrega · 3 fila</span>
           </div>
 
           {/* Spotify */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#1DB954' }} />
             <strong style={{ color: '#F1F5F9' }}>Spotify Ads:</strong>
-            <span style={{ color: '#94A3B8' }}>7 entregando · 1 sem entrega · 1 fila · 1 erro</span>
+            <span style={{ color: "var(--disk-text-muted)" }}>7 entregando · 1 sem entrega · 1 fila · 1 erro</span>
           </div>
         </div>
       </div>

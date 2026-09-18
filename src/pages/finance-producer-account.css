@@ -114,7 +114,7 @@
 
 .producer-account-hero p {
   max-width: 780px;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   margin: 0;
   line-height: 1.6;
   font-size: 14px;
@@ -130,7 +130,7 @@
 
 .hero-context > span {
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   font-weight: 600;
 }
 
@@ -174,7 +174,7 @@
 
 .pa-kpi:hover {
   transform: translateY(-2px);
-  border-color: #334155;
+  border-color: var(--disk-border-default);
 }
 
 .pa-kpi:after {
@@ -211,7 +211,7 @@
 }
 
 .pa-kpi small {
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   font-size: 12px;
   font-weight: 500;
 }
@@ -225,14 +225,14 @@
 
 .pa-kpi span:last-child {
   font-size: 11px;
-  color: #64748b;
+  color: var(--disk-text-muted);
 }
 
 /* --- Abas de Navegação (Subcontas / Transferências / Visão Gráfica) --- */
 .pa-tabs-container {
   display: flex;
   gap: 8px;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--disk-border-default);
   padding-bottom: 2px;
   margin-top: 4px;
   overflow-x: auto;
@@ -246,7 +246,7 @@
   background: transparent;
   border: none;
   border-bottom: 3px solid transparent;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -267,8 +267,8 @@
 }
 
 .pa-tab-badge {
-  background: #1e293b;
-  color: #94a3b8;
+  background: var(--disk-legacy-dark-surface, #1e293b);
+  color: var(--disk-text-muted);
   font-size: 11px;
   padding: 2px 7px;
   border-radius: 12px;
@@ -316,7 +316,7 @@
   gap: 12px;
   align-items: center;
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
 }
 
 .pa-subaccounts-metrics span {
@@ -324,7 +324,7 @@
   align-items: center;
   gap: 5px;
   background: #111a29;
-  border: 1px solid #1e293b;
+  border: 1px solid var(--disk-border-default);
   padding: 4px 10px;
   border-radius: 8px;
 }
@@ -346,7 +346,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--disk-border-default);
 }
 
 .pa-table-header h2 {
@@ -370,7 +370,7 @@
 .pa-table th {
   padding: 12px 16px;
   background: #0d1625;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -411,7 +411,7 @@
 }
 
 .pa-event-info small {
-  color: #64748b;
+  color: var(--disk-text-muted);
   font-size: 11px;
 }
 
@@ -440,7 +440,7 @@
 
 .pa-badge.closed {
   background: rgba(148, 163, 184, 0.15);
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   border: 1px solid rgba(148, 163, 184, 0.3);
 }
 
@@ -474,7 +474,7 @@
   cursor: pointer;
   border: 1px solid #24334a;
   background: #111a29;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   transition: all 0.2s;
 }
 
@@ -554,7 +554,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   border-top: 1px solid #1a2638;
   padding-top: 10px;
   flex-wrap: wrap;
@@ -568,7 +568,7 @@
 }
 
 .pa-tag-ledger {
-  background: #1e293b;
+  background: var(--disk-legacy-dark-surface, #1e293b);
   color: #7dd3fc;
   font-size: 10px;
   padding: 2px 6px;
@@ -598,7 +598,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #64748b;
+  color: var(--disk-text-muted);
 }
 
 .pa-card-head h2 {
@@ -699,7 +699,7 @@
 .chart-axis {
   display: flex;
   justify-content: space-between;
-  color: #64748b;
+  color: var(--disk-text-muted);
   font-size: 11px;
 }
 
@@ -716,7 +716,7 @@
   font-size: 12px;
 }
 
-.flow-row span { color: #94a3b8; }
+.flow-row span { color: var(--disk-text-muted); }
 .flow-track {
   margin-top: 6px;
   height: 9px;
@@ -766,7 +766,7 @@
 
 .producer-account .health-bars { display: flex; flex-direction: column; gap: 10px; }
 .producer-account .metric > div:first-child { display: flex; justify-content: space-between; font-size: 12px; }
-.producer-account .metric span { color: #94a3b8; }
+.producer-account .metric span { color: var(--disk-text-muted); }
 .producer-account .metric > div:last-child {
   height: 6px;
   background: #172235;
@@ -810,9 +810,9 @@
 .bucket.d15:before { background: #8b5cf6; }
 .bucket.d30:before { background: #64748b; }
 .bucket.reserve:before { background: #fbbf24; }
-.bucket span { font-size: 12px; color: #94a3b8; }
+.bucket span { font-size: 12px; color: var(--disk-text-muted); }
 .bucket strong { font-size: 16px; color: #ffffff; }
-.bucket small { font-size: 11px; color: #64748b; }
+.bucket small { font-size: 11px; color: var(--disk-text-muted); }
 
 /* --- Tabela do Demonstrativo Consolidado Original --- */
 .producer-ledger-table { padding-bottom: 0; }
@@ -909,7 +909,7 @@
   align-items: center;
   padding: 18px 24px;
   background: #0c1421;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--disk-border-default);
 }
 
 .pa-modal-header h3 {
@@ -924,7 +924,7 @@
 .pa-modal-close {
   background: transparent;
   border: none;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   cursor: pointer;
   padding: 6px;
   border-radius: 8px;
@@ -933,7 +933,7 @@
 
 .pa-modal-close:hover {
   color: #ffffff;
-  background: #1e293b;
+  background: var(--disk-legacy-dark-surface, #1e293b);
 }
 
 .pa-modal-body {
@@ -950,7 +950,7 @@
   gap: 12px;
   padding: 16px 24px;
   background: #0c1421;
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid var(--disk-border-default);
 }
 
 /* Campos do Modal */
@@ -997,9 +997,9 @@
   flex: 1;
   padding: 6px;
   background: #111a29;
-  border: 1px solid #1e293b;
+  border: 1px solid var(--disk-border-default);
   border-radius: 6px;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   font-size: 11px;
   font-weight: 600;
   cursor: pointer;
@@ -1007,7 +1007,7 @@
 }
 
 .pa-quick-pct button:hover {
-  background: #1e293b;
+  background: var(--disk-legacy-dark-surface, #1e293b);
   color: #38bdf8;
   border-color: #38bdf8;
 }
@@ -1082,7 +1082,7 @@
 .pa-impact-box h4 {
   margin: 0;
   font-size: 12px;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1093,13 +1093,13 @@
   font-size: 12px;
 }
 
-.pa-impact-row span { color: #64748b; }
+.pa-impact-row span { color: var(--disk-text-muted); }
 .pa-impact-row strong { color: #e2e8f0; }
 
 /* Caixa de Partidas Dobradas */
 .pa-double-entry-card {
   background: #0a101d;
-  border: 1px solid #1e293b;
+  border: 1px solid var(--disk-border-default);
   border-radius: 12px;
   padding: 14px;
 }
@@ -1132,8 +1132,8 @@
 
 /* Voucher / Comprovante */
 .pa-voucher-receipt {
-  background: #ffffff;
-  color: #0f172a;
+  background: var(--disk-bg-surface);
+  color: var(--disk-text-primary);
   border-radius: 14px;
   padding: 24px;
   display: flex;
@@ -1144,7 +1144,7 @@
 }
 
 .pa-voucher-receipt header {
-  border-bottom: 2px dashed #cbd5e1;
+  border-bottom: 2px dashed var(--disk-border-default);
   padding-bottom: 14px;
   display: flex;
   justify-content: space-between;
@@ -1163,12 +1163,12 @@
 .pa-voucher-receipt header p {
   margin: 3px 0 0;
   font-size: 11px;
-  color: #64748b;
+  color: var(--disk-text-muted);
 }
 
 .pa-voucher-amount-box {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: var(--disk-bg-muted);
+  border: 1px solid var(--disk-border-default);
   border-radius: 10px;
   padding: 14px;
   text-align: center;
@@ -1178,7 +1178,7 @@
   font-size: 11px;
   text-transform: uppercase;
   font-weight: 600;
-  color: #64748b;
+  color: var(--disk-text-muted);
 }
 
 .pa-voucher-amount-box strong {
@@ -1198,18 +1198,18 @@
 .pa-voucher-row {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #f1f5f9;
+  border-bottom: 1px solid var(--disk-border-default);
   padding-bottom: 6px;
 }
 
-.pa-voucher-row span { color: #64748b; font-weight: 500; }
-.pa-voucher-row strong { color: #1e293b; text-align: right; }
+.pa-voucher-row span { color: var(--disk-text-muted); font-weight: 500; }
+.pa-voucher-row strong { color: var(--disk-text-primary); text-align: right; }
 
 .pa-voucher-footer {
-  border-top: 2px dashed #cbd5e1;
+  border-top: 2px dashed var(--disk-border-default);
   padding-top: 12px;
   font-size: 10px;
-  color: #64748b;
+  color: var(--disk-text-muted);
   display: flex;
   flex-direction: column;
   gap: 4px;

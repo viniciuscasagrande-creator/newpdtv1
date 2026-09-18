@@ -307,7 +307,7 @@ export default function FinanceBalancesPage({ events, notify, onNavigate }: Prop
                     step="0.01"
                   />
                 </div>
-                <small style={{ color: '#64748b', marginTop: '4px', display: 'block' }}>
+                <small style={{ color: "var(--disk-text-muted)", marginTop: '4px', display: 'block' }}>
                   Saldo disponível: <b>{brl(selectedEventForPayout ? selectedEventForPayout.available : totalAvailable)}</b>
                 </small>
               </label>

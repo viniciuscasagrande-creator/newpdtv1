@@ -257,15 +257,15 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
       
       {/* HEADER & ACTIONS */}
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '16px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '16px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>
             MARKETING & ATIVAÇÃO MULTICANAL • FASE 16.10.2
           </p>
-          <h2 style={{ color: '#0F172A', fontSize: '24px', fontWeight: 800, margin: '2px 0 4px' }}>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '24px', fontWeight: 800, margin: '2px 0 4px' }}>
             Campanhas Prontas & Gestão de Performance
           </h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>
             Escolha entre 8 modelos pré-configurados de alta conversão ou crie e acompanhe campanhas multicanais com atribuição UTM real.
           </p>
         </div>
@@ -292,13 +292,13 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
       </div>
 
       {/* CONTEXT BAR (EVENT FILTER + DATE) */}
-      <div className="growth-context" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', display: 'flex', gap: '16px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
+      <div className="growth-context" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", display: 'flex', gap: '16px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
         <div style={{ minWidth: '220px' }}>
-          <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>Evento Selecionado</span>
+          <span style={{ fontSize: '11px', fontWeight: 700, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>Evento Selecionado</span>
           <select 
             value={selectedEventId} 
             onChange={e => setSelectedEventId(e.target.value)}
-            style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px', color: '#0F172A', fontWeight: 600 }}
+            style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px', color: "var(--disk-text-primary)", fontWeight: 600 }}
           >
             <option value="all">Todos os eventos ({events.length})</option>
             {events.map(ev => (
@@ -308,11 +308,11 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
         </div>
 
         <div style={{ minWidth: '180px' }}>
-          <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>Status da Campanha</span>
+          <span style={{ fontSize: '11px', fontWeight: 700, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>Status da Campanha</span>
           <select 
             value={selectedStatus} 
             onChange={e => setSelectedStatus(e.target.value)}
-            style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px', color: '#0F172A', fontWeight: 600 }}
+            style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px', color: "var(--disk-text-primary)", fontWeight: 600 }}
           >
             <option value="all">Todos os Status ({campaigns.length})</option>
             <option value="active">● Ativas</option>
@@ -324,21 +324,21 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
         </div>
 
         <div style={{ flex: 1, minWidth: '240px' }}>
-          <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>Buscar Campanha</span>
+          <span style={{ fontSize: '11px', fontWeight: 700, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>Buscar Campanha</span>
           <div style={{ position: 'relative' }}>
-            <Search size={15} style={{ position: 'absolute', left: '10px', top: '12px', color: '#94A3B8' }} />
+            <Search size={15} style={{ position: 'absolute', left: '10px', top: '12px', color: "var(--disk-text-muted)" }} />
             <input 
               type="text" 
               placeholder="Buscar por nome, evento ou utm_campaign..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', paddingLeft: '32px', paddingRight: '10px', fontSize: '13px' }}
+              style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", paddingLeft: '32px', paddingRight: '10px', fontSize: '13px' }}
             />
           </div>
         </div>
 
         {/* Tab Switcher Buttons */}
-        <div style={{ display: 'flex', gap: '4px', background: '#F1F5F9', padding: '3px', borderRadius: '8px' }}>
+        <div style={{ display: 'flex', gap: '4px', background: "var(--disk-bg-muted)", padding: '3px', borderRadius: '8px' }}>
           <button
             type="button"
             onClick={() => setActiveTab('campaigns')}
@@ -406,16 +406,16 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
 
       {/* 6 EXECUTIVE KPIS OF MARKETING CAMPAIGNS */}
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '16px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px' }}>
           <div className="kpi-top">
             <span>Investimento Total</span>
-            <WalletCards size={18} style={{ color: '#64748B' }} />
+            <WalletCards size={18} style={{ color: "var(--disk-text-muted)" }} />
           </div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>{formatBrl(totalSpent)}</strong>
-          <small style={{ color: '#64748B' }}>Orçado: {formatBrl(totalBudget)}</small>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>{formatBrl(totalSpent)}</strong>
+          <small style={{ color: "var(--disk-text-muted)" }}>Orçado: {formatBrl(totalBudget)}</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '16px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px' }}>
           <div className="kpi-top">
             <span>Receita Gerada</span>
             <TrendingUp size={18} style={{ color: '#16A34A' }} />
@@ -424,16 +424,16 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
           <small style={{ color: '#16A34A' }}>↑ Atribuição ponta a ponta</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '16px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px' }}>
           <div className="kpi-top">
             <span>Ingressos Vendidos</span>
             <MousePointerClick size={18} style={{ color: '#2563EB' }} />
           </div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>{totalSales}</strong>
-          <small style={{ color: '#64748B' }}>{totalVisitors} visitas registradas</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>{totalVisitors} visitas registradas</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '16px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px' }}>
           <div className="kpi-top">
             <span>ROAS Médio</span>
             <BarChart3 size={18} style={{ color: '#16A34A' }} />
@@ -442,7 +442,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
           <small style={{ color: '#16A34A' }}>Retorno sobre investimento</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '16px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px' }}>
           <div className="kpi-top">
             <span>CPA Médio</span>
             <Target size={18} style={{ color: '#D97706' }} />
@@ -450,10 +450,10 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
           <strong style={{ color: '#D97706', fontSize: '20px' }}>
             {totalSales > 0 ? formatBrl(totalSpent / totalSales) : 'R$ 28,50'}
           </strong>
-          <small style={{ color: '#64748B' }}>Custo por ingresso vendido</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>Custo por ingresso vendido</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '16px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px' }}>
           <div className="kpi-top">
             <span>Taxa de Conversão</span>
             <Flame size={18} style={{ color: '#EA580C' }} />
@@ -468,13 +468,13 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
       {/* TAB 1: CAMPANHAS CADASTRADAS */}
       {activeTab === 'campaigns' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <div className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '0' }}>
-            <div style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '0' }}>
+            <div style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
-                <h3 style={{ margin: 0, fontSize: '16px', color: '#0F172A', fontWeight: 800 }}>
+                <h3 style={{ margin: 0, fontSize: '16px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
                   Campanhas Multicanais em Execução
                 </h3>
-                <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748B' }}>
+                <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                   {filteredCampaigns.length} campanha(s) encontrada(s) com dados de atribuição em tempo real.
                 </p>
               </div>
@@ -514,7 +514,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                       >
                         <td>
                           <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                            <strong style={{ color: '#0F172A', fontSize: '13px' }}>{cmp.name}</strong>
+                            <strong style={{ color: "var(--disk-text-primary)", fontSize: '13px' }}>{cmp.name}</strong>
                             <small style={{ color: '#2563EB', fontWeight: 600 }}>
                               {cmp.eventName || 'Todos os Eventos'} • <code>utm_campaign={cmp.utmCampaign}</code>
                             </small>
@@ -560,12 +560,12 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                               {st.label}
                             </span>
                             {cmp.status === 'active' && cmp.id === 'CMP-004' ? (
-                              <span style={{ fontSize: '9px', fontWeight: 800, color: '#92400E', background: '#FEF3C7', border: '1px solid #FDE68A', padding: '1px 6px', borderRadius: '4px', width: 'fit-content', display: 'inline-flex', alignItems: 'center', gap: '3px' }} title="0 impressões nas últimas 6h">
+                              <span style={{ fontSize: '9px', fontWeight: 800, color: "var(--disk-color-warning-text)", background: "var(--disk-color-warning-subtle)", border: "1px solid var(--disk-color-warning-border)", padding: '1px 6px', borderRadius: '4px', width: 'fit-content', display: 'inline-flex', alignItems: 'center', gap: '3px' }} title="0 impressões nas últimas 6h">
                                 <span style={{ width: '5px', height: '5px', borderRadius: '999px', background: '#D97706' }} />
                                 Sem entrega (6h)
                               </span>
                             ) : cmp.status === 'active' ? (
-                              <span style={{ fontSize: '9px', fontWeight: 800, color: '#166534', background: '#DCFCE7', border: '1px solid #86EFAC', padding: '1px 6px', borderRadius: '4px', width: 'fit-content', display: 'inline-flex', alignItems: 'center', gap: '3px' }} title="Telemetria ativa">
+                              <span style={{ fontSize: '9px', fontWeight: 800, color: "var(--disk-color-success-text)", background: "var(--disk-color-success-subtle)", border: '1px solid #86EFAC', padding: '1px 6px', borderRadius: '4px', width: 'fit-content', display: 'inline-flex', alignItems: 'center', gap: '3px' }} title="Telemetria ativa">
                                 <span style={{ width: '5px', height: '5px', borderRadius: '999px', background: '#16A34A' }} />
                                 Entregando
                               </span>
@@ -574,13 +574,13 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                         </td>
 
                         <td style={{ textAlign: 'right' }}>
-                          <strong style={{ color: '#0F172A', display: 'block', fontSize: '13px' }}>{formatBrl(cmp.spent)}</strong>
-                          <small style={{ color: '#64748B' }}>de {formatBrl(cmp.budget)}</small>
+                          <strong style={{ color: "var(--disk-text-primary)", display: 'block', fontSize: '13px' }}>{formatBrl(cmp.spent)}</strong>
+                          <small style={{ color: "var(--disk-text-muted)" }}>de {formatBrl(cmp.budget)}</small>
                         </td>
 
                         <td style={{ textAlign: 'right' }}>
                           <strong style={{ color: '#2563EB', display: 'block', fontSize: '13px' }}>{cmp.salesCount}</strong>
-                          <small style={{ color: '#64748B' }}>CPA {formatBrl(cmp.cpa || 35)}</small>
+                          <small style={{ color: "var(--disk-text-muted)" }}>CPA {formatBrl(cmp.cpa || 35)}</small>
                         </td>
 
                         <td style={{ textAlign: 'right' }}>
@@ -600,7 +600,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                               type="button"
                               onClick={() => setSelectedCampaignForDrilldown(cmp)}
                               title="Abrir Dashboard Detalhado"
-                              style={{ padding: '4px 8px', borderRadius: '4px', border: '1px solid #CBD5E1', background: '#FFFFFF', color: '#2563EB', fontSize: '11px', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                              style={{ padding: '4px 8px', borderRadius: '4px', border: "1px solid var(--disk-border-default)", background: "var(--disk-bg-surface)", color: '#2563EB', fontSize: '11px', fontWeight: 700, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
                             >
                               <Eye size={12} /> Dashboard
                             </button>
@@ -609,7 +609,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                               type="button"
                               onClick={() => toggleCampaignStatus(cmp.id)}
                               title={cmp.status === 'active' ? 'Pausar Campanha' : 'Ativar Campanha'}
-                              style={{ width: '28px', height: '28px', borderRadius: '4px', border: '1px solid #CBD5E1', background: '#FFFFFF', color: cmp.status === 'active' ? '#64748B' : '#16A34A', display: 'grid', placeItems: 'center', cursor: 'pointer' }}
+                              style={{ width: '28px', height: '28px', borderRadius: '4px', border: "1px solid var(--disk-border-default)", background: "var(--disk-bg-surface)", color: cmp.status === 'active' ? '#64748B' : '#16A34A', display: 'grid', placeItems: 'center', cursor: 'pointer' }}
                             >
                               {cmp.status === 'active' ? <Pause size={12} /> : <Play size={12} />}
                             </button>
@@ -618,7 +618,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                               type="button"
                               onClick={() => duplicateCampaign(cmp)}
                               title="Duplicar Campanha"
-                              style={{ width: '28px', height: '28px', borderRadius: '4px', border: '1px solid #CBD5E1', background: '#FFFFFF', color: '#7C3AED', display: 'grid', placeItems: 'center', cursor: 'pointer' }}
+                              style={{ width: '28px', height: '28px', borderRadius: '4px', border: "1px solid var(--disk-border-default)", background: "var(--disk-bg-surface)", color: '#7C3AED', display: 'grid', placeItems: 'center', cursor: 'pointer' }}
                             >
                               <Copy size={12} />
                             </button>
@@ -637,22 +637,22 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
       {/* TAB 2: CATÁLOGO DE 8 MODELOS PRONTOS */}
       {activeTab === 'templates' && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <div className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+          <div className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
             <div>
-              <h3 style={{ margin: 0, fontSize: '16px', color: '#0F172A', fontWeight: 800 }}>
+              <h3 style={{ margin: 0, fontSize: '16px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
                 Catálogo dos 8 Modelos de Campanhas Prontas
               </h3>
-              <p style={{ margin: '3px 0 0', fontSize: '12px', color: '#64748B' }}>
+              <p style={{ margin: '3px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                 Selecione uma estratégia pronta para ativar instantaneamente canais, público sugerido, orçamento e links UTM.
               </p>
             </div>
 
             <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-              <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>Filtrar Categoria:</span>
+              <span style={{ fontSize: '11px', fontWeight: 700, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>Filtrar Categoria:</span>
               <select
                 value={selectedTemplateCategory}
                 onChange={e => setSelectedTemplateCategory(e.target.value)}
-                style={{ height: '36px', border: '1px solid #CBD5E1', borderRadius: '6px', background: '#FFFFFF', padding: '0 10px', fontSize: '12px', color: '#0F172A', fontWeight: 600 }}
+                style={{ height: '36px', border: "1px solid var(--disk-border-default)", borderRadius: '6px', background: "var(--disk-bg-surface)", padding: '0 10px', fontSize: '12px', color: "var(--disk-text-primary)", fontWeight: 600 }}
               >
                 <option value="all">Todos os Modelos ({templates.length})</option>
                 <option value="urgencia">Urgência & Virada de Lote</option>
@@ -670,8 +670,8 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                 key={tmpl.id} 
                 className="growth-panel" 
                 style={{ 
-                  background: '#FFFFFF', 
-                  border: '1px solid #CBD5E1', 
+                  background: "var(--disk-bg-surface)", 
+                  border: "1px solid var(--disk-border-default)", 
                   padding: '20px', 
                   display: 'flex', 
                   flexDirection: 'column', 
@@ -682,26 +682,26 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
               >
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                    <span style={{ fontSize: '10px', fontWeight: 800, textTransform: 'uppercase', padding: '2px 8px', borderRadius: '999px', background: '#FEF3C7', color: '#B45309', border: '1px solid #FDE68A' }}>
+                    <span style={{ fontSize: '10px', fontWeight: 800, textTransform: 'uppercase', padding: '2px 8px', borderRadius: '999px', background: "var(--disk-color-warning-subtle)", color: "var(--disk-color-warning-text)", border: "1px solid var(--disk-color-warning-border)" }}>
                       {tmpl.badge}
                     </span>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#2563EB', background: '#EFF6FF', padding: '2px 8px', borderRadius: '999px' }}>
+                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#2563EB', background: "var(--disk-color-info-subtle)", padding: '2px 8px', borderRadius: '999px' }}>
                       {tmpl.channelsCount} canais integrados
                     </span>
                   </div>
 
-                  <h4 style={{ margin: '4px 0 2px', fontSize: '16px', color: '#0F172A', fontWeight: 800 }}>
+                  <h4 style={{ margin: '4px 0 2px', fontSize: '16px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
                     {tmpl.name}
                   </h4>
                   <p style={{ margin: '0 0 8px', fontSize: '12px', color: '#2563EB', fontWeight: 600 }}>
                     {tmpl.tagline}
                   </p>
-                  <p style={{ margin: '0 0 12px', fontSize: '12px', color: '#64748B', lineHeight: '1.45' }}>
+                  <p style={{ margin: '0 0 12px', fontSize: '12px', color: "var(--disk-text-muted)", lineHeight: '1.45' }}>
                     {tmpl.description}
                   </p>
 
-                  <div style={{ paddingTop: '10px', borderTop: '1px solid #F1F5F9' }}>
-                    <span style={{ fontSize: '10px', fontWeight: 800, textTransform: 'uppercase', color: '#64748B', display: 'block', marginBottom: '6px' }}>
+                  <div style={{ paddingTop: '10px', borderTop: "1px solid var(--disk-border-default)" }}>
+                    <span style={{ fontSize: '10px', fontWeight: 800, textTransform: 'uppercase', color: "var(--disk-text-muted)", display: 'block', marginBottom: '6px' }}>
                       Canais Inclusos no Pacote:
                     </span>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
@@ -719,13 +719,13 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: '12px', background: '#F8FAFC', padding: '8px 10px', borderRadius: '6px', border: '1px solid #E2E8F0' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginTop: '12px', background: "var(--disk-bg-muted)", padding: '8px 10px', borderRadius: '6px', border: "1px solid var(--disk-border-default)" }}>
                     <div>
-                      <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Orçamento Sugerido</span>
-                      <strong style={{ fontSize: '13px', color: '#0F172A' }}>{formatBrl(tmpl.recommendedBudget)}</strong>
+                      <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Orçamento Sugerido</span>
+                      <strong style={{ fontSize: '13px', color: "var(--disk-text-primary)" }}>{formatBrl(tmpl.recommendedBudget)}</strong>
                     </div>
                     <div>
-                      <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>ROI Estimado</span>
+                      <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>ROI Estimado</span>
                       <strong style={{ fontSize: '13px', color: '#16A34A' }}>{tmpl.expectedRoi}</strong>
                     </div>
                   </div>
@@ -773,19 +773,19 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsWizardOpen(false)}>
           <div 
             className="utm-modal-card-v2" 
-            style={{ width: 'min(760px, 95vw)', maxHeight: '92vh', overflowY: 'auto', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }}
+            style={{ width: 'min(760px, 95vw)', maxHeight: '92vh', overflowY: 'auto', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }}
             onClick={e => e.stopPropagation()}
           >
             {/* Wizard Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>
                   WIZARD OPERACIONAL • PASSO {wizardStep} DE 5
                 </span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
                   {wizardSelectedTemplate ? `Ativar Modelo: ${wizardSelectedTemplate.name}` : 'Criar e Ativar Campanha Multicanal'}
                 </h3>
-                <p style={{ margin: '3px 0 0', fontSize: '12px', color: '#64748B' }}>
+                <p style={{ margin: '3px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                   Geração automática de URLs UTM integradas à Central de Conversões.
                 </p>
               </div>
@@ -818,13 +818,13 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
             {wizardStep === 1 && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '6px' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '6px' }}>
                     1. Selecione o Evento de Destino *
                   </label>
                   <select 
                     value={wizardEventId} 
                     onChange={e => setWizardEventId(Number(e.target.value))}
-                    style={{ width: '100%', height: '40px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 12px', fontSize: '13px', color: '#0F172A', fontWeight: 600 }}
+                    style={{ width: '100%', height: '40px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 12px', fontSize: '13px', color: "var(--disk-text-primary)", fontWeight: 600 }}
                   >
                     {events.map(e => (
                       <option key={e.id} value={e.id}>{e.title} ({e.date} - {e.venue})</option>
@@ -833,7 +833,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                 </div>
 
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '6px' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '6px' }}>
                     2. Nome da Campanha
                   </label>
                   <input 
@@ -841,12 +841,12 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                     value={wizardName} 
                     onChange={e => setWizardName(e.target.value)}
                     placeholder="Ex: Virada de Lote Oficial — Marcos & Belutti"
-                    style={{ width: '100%', height: '40px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 12px', fontSize: '13px' }}
+                    style={{ width: '100%', height: '40px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 12px', fontSize: '13px' }}
                   />
                 </div>
 
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '6px' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '6px' }}>
                     3. Escolher Modelo / Estratégia
                   </label>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px' }}>
@@ -874,7 +874,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                             <strong style={{ fontSize: '13px', color: isSelected ? '#1E40AF' : '#0F172A' }}>{t.name}</strong>
                             {isSelected && <CheckCircle size={14} style={{ color: '#2563EB' }} />}
                           </div>
-                          <span style={{ fontSize: '11px', color: '#64748B', display: 'block', marginTop: '2px' }}>{t.tagline}</span>
+                          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block', marginTop: '2px' }}>{t.tagline}</span>
                         </div>
                       )
                     })}
@@ -887,10 +887,10 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
             {wizardStep === 2 && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div>
-                  <h4 style={{ margin: 0, fontSize: '14px', color: '#0F172A', fontWeight: 800 }}>
+                  <h4 style={{ margin: 0, fontSize: '14px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
                     Selecione os Canais Ativos para esta Campanha
                   </h4>
-                  <p style={{ margin: '2px 0 12px', fontSize: '12px', color: '#64748B' }}>
+                  <p style={{ margin: '2px 0 12px', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                     Cada canal selecionado terá sua própria UTM gerada e mensuração individual no dashboard.
                   </p>
 
@@ -939,13 +939,13 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
             {wizardStep === 3 && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '6px' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '6px' }}>
                     Público-Alvo & Segmentação
                   </label>
                   <select 
                     value={wizardAudience} 
                     onChange={e => setWizardAudience(e.target.value)}
-                    style={{ width: '100%', height: '40px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 12px', fontSize: '13px' }}
+                    style={{ width: '100%', height: '40px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 12px', fontSize: '13px' }}
                   >
                     <option value="Público Amplo de Curitiba / Região Metropolitana">Público Amplo de Curitiba / Região Metropolitana</option>
                     <option value="Compradores VIP (Ticket Médio acima de R$ 300)">Compradores VIP (Ticket Médio acima de R$ 300)</option>
@@ -957,7 +957,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '6px' }}>
                       Orçamento Total Previsto (R$)
                     </label>
                     <input 
@@ -965,18 +965,18 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                       value={wizardBudget}
                       onChange={e => setWizardBudget(e.target.value)}
                       placeholder="Ex: 6000"
-                      style={{ width: '100%', height: '40px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 12px', fontSize: '13px' }}
+                      style={{ width: '100%', height: '40px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 12px', fontSize: '13px' }}
                     />
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '6px' }}>
                       Meta de Ingressos Vendidos
                     </label>
                     <input 
                       type="number"
                       defaultValue={180}
-                      style={{ width: '100%', height: '40px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 12px', fontSize: '13px' }}
+                      style={{ width: '100%', height: '40px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 12px', fontSize: '13px' }}
                     />
                   </div>
                 </div>
@@ -988,35 +988,35 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '6px' }}>
                       Data de Início
                     </label>
                     <input 
                       type="text"
                       value={wizardStartDate}
                       onChange={e => setWizardStartDate(e.target.value)}
-                      style={{ width: '100%', height: '40px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 12px', fontSize: '13px' }}
+                      style={{ width: '100%', height: '40px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 12px', fontSize: '13px' }}
                     />
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '6px' }}>
                       Data de Término
                     </label>
                     <input 
                       type="text"
                       value={wizardEndDate}
                       onChange={e => setWizardEndDate(e.target.value)}
-                      style={{ width: '100%', height: '40px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 12px', fontSize: '13px' }}
+                      style={{ width: '100%', height: '40px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 12px', fontSize: '13px' }}
                     />
                   </div>
                 </div>
 
-                <div style={{ background: '#F8FAFC', padding: '12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>
+                <div style={{ background: "var(--disk-bg-muted)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>
                     ⚡ Ativação Imediata
                   </span>
-                  <p style={{ margin: 0, fontSize: '11px', color: '#64748B' }}>
+                  <p style={{ margin: 0, fontSize: '11px', color: "var(--disk-text-muted)" }}>
                     Ao clicar em Ativar, a campanha entrará em status <strong>Ativa</strong> e os links UTM começarão a registrar cliques imediatamente.
                   </p>
                 </div>
@@ -1026,16 +1026,16 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
             {/* STEP 5: REVISÃO & GERAÇÃO DE UTMS */}
             {wizardStep === 5 && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <div style={{ background: '#DCFCE7', border: '1px solid #86EFAC', padding: '12px', borderRadius: '8px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#166534', fontWeight: 800, fontSize: '13px' }}>
+                <div style={{ background: "var(--disk-color-success-subtle)", border: '1px solid #86EFAC', padding: '12px', borderRadius: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: "var(--disk-color-success-text)", fontWeight: 800, fontSize: '13px' }}>
                     <CheckCircle size={16} /> Links UTM Prontos para Ativação
                   </div>
-                  <p style={{ margin: '3px 0 0', fontSize: '11px', color: '#166534' }}>
+                  <p style={{ margin: '3px 0 0', fontSize: '11px', color: "var(--disk-color-success-text)" }}>
                     Foram configurados {wizardChannels.length} canais com parâmetros exclusivos de atribuição.
                   </p>
                 </div>
 
-                <div style={{ border: '1px solid #CBD5E1', borderRadius: '8px', overflow: 'hidden' }}>
+                <div style={{ border: "1px solid var(--disk-border-default)", borderRadius: '8px', overflow: 'hidden' }}>
                   <table className="growth-table" style={{ margin: 0 }}>
                     <thead>
                       <tr><th>Canal</th><th>Link UTM Gerado</th></tr>
@@ -1047,7 +1047,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                         return (
                           <tr key={idx}>
                             <td><strong>{channelMeta[ch]?.label || ch}</strong></td>
-                            <td><code style={{ fontSize: '10px', background: '#F1F5F9', padding: '2px 6px', borderRadius: '4px', color: '#2563EB' }}>{sampleUrl}</code></td>
+                            <td><code style={{ fontSize: '10px', background: "var(--disk-bg-muted)", padding: '2px 6px', borderRadius: '4px', color: '#2563EB' }}>{sampleUrl}</code></td>
                           </tr>
                         )
                       })}
@@ -1058,7 +1058,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
             )}
 
             {/* Wizard Navigation Footer */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', paddingTop: '14px', borderTop: '1px solid #E2E8F0' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', paddingTop: '14px', borderTop: "1px solid var(--disk-border-default)" }}>
               {wizardStep > 1 ? (
                 <button 
                   type="button" 
@@ -1099,11 +1099,11 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setSelectedCampaignForDrilldown(null)}>
           <div 
             className="utm-modal-card-v2" 
-            style={{ width: 'min(920px, 95vw)', maxHeight: '92vh', overflowY: 'auto', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }}
+            style={{ width: 'min(920px, 95vw)', maxHeight: '92vh', overflowY: 'auto', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }}
             onClick={e => e.stopPropagation()}
           >
             {/* Drilldown Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>
@@ -1121,10 +1121,10 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                     {statusMeta[selectedCampaignForDrilldown.status]?.label || 'Ativa'}
                   </span>
                 </div>
-                <h3 style={{ margin: '3px 0 0', fontSize: '20px', color: '#0F172A', fontWeight: 800 }}>
+                <h3 style={{ margin: '3px 0 0', fontSize: '20px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
                   {selectedCampaignForDrilldown.name}
                 </h3>
-                <p style={{ margin: '3px 0 0', fontSize: '12px', color: '#64748B' }}>
+                <p style={{ margin: '3px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                   Evento: <strong>{selectedCampaignForDrilldown.eventName}</strong> • Identificador: <code>utm_campaign={selectedCampaignForDrilldown.utmCampaign}</code>
                 </p>
               </div>
@@ -1171,60 +1171,60 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                   </small>
                 </div>
               </div>
-              <div style={{ fontSize: '11px', color: '#64748B', fontWeight: 600 }}>
+              <div style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 600 }}>
                 Sincronizado com APIs de mídia: há 8 min
               </div>
             </div>
 
             {/* 10 Operational KPIs Grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px', background: '#F8FAFC', padding: '14px', borderRadius: '8px', border: '1px solid #E2E8F0', marginBottom: '16px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '8px', background: "var(--disk-bg-muted)", padding: '14px', borderRadius: '8px', border: "1px solid var(--disk-border-default)", marginBottom: '16px' }}>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>1. Investimento</span>
-                <strong style={{ fontSize: '14px', color: '#0F172A' }}>{formatBrl(selectedCampaignForDrilldown.spent)}</strong>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>1. Investimento</span>
+                <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)" }}>{formatBrl(selectedCampaignForDrilldown.spent)}</strong>
               </div>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>2. Visitas</span>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>2. Visitas</span>
                 <strong style={{ fontSize: '14px', color: '#2563EB' }}>{selectedCampaignForDrilldown.visitors || 3840}</strong>
               </div>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>3. Carrinhos</span>
-                <strong style={{ fontSize: '14px', color: '#0F172A' }}>{selectedCampaignForDrilldown.carts || 642}</strong>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>3. Carrinhos</span>
+                <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)" }}>{selectedCampaignForDrilldown.carts || 642}</strong>
               </div>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>4. Vendas</span>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>4. Vendas</span>
                 <strong style={{ fontSize: '14px', color: '#16A34A' }}>{selectedCampaignForDrilldown.salesCount}</strong>
               </div>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>5. Receita Total</span>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>5. Receita Total</span>
                 <strong style={{ fontSize: '14px', color: '#16A34A' }}>{formatBrl(selectedCampaignForDrilldown.revenue)}</strong>
               </div>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>6. Taxa Conversão</span>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>6. Taxa Conversão</span>
                 <strong style={{ fontSize: '14px', color: '#EA580C' }}>{selectedCampaignForDrilldown.conversionRate || '4,82%'}</strong>
               </div>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>7. CPA Médio</span>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>7. CPA Médio</span>
                 <strong style={{ fontSize: '14px', color: '#D97706' }}>{formatBrl(selectedCampaignForDrilldown.cpa || 39.74)}</strong>
               </div>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>8. ROAS Real</span>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>8. ROAS Real</span>
                 <strong style={{ fontSize: '14px', color: '#16A34A' }}>
                   {selectedCampaignForDrilldown.roas ? `${selectedCampaignForDrilldown.roas}x` : `${((selectedCampaignForDrilldown.revenue / (selectedCampaignForDrilldown.spent || 1))).toFixed(1)}x`}
                 </strong>
               </div>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>9. ROI %</span>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>9. ROI %</span>
                 <strong style={{ fontSize: '14px', color: '#16A34A' }}>+{selectedCampaignForDrilldown.roi}%</strong>
               </div>
               <div>
-                <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>10. Orçado</span>
-                <strong style={{ fontSize: '14px', color: '#64748B' }}>{formatBrl(selectedCampaignForDrilldown.budget)}</strong>
+                <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>10. Orçado</span>
+                <strong style={{ fontSize: '14px', color: "var(--disk-text-muted)" }}>{formatBrl(selectedCampaignForDrilldown.budget)}</strong>
               </div>
             </div>
 
             {/* Channels Table with Copy UTM */}
-            <div style={{ border: '1px solid #E2E8F0', borderRadius: '8px', overflow: 'hidden', marginBottom: '16px' }}>
-              <div style={{ padding: '10px 14px', background: '#F1F5F9', borderBottom: '1px solid #E2E8F0', fontWeight: 700, fontSize: '12px', color: '#334155' }}>
+            <div style={{ border: "1px solid var(--disk-border-default)", borderRadius: '8px', overflow: 'hidden', marginBottom: '16px' }}>
+              <div style={{ padding: '10px 14px', background: "var(--disk-bg-muted)", borderBottom: "1px solid var(--disk-border-default)", fontWeight: 700, fontSize: '12px', color: "var(--disk-text-secondary)" }}>
                 Desempenho Discriminado por Canal & Links Rastreáveis
               </div>
 
@@ -1258,12 +1258,12 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
                               type="text" 
                               readOnly 
                               value={url} 
-                              style={{ width: '100%', fontSize: '10px', fontFamily: 'monospace', background: '#F8FAFC', border: '1px solid #CBD5E1', borderRadius: '4px', padding: '4px 6px', color: '#1E3A8A' }} 
+                              style={{ width: '100%', fontSize: '10px', fontFamily: 'monospace', background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '4px', padding: '4px 6px', color: '#1E3A8A' }} 
                             />
                             <button
                               type="button"
                               onClick={() => copyToClipboard(url)}
-                              style={{ padding: '4px 8px', border: '1px solid #CBD5E1', borderRadius: '4px', background: '#FFFFFF', color: copiedUrl === url ? '#16A34A' : '#2563EB', cursor: 'pointer', fontSize: '10px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '3px' }}
+                              style={{ padding: '4px 8px', border: "1px solid var(--disk-border-default)", borderRadius: '4px', background: "var(--disk-bg-surface)", color: copiedUrl === url ? '#16A34A' : '#2563EB', cursor: 'pointer', fontSize: '10px', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '3px' }}
                             >
                               {copiedUrl === url ? <Check size={11} /> : <Copy size={11} />}
                               {copiedUrl === url ? 'Copiado' : 'Copiar'}
@@ -1283,7 +1283,7 @@ export const MarketingCampaignsPage: React.FC<MarketingCampaignsPageProps> = ({ 
             </div>
 
             {/* Drilldown Actions */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #E2E8F0', paddingTop: '14px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: "1px solid var(--disk-border-default)", paddingTop: '14px' }}>
               <div style={{ display: 'flex', gap: '8px' }}>
                 <button
                   type="button"

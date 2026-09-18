@@ -8,7 +8,7 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  background-color: #0b1120;
+  background-color: var(--disk-legacy-dark-surface, #0b1120);
   color: #f1f5f9;
   min-height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -37,7 +37,7 @@
   justify-content: space-between;
   gap: 1.25rem;
   background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-  border: 1px solid #334155;
+  border: 1px solid var(--disk-border-default);
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
@@ -115,7 +115,7 @@
   align-items: center;
   gap: 1rem;
   font-size: 0.85rem;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   flex-wrap: wrap;
 }
 
@@ -134,8 +134,8 @@
 
 .epe-period-group {
   display: inline-flex;
-  background-color: #1e293b;
-  border: 1px solid #334155;
+  background-color: var(--disk-legacy-dark-surface, #1e293b);
+  border: 1px solid var(--disk-border-default);
   border-radius: 0.5rem;
   padding: 2px;
 }
@@ -143,7 +143,7 @@
 .epe-period-btn {
   background: transparent;
   border: none;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   padding: 0.4rem 0.75rem;
   font-size: 0.8rem;
   font-weight: 600;
@@ -169,8 +169,8 @@
   font-size: 0.825rem;
   font-weight: 600;
   border-radius: 0.5rem;
-  border: 1px solid #334155;
-  background-color: #1e293b;
+  border: 1px solid var(--disk-border-default);
+  background-color: var(--disk-legacy-dark-surface, #1e293b);
   color: #f1f5f9;
   cursor: pointer;
   transition: all 0.2s;
@@ -178,7 +178,7 @@
 
 .epe-btn:hover {
   background-color: #334155;
-  border-color: #475569;
+  border-color: var(--disk-border-default);
 }
 
 .epe-btn-primary {
@@ -212,8 +212,8 @@
 }
 
 .epe-kpi-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: var(--disk-legacy-dark-surface, #0f172a);
+  border: 1px solid var(--disk-border-default);
   border-radius: 0.75rem;
   padding: 1.15rem;
   display: flex;
@@ -223,7 +223,7 @@
 }
 
 .epe-kpi-card:hover {
-  border-color: #334155;
+  border-color: var(--disk-border-default);
   transform: translateY(-2px);
 }
 
@@ -231,7 +231,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   font-size: 0.775rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -268,7 +268,7 @@
 }
 
 .epe-delta-neutral {
-  color: #94a3b8;
+  color: var(--disk-text-muted);
 }
 
 /* --------------------------------------------------------------------------
@@ -281,8 +281,8 @@
 }
 
 .epe-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
+  background: var(--disk-legacy-dark-surface, #0f172a);
+  border: 1px solid var(--disk-border-default);
   border-radius: 0.85rem;
   padding: 1.25rem;
   display: flex;
@@ -294,7 +294,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--disk-border-default);
   padding-bottom: 0.75rem;
 }
 
@@ -312,8 +312,8 @@
   font-size: 0.75rem;
   padding: 0.2rem 0.5rem;
   border-radius: 0.375rem;
-  background-color: #1e293b;
-  color: #94a3b8;
+  background-color: var(--disk-legacy-dark-surface, #1e293b);
+  color: var(--disk-text-muted);
   font-weight: 600;
 }
 
@@ -329,10 +329,10 @@
 .epe-progress-bar-wrap {
   position: relative;
   height: 22px;
-  background-color: #1e293b;
+  background-color: var(--disk-legacy-dark-surface, #1e293b);
   border-radius: 9999px;
   overflow: hidden;
-  border: 1px solid #334155;
+  border: 1px solid var(--disk-border-default);
 }
 
 .epe-progress-fill-realized {
@@ -361,7 +361,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
 }
 
 .epe-progress-legend {
@@ -397,7 +397,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.55rem 0.85rem;
-  background-color: #1e293b;
+  background-color: var(--disk-legacy-dark-surface, #1e293b);
   border-radius: 0.5rem;
   font-size: 0.825rem;
 }
@@ -444,15 +444,15 @@
 
 .epe-table th {
   padding: 0.6rem 0.75rem;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   font-weight: 600;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--disk-border-default);
 }
 
 .epe-table td {
   padding: 0.65rem 0.75rem;
   color: #e2e8f0;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--disk-border-default);
 }
 
 .epe-table tr:last-child td {
@@ -493,7 +493,7 @@
 
 .epe-sector-bar {
   height: 8px;
-  background-color: #1e293b;
+  background-color: var(--disk-legacy-dark-surface, #1e293b);
   border-radius: 9999px;
   overflow: hidden;
 }
@@ -523,7 +523,7 @@
 }
 
 .epe-finance-item {
-  background-color: #1e293b;
+  background-color: var(--disk-legacy-dark-surface, #1e293b);
   border-radius: 0.5rem;
   padding: 0.75rem;
   display: flex;
@@ -533,7 +533,7 @@
 
 .epe-finance-label {
   font-size: 0.725rem;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   font-weight: 600;
 }
 
@@ -553,7 +553,7 @@
 }
 
 .epe-mini-card {
-  background-color: #1e293b;
+  background-color: var(--disk-legacy-dark-surface, #1e293b);
   padding: 0.65rem 0.75rem;
   border-radius: 0.5rem;
   display: flex;
@@ -563,7 +563,7 @@
 
 .epe-mini-card span:first-child {
   font-size: 0.725rem;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
 }
 
 .epe-mini-card span:last-child {
@@ -614,7 +614,7 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.6rem 0.85rem;
-  background-color: #1e293b;
+  background-color: var(--disk-legacy-dark-surface, #1e293b);
   border-radius: 0.5rem;
   font-size: 0.825rem;
   color: #e2e8f0;
@@ -636,8 +636,8 @@
 }
 
 .epe-modal {
-  background: #0f172a;
-  border: 1px solid #334155;
+  background: var(--disk-legacy-dark-surface, #0f172a);
+  border: 1px solid var(--disk-border-default);
   border-radius: 1rem;
   max-width: 680px;
   width: 100%;
@@ -652,7 +652,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid #1e293b;
+  border-bottom: 1px solid var(--disk-border-default);
 }
 
 .epe-modal-title {
@@ -675,6 +675,6 @@
   display: flex;
   justify-content: flex-end;
   padding: 1rem 1.5rem;
-  border-top: 1px solid #1e293b;
-  background-color: #0b1120;
+  border-top: 1px solid var(--disk-border-default);
+  background-color: var(--disk-legacy-dark-surface, #0b1120);
 }

@@ -122,8 +122,8 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
   return (
     <div
       style={{
-        background: '#FFFFFF',
-        border: '1px solid #CBD5E1',
+        background: "var(--disk-bg-surface)",
+        border: "1px solid var(--disk-border-default)",
         borderRadius: '12px',
         overflow: 'hidden',
         boxShadow: '0 1px 3px rgba(0,0,0,0.03)',
@@ -135,13 +135,13 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
       <div
         style={{
           padding: '16px 20px',
-          borderBottom: '1px solid #E2E8F0',
+          borderBottom: "1px solid var(--disk-border-default)",
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           flexWrap: 'wrap',
           gap: '12px',
-          background: '#F8FAFC'
+          background: "var(--disk-bg-muted)"
         }}
       >
         <div>
@@ -162,8 +162,8 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                 fontSize: '11px',
                 fontWeight: 800,
                 color: '#16A34A',
-                background: '#DCFCE7',
-                border: '1px solid #BBF7D0',
+                background: "var(--disk-color-success-subtle)",
+                border: "1px solid var(--disk-color-success-border)",
                 padding: '2px 8px',
                 borderRadius: '999px',
                 display: 'inline-flex',
@@ -174,10 +174,10 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
               <Activity size={12} /> Telemetria 6h Ao Vivo
             </span>
           </div>
-          <h3 style={{ margin: '2px 0 0', fontSize: '18px', fontWeight: 800, color: '#0F172A' }}>
+          <h3 style={{ margin: '2px 0 0', fontSize: '18px', fontWeight: 800, color: "var(--disk-text-primary)" }}>
             Monitoramento de Ativação & Entrega Real das Campanhas
           </h3>
-          <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748B' }}>
+          <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
             Verificação dupla: Status oficial da plataforma vs. Prova real de entrega (impressões e gasto nas últimas 6 horas).
           </p>
         </div>
@@ -194,7 +194,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
-              background: '#FFFFFF'
+              background: "var(--disk-bg-surface)"
             }}
             data-testid="sync-all-delivery-status-btn"
           >
@@ -208,8 +208,8 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
       {criticalItems.length > 0 && (
         <div
           style={{
-            background: '#FFFBEB',
-            borderBottom: '1px solid #FDE68A',
+            background: "var(--disk-color-warning-subtle)",
+            borderBottom: "1px solid var(--disk-color-warning-border)",
             padding: '12px 20px',
             display: 'flex',
             alignItems: 'flex-start',
@@ -219,10 +219,10 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
         >
           <AlertTriangle size={18} style={{ color: '#D97706', flexShrink: 0, marginTop: '2px' }} />
           <div style={{ flex: 1, fontSize: '12px' }}>
-            <strong style={{ color: '#92400E', display: 'block', fontSize: '13px' }}>
+            <strong style={{ color: "var(--disk-color-warning-text)", display: 'block', fontSize: '13px' }}>
               Atenção Operacional: {criticalItems.length} campanha(s) requerem intervenção
             </strong>
-            <p style={{ color: '#B45309', margin: '2px 0 0' }}>
+            <p style={{ color: "var(--disk-color-warning-text)", margin: '2px 0 0' }}>
               Detectamos campanhas marcadas como "Ativas" na plataforma que não registraram nenhuma impressão nas últimas 6 horas,
               ou anúncios com Ad Set pausado / criativos reprovados. Clique em "Ver Diagnóstico" para orientações de correção.
             </p>
@@ -237,55 +237,55 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
           gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
           gap: '12px',
           padding: '16px 20px',
-          background: '#FFFFFF',
-          borderBottom: '1px solid #E2E8F0'
+          background: "var(--disk-bg-surface)",
+          borderBottom: "1px solid var(--disk-border-default)"
         }}
       >
-        <div style={{ background: '#F8FAFC', padding: '12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-          <span style={{ fontSize: '11px', color: '#64748B', fontWeight: 600, display: 'block' }}>Total Monitoradas</span>
-          <strong style={{ fontSize: '18px', color: '#0F172A', display: 'block' }}>{kpis.totalCampaigns}</strong>
-          <small style={{ fontSize: '10px', color: '#64748B' }}>Meta, Google, TikTok, Spotify</small>
+        <div style={{ background: "var(--disk-bg-muted)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 600, display: 'block' }}>Total Monitoradas</span>
+          <strong style={{ fontSize: '18px', color: "var(--disk-text-primary)", display: 'block' }}>{kpis.totalCampaigns}</strong>
+          <small style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>Meta, Google, TikTok, Spotify</small>
         </div>
 
-        <div style={{ background: '#F0FDF4', padding: '12px', borderRadius: '8px', border: '1px solid #BBF7D0' }}>
+        <div style={{ background: "var(--disk-color-success-subtle)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-color-success-border)" }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', color: '#166534', fontWeight: 700 }}>Entregando Ativas</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-color-success-text)", fontWeight: 700 }}>Entregando Ativas</span>
             <span style={{ width: '8px', height: '8px', borderRadius: '999px', background: '#16A34A' }} />
           </div>
-          <strong style={{ fontSize: '18px', color: '#166534', display: 'block' }}>{kpis.deliveringCount}</strong>
-          <small style={{ fontSize: '10px', color: '#15803D' }}>Telemetria confirmada (6h)</small>
+          <strong style={{ fontSize: '18px', color: "var(--disk-color-success-text)", display: 'block' }}>{kpis.deliveringCount}</strong>
+          <small style={{ fontSize: '10px', color: "var(--disk-color-success-text)" }}>Telemetria confirmada (6h)</small>
         </div>
 
-        <div style={{ background: '#FEF3C7', padding: '12px', borderRadius: '8px', border: '1px solid #FDE68A' }}>
+        <div style={{ background: "var(--disk-color-warning-subtle)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-color-warning-border)" }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', color: '#92400E', fontWeight: 700 }}>Sem Entrega (6h)</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-color-warning-text)", fontWeight: 700 }}>Sem Entrega (6h)</span>
             <span style={{ width: '8px', height: '8px', borderRadius: '999px', background: '#D97706' }} />
           </div>
-          <strong style={{ fontSize: '18px', color: '#92400E', display: 'block' }}>{kpis.noDeliveryCount}</strong>
-          <small style={{ fontSize: '10px', color: '#B45309' }}>Ativas mas sem veiculação</small>
+          <strong style={{ fontSize: '18px', color: "var(--disk-color-warning-text)", display: 'block' }}>{kpis.noDeliveryCount}</strong>
+          <small style={{ fontSize: '10px', color: "var(--disk-color-warning-text)" }}>Ativas mas sem veiculação</small>
         </div>
 
-        <div style={{ background: '#EFF6FF', padding: '12px', borderRadius: '8px', border: '1px solid #BFDBFE' }}>
+        <div style={{ background: "var(--disk-color-info-subtle)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-color-info-border)" }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', color: '#1E40AF', fontWeight: 700 }}>Em Análise</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-color-info-text)", fontWeight: 700 }}>Em Análise</span>
             <span style={{ width: '8px', height: '8px', borderRadius: '999px', background: '#2563EB' }} />
           </div>
-          <strong style={{ fontSize: '18px', color: '#1E40AF', display: 'block' }}>{kpis.inReviewCount}</strong>
-          <small style={{ fontSize: '10px', color: '#1D4ED8' }}>Moderação de criativos</small>
+          <strong style={{ fontSize: '18px', color: "var(--disk-color-info-text)", display: 'block' }}>{kpis.inReviewCount}</strong>
+          <small style={{ fontSize: '10px', color: "var(--disk-color-info-text)" }}>Moderação de criativos</small>
         </div>
 
-        <div style={{ background: '#FEE2E2', padding: '12px', borderRadius: '8px', border: '1px solid #FCA5A5' }}>
+        <div style={{ background: "var(--disk-color-danger-subtle)", padding: '12px', borderRadius: '8px', border: '1px solid #FCA5A5' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{ fontSize: '11px', color: '#991B1B', fontWeight: 700 }}>Rejeitadas / Atenção</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-color-danger-text)", fontWeight: 700 }}>Rejeitadas / Atenção</span>
             <span style={{ width: '8px', height: '8px', borderRadius: '999px', background: '#DC2626' }} />
           </div>
-          <strong style={{ fontSize: '18px', color: '#991B1B', display: 'block' }}>{kpis.rejectedCount}</strong>
-          <small style={{ fontSize: '10px', color: '#B91C1C' }}>Políticas ou falhas</small>
+          <strong style={{ fontSize: '18px', color: "var(--disk-color-danger-text)", display: 'block' }}>{kpis.rejectedCount}</strong>
+          <small style={{ fontSize: '10px', color: "var(--disk-color-danger-text)" }}>Políticas ou falhas</small>
         </div>
 
-        <div style={{ background: '#F8FAFC', padding: '12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-          <span style={{ fontSize: '11px', color: '#64748B', fontWeight: 600, display: 'block' }}>Volume Recente (6h)</span>
-          <strong style={{ fontSize: '15px', color: '#0F172A', display: 'block' }}>
+        <div style={{ background: "var(--disk-bg-muted)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 600, display: 'block' }}>Volume Recente (6h)</span>
+          <strong style={{ fontSize: '15px', color: "var(--disk-text-primary)", display: 'block' }}>
             {kpis.totalImpressions6h.toLocaleString('pt-BR')} imp.
           </strong>
           <small style={{ fontSize: '10px', color: '#16A34A', fontWeight: 700 }}>
@@ -298,8 +298,8 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
       <div
         style={{
           padding: '12px 20px',
-          background: '#F8FAFC',
-          borderBottom: '1px solid #E2E8F0',
+          background: "var(--disk-bg-muted)",
+          borderBottom: "1px solid var(--disk-border-default)",
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -309,8 +309,8 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
       >
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Filter size={14} style={{ color: '#64748B' }} />
-            <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748B', textTransform: 'uppercase' }}>Canal:</span>
+            <Filter size={14} style={{ color: "var(--disk-text-muted)" }} />
+            <span style={{ fontSize: '11px', fontWeight: 700, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>Canal:</span>
           </div>
           {(['ALL', 'META', 'GOOGLE', 'TIKTOK', 'SPOTIFY'] as const).map(ch => {
             const isSel = selectedChannel === ch
@@ -345,12 +345,12 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
             style={{
               height: '34px',
               borderRadius: '6px',
-              border: '1px solid #CBD5E1',
+              border: "1px solid var(--disk-border-default)",
               padding: '0 8px',
               fontSize: '12px',
-              color: '#0F172A',
+              color: "var(--disk-text-primary)",
               fontWeight: 600,
-              background: '#FFFFFF'
+              background: "var(--disk-bg-surface)"
             }}
           >
             <option value="ALL">Todos os Status de Entrega</option>
@@ -362,7 +362,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
           </select>
 
           <div style={{ position: 'relative', width: '220px' }}>
-            <Search size={14} style={{ position: 'absolute', left: '8px', top: '10px', color: '#94A3B8' }} />
+            <Search size={14} style={{ position: 'absolute', left: '8px', top: '10px', color: "var(--disk-text-muted)" }} />
             <input
               type="text"
               placeholder="Buscar campanha..."
@@ -372,11 +372,11 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                 width: '100%',
                 height: '34px',
                 borderRadius: '6px',
-                border: '1px solid #CBD5E1',
+                border: "1px solid var(--disk-border-default)",
                 paddingLeft: '28px',
                 paddingRight: '8px',
                 fontSize: '12px',
-                background: '#FFFFFF'
+                background: "var(--disk-bg-surface)"
               }}
             />
           </div>
@@ -387,7 +387,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
       <div style={{ overflowX: 'auto' }}>
         <table className="growth-table" style={{ margin: 0, width: '100%' }}>
           <thead>
-            <tr style={{ background: '#F8FAFC', borderBottom: '1px solid #E2E8F0' }}>
+            <tr style={{ background: "var(--disk-bg-muted)", borderBottom: "1px solid var(--disk-border-default)" }}>
               <th style={{ width: '110px', padding: '10px 14px' }}>Canal</th>
               <th style={{ padding: '10px 14px' }}>Campanha & Evento</th>
               <th style={{ width: '130px', padding: '10px 14px' }}>Status Plataforma</th>
@@ -401,7 +401,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
           <tbody>
             {filteredCampaigns.length === 0 ? (
               <tr>
-                <td colSpan={8} style={{ textAlign: 'center', padding: '30px', color: '#64748B' }}>
+                <td colSpan={8} style={{ textAlign: 'center', padding: '30px', color: "var(--disk-text-muted)" }}>
                   Nenhuma campanha encontrada com os filtros selecionados.
                 </td>
               </tr>
@@ -449,13 +449,13 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                     {/* CAMPANHA & EVENTO */}
                     <td style={{ padding: '10px 14px' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                        <strong style={{ color: '#0F172A', fontSize: '13px' }}>{item.campaignName}</strong>
-                        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', fontSize: '11px', color: '#64748B' }}>
+                        <strong style={{ color: "var(--disk-text-primary)", fontSize: '13px' }}>{item.campaignName}</strong>
+                        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', fontSize: '11px', color: "var(--disk-text-muted)" }}>
                           <span>{item.eventName || 'Evento Geral'}</span>
                           {item.externalCampaignId && (
                             <>
                               <span>•</span>
-                              <code style={{ fontSize: '10px', color: '#2563EB', background: '#EFF6FF', padding: '1px 4px', borderRadius: '3px' }}>
+                              <code style={{ fontSize: '10px', color: '#2563EB', background: "var(--disk-color-info-subtle)", padding: '1px 4px', borderRadius: '3px' }}>
                                 {item.externalCampaignId}
                               </code>
                             </>
@@ -472,9 +472,9 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                           fontWeight: 700,
                           padding: '2px 8px',
                           borderRadius: '4px',
-                          background: '#F1F5F9',
-                          color: '#334155',
-                          border: '1px solid #CBD5E1'
+                          background: "var(--disk-bg-muted)",
+                          color: "var(--disk-text-secondary)",
+                          border: "1px solid var(--disk-border-default)"
                         }}
                       >
                         {item.platformStatusLabelPtBr}
@@ -536,9 +536,9 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                     </td>
 
                     {/* ÚLTIMA SINCRONIZAÇÃO */}
-                    <td style={{ padding: '10px 14px', fontSize: '11px', color: '#64748B' }}>
+                    <td style={{ padding: '10px 14px', fontSize: '11px', color: "var(--disk-text-muted)" }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                        <Clock size={12} style={{ color: '#94A3B8' }} />
+                        <Clock size={12} style={{ color: "var(--disk-text-muted)" }} />
                         <span>{item.lastSyncAt}</span>
                       </div>
                     </td>
@@ -553,8 +553,8 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                           style={{
                             padding: '4px 8px',
                             borderRadius: '4px',
-                            border: '1px solid #CBD5E1',
-                            background: '#FFFFFF',
+                            border: "1px solid var(--disk-border-default)",
+                            background: "var(--disk-bg-surface)",
                             color: '#2563EB',
                             fontSize: '11px',
                             fontWeight: 700,
@@ -576,9 +576,9 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                             width: '26px',
                             height: '26px',
                             borderRadius: '4px',
-                            border: '1px solid #CBD5E1',
-                            background: '#FFFFFF',
-                            color: '#475569',
+                            border: "1px solid var(--disk-border-default)",
+                            background: "var(--disk-bg-surface)",
+                            color: "var(--disk-text-secondary)",
                             display: 'grid',
                             placeItems: 'center',
                             cursor: 'pointer'
@@ -600,13 +600,13 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
       <div
         style={{
           padding: '12px 20px',
-          background: '#F8FAFC',
-          borderTop: '1px solid #E2E8F0',
+          background: "var(--disk-bg-muted)",
+          borderTop: "1px solid var(--disk-border-default)",
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           fontSize: '12px',
-          color: '#64748B',
+          color: "var(--disk-text-muted)",
           flexWrap: 'wrap',
           gap: '8px'
         }}
@@ -614,7 +614,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
         <span>
           Exibindo <strong>{filteredCampaigns.length}</strong> de <strong>{campaigns.length}</strong> campanhas ativas monitoradas.
         </span>
-        <span style={{ fontSize: '11px', color: '#475569' }}>
+        <span style={{ fontSize: '11px', color: "var(--disk-text-secondary)" }}>
           💡 As métricas de telemetria das últimas 6h refletem dados coletados diretamente das APIs de marketing.
         </span>
       </div>
@@ -633,7 +633,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
               width: 'min(780px, 95vw)',
               maxHeight: '92vh',
               overflowY: 'auto',
-              background: '#FFFFFF',
+              background: "var(--disk-bg-surface)",
               borderRadius: '12px',
               padding: '24px'
             }}
@@ -645,7 +645,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'flex-start',
-                borderBottom: '1px solid #E2E8F0',
+                borderBottom: "1px solid var(--disk-border-default)",
                 paddingBottom: '14px',
                 marginBottom: '16px'
               }}
@@ -676,10 +676,10 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                     {selectedDetailCampaign.deliveryMeta.label}
                   </span>
                 </div>
-                <h3 style={{ margin: '3px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>
+                <h3 style={{ margin: '3px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
                   {selectedDetailCampaign.campaignName}
                 </h3>
-                <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748B' }}>
+                <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                   Evento: <strong>{selectedDetailCampaign.eventName}</strong> • ID Externo:{' '}
                   <code>{selectedDetailCampaign.externalCampaignId || '—'}</code>
                 </p>
@@ -737,7 +737,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
 
             {/* NÍVEIS HIERÁRQUICOS DE STATUS DA PLATAFORMA */}
             <div style={{ marginBottom: '16px' }}>
-              <h4 style={{ fontSize: '13px', fontWeight: 800, color: '#0F172A', marginBottom: '8px' }}>
+              <h4 style={{ fontSize: '13px', fontWeight: 800, color: "var(--disk-text-primary)", marginBottom: '8px' }}>
                 1. Status Hierárquico na Plataforma ({MONITORED_CHANNELS_META[selectedDetailCampaign.channel].displayName})
               </h4>
               <div
@@ -745,18 +745,18 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                   display: 'grid',
                   gridTemplateColumns: 'repeat(3, 1fr)',
                   gap: '8px',
-                  background: '#F8FAFC',
+                  background: "var(--disk-bg-muted)",
                   padding: '12px',
                   borderRadius: '8px',
-                  border: '1px solid #E2E8F0'
+                  border: "1px solid var(--disk-border-default)"
                 }}
               >
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Nível Campanha</span>
-                  <strong style={{ fontSize: '13px', color: '#0F172A' }}>{selectedDetailCampaign.platformCampaignStatus}</strong>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Nível Campanha</span>
+                  <strong style={{ fontSize: '13px', color: "var(--disk-text-primary)" }}>{selectedDetailCampaign.platformCampaignStatus}</strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Nível Ad Set / Grupo</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Nível Ad Set / Grupo</span>
                   <strong
                     style={{
                       fontSize: '13px',
@@ -767,7 +767,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                   </strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Nível Anúncio / Criativo</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Nível Anúncio / Criativo</span>
                   <strong
                     style={{
                       fontSize: '13px',
@@ -782,7 +782,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
 
             {/* PROVA DE TELEMETRIA REAL (ÚLTIMAS 6 HORAS) */}
             <div style={{ marginBottom: '16px' }}>
-              <h4 style={{ fontSize: '13px', fontWeight: 800, color: '#0F172A', marginBottom: '8px' }}>
+              <h4 style={{ fontSize: '13px', fontWeight: 800, color: "var(--disk-text-primary)", marginBottom: '8px' }}>
                 2. Prova de Entrega Recente (Últimas 6 Horas)
               </h4>
               <div
@@ -790,33 +790,33 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                   display: 'grid',
                   gridTemplateColumns: 'repeat(4, 1fr)',
                   gap: '8px',
-                  background: '#F8FAFC',
+                  background: "var(--disk-bg-muted)",
                   padding: '12px',
                   borderRadius: '8px',
-                  border: '1px solid #E2E8F0'
+                  border: "1px solid var(--disk-border-default)"
                 }}
               >
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Impressões (6h)</span>
-                  <strong style={{ fontSize: '15px', color: '#0F172A' }}>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Impressões (6h)</span>
+                  <strong style={{ fontSize: '15px', color: "var(--disk-text-primary)" }}>
                     {selectedDetailCampaign.impressionsLast6h.toLocaleString('pt-BR')}
                   </strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Cliques (6h)</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Cliques (6h)</span>
                   <strong style={{ fontSize: '15px', color: '#2563EB' }}>
                     {selectedDetailCampaign.clicksLast6h.toLocaleString('pt-BR')}
                   </strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Gasto (6h)</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Gasto (6h)</span>
                   <strong style={{ fontSize: '15px', color: '#16A34A' }}>
                     {formatBrl(selectedDetailCampaign.spendLast6hCents)}
                   </strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Último Sinal</span>
-                  <strong style={{ fontSize: '13px', color: '#475569' }}>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Último Sinal</span>
+                  <strong style={{ fontSize: '13px', color: "var(--disk-text-secondary)" }}>
                     {selectedDetailCampaign.lastTelemetryAt}
                   </strong>
                 </div>
@@ -825,7 +825,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
 
             {/* HISTÓRICO ACUMULADO DA CAMPANHA */}
             <div style={{ marginBottom: '20px' }}>
-              <h4 style={{ fontSize: '13px', fontWeight: 800, color: '#0F172A', marginBottom: '8px' }}>
+              <h4 style={{ fontSize: '13px', fontWeight: 800, color: "var(--disk-text-primary)", marginBottom: '8px' }}>
                 3. Desempenho Acumulado no Evento
               </h4>
               <div
@@ -833,32 +833,32 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                   display: 'grid',
                   gridTemplateColumns: 'repeat(4, 1fr)',
                   gap: '8px',
-                  background: '#F8FAFC',
+                  background: "var(--disk-bg-muted)",
                   padding: '12px',
                   borderRadius: '8px',
-                  border: '1px solid #E2E8F0'
+                  border: "1px solid var(--disk-border-default)"
                 }}
               >
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Total Investido</span>
-                  <strong style={{ fontSize: '13px', color: '#0F172A' }}>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Total Investido</span>
+                  <strong style={{ fontSize: '13px', color: "var(--disk-text-primary)" }}>
                     {formatBrl(selectedDetailCampaign.totalSpentCents)}
                   </strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Receita Gerada</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Receita Gerada</span>
                   <strong style={{ fontSize: '13px', color: '#16A34A' }}>
                     {formatBrl(selectedDetailCampaign.totalRevenueCents)}
                   </strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Vendas / Conversões</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Vendas / Conversões</span>
                   <strong style={{ fontSize: '13px', color: '#2563EB' }}>
                     {selectedDetailCampaign.totalConversions}
                   </strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>ROAS Geral</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>ROAS Geral</span>
                   <strong style={{ fontSize: '13px', color: '#16A34A' }}>
                     {selectedDetailCampaign.roas ? `${selectedDetailCampaign.roas.toFixed(2)}x` : '—'}
                   </strong>
@@ -872,7 +872,7 @@ export const CampaignDeliveryMonitoringTable: React.FC<CampaignDeliveryMonitorin
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                borderTop: '1px solid #E2E8F0',
+                borderTop: "1px solid var(--disk-border-default)",
                 paddingTop: '14px'
               }}
             >

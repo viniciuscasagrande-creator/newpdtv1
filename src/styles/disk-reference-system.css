@@ -1,0 +1,151 @@
+/* Padrão visual compartilhado por páginas, componentes e portais de diálogo.
+   Cores de status e gráficos continuam nos respectivos tokens semânticos. */
+:root {
+  --disk-border: var(--disk-border-default);
+  --disk-master-radius: 6px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --ll-radius: 6px;
+  --ll-radius-sm: 4px;
+  --font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --font-size-page: 1.375rem;
+  --font-size-section: 1.125rem;
+  --font-size-card: .9375rem;
+  --font-size-kpi: 1.5rem;
+  --disk-master-shadow: 0 1px 3px rgb(0 0 0 / .08);
+  --disk-master-shadow-hover: 0 3px 10px rgb(0 0 0 / .12);
+  --di-bg: var(--disk-bg-app);
+  --di-border: var(--disk-border-default);
+  --di-text: var(--disk-text-primary);
+  --di-muted: var(--disk-text-muted);
+  --di-white: var(--disk-bg-surface);
+  --di-radius: 6px;
+  --di-shadow: var(--disk-master-shadow);
+}
+html.dark {
+  --disk-legacy-dark-surface: #25262c;
+  --disk-chart-grid: #46474d;
+  --disk-chart-axis: #a6a7b0;
+  --di-navy: #25262c;
+  --di-navy-2: #303138;
+}
+html[data-ui-framework='limitless'] body {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+}
+html[data-ui-framework='limitless'] :is(button, input, select, textarea) { font-family: inherit; }
+html[data-ui-framework='limitless'] .disk-main-content {
+  background: var(--disk-bg-app) !important;
+  color: var(--disk-text-primary);
+}
+html[data-ui-framework='limitless'] .commercial-dashboard {
+  --cd-ink: var(--disk-text-primary);
+  --cd-muted: var(--disk-text-muted);
+  --cd-bg: var(--disk-bg-app);
+  --cd-border: var(--disk-border-default);
+}
+/* As famílias compartilhadas preservam a disposição e os estados selecionados. */
+html[data-ui-framework='limitless'] :is(
+  .disk-card, .disk-kpi-card, .card, .panel, .table-card, .chart-card,
+  .metric-card, .summary-card, .kpi-card, .stat-card, .form-card, .filter-card,
+  .profile-kpi, .profile-section, .profile-shortcut, .event-card,
+  .event-os-panel, .event-os-kpi, .commercial-card, .commercial-kpi,
+  .finance-card, .finance-kpi, .growth-panel, .growth-kpi, .marketing-os-panel,
+  .module-hub-card, .di-card, .di-kpi, .estcc-card, .estcc-kpi
+) {
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--disk-master-shadow);
+}
+html[data-ui-framework='limitless'] :is(.disk-page-header, .page-header, .module-titlebar) {
+  gap: 16px;
+  color: var(--disk-text-primary);
+  border-color: var(--disk-border-default);
+}
+html[data-ui-framework='limitless'] .disk-main-content :is(h1, h2, h3) {
+  font-family: var(--font-sans);
+  line-height: 1.35;
+  letter-spacing: -.015em;
+}
+html[data-ui-framework='limitless'] :is(.card-title, .section-title, .panel-title) { font-size: 15px; font-weight: 600; }
+html[data-ui-framework='limitless'] :is(.kpi-value, .metric-value, .disk-kpi-value, td) { font-variant-numeric: tabular-nums; }
+/* Campos: mesma superfície em telas, filtros e modais. */
+html[data-ui-framework='limitless'] :is(.disk-main-content, [role='dialog'], .modal, .drawer) :is(input, select, textarea):not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):not([type='file']):not([type='hidden']):not([type='submit']):not([type='button']) {
+  background-color: var(--disk-bg-surface) !important;
+  border-color: var(--disk-border-default) !important;
+  color: var(--disk-text-primary) !important;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  min-width: 0;
+}
+html[data-ui-framework='limitless'] :is(input, textarea)::placeholder { color: var(--disk-text-muted); opacity: 1; }
+html[data-ui-framework='limitless'] :is(button, a, input, select, textarea):focus-visible {
+  outline: 2px solid var(--disk-color-info);
+  outline-offset: 2px;
+}
+html[data-ui-framework='limitless'] :is(input, select, textarea):disabled { opacity: .6; cursor: not-allowed; }
+html[data-ui-framework='limitless'] :is(.disk-main-content, [role='dialog']) table { color: var(--disk-text-primary); }
+html[data-ui-framework='limitless'] :is(.disk-main-content, [role='dialog']) thead th {
+  background: var(--disk-bg-muted);
+  color: var(--disk-text-secondary);
+  border-color: var(--disk-border-default);
+  font-size: 12px;
+  font-weight: 600;
+}
+html[data-ui-framework='limitless'] :is(.disk-main-content, [role='dialog']) tbody td { border-color: var(--disk-border-subtle); }
+html[data-ui-framework='limitless'] :is(.disk-main-content, [role='dialog']) tbody tr:hover { background-color: var(--disk-bg-hover); }
+html[data-ui-framework='limitless'] :is(.modal-content, .modal-card, .drawer-content, .di-modal, .estcc-modal, .dropdown-menu, .popover-content) {
+  background-color: var(--disk-bg-elevated);
+  color: var(--disk-text-primary);
+  border-color: var(--disk-border-default);
+  border-radius: var(--radius-lg);
+}
+html[data-ui-framework='limitless'] :is(.module-hub-container, .module-hub-title, .module-hub-card-title) { color: var(--disk-text-primary); }
+html[data-ui-framework='limitless'] :is(.module-hub-card, .module-hub-search-input) {
+  background: var(--disk-bg-surface);
+  color: var(--disk-text-primary);
+  border-color: var(--disk-border-default);
+}
+html[data-ui-framework='limitless'] .module-hub-card:hover { background: var(--disk-bg-hover); }
+@media (max-width: 640px) {
+  html[data-ui-framework='limitless'] :is(.di-content, .estcc-page, .module-hub-container) { padding: 12px; }
+  html[data-ui-framework='limitless'] :is(.disk-page-header, .page-header, .di-page-head, .estcc-page-head) { flex-wrap: wrap; gap: 12px; }
+}
+
+:root {
+  --disk-color-purple-subtle: #f5f3ff;
+  --disk-color-purple-border: #ddd6fe;
+  --disk-color-purple-text: #6d28d9;
+}
+html.dark {
+  --disk-color-purple-subtle: rgb(139 92 246 / .14);
+  --disk-color-purple-border: rgb(139 92 246 / .3);
+  --disk-color-purple-text: #c4b5fd;
+}
+html[data-ui-framework='limitless'] .finance-option-carousel {
+  background: var(--disk-bg-surface);
+  border-color: var(--disk-border-default);
+}
+html[data-ui-framework='limitless'] .ds-card-text h4 { white-space: normal; overflow: visible; }
+html[data-ui-framework='limitless'] .ds-module-card { border-radius: var(--radius-md); }
+/* A tela de acesso compartilha a mesma identidade das áreas autenticadas. */
+html[data-ui-framework='limitless'] .login-page,
+html[data-ui-framework='limitless'] .login-main { background: var(--disk-bg-app); color: var(--disk-text-primary); }
+html[data-ui-framework='limitless'] .login-aside { background: #131415; color: #f5f5f7; }
+html[data-ui-framework='limitless'] :is(.login-card, .login-input, .demo-access, .demo-btn) {
+  background: var(--disk-bg-surface);
+  color: var(--disk-text-primary);
+  border-color: var(--disk-border-default);
+}
+html[data-ui-framework='limitless'] .login-input input { color: var(--disk-text-primary); background: transparent; }
+html[data-ui-framework='limitless'] :is(.login-card h2, .login-card label) { color: var(--disk-text-primary); }
+html[data-ui-framework='limitless'] :is(.login-card-head p, .login-input, .login-options) { color: var(--disk-text-muted); }
+html[data-ui-framework='limitless'] .disk-main-content :is(h1, h2, h3) { font-weight: 600; }
+html.dark {
+  --secondary: 233 9% 18%;
+  --secondary-foreground: 240 11% 96%;
+  --accent: 228 4% 23%;
+  --accent-foreground: 240 11% 96%;
+}

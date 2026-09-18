@@ -185,7 +185,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
           gap: '12px',
           marginBottom: '16px',
           paddingBottom: '16px',
-          borderBottom: '1px solid #E2E8F0'
+          borderBottom: "1px solid var(--disk-border-default)"
         }}
       >
         <div>
@@ -199,8 +199,8 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                 fontSize: '11px',
                 fontWeight: 700,
                 color: '#2563EB',
-                background: '#EFF6FF',
-                border: '1px solid #BFDBFE',
+                background: "var(--disk-color-info-subtle)",
+                border: "1px solid var(--disk-color-info-border)",
                 padding: '3px 8px',
                 borderRadius: '6px',
                 cursor: 'pointer'
@@ -209,14 +209,14 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
               <ArrowLeft size={13} />
               Voltar ao Dashboard Marketing
             </button>
-            <span style={{ fontSize: '11px', color: '#94A3B8' }}>/</span>
-            <span style={{ fontSize: '11px', fontWeight: 700, color: '#0F172A' }}>Status Real das Campanhas</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>/</span>
+            <span style={{ fontSize: '11px', fontWeight: 700, color: "var(--disk-text-primary)" }}>Status Real das Campanhas</span>
           </div>
 
-          <h2 style={{ margin: 0, fontSize: '22px', fontWeight: 800, color: '#0F172A' }}>
+          <h2 style={{ margin: 0, fontSize: '22px', fontWeight: 800, color: "var(--disk-text-primary)" }}>
             Central de Status Real & Telemetria de Entrega
           </h2>
-          <p style={{ margin: '4px 0 0', fontSize: '13px', color: '#64748B' }}>
+          <p style={{ margin: '4px 0 0', fontSize: '13px', color: "var(--disk-text-muted)" }}>
             Auditoria contínua de entrega e diagnóstico de causa-raiz para <b>Meta Ads</b>, <b>Google Ads</b>, <b>TikTok Ads</b> e <b>Spotify Ads</b>.
           </p>
         </div>
@@ -232,9 +232,9 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                 padding: '0 12px',
                 fontSize: '12px',
                 fontWeight: 700,
-                background: '#FFFFFF',
-                color: '#0F172A',
-                border: '1px solid #CBD5E1',
+                background: "var(--disk-bg-surface)",
+                color: "var(--disk-text-primary)",
+                border: "1px solid var(--disk-border-default)",
                 borderRadius: '8px',
                 cursor: 'pointer'
               }}
@@ -296,18 +296,18 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 800, color: '#15803D', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, color: "var(--disk-color-success-text)", textTransform: 'uppercase' }}>
               Ativas e Entregando
             </span>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10B981' }} />
           </div>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <strong style={{ fontSize: '26px', fontWeight: 900, color: '#0F172A' }}>
+            <strong style={{ fontSize: '26px', fontWeight: 900, color: "var(--disk-text-primary)" }}>
               {kpis.deliveringCount}
             </strong>
-            <small style={{ fontSize: '11px', color: '#15803D', fontWeight: 700 }}>● Saudável</small>
+            <small style={{ fontSize: '11px', color: "var(--disk-color-success-text)", fontWeight: 700 }}>● Saudável</small>
           </div>
-          <span style={{ fontSize: '11px', color: '#64748B', display: 'block', marginTop: '4px' }}>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block', marginTop: '4px' }}>
             Impressões e cliques ativos nas últimas 6 horas
           </span>
         </div>
@@ -325,7 +325,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 800, color: '#B45309', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, color: "var(--disk-color-warning-text)", textTransform: 'uppercase' }}>
               Ativas sem Entrega
             </span>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#F59E0B' }} />
@@ -334,9 +334,9 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
             <strong style={{ fontSize: '26px', fontWeight: 900, color: '#D97706' }}>
               {kpis.noDeliveryCount}
             </strong>
-            <small style={{ fontSize: '11px', color: '#B45309', fontWeight: 700 }}>⚠️ Atenção</small>
+            <small style={{ fontSize: '11px', color: "var(--disk-color-warning-text)", fontWeight: 700 }}>⚠️ Atenção</small>
           </div>
-          <span style={{ fontSize: '11px', color: '#64748B', display: 'block', marginTop: '4px' }}>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block', marginTop: '4px' }}>
             Ativa na plataforma porém sem impressões geradas
           </span>
         </div>
@@ -354,7 +354,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 800, color: '#1D4ED8', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, color: "var(--disk-color-info-text)", textTransform: 'uppercase' }}>
               Em Análise / Fila
             </span>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#3B82F6' }} />
@@ -363,9 +363,9 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
             <strong style={{ fontSize: '26px', fontWeight: 900, color: '#2563EB' }}>
               {kpis.inReviewCount}
             </strong>
-            <small style={{ fontSize: '11px', color: '#1D4ED8', fontWeight: 700 }}>⏳ Moderação</small>
+            <small style={{ fontSize: '11px', color: "var(--disk-color-info-text)", fontWeight: 700 }}>⏳ Moderação</small>
           </div>
-          <span style={{ fontSize: '11px', color: '#64748B', display: 'block', marginTop: '4px' }}>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block', marginTop: '4px' }}>
             Aguardando validação algorítmica e humana
           </span>
         </div>
@@ -383,7 +383,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-            <span style={{ fontSize: '11px', fontWeight: 800, color: '#B91C1C', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '11px', fontWeight: 800, color: "var(--disk-color-danger-text)", textTransform: 'uppercase' }}>
               Com Problemas / Erro
             </span>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#EF4444' }} />
@@ -392,9 +392,9 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
             <strong style={{ fontSize: '26px', fontWeight: 900, color: '#DC2626' }}>
               {kpis.rejectedCount}
             </strong>
-            <small style={{ fontSize: '11px', color: '#B91C1C', fontWeight: 700 }}>🚨 Ação necessária</small>
+            <small style={{ fontSize: '11px', color: "var(--disk-color-danger-text)", fontWeight: 700 }}>🚨 Ação necessária</small>
           </div>
-          <span style={{ fontSize: '11px', color: '#64748B', display: 'block', marginTop: '4px' }}>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block', marginTop: '4px' }}>
             Criativos reprovados, saldo esgotado ou conta bloqueada
           </span>
         </div>
@@ -403,8 +403,8 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
       {/* 3. Filter Tools Bar (Channel + Status + Search) */}
       <div
         style={{
-          background: '#FFFFFF',
-          border: '1px solid #E2E8F0',
+          background: "var(--disk-bg-surface)",
+          border: "1px solid var(--disk-border-default)",
           borderRadius: '10px',
           padding: '14px 16px',
           marginBottom: '16px',
@@ -454,7 +454,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
 
           {/* Search Box */}
           <div style={{ position: 'relative', width: '280px' }}>
-            <Search size={14} style={{ position: 'absolute', left: '10px', top: '10px', color: '#94A3B8' }} />
+            <Search size={14} style={{ position: 'absolute', left: '10px', top: '10px', color: "var(--disk-text-muted)" }} />
             <input
               value={search}
               onChange={e => setSearch(e.target.value)}
@@ -464,10 +464,10 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                 height: '34px',
                 padding: '0 10px 0 32px',
                 fontSize: '12px',
-                background: '#F8FAFC',
-                border: '1px solid #CBD5E1',
+                background: "var(--disk-bg-muted)",
+                border: "1px solid var(--disk-border-default)",
                 borderRadius: '6px',
-                color: '#0F172A',
+                color: "var(--disk-text-primary)",
                 outline: 'none'
               }}
             />
@@ -481,7 +481,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                   background: 'none',
                   border: 0,
                   cursor: 'pointer',
-                  color: '#94A3B8'
+                  color: "var(--disk-text-muted)"
                 }}
               >
                 <X size={13} />
@@ -491,8 +491,8 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
         </div>
 
         {/* Status Filter Pills */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '6px', paddingTop: '8px', borderTop: '1px solid #F1F5F9' }}>
-          <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748B', marginRight: '4px' }}>Status:</span>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '6px', paddingTop: '8px', borderTop: "1px solid var(--disk-border-default)" }}>
+          <span style={{ fontSize: '11px', fontWeight: 700, color: "var(--disk-text-muted)", marginRight: '4px' }}>Status:</span>
           {[
             { key: 'ALL', label: 'Todos os Status' },
             { key: 'ACTIVE_DELIVERING', label: '🟢 Entregando' },
@@ -530,8 +530,8 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
       {/* 4. Campaigns Table */}
       <div
         style={{
-          background: '#FFFFFF',
-          border: '1px solid #E2E8F0',
+          background: "var(--disk-bg-surface)",
+          border: "1px solid var(--disk-border-default)",
           borderRadius: '10px',
           overflow: 'hidden',
           boxShadow: '0 1px 3px rgba(0,0,0,0.03)'
@@ -540,17 +540,17 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
         <div
           style={{
             padding: '12px 16px',
-            background: '#F8FAFC',
-            borderBottom: '1px solid #E2E8F0',
+            background: "var(--disk-bg-muted)",
+            borderBottom: "1px solid var(--disk-border-default)",
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between'
           }}
         >
-          <span style={{ fontSize: '12px', fontWeight: 700, color: '#334155' }}>
+          <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-secondary)" }}>
             {filteredCampaigns.length} campanhas monitoradas
           </span>
-          <span style={{ fontSize: '11px', color: '#64748B' }}>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>
             Telemetria direta das APIs Graph, Google Ads, TikTok e Spotify v3
           </span>
         </div>
@@ -558,7 +558,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
             <thead>
-              <tr style={{ background: '#F8FAFC', borderBottom: '1px solid #E2E8F0', color: '#64748B', textAlign: 'left' }}>
+              <tr style={{ background: "var(--disk-bg-muted)", borderBottom: "1px solid var(--disk-border-default)", color: "var(--disk-text-muted)", textAlign: 'left' }}>
                 <th style={{ padding: '10px 14px', fontWeight: 700 }}>Canal</th>
                 <th style={{ padding: '10px 14px', fontWeight: 700 }}>Campanha & Evento</th>
                 <th style={{ padding: '10px 14px', fontWeight: 700 }}>Status Plataforma</th>
@@ -580,7 +580,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                   <tr
                     key={c.id}
                     style={{
-                      borderBottom: '1px solid #F1F5F9',
+                      borderBottom: "1px solid var(--disk-border-default)",
                       transition: 'background 0.15s ease'
                     }}
                   >
@@ -605,10 +605,10 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
 
                     {/* Campanha & Evento */}
                     <td style={{ padding: '12px 14px', verticalAlign: 'middle' }}>
-                      <strong style={{ display: 'block', color: '#0F172A', fontSize: '13px' }}>
+                      <strong style={{ display: 'block', color: "var(--disk-text-primary)", fontSize: '13px' }}>
                         {c.campaignName}
                       </strong>
-                      <small style={{ color: '#64748B' }}>
+                      <small style={{ color: "var(--disk-text-muted)" }}>
                         {c.eventName} • <code>{c.externalCampaignId}</code>
                       </small>
                     </td>
@@ -623,8 +623,8 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                           borderRadius: '4px',
                           fontSize: '11px',
                           fontWeight: 700,
-                          background: '#F1F5F9',
-                          color: '#334155'
+                          background: "var(--disk-bg-muted)",
+                          color: "var(--disk-text-secondary)"
                         }}
                       >
                         {c.platformStatusLabelPtBr}
@@ -683,7 +683,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                     {/* Diagnóstico / Causa */}
                     <td style={{ padding: '12px 14px', verticalAlign: 'middle', maxWidth: '280px' }}>
                       {c.issueReason ? (
-                        <div style={{ fontSize: '11px', color: '#B45309', display: 'flex', alignItems: 'flex-start', gap: '4px' }}>
+                        <div style={{ fontSize: '11px', color: "var(--disk-color-warning-text)", display: 'flex', alignItems: 'flex-start', gap: '4px' }}>
                           <AlertTriangle size={13} style={{ flexShrink: 0, marginTop: '2px' }} />
                           <span style={{ lineHeight: '1.3' }}>{c.issueReason}</span>
                         </div>
@@ -707,9 +707,9 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                             padding: '0 8px',
                             fontSize: '11px',
                             fontWeight: 700,
-                            background: '#EFF6FF',
+                            background: "var(--disk-color-info-subtle)",
                             color: '#2563EB',
-                            border: '1px solid #BFDBFE',
+                            border: "1px solid var(--disk-color-info-border)",
                             borderRadius: '6px',
                             cursor: 'pointer',
                             display: 'inline-flex',
@@ -732,9 +732,9 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                             display: 'inline-flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            background: '#F8FAFC',
-                            color: '#475569',
-                            border: '1px solid #CBD5E1',
+                            background: "var(--disk-bg-muted)",
+                            color: "var(--disk-text-secondary)",
+                            border: "1px solid var(--disk-border-default)",
                             borderRadius: '6px',
                             cursor: isItemSyncing ? 'not-allowed' : 'pointer'
                           }}
@@ -771,7 +771,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
               width: '560px',
               maxWidth: '90vw',
               height: '100%',
-              background: '#FFFFFF',
+              background: "var(--disk-bg-surface)",
               boxShadow: '-4px 0 24px rgba(0,0,0,0.15)',
               padding: '24px',
               overflowY: 'auto',
@@ -781,7 +781,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
             }}
           >
             {/* Drawer Header */}
-            <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', borderBottom: '1px solid #E2E8F0', paddingBottom: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '16px' }}>
               <div>
                 <span
                   style={{
@@ -789,17 +789,17 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                     fontWeight: 800,
                     textTransform: 'uppercase',
                     color: '#2563EB',
-                    background: '#EFF6FF',
+                    background: "var(--disk-color-info-subtle)",
                     padding: '2px 8px',
                     borderRadius: '4px'
                   }}
                 >
                   DIAGNÓSTICO AUTOMATIZADO · FASE 28.13.2
                 </span>
-                <h3 style={{ margin: '6px 0 0', fontSize: '18px', fontWeight: 800, color: '#0F172A' }}>
+                <h3 style={{ margin: '6px 0 0', fontSize: '18px', fontWeight: 800, color: "var(--disk-text-primary)" }}>
                   {selectedDiagnostic.campaignName}
                 </h3>
-                <small style={{ color: '#64748B' }}>
+                <small style={{ color: "var(--disk-text-muted)" }}>
                   Canal: <b>{selectedDiagnostic.channel}</b> • Evento: <b>{selectedDiagnostic.eventName}</b>
                 </small>
               </div>
@@ -810,7 +810,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                   background: 'none',
                   border: 0,
                   fontSize: '18px',
-                  color: '#64748B',
+                  color: "var(--disk-text-muted)",
                   cursor: 'pointer'
                 }}
               >
@@ -828,7 +828,7 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                <span style={{ fontSize: '12px', fontWeight: 800, color: '#0F172A' }}>
+                <span style={{ fontSize: '12px', fontWeight: 800, color: "var(--disk-text-primary)" }}>
                   Avaliação da Telemetria:
                 </span>
                 <span
@@ -843,24 +843,24 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                   {selectedDiagnostic.deliveryMeta.label}
                 </span>
               </div>
-              <p style={{ margin: 0, fontSize: '12px', color: '#334155' }}>
+              <p style={{ margin: 0, fontSize: '12px', color: "var(--disk-text-secondary)" }}>
                 {selectedDiagnostic.issueReason || 'A campanha possui entrega ativa e contínua, com telemetria confirmada na plataforma oficial.'}
               </p>
             </div>
 
             {/* Why This Happened & Step-by-Step Resolution */}
-            <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '14px' }}>
-              <h4 style={{ margin: '0 0 8px', fontSize: '13px', fontWeight: 800, color: '#0F172A' }}>
+            <div style={{ background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '14px' }}>
+              <h4 style={{ margin: '0 0 8px', fontSize: '13px', fontWeight: 800, color: "var(--disk-text-primary)" }}>
                 📋 Análise de Causa-Raiz & Ação Sugerida
               </h4>
 
               {selectedDiagnostic.deliveryStatus === 'ACTIVE_NO_DELIVERY' && (
-                <div style={{ fontSize: '12px', color: '#334155', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ fontSize: '12px', color: "var(--disk-text-secondary)", display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <p style={{ margin: 0 }}>
                     <b>Motivo identificado:</b> A campanha está habilitada na plataforma externa, mas nenhuma impressão foi registrada nas últimas 6 horas.
                   </p>
-                  <div style={{ background: '#FFFFFF', padding: '10px', borderRadius: '6px', border: '1px solid #CBD5E1' }}>
-                    <strong style={{ color: '#B45309', display: 'block', marginBottom: '4px' }}>Como resolver:</strong>
+                  <div style={{ background: "var(--disk-bg-surface)", padding: '10px', borderRadius: '6px', border: "1px solid var(--disk-border-default)" }}>
+                    <strong style={{ color: "var(--disk-color-warning-text)", display: 'block', marginBottom: '4px' }}>Como resolver:</strong>
                     <ol style={{ margin: 0, paddingLeft: '18px' }}>
                       <li>Verifique se o lance de lance mínimo (CPC/CPA) do leilão foi atingido.</li>
                       <li>Confirme se o saldo pré-pago ou limite de crédito da conta foi esgotado.</li>
@@ -871,12 +871,12 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
               )}
 
               {selectedDiagnostic.deliveryStatus === 'REJECTED' && (
-                <div style={{ fontSize: '12px', color: '#334155', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ fontSize: '12px', color: "var(--disk-text-secondary)", display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <p style={{ margin: 0 }}>
                     <b>Motivo identificado:</b> O anúncio ou criativo foi reprovado pela política de publicidade da plataforma parceira.
                   </p>
-                  <div style={{ background: '#FFFFFF', padding: '10px', borderRadius: '6px', border: '1px solid #CBD5E1' }}>
-                    <strong style={{ color: '#B91C1C', display: 'block', marginBottom: '4px' }}>Como resolver:</strong>
+                  <div style={{ background: "var(--disk-bg-surface)", padding: '10px', borderRadius: '6px', border: "1px solid var(--disk-border-default)" }}>
+                    <strong style={{ color: "var(--disk-color-danger-text)", display: 'block', marginBottom: '4px' }}>Como resolver:</strong>
                     <ol style={{ margin: 0, paddingLeft: '18px' }}>
                       <li>Substitua a imagem ou áudio do anúncio adequando aos padrões da plataforma.</li>
                       <li>Solicite reanálise no painel de moderação da ferramenta (Meta / Google / Spotify).</li>
@@ -886,18 +886,18 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
               )}
 
               {selectedDiagnostic.deliveryStatus === 'PENDING_REVIEW' && (
-                <div style={{ fontSize: '12px', color: '#334155', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ fontSize: '12px', color: "var(--disk-text-secondary)", display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <p style={{ margin: 0 }}>
                     <b>Motivo identificado:</b> O anúncio está na fila de moderação padrão.
                   </p>
-                  <div style={{ background: '#FFFFFF', padding: '10px', borderRadius: '6px', border: '1px solid #CBD5E1' }}>
-                    <span style={{ color: '#1D4ED8' }}>Tempo médio de espera: entre 30 e 90 minutos para aprovação.</span>
+                  <div style={{ background: "var(--disk-bg-surface)", padding: '10px', borderRadius: '6px', border: "1px solid var(--disk-border-default)" }}>
+                    <span style={{ color: "var(--disk-color-info-text)" }}>Tempo médio de espera: entre 30 e 90 minutos para aprovação.</span>
                   </div>
                 </div>
               )}
 
               {selectedDiagnostic.deliveryStatus === 'ACTIVE_DELIVERING' && (
-                <div style={{ fontSize: '12px', color: '#15803D' }}>
+                <div style={{ fontSize: '12px', color: "var(--disk-color-success-text)" }}>
                   Campanha funcionando com excelência. ROAS atual: <b>{selectedDiagnostic.roas || '5.5'}x</b>. Nenhuma ação corretiva necessária.
                 </div>
               )}
@@ -905,18 +905,18 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
 
             {/* Metrics Breakdown */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-              <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '10px', borderRadius: '6px' }}>
-                <span style={{ fontSize: '11px', color: '#64748B' }}>Impressões (6h)</span>
-                <strong style={{ display: 'block', fontSize: '16px', color: '#0F172A' }}>{selectedDiagnostic.impressionsLast6h.toLocaleString('pt-BR')}</strong>
+              <div style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '10px', borderRadius: '6px' }}>
+                <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>Impressões (6h)</span>
+                <strong style={{ display: 'block', fontSize: '16px', color: "var(--disk-text-primary)" }}>{selectedDiagnostic.impressionsLast6h.toLocaleString('pt-BR')}</strong>
               </div>
-              <div style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '10px', borderRadius: '6px' }}>
-                <span style={{ fontSize: '11px', color: '#64748B' }}>Gasto (6h)</span>
-                <strong style={{ display: 'block', fontSize: '16px', color: '#15803D' }}>{formatBrl(selectedDiagnostic.spendLast6hCents)}</strong>
+              <div style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '10px', borderRadius: '6px' }}>
+                <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>Gasto (6h)</span>
+                <strong style={{ display: 'block', fontSize: '16px', color: "var(--disk-color-success-text)" }}>{formatBrl(selectedDiagnostic.spendLast6hCents)}</strong>
               </div>
             </div>
 
             {/* Drawer Actions */}
-            <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: '1px solid #E2E8F0', display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
+            <div style={{ marginTop: 'auto', paddingTop: '16px', borderTop: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
               <button
                 type="button"
                 onClick={() => setSelectedDiagnostic(null)}
@@ -925,9 +925,9 @@ export const CampaignRealStatusPage: React.FC<CampaignRealStatusPageProps> = ({
                   padding: '0 14px',
                   fontSize: '12px',
                   fontWeight: 700,
-                  background: '#F1F5F9',
-                  color: '#475569',
-                  border: '1px solid #CBD5E1',
+                  background: "var(--disk-bg-muted)",
+                  color: "var(--disk-text-secondary)",
+                  border: "1px solid var(--disk-border-default)",
                   borderRadius: '6px',
                   cursor: 'pointer'
                 }}

@@ -44,7 +44,7 @@ export default function EventTrackingSelector({ events, selectedEventId, onSelec
 
       {events.length > 1 && (
         <div className="event-picker-dropdown">
-          <label htmlFor="event-selector-select" style={{ fontSize: '12px', fontWeight: 600, color: '#475569' }}>
+          <label htmlFor="event-selector-select" style={{ fontSize: '12px', fontWeight: 600, color: "var(--disk-text-secondary)" }}>
             Alterar Evento:
           </label>
           <div style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
@@ -60,7 +60,7 @@ export default function EventTrackingSelector({ events, selectedEventId, onSelec
                 </option>
               ))}
             </select>
-            <ChevronDown size={14} style={{ position: 'absolute', right: '10px', pointerEvents: 'none', color: '#64748b' }} />
+            <ChevronDown size={14} style={{ position: 'absolute', right: '10px', pointerEvents: 'none', color: "var(--disk-text-muted)" }} />
           </div>
         </div>
       )}

@@ -522,7 +522,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
             </div>
 
             <div className="ds-modules-grid">
-              <div className="ds-module-card" onClick={() => setActiveTab('search360')} style={{ border: '2px solid #2563eb', background: '#eff6ff' }}>
+              <div className="ds-module-card" onClick={() => setActiveTab('search360')} style={{ border: '2px solid #2563eb', background: "var(--disk-color-info-subtle)" }}>
                 <div className="ds-card-icon-wrap blue"><Search size={22} /></div>
                 <div className="ds-card-text"><h4>Busca ID</h4><p>Localização rápida por CPF, pedido, nome, fone ou ingresso</p></div>
                 <ChevronRight size={18} className="ds-card-chevron" style={{ color: '#2563eb' }} />
@@ -664,7 +664,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
 
             <div className="ds-quick-actions-bar">
               <button className="ds-quick-action-pill" onClick={() => setActiveTab('new')}><Plus size={14} style={{ color: '#059669' }} /> Novo Ticket</button>
-              <button className="ds-quick-action-pill" onClick={() => onNavigate('customer-search-hub')} style={{ background: '#f5f3ff', borderColor: '#c4b5fd', color: '#6d28d9', fontWeight: 'bold' }}><Users size={14} style={{ color: '#7c3aed' }} /> Central de Clientes</button>
+              <button className="ds-quick-action-pill" onClick={() => onNavigate('customer-search-hub')} style={{ background: "var(--disk-color-purple-subtle)", borderColor: "var(--disk-color-purple-border)", color: "var(--disk-color-purple-text)", fontWeight: 'bold' }}><Users size={14} style={{ color: '#7c3aed' }} /> Central de Clientes</button>
               <button className="ds-quick-action-pill" onClick={() => onNavigate('tickets-hub')}><Ticket size={14} style={{ color: '#2563eb' }} /> Ingressos & QR</button>
               <button className="ds-quick-action-pill" onClick={() => onNavigate('access-control-hub')}><ScanLine size={14} style={{ color: '#059669' }} /> Disk Acesso</button>
               <button className="ds-quick-action-pill" onClick={() => setActiveTab('incidents')}><AlertTriangle size={14} style={{ color: '#dc2626' }} /> Novo Incidente</button>
@@ -718,7 +718,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                     <div className="ds-cockpit-name-block">
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
                         <span style={{ background: '#2563eb', color: '#fff', fontSize: '10px', fontWeight: 800, padding: '2px 8px', borderRadius: '6px' }}>CLIENTE IDENTIFICADO</span>
-                        <span style={{ background: '#eff6ff', color: '#2563eb', fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '6px', border: '1px solid #bfdbfe' }}>Busca via {detectedType}</span>
+                        <span style={{ background: "var(--disk-color-info-subtle)", color: '#2563eb', fontSize: '10px', fontWeight: 700, padding: '2px 8px', borderRadius: '6px', border: "1px solid var(--disk-color-info-border)" }}>Busca via {detectedType}</span>
                       </div>
                       <h2>{customer360.customer.name}</h2>
                       <p>
@@ -765,11 +765,11 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   </button>
                 </div>
 
-                <div style={{ background: '#f5f3ff', border: '1px solid #ddd6fe', borderRadius: '14px', padding: '16px 20px' }}>
+                <div style={{ background: "var(--disk-color-purple-subtle)", border: "1px solid var(--disk-color-purple-border)", borderRadius: '14px', padding: '16px 20px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <Bot size={18} style={{ color: '#7c3aed' }} />
-                      <strong style={{ color: '#5b21b6', fontSize: '14px' }}>Diagnóstico Disk Copilot IA (SAC Integrado)</strong>
+                      <strong style={{ color: "var(--disk-color-purple-text)", fontSize: '14px' }}>Diagnóstico Disk Copilot IA (SAC Integrado)</strong>
                     </div>
                     <span className="ds-mini-tag purple" style={{ position: 'static' }}>96% Confiança</span>
                   </div>
@@ -816,7 +816,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
 
                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
                       <thead>
-                        <tr style={{ borderBottom: '1px solid #e2e8f0', color: '#64748b', textAlign: 'left' }}>
+                        <tr style={{ borderBottom: "1px solid var(--disk-border-default)", color: "var(--disk-text-muted)", textAlign: 'left' }}>
                           <th style={{ padding: '8px' }}>Ingresso</th>
                           <th style={{ padding: '8px' }}>Evento</th>
                           <th style={{ padding: '8px' }}>Status</th>
@@ -825,7 +825,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                       </thead>
                       <tbody>
                         {customer360.ingressos.map(ing => (
-                          <tr key={ing.id} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                          <tr key={ing.id} style={{ borderBottom: "1px solid var(--disk-border-default)" }}>
                             <td style={{ padding: '8px' }}><b>{ing.ticket_code}</b></td>
                             <td style={{ padding: '8px' }}>{ing.event_name}</td>
                             <td style={{ padding: '8px' }}><span className="status-pill green">{ing.status}</span></td>
@@ -845,7 +845,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
 
                     <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '12px' }}>
                       <thead>
-                        <tr style={{ borderBottom: '1px solid #e2e8f0', color: '#64748b', textAlign: 'left' }}>
+                        <tr style={{ borderBottom: "1px solid var(--disk-border-default)", color: "var(--disk-text-muted)", textAlign: 'left' }}>
                           <th style={{ padding: '8px' }}>Protocolo</th>
                           <th style={{ padding: '8px' }}>Assunto</th>
                           <th style={{ padding: '8px' }}>Pri.</th>
@@ -854,7 +854,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                       </thead>
                       <tbody>
                         {customer360.sacTickets.map(st => (
-                          <tr key={st.id} style={{ borderBottom: '1px solid #f1f5f9' }}>
+                          <tr key={st.id} style={{ borderBottom: "1px solid var(--disk-border-default)" }}>
                             <td style={{ padding: '8px' }}><b>{st.ticket_number}</b></td>
                             <td style={{ padding: '8px' }}>{st.subject}</td>
                             <td style={{ padding: '8px' }}><span className="priority-tag P1">{st.priority}</span></td>
@@ -908,7 +908,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   <h3 className="ds-bi-card-title"><BarChart3 size={18} style={{ color: '#2563eb' }} /> Volume de Tickets</h3>
                   <select className="ds-filter-select"><option>Últimos 7 dias</option></select>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', height: '170px', padding: '10px 0', borderBottom: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', height: '170px', padding: '10px 0', borderBottom: "1px solid var(--disk-border-default)" }}>
                   {[
                     { day: '13/05', open: 280, closed: 210 },
                     { day: '14/05', open: 310, closed: 260 },
@@ -923,7 +923,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                         <div style={{ width: '12px', background: '#2563eb', height: `${(d.open / 350) * 125}px`, borderRadius: '3px 3px 0 0' }} />
                         <div style={{ width: '12px', background: '#059669', height: `${(d.closed / 350) * 125}px`, borderRadius: '3px 3px 0 0' }} />
                       </div>
-                      <span style={{ fontSize: '10px', color: '#64748b' }}>{d.day}</span>
+                      <span style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>{d.day}</span>
                     </div>
                   ))}
                 </div>
@@ -976,7 +976,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                 </div>
                 <div style={{ textAlign: 'center', padding: '20px 0' }}>
                   <div style={{ fontSize: '42px', fontWeight: 800, color: '#059669' }}>92.4%</div>
-                  <p style={{ margin: '4px 0 0', color: '#64748b', fontSize: '13px' }}>110 de 128 chamados resolvidos dentro do prazo</p>
+                  <p style={{ margin: '4px 0 0', color: "var(--disk-text-muted)", fontSize: '13px' }}>110 de 128 chamados resolvidos dentro do prazo</p>
                 </div>
               </div>
 
@@ -990,10 +990,10 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                     { name: 'Beatriz N2', count: 36, sla: '96.2%' },
                     { name: 'Fernando Atendente', count: 28, sla: '94.0%' },
                   ].map((ag, i) => (
-                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 12px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                    <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 12px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
                       <div>
                         <strong>{ag.name}</strong>
-                        <div style={{ fontSize: '11px', color: '#64748b' }}>{ag.count} chamados resolvidos</div>
+                        <div style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>{ag.count} chamados resolvidos</div>
                       </div>
                       <span className="ds-badge green">{ag.sla} SLA</span>
                     </div>
@@ -1013,8 +1013,8 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                     { cat: 'Alteração Cadastral', pct: '12%' },
                   ].map((ct, i) => (
                     <div key={i} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px' }}>
-                      <span style={{ color: '#334155' }}>{ct.cat}</span>
-                      <strong style={{ color: '#0f172a' }}>{ct.pct}</strong>
+                      <span style={{ color: "var(--disk-text-secondary)" }}>{ct.cat}</span>
+                      <strong style={{ color: "var(--disk-text-primary)" }}>{ct.pct}</strong>
                     </div>
                   ))}
                 </div>
@@ -1087,7 +1087,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                         <td><strong>{t.code}</strong></td>
                         <td>
                           <b>{t.customer}</b>
-                          <div style={{ fontSize: '11px', color: '#64748b' }}>{t.event}</div>
+                          <div style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>{t.event}</div>
                         </td>
                         <td>
                           <span className="ds-badge blue">{t.channel}</span>
@@ -1124,7 +1124,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                             <button
                               onClick={() => notify(`Chamado ${t.code} resolvido e notificação enviada para ${t.customer}!`)}
                               className="ds-operator-btn"
-                              style={{ padding: '4px 8px', fontSize: '11px', background: '#ecfdf5', color: '#059669', borderColor: '#a7f3d0' }}
+                              style={{ padding: '4px 8px', fontSize: '11px', background: "var(--disk-color-success-subtle)", color: '#059669', borderColor: "var(--disk-color-success-border)" }}
                             >
                               <Check size={12} /> Resolver
                             </button>
@@ -1147,15 +1147,15 @@ export default function SupportPage({ events, producerId, producerName, mode = '
               
               {/* Painel 1: Lista de Conversas */}
               <div className="ds-inbox-conversations-panel">
-                <div style={{ padding: '14px 16px', borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                <div style={{ padding: '14px 16px', borderBottom: "1px solid var(--disk-border-default)", background: "var(--disk-bg-muted)" }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                    <strong style={{ fontSize: '14px', color: '#0f172a' }}>Caixa de Entrada Omnichannel</strong>
+                    <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)" }}>Caixa de Entrada Omnichannel</strong>
                     <span className="ds-badge blue">4 ativas</span>
                   </div>
                   <input
                     type="text"
                     placeholder="Filtrar conversas..."
-                    style={{ width: '100%', background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '6px 10px', fontSize: '12px' }}
+                    style={{ width: '100%', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '6px 10px', fontSize: '12px' }}
                   />
                 </div>
 
@@ -1171,11 +1171,11 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                           {c.channel === 'WhatsApp' ? <Phone size={13} style={{ color: '#16a34a' }} /> : <Mail size={13} style={{ color: '#2563eb' }} />}
                           {c.customer}
                         </span>
-                        <small style={{ fontSize: '11px', color: '#94a3b8' }}>{c.time}</small>
+                        <small style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>{c.time}</small>
                       </div>
                       <span className="ds-conv-preview">{c.lastMsg}</span>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4px' }}>
-                        <span style={{ fontSize: '10px', color: '#64748b' }}>{c.phone}</span>
+                        <span style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>{c.phone}</span>
                         {c.unread > 0 && <span className="ds-badge-count-pill" style={{ position: 'static' }}>{c.unread}</span>}
                       </div>
                     </div>
@@ -1185,10 +1185,10 @@ export default function SupportPage({ events, producerId, producerName, mode = '
 
               {/* Painel 2: Chat / Histórico de Mensagens */}
               <div className="ds-inbox-chat-panel">
-                <div style={{ padding: '14px 20px', borderBottom: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#ffffff' }}>
+                <div style={{ padding: '14px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: "var(--disk-bg-surface)" }}>
                   <div>
-                    <h3 style={{ margin: 0, fontSize: '15px', color: '#0f172a' }}>{selectedConv.customer}</h3>
-                    <span style={{ fontSize: '12px', color: '#64748b' }}>Canal: {selectedConv.channel} ({selectedConv.phone})</span>
+                    <h3 style={{ margin: 0, fontSize: '15px', color: "var(--disk-text-primary)" }}>{selectedConv.customer}</h3>
+                    <span style={{ fontSize: '12px', color: "var(--disk-text-muted)" }}>Canal: {selectedConv.channel} ({selectedConv.phone})</span>
                   </div>
                   <div style={{ display: 'flex', gap: '8px' }}>
                     <button
@@ -1215,7 +1215,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   <div className="ds-chat-bubble customer">
                     <strong>{selectedConv.customer}</strong>
                     <p style={{ margin: '4px 0 0' }}>{selectedConv.lastMsg}</p>
-                    <small style={{ fontSize: '10px', color: '#64748b', display: 'block', marginTop: '4px' }}>10:48 • Recebido via {selectedConv.channel}</small>
+                    <small style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block', marginTop: '4px' }}>10:48 • Recebido via {selectedConv.channel}</small>
                   </div>
 
                   <div className="ds-chat-bubble agent">
@@ -1258,14 +1258,14 @@ export default function SupportPage({ events, producerId, producerName, mode = '
 
               {/* Painel 3: Contexto 360 Lateral */}
               <div className="ds-inbox-context-panel">
-                <div style={{ borderBottom: '1px solid #e2e8f0', paddingBottom: '12px' }}>
-                  <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 800, textTransform: 'uppercase' }}>Perfil do Solicitante</span>
-                  <h4 style={{ margin: '4px 0 2px', fontSize: '16px', color: '#0f172a' }}>{selectedConv.customer}</h4>
-                  <p style={{ margin: 0, fontSize: '12px', color: '#64748b' }}>Cliente desde 2024 • 3 pedidos • VIP</p>
+                <div style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '12px' }}>
+                  <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 800, textTransform: 'uppercase' }}>Perfil do Solicitante</span>
+                  <h4 style={{ margin: '4px 0 2px', fontSize: '16px', color: "var(--disk-text-primary)" }}>{selectedConv.customer}</h4>
+                  <p style={{ margin: 0, fontSize: '12px', color: "var(--disk-text-muted)" }}>Cliente desde 2024 • 3 pedidos • VIP</p>
                 </div>
 
                 <div>
-                  <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 800, textTransform: 'uppercase' }}>Modelos Rápidos de Resposta</span>
+                  <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 800, textTransform: 'uppercase' }}>Modelos Rápidos de Resposta</span>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '8px' }}>
                     <button
                       onClick={() => setChatInput('Olá! Seu pedido já está aprovado e os ingressos estão disponíveis no app Disk Ingressos.')}
@@ -1349,7 +1349,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                           <button onClick={() => notify(`Broadcast push emitido para os ${inc.ticketsLinked} clientes afetados pelo incidente ${inc.code}!`)} className="ds-operator-btn" style={{ padding: '4px 8px', fontSize: '11px' }}>
                             <Radio size={12} /> Broadcast
                           </button>
-                          <button onClick={() => notify(`Incidente ${inc.code} marcado como RESOLVIDO!`)} className="ds-operator-btn" style={{ padding: '4px 8px', fontSize: '11px', background: '#ecfdf5', color: '#059669', borderColor: '#a7f3d0' }}>
+                          <button onClick={() => notify(`Incidente ${inc.code} marcado como RESOLVIDO!`)} className="ds-operator-btn" style={{ padding: '4px 8px', fontSize: '11px', background: "var(--disk-color-success-subtle)", color: '#059669', borderColor: "var(--disk-color-success-border)" }}>
                             <Check size={12} /> Resolver
                           </button>
                         </div>
@@ -1373,15 +1373,15 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   <span className="ds-warroom-commander-tag">WAR ROOM P1 ATIVA</span>
                   <span className="ds-badge red">INCIDENT COMMANDER: Fernando SAC</span>
                 </div>
-                <h2 style={{ margin: 0, fontSize: '20px', color: '#0f172a' }}>INC-2026-089 — Instabilidade no Gateway Efí Pix</h2>
-                <p style={{ margin: '4px 0 0', color: '#64748b', fontSize: '13px' }}>
+                <h2 style={{ margin: 0, fontSize: '20px', color: "var(--disk-text-primary)" }}>INC-2026-089 — Instabilidade no Gateway Efí Pix</h2>
+                <p style={{ margin: '4px 0 0', color: "var(--disk-text-muted)", fontSize: '13px' }}>
                   Impacto estimado: 3.420 compradores • R$ 48.200 em transações com callback atrasado
                 </p>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 <div style={{ textAlign: 'right' }}>
-                  <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 800, textTransform: 'uppercase' }}>Tempo em Downtime</span>
+                  <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 800, textTransform: 'uppercase' }}>Tempo em Downtime</span>
                   <div className="ds-warroom-timer">00:42:15</div>
                 </div>
                 <button
@@ -1420,15 +1420,15 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   <h3 className="ds-bi-card-title"><Users size={18} style={{ color: '#2563eb' }} /> Equipe de Resposta & Comitê</h3>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
                     <span><b>Incident Commander:</b> Fernando SAC</span>
                     <span className="ds-badge green">Online</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
                     <span><b>Tech Lead:</b> Vinicius Casagrande (Eng)</span>
                     <span className="ds-badge green">Online</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 12px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
                     <span><b>Comunicação Solicitantes:</b> Lucas Atendente</span>
                     <span className="ds-badge blue">Emitindo Broadcast</span>
                   </div>
@@ -1466,24 +1466,24 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                     <span className="ds-badge green">{p.status}</span>
                   </div>
 
-                  <div style={{ fontSize: '13px', color: '#334155', display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '10px' }}>
-                    <div style={{ background: '#f8fafc', padding: '10px 12px', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                  <div style={{ fontSize: '13px', color: "var(--disk-text-secondary)", display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '10px' }}>
+                    <div style={{ background: "var(--disk-bg-muted)", padding: '10px 12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
                       <strong style={{ color: '#dc2626', display: 'block', marginBottom: '2px' }}>🔍 Causa Raiz (RCA):</strong>
                       {p.rootCause}
                     </div>
 
-                    <div style={{ background: '#eff6ff', padding: '10px 12px', borderRadius: '8px', border: '1px solid #bfdbfe' }}>
+                    <div style={{ background: "var(--disk-color-info-subtle)", padding: '10px 12px', borderRadius: '8px', border: "1px solid var(--disk-color-info-border)" }}>
                       <strong style={{ color: '#2563eb', display: 'block', marginBottom: '2px' }}>⚡ Contorno Provisório (Workaround):</strong>
                       {p.workaround}
                     </div>
 
-                    <div style={{ background: '#ecfdf5', padding: '10px 12px', borderRadius: '8px', border: '1px solid #a7f3d0' }}>
+                    <div style={{ background: "var(--disk-color-success-subtle)", padding: '10px 12px', borderRadius: '8px', border: "1px solid var(--disk-color-success-border)" }}>
                       <strong style={{ color: '#059669', display: 'block', marginBottom: '2px' }}>🛠️ Plano de Ação Definitivo:</strong>
                       {p.actionPlan}
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '14px', paddingTop: '12px', borderTop: '1px solid #e2e8f0' }}>
+                  <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '14px', paddingTop: '12px', borderTop: "1px solid var(--disk-border-default)" }}>
                     <button onClick={() => notify(`Workaround de ${p.code} publicado na Base de Conhecimento!`)} className="ds-operator-btn" style={{ fontSize: '11px', padding: '6px 12px' }}>
                       <BookOpen size={12} /> Publicar na Base
                     </button>
@@ -1530,19 +1530,19 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                         <span className="ds-badge blue" style={{ marginBottom: '4px' }}>{k.category}</span>
                         <h3 className="ds-bi-card-title">{k.title}</h3>
                       </div>
-                      <small style={{ fontSize: '11px', color: '#94a3b8' }}>{k.views} views</small>
+                      <small style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>{k.views} views</small>
                     </div>
 
                     <div style={{ display: 'flex', gap: '6px', margin: '10px 0', flexWrap: 'wrap' }}>
                       {k.tags.map(tag => (
-                        <span key={tag} style={{ background: '#f1f5f9', color: '#475569', fontSize: '10px', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
+                        <span key={tag} style={{ background: "var(--disk-bg-muted)", color: "var(--disk-text-secondary)", fontSize: '10px', padding: '2px 8px', borderRadius: '4px', fontWeight: 600 }}>
                           #{tag}
                         </span>
                       ))}
                     </div>
 
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '12px', paddingTop: '12px', borderTop: '1px solid #e2e8f0' }}>
-                      <div style={{ display: 'flex', gap: '8px', fontSize: '12px', color: '#64748b' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '12px', paddingTop: '12px', borderTop: "1px solid var(--disk-border-default)" }}>
+                      <div style={{ display: 'flex', gap: '8px', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><ThumbsUp size={13} style={{ color: '#059669' }} /> {k.helpful}</span>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><ThumbsDown size={13} style={{ color: '#dc2626' }} /> {k.unhelpful}</span>
                       </div>
@@ -1588,7 +1588,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                     { name: 'Letícia R.', score: 4, comment: 'Tudo certo com o ingresso, apenas achei o app um pouco lento no primeiro login.', time: 'Há 35 min', tag: 'NEUTRO' },
                     { name: 'Marcos V.', score: 1, comment: 'Fiquei com dúvida sobre documentação de meia-entrada e precisei de ajuda.', time: 'Há 1h', tag: 'DETRATOR' },
                   ].map((feed, i) => (
-                    <div key={i} style={{ padding: '12px 14px', background: '#f8fafc', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+                    <div key={i} style={{ padding: '12px 14px', background: "var(--disk-bg-muted)", borderRadius: '10px', border: "1px solid var(--disk-border-default)" }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <div>
                           <strong>{feed.name}</strong>
@@ -1596,11 +1596,11 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                         </div>
                         <span className={`ds-badge ${feed.tag === 'POSITIVO' ? 'green' : feed.tag === 'NEUTRO' ? 'yellow' : 'red'}`}>{feed.tag}</span>
                       </div>
-                      <p style={{ margin: '6px 0 0', fontSize: '13px', color: '#334155' }}>"{feed.comment}"</p>
+                      <p style={{ margin: '6px 0 0', fontSize: '13px', color: "var(--disk-text-secondary)" }}>"{feed.comment}"</p>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px' }}>
-                        <small style={{ color: '#94a3b8' }}>{feed.time}</small>
+                        <small style={{ color: "var(--disk-text-muted)" }}>{feed.time}</small>
                         {feed.tag === 'DETRATOR' && (
-                          <button onClick={() => notify(`Chamado de recuperação imediata aberto para ${feed.name}!`)} className="ds-operator-btn" style={{ padding: '2px 8px', fontSize: '11px', background: '#fef2f2', color: '#dc2626', borderColor: '#fecaca' }}>
+                          <button onClick={() => notify(`Chamado de recuperação imediata aberto para ${feed.name}!`)} className="ds-operator-btn" style={{ padding: '2px 8px', fontSize: '11px', background: "var(--disk-color-danger-subtle)", color: '#dc2626', borderColor: "var(--disk-color-danger-border)" }}>
                             <RotateCcw size={11} /> Abrir Loop de Recuperação
                           </button>
                         )}
@@ -1615,12 +1615,12 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   <h3 className="ds-bi-card-title"><Workflow size={18} style={{ color: '#2563eb' }} /> Configurações de Pesquisa de Satisfação</h3>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                    <div><strong>Disparo automático pós-resolução</strong><p style={{ margin: 0, fontSize: '11px', color: '#64748b' }}>Enviar CSAT via WhatsApp 5 minutos após fechar o chamado</p></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                    <div><strong>Disparo automático pós-resolução</strong><p style={{ margin: 0, fontSize: '11px', color: "var(--disk-text-muted)" }}>Enviar CSAT via WhatsApp 5 minutos após fechar o chamado</p></div>
                     <span className="ds-badge green">Ativo</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                    <div><strong>Alerta imediato para Detratores (1 e 2 estrelas)</strong><p style={{ margin: 0, fontSize: '11px', color: '#64748b' }}>Criar ticket com prioridade P2 para a equipe de qualidade</p></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                    <div><strong>Alerta imediato para Detratores (1 e 2 estrelas)</strong><p style={{ margin: 0, fontSize: '11px', color: "var(--disk-text-muted)" }}>Criar ticket com prioridade P2 para a equipe de qualidade</p></div>
                     <span className="ds-badge green">Ativo</span>
                   </div>
                 </div>
@@ -1634,7 +1634,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
             ======================================================== */}
         {activeTab === 'copilot' && (
           <div style={{ marginTop: '10px' }}>
-            <div style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #eff6ff 100%)', border: '1px solid #ddd6fe', borderRadius: '14px', padding: '20px 24px', marginBottom: '20px' }}>
+            <div style={{ background: 'linear-gradient(135deg, #f5f3ff 0%, #eff6ff 100%)', border: "1px solid var(--disk-color-purple-border)", borderRadius: '14px', padding: '20px 24px', marginBottom: '20px' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#7c3aed', color: '#fff', display: 'grid', placeItems: 'center' }}>
@@ -1642,7 +1642,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   </div>
                   <div>
                     <h2 style={{ margin: 0, fontSize: '18px', color: '#4c1d95' }}>Disk Copilot IA — Inteligência Ativa no SAC</h2>
-                    <p style={{ margin: 0, fontSize: '13px', color: '#6d28d9' }}>Conectado a Tickets + Pedidos + Clientes + KEDB + Incidentes</p>
+                    <p style={{ margin: 0, fontSize: '13px', color: "var(--disk-color-purple-text)" }}>Conectado a Tickets + Pedidos + Clientes + KEDB + Incidentes</p>
                   </div>
                 </div>
                 <span className="ds-badge purple" style={{ fontSize: '13px', padding: '6px 12px' }}>Modelo Ativo: GPT-4o Optimized</span>
@@ -1656,23 +1656,23 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '14px' }}>
+                  <div style={{ background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '10px', padding: '14px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <strong style={{ color: '#0f172a' }}>Sugestão: Reenvio Automático de QR Code</strong>
+                      <strong style={{ color: "var(--disk-text-primary)" }}>Sugestão: Reenvio Automático de QR Code</strong>
                       <span className="ds-badge green">96% Confiança</span>
                     </div>
-                    <p style={{ margin: '4px 0 8px', fontSize: '12px', color: '#64748b' }}>Aplicável para 4 clientes que entraram em contato com dúvida sobre recebimento de e-mail.</p>
+                    <p style={{ margin: '4px 0 8px', fontSize: '12px', color: "var(--disk-text-muted)" }}>Aplicável para 4 clientes que entraram em contato com dúvida sobre recebimento de e-mail.</p>
                     <button onClick={() => notify('Recomendação do Copilot aplicada para todos os 4 chamados em lote!')} className="ds-operator-btn primary" style={{ fontSize: '11px', padding: '4px 10px' }}>
                       Aplicar em Lote (4)
                     </button>
                   </div>
 
-                  <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '14px' }}>
+                  <div style={{ background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '10px', padding: '14px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <strong style={{ color: '#0f172a' }}>Sugestão: Resposta Padrão sobre Regras de Meia-Entrada</strong>
+                      <strong style={{ color: "var(--disk-text-primary)" }}>Sugestão: Resposta Padrão sobre Regras de Meia-Entrada</strong>
                       <span className="ds-badge yellow">92% Confiança</span>
                     </div>
-                    <p style={{ margin: '4px 0 8px', fontSize: '12px', color: '#64748b' }}>Aplicar modelo explicativo da Lei Federal 12.933/2013 e DNE para 3 chamados pendentes.</p>
+                    <p style={{ margin: '4px 0 8px', fontSize: '12px', color: "var(--disk-text-muted)" }}>Aplicar modelo explicativo da Lei Federal 12.933/2013 e DNE para 3 chamados pendentes.</p>
                     <button onClick={() => notify('Modelo de Meia-Entrada enviado aos chamados!')} className="ds-operator-btn" style={{ fontSize: '11px', padding: '4px 10px' }}>
                       Aplicar Resposta
                     </button>
@@ -1685,12 +1685,12 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   <h3 className="ds-bi-card-title"><SlidersHorizontal size={18} style={{ color: '#2563eb' }} /> Parâmetros de Confiança e Ações Autônomas</h3>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                    <div><strong>Auto-Resposta com Confiança &gt; 95%</strong><p style={{ margin: 0, fontSize: '11px', color: '#64748b' }}>Enviar resposta sem intervenção humana para dúvidas comuns</p></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                    <div><strong>Auto-Resposta com Confiança &gt; 95%</strong><p style={{ margin: 0, fontSize: '11px', color: "var(--disk-text-muted)" }}>Enviar resposta sem intervenção humana para dúvidas comuns</p></div>
                     <span className="ds-badge green">Habilitado</span>
                   </div>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
-                    <div><strong>Análise de Sentimento em Tempo Real</strong><p style={{ margin: 0, fontSize: '11px', color: '#64748b' }}>Priorizar automaticamente clientes irritados para nível P1</p></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                    <div><strong>Análise de Sentimento em Tempo Real</strong><p style={{ margin: 0, fontSize: '11px', color: "var(--disk-text-muted)" }}>Priorizar automaticamente clientes irritados para nível P1</p></div>
                     <span className="ds-badge green">Habilitado</span>
                   </div>
                 </div>
@@ -1714,8 +1714,8 @@ export default function SupportPage({ events, producerId, producerName, mode = '
             </div>
 
             <div className="ds-data-table-wrap" style={{ marginTop: '16px' }}>
-              <div style={{ padding: '16px', borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
-                <strong style={{ fontSize: '15px', color: '#0f172a' }}>Matriz de Políticas de SLA por Prioridade (ITIL)</strong>
+              <div style={{ padding: '16px', borderBottom: "1px solid var(--disk-border-default)", background: "var(--disk-bg-muted)" }}>
+                <strong style={{ fontSize: '15px', color: "var(--disk-text-primary)" }}>Matriz de Políticas de SLA por Prioridade (ITIL)</strong>
               </div>
               <table className="ds-data-table">
                 <thead>
@@ -1779,7 +1779,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span style={{ fontSize: '13px', color: '#475569', fontWeight: 600 }}>Roteamento Round-Robin Automático:</span>
+                <span style={{ fontSize: '13px', color: "var(--disk-text-secondary)", fontWeight: 600 }}>Roteamento Round-Robin Automático:</span>
                 <button
                   onClick={() => {
                     setAutoRouting(!autoRouting)
@@ -1807,15 +1807,15 @@ export default function SupportPage({ events, producerId, producerName, mode = '
 
                   <div style={{ margin: '14px 0', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-                      <span style={{ color: '#64748b' }}>Tempo Médio de Espera:</span>
+                      <span style={{ color: "var(--disk-text-muted)" }}>Tempo Médio de Espera:</span>
                       <strong>{q.wait}</strong>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-                      <span style={{ color: '#64748b' }}>Atendentes Escalados:</span>
+                      <span style={{ color: "var(--disk-text-muted)" }}>Atendentes Escalados:</span>
                       <strong>{q.agents} ativos</strong>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-                      <span style={{ color: '#64748b' }}>Supervisor da Fila:</span>
+                      <span style={{ color: "var(--disk-text-muted)" }}>Supervisor da Fila:</span>
                       <strong>{q.lead}</strong>
                     </div>
                   </div>
@@ -1849,7 +1849,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   <h3 className="ds-bi-card-title"><LineChart size={18} style={{ color: '#2563eb' }} /> Previsão de Demanda de Chamados (7 Dias)</h3>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', height: '170px', padding: '10px 0', borderBottom: '1px solid #e2e8f0' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', height: '170px', padding: '10px 0', borderBottom: "1px solid var(--disk-border-default)" }}>
                   {[
                     { day: 'Hoje', count: 95, color: '#2563eb' },
                     { day: 'Amanhã', count: 82, color: '#2563eb' },
@@ -1862,7 +1862,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                     <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', flex: 1 }}>
                       <span style={{ fontSize: '11px', fontWeight: 800, color: d.color }}>{d.count}</span>
                       <div style={{ width: '18px', background: d.color, height: `${(d.count / 200) * 120}px`, borderRadius: '4px 4px 0 0' }} />
-                      <span style={{ fontSize: '10px', color: '#64748b' }}>{d.day}</span>
+                      <span style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>{d.day}</span>
                     </div>
                   ))}
                 </div>
@@ -1873,13 +1873,13 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   <h3 className="ds-bi-card-title"><Target size={18} style={{ color: '#059669' }} /> Backlog de Melhoria Contínua (CSI / PDCA)</h3>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div style={{ padding: '10px 12px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                  <div style={{ padding: '10px 12px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
                     <strong>CSI-01: Redução de 22% nas dúvidas sobre meia-entrada</strong>
-                    <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748b' }}>Banner informativo adicionado no checkout durante a seleção de lote.</p>
+                    <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>Banner informativo adicionado no checkout durante a seleção de lote.</p>
                   </div>
-                  <div style={{ padding: '10px 12px', background: '#f8fafc', borderRadius: '8px', border: '1px solid #e2e8f0' }}>
+                  <div style={{ padding: '10px 12px', background: "var(--disk-bg-muted)", borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
                     <strong>CSI-02: Auto-reparo de Webhooks Pix atrasados</strong>
-                    <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748b' }}>Job cron a cada 2 minutos consultando transações pendentes.</p>
+                    <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>Job cron a cada 2 minutos consultando transações pendentes.</p>
                   </div>
                 </div>
               </div>
@@ -1917,16 +1917,16 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', margin: '12px 0', fontSize: '13px' }}>
-                    <div style={{ background: '#f8fafc', padding: '8px 12px', borderRadius: '6px', border: '1px solid #e2e8f0' }}>
+                    <div style={{ background: "var(--disk-bg-muted)", padding: '8px 12px', borderRadius: '6px', border: "1px solid var(--disk-border-default)" }}>
                       <span style={{ color: '#2563eb', fontWeight: 700 }}>⚡ {wf.trigger}</span>
                     </div>
-                    <div style={{ background: '#ecfdf5', padding: '8px 12px', borderRadius: '6px', border: '1px solid #a7f3d0' }}>
+                    <div style={{ background: "var(--disk-color-success-subtle)", padding: '8px 12px', borderRadius: '6px', border: "1px solid var(--disk-color-success-border)" }}>
                       <span style={{ color: '#059669', fontWeight: 700 }}>🎯 {wf.action}</span>
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px', paddingTop: '10px', borderTop: '1px solid #e2e8f0' }}>
-                    <small style={{ color: '#64748b' }}>Executado <b>{wf.runs} vezes</b> hoje</small>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px', paddingTop: '10px', borderTop: "1px solid var(--disk-border-default)" }}>
+                    <small style={{ color: "var(--disk-text-muted)" }}>Executado <b>{wf.runs} vezes</b> hoje</small>
                     <button onClick={() => notify(`Workflow "${wf.title}" testado com sucesso!`)} className="ds-operator-btn" style={{ padding: '4px 10px', fontSize: '11px' }}>
                       <Play size={12} /> Testar Regra
                     </button>
@@ -1952,25 +1952,25 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                 notify('Novo chamado protocolado com sucesso sob protocolo #DS-2026-984222!')
                 setActiveTab('tickets')
               }}
-              style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '24px', maxWidth: '800px', boxShadow: '0 1px 3px rgba(15,23,42,0.04)' }}
+              style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '14px', padding: '24px', maxWidth: '800px', boxShadow: '0 1px 3px rgba(15,23,42,0.04)' }}
             >
-              <h3 style={{ margin: '0 0 16px', color: '#0f172a', fontSize: '18px' }}>Protocolar Novo Chamado no Disk Service</h3>
+              <h3 style={{ margin: '0 0 16px', color: "var(--disk-text-primary)", fontSize: '18px' }}>Protocolar Novo Chamado no Disk Service</h3>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#475569', display: 'block', marginBottom: '4px' }}>Nome do Solicitante</label>
-                  <input type="text" placeholder="Nome completo" required style={{ width: '100%', background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 12px', color: '#0f172a' }} />
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-secondary)", display: 'block', marginBottom: '4px' }}>Nome do Solicitante</label>
+                  <input type="text" placeholder="Nome completo" required style={{ width: '100%', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '10px 12px', color: "var(--disk-text-primary)" }} />
                 </div>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#475569', display: 'block', marginBottom: '4px' }}>E-mail ou Telefone</label>
-                  <input type="text" placeholder="joao@email.com ou (41) 99999-8888" required style={{ width: '100%', background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 12px', color: '#0f172a' }} />
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-secondary)", display: 'block', marginBottom: '4px' }}>E-mail ou Telefone</label>
+                  <input type="text" placeholder="joao@email.com ou (41) 99999-8888" required style={{ width: '100%', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '10px 12px', color: "var(--disk-text-primary)" }} />
                 </div>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px', marginBottom: '12px' }}>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#475569', display: 'block', marginBottom: '4px' }}>Canal de Entrada</label>
-                  <select style={{ width: '100%', background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 12px', color: '#0f172a' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-secondary)", display: 'block', marginBottom: '4px' }}>Canal de Entrada</label>
+                  <select style={{ width: '100%', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '10px 12px', color: "var(--disk-text-primary)" }}>
                     <option>WhatsApp</option>
                     <option>E-mail</option>
                     <option>Chat Web</option>
@@ -1978,8 +1978,8 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   </select>
                 </div>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#475569', display: 'block', marginBottom: '4px' }}>Prioridade (SLA)</label>
-                  <select style={{ width: '100%', background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 12px', color: '#0f172a' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-secondary)", display: 'block', marginBottom: '4px' }}>Prioridade (SLA)</label>
+                  <select style={{ width: '100%', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '10px 12px', color: "var(--disk-text-primary)" }}>
                     <option>P2 — Alto (1h FRT / 8h MTTR)</option>
                     <option>P1 — Crítico (15m FRT / 2h MTTR)</option>
                     <option>P3 — Médio (4h FRT / 24h MTTR)</option>
@@ -1987,8 +1987,8 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                   </select>
                 </div>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#475569', display: 'block', marginBottom: '4px' }}>Evento Vinculado</label>
-                  <select style={{ width: '100%', background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 12px', color: '#0f172a' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-secondary)", display: 'block', marginBottom: '4px' }}>Evento Vinculado</label>
+                  <select style={{ width: '100%', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '10px 12px', color: "var(--disk-text-primary)" }}>
                     <option>Festival XPTO 2026</option>
                     <option>Rock Arena Festival 2026</option>
                     <option>Seu Jorge — Turnê Exclusiva</option>
@@ -1997,13 +1997,13 @@ export default function SupportPage({ events, producerId, producerName, mode = '
               </div>
 
               <div style={{ marginBottom: '12px' }}>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#475569', display: 'block', marginBottom: '4px' }}>Assunto do Chamado</label>
-                <input type="text" placeholder="Ex: Dificuldade no recebimento de QR Code Pix" required style={{ width: '100%', background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 12px', color: '#0f172a' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-secondary)", display: 'block', marginBottom: '4px' }}>Assunto do Chamado</label>
+                <input type="text" placeholder="Ex: Dificuldade no recebimento de QR Code Pix" required style={{ width: '100%', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '10px 12px', color: "var(--disk-text-primary)" }} />
               </div>
 
               <div style={{ marginBottom: '16px' }}>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#475569', display: 'block', marginBottom: '4px' }}>Descrição Detalhada do Problema</label>
-                <textarea placeholder="Relate as informações fornecidas pelo cliente..." rows={4} required style={{ width: '100%', background: '#ffffff', border: '1px solid #cbd5e1', borderRadius: '8px', padding: '10px 12px', color: '#0f172a' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-secondary)", display: 'block', marginBottom: '4px' }}>Descrição Detalhada do Problema</label>
+                <textarea placeholder="Relate as informações fornecidas pelo cliente..." rows={4} required style={{ width: '100%', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '10px 12px', color: "var(--disk-text-primary)" }} />
               </div>
 
               <button type="submit" className="ds-search360-btn" style={{ background: '#2563eb', padding: '12px 24px' }}>
@@ -2037,7 +2037,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
               <div className="ds-order-modal-body">
                 {/* 1. Dados do Comprador */}
                 <div>
-                  <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 800, textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Titular da Compra</span>
+                  <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 800, textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Titular da Compra</span>
                   <div className="ds-order-info-grid">
                     <div className="ds-order-info-box">
                       <span>Nome Completo</span>
@@ -2050,14 +2050,14 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                     <div className="ds-order-info-box">
                       <span>Telefone & E-mail</span>
                       <strong>{customer360?.customer.phoneMasked || '(41) *****-8899'}</strong>
-                      <div style={{ fontSize: '11px', color: '#64748b' }}>{customer360?.customer.emailMasked || 'jo***@email.com'}</div>
+                      <div style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>{customer360?.customer.emailMasked || 'jo***@email.com'}</div>
                     </div>
                   </div>
                 </div>
 
                 {/* 2. Ingressos do Pedido */}
                 <div>
-                  <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 800, textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Vouchers & Ingressos Emitidos ({selectedOrderModal.ingresso_count || 2})</span>
+                  <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 800, textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Vouchers & Ingressos Emitidos ({selectedOrderModal.ingresso_count || 2})</span>
                   <div className="ds-order-tickets-list">
                     {(customer360?.ingressos.filter(i => i.order_number === selectedOrderModal.order_number) || [
                       { id: 1, ticket_code: 'ING-88101', event_name: selectedOrderModal.event_name, status: 'ACTIVE', checkin_status: 'NÃO UTILIZADO' },
@@ -2066,10 +2066,10 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                       <div key={ing.id} className="ds-order-ticket-row">
                         <div>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <strong style={{ fontSize: '14px', color: '#0f172a' }}>{ing.ticket_code}</strong>
+                            <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)" }}>{ing.ticket_code}</strong>
                             <span className="ds-badge green">{ing.status}</span>
                           </div>
-                          <div style={{ fontSize: '12px', color: '#64748b', marginTop: '2px' }}>Pista Premium • Inteira • Check-in: <b>{ing.checkin_status}</b></div>
+                          <div style={{ fontSize: '12px', color: "var(--disk-text-muted)", marginTop: '2px' }}>Pista Premium • Inteira • Check-in: <b>{ing.checkin_status}</b></div>
                         </div>
 
                         <div style={{ display: 'flex', gap: '8px' }}>
@@ -2087,7 +2087,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
 
                 {/* 3. Extrato Financeiro & Gateway */}
                 <div>
-                  <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 800, textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Extrato Financeiro da Transação</span>
+                  <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 800, textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Extrato Financeiro da Transação</span>
                   <div className="ds-order-info-grid">
                     <div className="ds-order-info-box">
                       <span>Método de Pagamento</span>
@@ -2108,10 +2108,10 @@ export default function SupportPage({ events, producerId, producerName, mode = '
 
               <div className="ds-order-modal-footer">
                 <div style={{ display: 'flex', gap: '8px' }}>
-                  <button onClick={() => notify(`Ingressos do pedido #${selectedOrderModal.order_number} reenviados por WhatsApp!`)} className="ds-operator-btn" style={{ color: '#16a34a', borderColor: '#bbf7d0', background: '#f0fdf4' }}>
+                  <button onClick={() => notify(`Ingressos do pedido #${selectedOrderModal.order_number} reenviados por WhatsApp!`)} className="ds-operator-btn" style={{ color: '#16a34a', borderColor: "var(--disk-color-success-border)", background: "var(--disk-color-success-subtle)" }}>
                     <Phone size={14} /> Reenviar WhatsApp
                   </button>
-                  <button onClick={() => notify(`Ingressos do pedido #${selectedOrderModal.order_number} reenviados por e-mail!`)} className="ds-operator-btn" style={{ color: '#2563eb', borderColor: '#bfdbfe', background: '#eff6ff' }}>
+                  <button onClick={() => notify(`Ingressos do pedido #${selectedOrderModal.order_number} reenviados por e-mail!`)} className="ds-operator-btn" style={{ color: '#2563eb', borderColor: "var(--disk-color-info-border)", background: "var(--disk-color-info-subtle)" }}>
                     <Mail size={14} /> Reenviar E-mail
                   </button>
                   <button onClick={() => notify(`Download do lote de vouchers PDF iniciado!`)} className="ds-operator-btn">
@@ -2120,7 +2120,7 @@ export default function SupportPage({ events, producerId, producerName, mode = '
                 </div>
 
                 <div style={{ display: 'flex', gap: '8px' }}>
-                  <button onClick={() => notify(`Estorno integral solicitado para o pedido #${selectedOrderModal.order_number}!`)} className="ds-operator-btn" style={{ color: '#dc2626', borderColor: '#fecaca', background: '#fef2f2' }}>
+                  <button onClick={() => notify(`Estorno integral solicitado para o pedido #${selectedOrderModal.order_number}!`)} className="ds-operator-btn" style={{ color: '#dc2626', borderColor: "var(--disk-color-danger-border)", background: "var(--disk-color-danger-subtle)" }}>
                     <RotateCcw size={14} /> Solicitar Reembolso
                   </button>
                   <button onClick={() => setSelectedOrderModal(null)} className="ds-search360-btn" style={{ background: '#475569' }}>

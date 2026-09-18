@@ -105,7 +105,7 @@ export default function TrackingIntegrationList({
         </div>
 
         <div style={{ position: 'relative', minWidth: '220px' }}>
-          <Search size={15} style={{ position: 'absolute', left: '10px', top: '9px', color: '#94a3b8' }} />
+          <Search size={15} style={{ position: 'absolute', left: '10px', top: '9px', color: "var(--disk-text-muted)" }} />
           <input
             type="text"
             placeholder="Filtrar por nome ou ID..."
@@ -117,7 +117,7 @@ export default function TrackingIntegrationList({
       </div>
 
       {filtered.length === 0 ? (
-        <div style={{ padding: '40px', textAlign: 'center', color: '#64748b', background: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+        <div style={{ padding: '40px', textAlign: 'center', color: "var(--disk-text-muted)", background: "var(--disk-bg-surface)", borderRadius: '12px', border: "1px solid var(--disk-border-default)" }}>
           Nenhuma integração encontrada com os filtros selecionados.
         </div>
       ) : (
@@ -135,14 +135,14 @@ export default function TrackingIntegrationList({
                   </span>
                   <div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <strong style={{ fontSize: '15px', color: '#0f172a' }}>{int.name}</strong>
+                      <strong style={{ fontSize: '15px', color: "var(--disk-text-primary)" }}>{int.name}</strong>
                       {a.isPrimary && (
                         <span className="status-badge green" style={{ fontSize: '10px', padding: '2px 6px' }}>
                           ★ Principal
                         </span>
                       )}
                     </div>
-                    <small style={{ color: '#64748b' }}>
+                    <small style={{ color: "var(--disk-text-muted)" }}>
                       {int.provider.toUpperCase()} · {friendlyIntegrationTypeLabel(int.integrationType)}
                     </small>
                   </div>
@@ -191,12 +191,12 @@ export default function TrackingIntegrationList({
                         </span>
                       ))
                     ) : (
-                      <span style={{ color: '#94a3b8', fontStyle: 'italic' }}>Regras padrão ativas</span>
+                      <span style={{ color: "var(--disk-text-muted)", fontStyle: 'italic' }}>Regras padrão ativas</span>
                     )}
                   </div>
                 </div>
 
-                <div className="editor-actions" style={{ marginTop: 'auto', paddingTop: '12px', borderTop: '1px solid #f1f5f9', display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                <div className="editor-actions" style={{ marginTop: 'auto', paddingTop: '12px', borderTop: "1px solid var(--disk-border-default)", display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
                   <button
                     type="button"
                     className="btn secondary"

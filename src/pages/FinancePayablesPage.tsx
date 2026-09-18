@@ -520,7 +520,7 @@ export default function FinancePayablesPage({ events, notify, onNavigate }: Prop
             </select>
           </div>
 
-          <div style={{ fontSize: '12px', color: '#94a3b8' }}>
+          <div style={{ fontSize: '12px', color: "var(--disk-text-muted)" }}>
             Exibindo <strong>{filtered.length}</strong> obrigações
           </div>
         </div>
@@ -533,7 +533,7 @@ export default function FinancePayablesPage({ events, notify, onNavigate }: Prop
             <span>REGISTRO DE OBRIGAÇÕES POR EVENTO</span>
             <h2>Esteira de Contas a Pagar</h2>
           </div>
-          <span style={{ fontSize: '11px', color: '#64748b' }}>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>
             Rastreabilidade total: Produtor → Evento → Centro de Custo
           </span>
         </div>
@@ -555,7 +555,7 @@ export default function FinancePayablesPage({ events, notify, onNavigate }: Prop
             <tbody>
               {filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={8} style={{ textAlign: 'center', padding: '36px', color: '#64748b' }}>
+                  <td colSpan={8} style={{ textAlign: 'center', padding: '36px', color: "var(--disk-text-muted)" }}>
                     Nenhuma obrigação encontrada para os filtros aplicados.
                   </td>
                 </tr>
@@ -574,13 +574,13 @@ export default function FinancePayablesPage({ events, notify, onNavigate }: Prop
                       </td>
                       <td>
                         <strong style={{ color: '#e2e8f0' }}>{item.vendor}</strong>
-                        <small style={{ display: 'block', color: '#64748b', fontSize: '11px' }}>
+                        <small style={{ display: 'block', color: "var(--disk-text-muted)", fontSize: '11px' }}>
                           Resp: {item.responsible}
                         </small>
                       </td>
                       <td>
                         <strong style={{ color: '#38bdf8' }}>{item.eventTitle}</strong>
-                        <small style={{ display: 'block', color: '#94a3b8', fontSize: '11px' }}>
+                        <small style={{ display: 'block', color: "var(--disk-text-muted)", fontSize: '11px' }}>
                           {item.costCenterName} • {item.competence}
                         </small>
                       </td>
@@ -619,7 +619,7 @@ export default function FinancePayablesPage({ events, notify, onNavigate }: Prop
                           >
                             {isPaid ? 'Pago' : isOverdue ? 'Vencido' : item.status === 'aguardando_aprovacao' ? 'Aguardando Aprovação' : 'Agendado'}
                           </span>
-                          <span style={{ fontSize: '10px', color: '#64748b' }}>
+                          <span style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>
                             {item.approvalTier === 'DIRECT' ? 'Alçada Operador (D+0)' : item.approvalTier === 'FINANCE' ? 'Alçada Financeira' : 'Alçada Diretoria'}
                           </span>
                         </div>
@@ -681,11 +681,11 @@ export default function FinancePayablesPage({ events, notify, onNavigate }: Prop
                 }}
               >
                 <div>
-                  <small style={{ color: '#94a3b8' }}>Despesa a Pagar</small>
+                  <small style={{ color: "var(--disk-text-muted)" }}>Despesa a Pagar</small>
                   <strong style={{ display: 'block', color: '#ffffff', fontSize: '14px' }}>
                     {payableToPay.description}
                   </strong>
-                  <span style={{ fontSize: '11px', color: '#64748b' }}>
+                  <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>
                     {payableToPay.vendor} • Evento: {payableToPay.eventTitle}
                   </span>
                 </div>

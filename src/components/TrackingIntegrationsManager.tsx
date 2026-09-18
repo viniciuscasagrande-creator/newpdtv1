@@ -370,7 +370,7 @@ export default function TrackingIntegrationsManager({
 
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
+              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
                 Plataformas de Mídia do Evento
               </h4>
               <button
@@ -396,7 +396,7 @@ export default function TrackingIntegrationsManager({
           {/* Quick preview of conversion matrix */}
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
+              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
                 Resumo da Matriz de Conversões
               </h4>
               <button
@@ -417,7 +417,7 @@ export default function TrackingIntegrationsManager({
           {/* Quick preview of recent activity */}
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: '#0f172a' }}>
+              <h4 style={{ margin: 0, fontSize: '16px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
                 Últimos Disparos de Conversão
               </h4>
               <button
@@ -445,10 +445,10 @@ export default function TrackingIntegrationsManager({
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
-              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 700, color: '#0f172a' }}>
+              <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
                 Integrações Associadas a este Evento
               </h3>
-              <small style={{ color: '#64748b' }}>
+              <small style={{ color: "var(--disk-text-muted)" }}>
                 Pixels, tags e APIs autorizados a receber telemetria de navegação e compras deste evento.
               </small>
             </div>

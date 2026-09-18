@@ -91,7 +91,7 @@ export default function AccountingJournalPage({ events, notify, onNavigate }: Pr
           <span className="eyebrow">ESCRITURAÇÃO OFICIAL & SPED ECD</span>
           <div className="finance-title-row">
             <h1>Livro Diário Geral</h1>
-            <span className="pipeline-status-badge" style={{ background: '#EFF6FF', color: '#1D4ED8', borderColor: '#BFDBFE' }}>
+            <span className="pipeline-status-badge" style={{ background: "var(--disk-color-info-subtle)", color: "var(--disk-color-info-text)", borderColor: "var(--disk-color-info-border)" }}>
               <ShieldCheck size={13} /> Autenticação Digital SPED (I200 / I250)
             </span>
           </div>
@@ -263,7 +263,7 @@ export default function AccountingJournalPage({ events, notify, onNavigate }: Pr
                     </div>
                   </td>
                   <td>
-                    <span style={{ fontSize: '11px', color: '#475569' }}>
+                    <span style={{ fontSize: '11px', color: "var(--disk-text-secondary)" }}>
                       {entry.costCenter || 'Geral'}
                     </span>
                   </td>
@@ -285,7 +285,7 @@ export default function AccountingJournalPage({ events, notify, onNavigate }: Pr
             </tbody>
             {filtered.length > 0 && (
               <tfoot>
-                <tr style={{ background: '#F8FAFC', fontWeight: 800 }}>
+                <tr style={{ background: "var(--disk-bg-muted)", fontWeight: 800 }}>
                   <td colSpan={5} style={{ textAlign: 'right', fontSize: '13px' }}>TOTAIS DO LIVRO DIÁRIO:</td>
                   <td style={{ textAlign: 'right', color: '#059669', fontSize: '14px' }}>{brl(totalDebits)}</td>
                   <td style={{ textAlign: 'right', color: '#DC2626', fontSize: '14px' }}>{brl(totalCredits)}</td>
@@ -310,8 +310,8 @@ export default function AccountingJournalPage({ events, notify, onNavigate }: Pr
             </div>
 
             <div className="advance-simulation-body">
-              <div style={{ background: '#F8FAFC', padding: '16px', borderRadius: '8px', border: '1px solid #E2E8F0', fontSize: '12px', lineHeight: '1.7', color: '#334155' }}>
-                <strong style={{ display: 'block', color: '#0F172A', fontSize: '13px', marginBottom: '8px' }}>
+              <div style={{ background: "var(--disk-bg-muted)", padding: '16px', borderRadius: '8px', border: "1px solid var(--disk-border-default)", fontSize: '12px', lineHeight: '1.7', color: "var(--disk-text-secondary)" }}>
+                <strong style={{ display: 'block', color: "var(--disk-text-primary)", fontSize: '13px', marginBottom: '8px' }}>
                   TERMO DE AUTENTICAÇÃO DIGITAL
                 </strong>
                 Contém este Livro Diário Geral o número de <strong>1.842 lançamentos</strong> escriturados em conformidade com as Normas Brasileiras de Contabilidade (NBC TG) e a Instrução Normativa RFB nº 2.003/2021.

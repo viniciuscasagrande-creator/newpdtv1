@@ -42,10 +42,10 @@ export default function TrackingConversionMatrix({ assignments, onOpenDrawer }: 
     <div className="tracking-matrix-card">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '10px' }}>
         <div>
-          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 700, color: '#0f172a' }}>
+          <h3 style={{ margin: 0, fontSize: '18px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
             Matriz de Disparos por Conversão
           </h3>
-          <p style={{ margin: '4px 0 0', fontSize: '13px', color: '#64748b' }}>
+          <p style={{ margin: '4px 0 0', fontSize: '13px', color: "var(--disk-text-muted)" }}>
             Compare quais Pixels e APIs recebem cada etapa da jornada de compra neste evento.
           </p>
         </div>
@@ -70,14 +70,14 @@ export default function TrackingConversionMatrix({ assignments, onOpenDrawer }: 
             <tr>
               <th>Evento da Jornada</th>
               {activeAssignments.length === 0 ? (
-                <th style={{ minWidth: '220px', color: '#64748b', fontWeight: 600, textAlign: 'center' }}>
+                <th style={{ minWidth: '220px', color: "var(--disk-text-muted)", fontWeight: 600, textAlign: 'center' }}>
                   Destinos de Mídia e Conversão
                 </th>
               ) : (
                 activeAssignments.map(a => (
                   <th key={a.id} style={{ minWidth: '160px' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
-                      <span style={{ fontSize: '13px', fontWeight: 700, color: '#0f172a' }}>
+                      <span style={{ fontSize: '13px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
                         {a.integration.name}
                       </span>
                       <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
@@ -90,7 +90,7 @@ export default function TrackingConversionMatrix({ assignments, onOpenDrawer }: 
                           {a.trackingMode === 'HYBRID' ? 'Híbrido' : a.trackingMode === 'BROWSER' ? 'Navegador' : 'Servidor'}
                         </span>
                       </div>
-                      <small style={{ color: '#64748b', fontSize: '11px' }}>
+                      <small style={{ color: "var(--disk-text-muted)", fontSize: '11px' }}>
                         {friendlyIntegrationTypeLabel(a.integration.integrationType)}
                       </small>
                     </div>
@@ -112,14 +112,14 @@ export default function TrackingConversionMatrix({ assignments, onOpenDrawer }: 
                           {totalForStage} destino{totalForStage === 1 ? '' : 's'}
                         </span>
                       </strong>
-                      <small style={{ color: '#64748b', fontSize: '11px', marginTop: '2px' }}>
+                      <small style={{ color: "var(--disk-text-muted)", fontSize: '11px', marginTop: '2px' }}>
                         {stage.description}
                       </small>
                     </div>
                   </td>
 
                   {activeAssignments.length === 0 ? (
-                    <td style={{ textAlign: 'center', color: '#94a3b8', fontSize: '12px', padding: '14px' }}>
+                    <td style={{ textAlign: 'center', color: "var(--disk-text-muted)", fontSize: '12px', padding: '14px' }}>
                       Nenhuma integração ativa vinculada a este evento. Adicione uma integração para rotear este evento.
                     </td>
                   ) : (
@@ -175,7 +175,7 @@ export default function TrackingConversionMatrix({ assignments, onOpenDrawer }: 
         </table>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', paddingTop: '12px', borderTop: '1px solid #edf2f7', fontSize: '12px', color: '#64748b' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '16px', paddingTop: '12px', borderTop: "1px solid var(--disk-border-default)", fontSize: '12px', color: "var(--disk-text-muted)" }}>
         <span>Legenda: <b>Web</b> = Disparo via Navegador · <b>API</b> = Disparo Seguro Server-Side (CAPI) com deduplicação de sinal.</span>
         <span>Clique em qualquer célula para gerenciar o roteamento individual.</span>
       </div>

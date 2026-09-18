@@ -133,7 +133,7 @@ export default function TrackingAssignmentModal({
             <span className="eyebrow" style={{ color: '#2563eb', fontWeight: 700, fontSize: '11px' }}>
               PIXELS E CONVERSÕES · ASSOCIAÇÃO POR EVENTO
             </span>
-            <h3 style={{ margin: '4px 0 0', fontSize: '20px', fontWeight: 700, color: '#0f172a' }}>
+            <h3 style={{ margin: '4px 0 0', fontSize: '20px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
               Adicionar Integração ao Evento
             </h3>
           </div>
@@ -148,7 +148,7 @@ export default function TrackingAssignmentModal({
           </button>
         </div>
 
-        <div style={{ display: 'flex', gap: '8px', marginBottom: '14px', borderBottom: '1px solid #e2e8f0', paddingBottom: '10px' }}>
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '14px', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '10px' }}>
           <button
             type="button"
             className={`btn ${mode === 'new' ? 'primary' : 'secondary'}`}
@@ -170,7 +170,7 @@ export default function TrackingAssignmentModal({
         {mode === 'existing' && (
           <form onSubmit={handleAssignExistingSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '13px', fontWeight: 600, color: '#334155' }}>
+              <span style={{ fontSize: '13px', fontWeight: 600, color: "var(--disk-text-secondary)" }}>
                 Selecione a integração existente:
               </span>
               <button
@@ -184,7 +184,7 @@ export default function TrackingAssignmentModal({
             </div>
 
             <div style={{ position: 'relative' }}>
-              <Search size={16} style={{ position: 'absolute', left: '12px', top: '10px', color: '#94a3b8' }} />
+              <Search size={16} style={{ position: 'absolute', left: '12px', top: '10px', color: "var(--disk-text-muted)" }} />
               <input
                 type="text"
                 placeholder="Buscar por nome, plataforma ou Pixel ID..."
@@ -194,9 +194,9 @@ export default function TrackingAssignmentModal({
               />
             </div>
 
-            <div style={{ maxHeight: '200px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '8px', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '8px' }}>
+            <div style={{ maxHeight: '200px', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '8px', border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '8px' }}>
               {unassignedIntegrations.length === 0 ? (
-                <div style={{ padding: '20px', textAlign: 'center', color: '#64748b', fontSize: '13px' }}>
+                <div style={{ padding: '20px', textAlign: 'center', color: "var(--disk-text-muted)", fontSize: '13px' }}>
                   Nenhuma integração disponível para vincular.
                 </div>
               ) : (
@@ -218,8 +218,8 @@ export default function TrackingAssignmentModal({
                       }}
                     >
                       <div>
-                        <strong style={{ fontSize: '13px', color: '#0f172a' }}>{item.name}</strong>
-                        <div style={{ fontSize: '11px', color: '#64748b' }}>
+                        <strong style={{ fontSize: '13px', color: "var(--disk-text-primary)" }}>{item.name}</strong>
+                        <div style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>
                           {item.provider.toUpperCase()} · {friendlyIntegrationTypeLabel(item.integrationType)} · ID: ••••••{item.pixelId.slice(-4)}
                         </div>
                       </div>
@@ -235,8 +235,8 @@ export default function TrackingAssignmentModal({
             </div>
 
             {selectedExistingId && (
-              <div style={{ padding: '14px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <span style={{ fontSize: '13px', fontWeight: 600, color: '#1e293b' }}>
+              <div style={{ padding: '14px', background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                <span style={{ fontSize: '13px', fontWeight: 600, color: "var(--disk-text-primary)" }}>
                   Configuração para este evento:
                 </span>
 
@@ -283,7 +283,7 @@ export default function TrackingAssignmentModal({
         {mode === 'new' && (
           <form onSubmit={handleCreateNewSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             {/* Step indicator */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #e2e8f0', paddingBottom: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '10px' }}>
               <span style={{ fontSize: '12px', fontWeight: step === 1 ? 700 : 500, color: step === 1 ? '#2563eb' : '#64748b' }}>
                 1. Plataforma
               </span>
@@ -300,7 +300,7 @@ export default function TrackingAssignmentModal({
 
             {step === 1 && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <span style={{ fontSize: '13px', fontWeight: 600, color: '#334155' }}>
+                <span style={{ fontSize: '13px', fontWeight: 600, color: "var(--disk-text-secondary)" }}>
                   Escolha a plataforma de mídia e conversão:
                 </span>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
@@ -315,8 +315,8 @@ export default function TrackingAssignmentModal({
                         setStep(2)
                       }}
                     >
-                      <strong style={{ fontSize: '14px', color: '#0f172a' }}>{p.name}</strong>
-                      <small style={{ display: 'block', color: '#64748b', fontSize: '11px', marginTop: '2px' }}>
+                      <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)" }}>{p.name}</strong>
+                      <small style={{ display: 'block', color: "var(--disk-text-muted)", fontSize: '11px', marginTop: '2px' }}>
                         {p.description}
                       </small>
                     </button>
@@ -423,7 +423,7 @@ export default function TrackingAssignmentModal({
 
             {step === 3 && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <span style={{ fontSize: '13px', fontWeight: 600, color: '#334155' }}>
+                <span style={{ fontSize: '13px', fontWeight: 600, color: "var(--disk-text-secondary)" }}>
                   Selecione os eventos de jornada enviados:
                 </span>
 
@@ -455,7 +455,7 @@ export default function TrackingAssignmentModal({
                         alignItems: 'center',
                         gap: '8px',
                         padding: '8px 12px',
-                        border: '1px solid #e2e8f0',
+                        border: "1px solid var(--disk-border-default)",
                         borderRadius: '6px',
                         fontSize: '13px',
                         cursor: 'pointer'
@@ -484,23 +484,23 @@ export default function TrackingAssignmentModal({
 
             {step === 4 && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <div style={{ padding: '16px', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', display: 'grid', gridTemplateColumns: '120px 1fr', gap: '8px', fontSize: '13px' }}>
-                  <span style={{ color: '#64748b' }}>Plataforma:</span>
+                <div style={{ padding: '16px', background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', display: 'grid', gridTemplateColumns: '120px 1fr', gap: '8px', fontSize: '13px' }}>
+                  <span style={{ color: "var(--disk-text-muted)" }}>Plataforma:</span>
                   <strong>{providerMeta.name}</strong>
 
-                  <span style={{ color: '#64748b' }}>Nome:</span>
+                  <span style={{ color: "var(--disk-text-muted)" }}>Nome:</span>
                   <span>{name}</span>
 
-                  <span style={{ color: '#64748b' }}>ID do Pixel:</span>
+                  <span style={{ color: "var(--disk-text-muted)" }}>ID do Pixel:</span>
                   <code>{pixelId}</code>
 
-                  <span style={{ color: '#64748b' }}>Modo:</span>
+                  <span style={{ color: "var(--disk-text-muted)" }}>Modo:</span>
                   <span>{TRACKING_MODE_LABELS[newTrackingMode]?.label}</span>
 
-                  <span style={{ color: '#64748b' }}>Principal:</span>
+                  <span style={{ color: "var(--disk-text-muted)" }}>Principal:</span>
                   <span>{newIsPrimary ? 'Sim (★ Principal)' : 'Não'}</span>
 
-                  <span style={{ color: '#64748b' }}>Eventos ({selectedEvents.length}):</span>
+                  <span style={{ color: "var(--disk-text-muted)" }}>Eventos ({selectedEvents.length}):</span>
                   <span>{selectedEvents.join(', ')}</span>
                 </div>
 

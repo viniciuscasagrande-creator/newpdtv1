@@ -125,7 +125,7 @@ export default function AccountingEntriesPage({ events, notify, onNavigate }: Pr
           <span className="eyebrow">ESCRITURAÇÃO & PARTIDAS DOBRADAS</span>
           <div className="finance-title-row">
             <h1>Lançamentos Contábeis Integrados</h1>
-            <span className="pipeline-status-badge" style={{ background: '#EFF6FF', color: '#1D4ED8', borderColor: '#BFDBFE' }}>
+            <span className="pipeline-status-badge" style={{ background: "var(--disk-color-info-subtle)", color: "var(--disk-color-info-text)", borderColor: "var(--disk-color-info-border)" }}>
               <Sparkles size={13} /> Geração Automática por Venda / Repasse
             </span>
           </div>
@@ -264,7 +264,7 @@ export default function AccountingEntriesPage({ events, notify, onNavigate }: Pr
                   <td>
                     <div>
                       <strong style={{ color: '#1C79EF', fontSize: '12px' }}>{entry.entryCode}</strong>
-                      <small style={{ display: 'block', color: '#64748B' }}>{entry.date}</small>
+                      <small style={{ display: 'block', color: "var(--disk-text-muted)" }}>{entry.date}</small>
                     </div>
                   </td>
                   <td>
@@ -298,12 +298,12 @@ export default function AccountingEntriesPage({ events, notify, onNavigate }: Pr
                     </div>
                   </td>
                   <td>
-                    <span style={{ fontSize: '11px', color: '#475569' }}>
+                    <span style={{ fontSize: '11px', color: "var(--disk-text-secondary)" }}>
                       {entry.costCenter || 'Geral'}
                     </span>
                   </td>
                   <td style={{ textAlign: 'right' }}>
-                    <strong style={{ color: '#0F172A', fontSize: '14px' }}>{brl(entry.amount)}</strong>
+                    <strong style={{ color: "var(--disk-text-primary)", fontSize: '14px' }}>{brl(entry.amount)}</strong>
                   </td>
                   <td>
                     <span className={`finance-status ${entry.status.toLowerCase()}`}>

@@ -389,21 +389,21 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
   }
 
   return (
-    <div className="utm-center utm-dashboard-v2" style={{ background: '#F8FAFC', color: '#0F172A' }}>
+    <div className="utm-center utm-dashboard-v2" style={{ background: "var(--disk-bg-muted)", color: "var(--disk-text-primary)" }}>
       {/* 1. Header & Operational Context Controls */}
-      <section className="utm-dash-header mobile-utm-head" style={{ padding: '8px 0', borderBottom: '1px solid #E2E8F0', marginBottom: '8px' }}>
+      <section className="utm-dash-header mobile-utm-head" style={{ padding: '8px 0', borderBottom: "1px solid var(--disk-border-default)", marginBottom: '8px' }}>
         <div className="utm-dash-title">
           <h2>Central UTM & Conversões</h2>
           <p>Acompanhe em tempo real a atribuição, jornada e desempenho operacional de cada origem de tráfego.</p>
         </div>
         <div className="utm-dash-controls mobile-utm-controls">
           {/* Event Context */}
-          <div className="utm-context-select mobile-utm-context" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
-            <span style={{ color: '#64748B' }}>Evento selecionado</span>
+          <div className="utm-context-select mobile-utm-context" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
+            <span style={{ color: "var(--disk-text-muted)" }}>Evento selecionado</span>
             {events.length > 0 && onSelectEvent ? (
               <select
                 className="utm-period-select"
-                style={{ color: '#0F172A', fontWeight: 700, cursor: 'pointer', maxWidth: '220px' }}
+                style={{ color: "var(--disk-text-primary)", fontWeight: 700, cursor: 'pointer', maxWidth: '220px' }}
                 value={event.id}
                 onChange={e => {
                   const ev = events.find(x => x.id === Number(e.target.value))
@@ -418,17 +418,17 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
                 ))}
               </select>
             ) : (
-              <strong style={{ color: '#0F172A' }}>{event.title}</strong>
+              <strong style={{ color: "var(--disk-text-primary)" }}>{event.title}</strong>
             )}
             <small style={{ color: '#16A34A', fontWeight: 700 }}>● Ativo (ID: {event.code})</small>
           </div>
 
           {/* Date Range Picker */}
-          <div className="utm-context-select mobile-utm-context" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
-            <span style={{ color: '#64748B' }}>Período</span>
+          <div className="utm-context-select mobile-utm-context" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
+            <span style={{ color: "var(--disk-text-muted)" }}>Período</span>
             <select
               className="utm-period-select"
-              style={{ color: '#0F172A', fontWeight: 700, cursor: 'pointer' }}
+              style={{ color: "var(--disk-text-primary)", fontWeight: 700, cursor: 'pointer' }}
               value={period}
               onChange={e => { setPeriod(e.target.value); notify(`Período alterado para: ${e.target.value}`); }}
             >
@@ -439,7 +439,7 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
               <option value="Últimos 90 dias">Últimos 90 dias</option>
               <option value="Ano 2026 (Consolidado)">Ano 2026 (Consolidado)</option>
             </select>
-            <small style={{ color: '#64748B' }}>Dados em tempo real</small>
+            <small style={{ color: "var(--disk-text-muted)" }}>Dados em tempo real</small>
           </div>
 
           {/* Action Buttons */}
@@ -522,35 +522,35 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
         display: 'grid',
         gridTemplateColumns: 'repeat(6, 1fr)',
         gap: '10px',
-        background: '#FFFFFF',
-        border: '1px solid #E2E8F0',
+        background: "var(--disk-bg-surface)",
+        border: "1px solid var(--disk-border-default)",
         borderRadius: '8px',
         padding: '12px 16px',
         margin: '12px 0 16px',
         boxShadow: '0 1px 2px rgba(0,0,0,0.03)'
       }}>
         <div>
-          <span style={{ fontSize: '10px', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>🏆 Melhor Canal</span>
+          <span style={{ fontSize: '10px', fontWeight: 800, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>🏆 Melhor Canal</span>
           <strong style={{ display: 'block', fontSize: '13px', color: '#16A34A', marginTop: '2px' }}>WhatsApp (14,2% conv.)</strong>
         </div>
         <div>
-          <span style={{ fontSize: '10px', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>💰 Maior Receita</span>
-          <strong style={{ display: 'block', fontSize: '13px', color: '#0F172A', marginTop: '2px' }}>Instagram (R$ 12.480,50)</strong>
+          <span style={{ fontSize: '10px', fontWeight: 800, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>💰 Maior Receita</span>
+          <strong style={{ display: 'block', fontSize: '13px', color: "var(--disk-text-primary)", marginTop: '2px' }}>Instagram (R$ 12.480,50)</strong>
         </div>
         <div>
-          <span style={{ fontSize: '10px', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>🎯 Melhor Conversão</span>
+          <span style={{ fontSize: '10px', fontWeight: 800, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>🎯 Melhor Conversão</span>
           <strong style={{ display: 'block', fontSize: '13px', color: '#2563EB', marginTop: '2px' }}>WhatsApp (9,8%)</strong>
         </div>
         <div>
-          <span style={{ fontSize: '10px', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>🚀 Mais Tráfego</span>
+          <span style={{ fontSize: '10px', fontWeight: 800, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>🚀 Mais Tráfego</span>
           <strong style={{ display: 'block', fontSize: '13px', color: '#7C3AED', marginTop: '2px' }}>Instagram (1.842 vis.)</strong>
         </div>
         <div>
-          <span style={{ fontSize: '10px', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>⚠️ Maior Abandono</span>
+          <span style={{ fontSize: '10px', fontWeight: 800, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>⚠️ Maior Abandono</span>
           <strong style={{ display: 'block', fontSize: '13px', color: '#EA580C', marginTop: '2px' }}>Google Ads (12 carr.)</strong>
         </div>
         <div>
-          <span style={{ fontSize: '10px', fontWeight: 800, color: '#64748B', textTransform: 'uppercase' }}>💡 Receita Potencial</span>
+          <span style={{ fontSize: '10px', fontWeight: 800, color: "var(--disk-text-muted)", textTransform: 'uppercase' }}>💡 Receita Potencial</span>
           <strong style={{ display: 'block', fontSize: '13px', color: '#059669', marginTop: '2px' }}>R$ 2.840,00</strong>
         </div>
       </section>
@@ -558,38 +558,38 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
       {/* 3. Main 2-Column Section */}
       <section className="utm-dash-main-grid">
         {/* Left Column: List of all UTMs */}
-        <aside className="utm-dash-panel utm-link-list-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0' }}>
+        <aside className="utm-dash-panel utm-link-list-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
           <div className="utm-panel-head">
             <div>
-              <h3 style={{ color: '#0F172A' }}>Todas as URLs rastreáveis do evento</h3>
+              <h3 style={{ color: "var(--disk-text-primary)" }}>Todas as URLs rastreáveis do evento</h3>
             </div>
-            <span className="utm-count-badge" style={{ background: '#F1F5F9', color: '#475569', border: '1px solid #CBD5E1' }}>
+            <span className="utm-count-badge" style={{ background: "var(--disk-bg-muted)", color: "var(--disk-text-secondary)", border: "1px solid var(--disk-border-default)" }}>
               {linksList.length} URLs cadastradas
             </span>
           </div>
 
           {/* Search & Channel Filter */}
           <div className="utm-list-tools" style={{ display: 'grid', gridTemplateColumns: '1fr 140px', gap: '8px', marginBottom: '12px' }}>
-            <div className="utm-search dark" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
-              <Search size={14} style={{ color: '#64748B' }} />
+            <div className="utm-search dark" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
+              <Search size={14} style={{ color: "var(--disk-text-muted)" }} />
               <input
                 value={linkSearch}
                 onChange={e => setLinkSearch(e.target.value)}
                 placeholder="Pesquisar URL ou canal..."
-                style={{ color: '#0F172A' }}
+                style={{ color: "var(--disk-text-primary)" }}
               />
               {linkSearch && (
-                <button onClick={() => setLinkSearch('')} style={{ background: 'none', border: 0, color: '#64748B', cursor: 'pointer' }}>
+                <button onClick={() => setLinkSearch('')} style={{ background: 'none', border: 0, color: "var(--disk-text-muted)", cursor: 'pointer' }}>
                   <X size={13} />
                 </button>
               )}
             </div>
-            <div className="utm-source-filter dark" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', borderRadius: '6px', padding: '0 8px', display: 'flex', alignItems: 'center' }}>
-              <Filter size={13} style={{ color: '#64748B', marginRight: '6px' }} />
+            <div className="utm-source-filter dark" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '6px', padding: '0 8px', display: 'flex', alignItems: 'center' }}>
+              <Filter size={13} style={{ color: "var(--disk-text-muted)", marginRight: '6px' }} />
               <select
                 value={sourceFilter}
                 onChange={e => setSourceFilter(e.target.value)}
-                style={{ background: 'transparent', border: 0, outline: 0, color: '#0F172A', fontSize: '11px', fontWeight: 600, width: '100%' }}
+                style={{ background: 'transparent', border: 0, outline: 0, color: "var(--disk-text-primary)", fontSize: '11px', fontWeight: 600, width: '100%' }}
               >
                 <option value="all">Todos canais</option>
                 <option value="instagram">Instagram</option>
@@ -650,19 +650,19 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
                     {getSourceIcon(item.source)}
                   </div>
                   <div className="utm-link-row-copy">
-                    <strong style={{ color: '#0F172A' }}>{item.name}</strong>
-                    <small style={{ color: '#64748B' }}>{item.shortUrl}</small>
+                    <strong style={{ color: "var(--disk-text-primary)" }}>{item.name}</strong>
+                    <small style={{ color: "var(--disk-text-muted)" }}>{item.shortUrl}</small>
                   </div>
                   <div className="utm-link-row-stat">
-                    <b style={{ color: '#0F172A' }}>{item.visits.toLocaleString('pt-BR')}</b>
+                    <b style={{ color: "var(--disk-text-primary)" }}>{item.visits.toLocaleString('pt-BR')}</b>
                     <span>visitas</span>
                   </div>
                   <div className="utm-link-row-stat">
-                    <b style={{ color: '#0F172A' }}>{item.sales}</b>
+                    <b style={{ color: "var(--disk-text-primary)" }}>{item.sales}</b>
                     <span>vendas</span>
                   </div>
                   <div className="utm-link-row-stat revenue">
-                    <b style={{ color: '#0F172A' }}>{`R$ ${(item.revenueCents / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}</b>
+                    <b style={{ color: "var(--disk-text-primary)" }}>{`R$ ${(item.revenueCents / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}</b>
                     <span>receita</span>
                   </div>
                   <button
@@ -692,7 +692,7 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
             })}
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '12px', paddingTop: '10px', borderTop: '1px solid #E2E8F0' }}>
+          <div style={{ textAlign: 'center', marginTop: '12px', paddingTop: '10px', borderTop: "1px solid var(--disk-border-default)" }}>
             <button className="utm-view-all-btn" onClick={() => { setLinkSearch(''); setSourceFilter('all'); notify('Exibindo todas as URLs ativas.'); }}>
               Ver todas as URLs
             </button>
@@ -710,8 +710,8 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
             <>
               {/* Automated Campaign Diagnostic Card (Fase 16.10) */}
               <div style={{
-                background: '#EFF6FF',
-                border: '1px solid #BFDBFE',
+                background: "var(--disk-color-info-subtle)",
+                border: "1px solid var(--disk-color-info-border)",
                 borderRadius: '8px',
                 padding: '12px 16px',
                 marginBottom: '14px',
@@ -726,7 +726,7 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
                     <strong style={{ fontSize: '13px', color: '#1E3A8A', display: 'block' }}>
                       💡 Insights & Diagnóstico de Performance: {selectedItem.name}
                     </strong>
-                    <span style={{ fontSize: '11px', color: '#1E40AF' }}>
+                    <span style={{ fontSize: '11px', color: "var(--disk-color-info-text)" }}>
                       Conversão de {((selectedItem.sales / selectedItem.visits) * 100).toFixed(2).replace('.', ',')}% (acima da média geral do evento). {selectedItem.abandoned} abandonos identificados (R$ {((selectedItem.abandoned * 160)).toLocaleString('pt-BR')} em receita potencial). Pico de conversão: 19h–21h. <b>Recomendação:</b> priorizar remarketing no WhatsApp dos checkouts abandonados há menos de 2h.
                     </span>
                   </div>
@@ -755,19 +755,19 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
               </div>
 
               {/* Header of Selected URL */}
-              <section className="utm-dash-panel utm-selected-summary" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', position: 'relative' }}>
+              <section className="utm-dash-panel utm-selected-summary" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", position: 'relative' }}>
             <div className="utm-selected-brand">
               <div className={`utm-source-avatar ${selectedItem.source} big`}>
                 {getSourceIcon(selectedItem.source)}
               </div>
               <div>
                 <div className="utm-selected-title">
-                  <h3 style={{ color: '#0F172A' }}>{selectedItem.name}</h3>
+                  <h3 style={{ color: "var(--disk-text-primary)" }}>{selectedItem.name}</h3>
                   <span className={`live-status-pill ${selectedItem.status === 'pausada' ? 'paused' : ''}`}>
                     ● {selectedItem.status === 'pausada' ? 'Pausada' : 'Ativa'}
                   </span>
                 </div>
-                <p style={{ color: '#64748B' }}>{selectedItem.shortUrl} <span style={{ color: '#94A3B8', fontSize: '10px' }}>({selectedItem.destination})</span></p>
+                <p style={{ color: "var(--disk-text-muted)" }}>{selectedItem.shortUrl} <span style={{ color: "var(--disk-text-muted)", fontSize: '10px' }}>({selectedItem.destination})</span></p>
               </div>
             </div>
 
@@ -834,7 +834,7 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
           </section>
 
           {/* 6 Micro KPIs Strip for Selected URL */}
-          <section className="utm-selected-mini-kpis" style={{ background: '#E2E8F0', border: '1px solid #CBD5E1' }}>
+          <section className="utm-selected-mini-kpis" style={{ background: "var(--disk-bg-active)", border: "1px solid var(--disk-border-default)" }}>
             <div className="utm-mini-metric blue">
               <Users size={14} />
               <div>
@@ -882,11 +882,11 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
           {/* Visual Charts Grid: Funnel + Daily Evolution & Hourly Stack */}
           <section className="utm-visual-grid">
             {/* Funnel Panel */}
-            <article className="utm-dash-panel utm-funnel-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0' }}>
+            <article className="utm-dash-panel utm-funnel-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
               <div className="utm-panel-head">
                 <div>
-                  <h3 style={{ color: '#0F172A' }}>Funil de conversão</h3>
-                  <span style={{ color: '#64748B' }}>Clique em uma etapa para filtrar os pedidos</span>
+                  <h3 style={{ color: "var(--disk-text-primary)" }}>Funil de conversão</h3>
+                  <span style={{ color: "var(--disk-text-muted)" }}>Clique em uma etapa para filtrar os pedidos</span>
                 </div>
               </div>
               <div className="utm-funnel-v2">
@@ -906,8 +906,8 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
                   <FunnelRow label="Compras realizadas" count={String(selectedItem.sales)} pct={`${((selectedItem.sales / selectedItem.visits) * 100).toFixed(2).replace('.', ',')}%`} color="#10B981" width="30%" />
                 </div>
               </div>
-              <div className="utm-funnel-footer" style={{ borderTop: '1px solid #E2E8F0' }}>
-                <span style={{ color: '#64748B' }}>Taxa de conversão geral</span>
+              <div className="utm-funnel-footer" style={{ borderTop: "1px solid var(--disk-border-default)" }}>
+                <span style={{ color: "var(--disk-text-muted)" }}>Taxa de conversão geral</span>
                 <strong className="conversion-highlight">{`${((selectedItem.sales / selectedItem.visits) * 100).toFixed(2).replace('.', ',')}%`}</strong>
               </div>
             </article>
@@ -915,11 +915,11 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
             {/* Charts Stack */}
             <div className="utm-chart-stack">
               {/* Daily Evolution Chart with Hover Tooltips */}
-              <article className="utm-dash-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', position: 'relative' }}>
+              <article className="utm-dash-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", position: 'relative' }}>
                 <div className="utm-panel-head">
                   <div>
-                    <h3 style={{ color: '#0F172A' }}>Evolução de ações por dia</h3>
-                    <span style={{ color: '#64748B' }}>Passe o mouse nos pontos para ver detalhes</span>
+                    <h3 style={{ color: "var(--disk-text-primary)" }}>Evolução de ações por dia</h3>
+                    <span style={{ color: "var(--disk-text-muted)" }}>Passe o mouse nos pontos para ver detalhes</span>
                   </div>
                 </div>
                 <div className="utm-line-legend">
@@ -964,7 +964,7 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
                   {/* Hover Popover Tooltip */}
                   {hoveredPoint && (
                     <div className="utm-chart-popover-tooltip">
-                      <strong style={{ display: 'block', borderBottom: '1px solid #E2E8F0', paddingBottom: '4px', marginBottom: '6px', color: '#0F172A' }}>
+                      <strong style={{ display: 'block', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '4px', marginBottom: '6px', color: "var(--disk-text-primary)" }}>
                         📅 {hoveredPoint.date}/2026
                       </strong>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', fontSize: '11px' }}>
@@ -972,7 +972,7 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
                         <span style={{ color: '#EA580C' }}>🟠 Checkouts: <b>{hoveredPoint.checkout}</b></span>
                         <span style={{ color: '#9333EA' }}>🟣 Abandonos: <b>{hoveredPoint.abandoned}</b></span>
                         <span style={{ color: '#2563EB' }}>🔵 Compras: <b>{hoveredPoint.sales}</b></span>
-                        <span style={{ color: '#0F172A', fontWeight: 700, marginTop: '3px', borderTop: '1px solid #F1F5F9', paddingTop: '3px' }}>
+                        <span style={{ color: "var(--disk-text-primary)", fontWeight: 700, marginTop: '3px', borderTop: "1px solid var(--disk-border-default)", paddingTop: '3px' }}>
                           📈 Conversão: <b>{hoveredPoint.rate}</b>
                         </span>
                       </div>
@@ -982,11 +982,11 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
               </article>
 
               {/* Hourly Distribution Chart */}
-              <article className="utm-dash-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', position: 'relative' }}>
+              <article className="utm-dash-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", position: 'relative' }}>
                 <div className="utm-panel-head">
                   <div>
-                    <h3 style={{ color: '#0F172A' }}>Distribuição por hora</h3>
-                    <span style={{ color: '#64748B' }}>Pico de conversão: <b>20:00h (96 ações)</b></span>
+                    <h3 style={{ color: "var(--disk-text-primary)" }}>Distribuição por hora</h3>
+                    <span style={{ color: "var(--disk-text-muted)" }}>Pico de conversão: <b>20:00h (96 ações)</b></span>
                   </div>
                 </div>
                 <div className="utm-hour-chart-v3">
@@ -999,7 +999,7 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
                       onMouseLeave={() => setHoveredHour(null)}
                     >
                       <div className="utm-bar-fill" style={{ height: `${h.val}%`, background: h.isPeak ? '#16A34A' : '#3B82F6' }} />
-                      {h.label && <small style={{ color: '#64748B' }}>{h.label}</small>}
+                      {h.label && <small style={{ color: "var(--disk-text-muted)" }}>{h.label}</small>}
                     </div>
                   ))}
                 </div>
@@ -1022,20 +1022,20 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
       {/* 4. Bottom Section: Orders Table & Remarketing Widget */}
       <section className="utm-bottom-grid">
         {/* Orders Table Panel */}
-        <article className="utm-dash-panel utm-orders-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0' }}>
+        <article className="utm-dash-panel utm-orders-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
           <div className="utm-panel-head utm-table-head">
             <div>
-              <h3 style={{ color: '#0F172A' }}>Pedidos & Conversões desta URL</h3>
-              <span style={{ color: '#64748B' }}>{filteredOrders.length} registros identificados</span>
+              <h3 style={{ color: "var(--disk-text-primary)" }}>Pedidos & Conversões desta URL</h3>
+              <span style={{ color: "var(--disk-text-muted)" }}>{filteredOrders.length} registros identificados</span>
             </div>
             <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-              <div className="utm-search dark" style={{ width: '280px', background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
-                <Search size={14} style={{ color: '#64748B' }} />
+              <div className="utm-search dark" style={{ width: '280px', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
+                <Search size={14} style={{ color: "var(--disk-text-muted)" }} />
                 <input
                   value={search}
                   onChange={e => { setSearch(e.target.value); setCurrentPage(1); }}
                   placeholder="Buscar pedido, cliente ou email..."
-                  style={{ color: '#0F172A' }}
+                  style={{ color: "var(--disk-text-primary)" }}
                 />
                 {search && (
                   <button onClick={() => setSearch('')} className="icon-clear">
@@ -1086,27 +1086,27 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
                     </td>
                     <td>
                       <div className="order-customer-cell">
-                        <strong style={{ color: '#0F172A' }}>{o.customer}</strong>
-                        <small style={{ color: '#64748B' }}>{o.email}</small>
+                        <strong style={{ color: "var(--disk-text-primary)" }}>{o.customer}</strong>
+                        <small style={{ color: "var(--disk-text-muted)" }}>{o.email}</small>
                       </div>
                     </td>
                     <td>
                       <div className="order-utm-cell">
-                        <span style={{ color: '#334155' }}>{o.utmSource} / {o.utmMedium} / {o.utmCampaign}</span>
-                        <small style={{ color: '#64748B' }}>{o.utmContent || 'direct'}</small>
+                        <span style={{ color: "var(--disk-text-secondary)" }}>{o.utmSource} / {o.utmMedium} / {o.utmCampaign}</span>
+                        <small style={{ color: "var(--disk-text-muted)" }}>{o.utmContent || 'direct'}</small>
                       </div>
                     </td>
                     <td>
                       <div className="order-tickets-cell">
-                        <strong style={{ color: '#0F172A' }}>{o.tickets}</strong>
-                        <small style={{ color: '#64748B' }}>{o.modality}</small>
+                        <strong style={{ color: "var(--disk-text-primary)" }}>{o.tickets}</strong>
+                        <small style={{ color: "var(--disk-text-muted)" }}>{o.modality}</small>
                       </div>
                     </td>
                     <td style={{ textAlign: 'right' }}>
-                      <strong style={{ color: '#0F172A', fontSize: '13px' }}>{`R$ ${(o.amountCents / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}</strong>
+                      <strong style={{ color: "var(--disk-text-primary)", fontSize: '13px' }}>{`R$ ${(o.amountCents / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}</strong>
                     </td>
                     <td>
-                      <span className="order-date-time" style={{ color: '#64748B' }}>{o.dateTime}</span>
+                      <span className="order-date-time" style={{ color: "var(--disk-text-muted)" }}>{o.dateTime}</span>
                     </td>
                     <td style={{ textAlign: 'center' }}>
                       <button className="icon-action-btn" onClick={(e) => { e.stopPropagation(); setSelectedOrder(o); }} title="Ver jornada de atribuição">
@@ -1120,17 +1120,17 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
           </div>
 
           {/* Table Pagination */}
-          <div className="utm-table-pagination" style={{ borderTop: '1px solid #E2E8F0', background: '#FFFFFF' }}>
+          <div className="utm-table-pagination" style={{ borderTop: "1px solid var(--disk-border-default)", background: "var(--disk-bg-surface)" }}>
             <div className="pagination-page-size">
-              <span style={{ color: '#64748B' }}>Itens por página:</span>
-              <select value={itemsPerPage} onChange={e => { setItemsPerPage(Number(e.target.value)); setCurrentPage(1); }} style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', color: '#0F172A' }}>
+              <span style={{ color: "var(--disk-text-muted)" }}>Itens por página:</span>
+              <select value={itemsPerPage} onChange={e => { setItemsPerPage(Number(e.target.value)); setCurrentPage(1); }} style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", color: "var(--disk-text-primary)" }}>
                 <option value={5}>5</option>
                 <option value={10}>10</option>
                 <option value={25}>25</option>
               </select>
             </div>
             <div className="pagination-controls">
-              <span style={{ color: '#64748B' }}>1-{paginatedOrders.length} de {filteredOrders.length}</span>
+              <span style={{ color: "var(--disk-text-muted)" }}>1-{paginatedOrders.length} de {filteredOrders.length}</span>
               <button className="pag-btn" disabled={currentPage === 1} onClick={() => setCurrentPage(1)}><ChevronsLeft size={14} /></button>
               <button className="pag-btn" disabled={currentPage === 1} onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}><ChevronLeft size={14} /></button>
               <button className="pag-btn active">1</button>
@@ -1141,29 +1141,29 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
         </article>
 
         {/* Remarketing & Recuperação Widget (Right) */}
-        <aside className="utm-dash-panel utm-recovery-widget" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0' }}>
+        <aside className="utm-dash-panel utm-recovery-widget" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
           <div className="utm-panel-head">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Users size={16} style={{ color: '#0284C7' }} />
-              <h3 style={{ color: '#0F172A' }}>Remarketing & Recuperação</h3>
+              <h3 style={{ color: "var(--disk-text-primary)" }}>Remarketing & Recuperação</h3>
             </div>
           </div>
 
           <div className="recovery-metrics-list">
-            <div className="recovery-metric-row" style={{ borderBottom: '1px solid #F1F5F9' }}>
-              <span style={{ color: '#64748B' }}>Carrinhos abandonados</span>
-              <strong style={{ color: '#0F172A' }}>18</strong>
+            <div className="recovery-metric-row" style={{ borderBottom: "1px solid var(--disk-border-default)" }}>
+              <span style={{ color: "var(--disk-text-muted)" }}>Carrinhos abandonados</span>
+              <strong style={{ color: "var(--disk-text-primary)" }}>18</strong>
             </div>
-            <div className="recovery-metric-row" style={{ borderBottom: '1px solid #F1F5F9' }}>
-              <span style={{ color: '#64748B' }}>Mensagens enviadas</span>
-              <strong style={{ color: '#0F172A' }}>14</strong>
+            <div className="recovery-metric-row" style={{ borderBottom: "1px solid var(--disk-border-default)" }}>
+              <span style={{ color: "var(--disk-text-muted)" }}>Mensagens enviadas</span>
+              <strong style={{ color: "var(--disk-text-primary)" }}>14</strong>
             </div>
-            <div className="recovery-metric-row" style={{ borderBottom: '1px solid #F1F5F9' }}>
-              <span style={{ color: '#64748B' }}>Recuperações</span>
-              <strong style={{ color: '#0F172A' }}>5</strong>
+            <div className="recovery-metric-row" style={{ borderBottom: "1px solid var(--disk-border-default)" }}>
+              <span style={{ color: "var(--disk-text-muted)" }}>Recuperações</span>
+              <strong style={{ color: "var(--disk-text-primary)" }}>5</strong>
             </div>
-            <div className="recovery-metric-row" style={{ borderBottom: '1px solid #F1F5F9' }}>
-              <span style={{ color: '#64748B' }}>Receita recuperada</span>
+            <div className="recovery-metric-row" style={{ borderBottom: "1px solid var(--disk-border-default)" }}>
+              <span style={{ color: "var(--disk-text-muted)" }}>Receita recuperada</span>
               <strong className="recovered-money-value" style={{ color: '#16A34A' }}>R$ 890,00</strong>
             </div>
           </div>
@@ -1176,7 +1176,7 @@ export default function UtmConversionsCenter({ event, events = [], onSelectEvent
             Ver oportunidades de remarketing
           </button>
 
-          <div className="recovery-info-note" style={{ color: '#64748B' }}>
+          <div className="recovery-info-note" style={{ color: "var(--disk-text-muted)" }}>
             <Info size={13} />
             <span>Esses dados são desta URL selecionada.</span>
           </div>
@@ -1258,19 +1258,19 @@ function UrlComparisonMatrix({ comparedItems, onExit }: { comparedItems: Trackin
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       {/* Header of Comparison */}
-      <div className="utm-dash-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="utm-dash-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>
             ⚖️ COMPARAÇÃO LADO A LADO DE URLs ({comparedItems.length} selecionadas)
           </span>
-          <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>
+          <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
             Matriz Comparativa de Performance & Conversão
           </h3>
-          <p style={{ margin: '3px 0 0', fontSize: '12px', color: '#64748B' }}>
+          <p style={{ margin: '3px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
             Compare métricas de tráfego, funil e faturamento entre canais para otimizar alocação de verba.
           </p>
         </div>
-        <button className="btn secondary" onClick={onExit} style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+        <button className="btn secondary" onClick={onExit} style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
           <X size={15} /> Sair da Comparação
         </button>
       </div>
@@ -1283,14 +1283,14 @@ function UrlComparisonMatrix({ comparedItems, onExit }: { comparedItems: Trackin
           const isWinnerConv = convRate === highestConv && highestConv > 0
 
           return (
-            <div key={item.id} className="utm-dash-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: '16px', position: 'relative' }}>
+            <div key={item.id} className="utm-dash-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px', position: 'relative' }}>
               {isWinnerSales && (
-                <span style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '10px', fontWeight: 800, background: '#DCFCE7', color: '#166534', border: '1px solid #BBF7D0', padding: '2px 6px', borderRadius: '4px' }}>
+                <span style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '10px', fontWeight: 800, background: "var(--disk-color-success-subtle)", color: "var(--disk-color-success-text)", border: "1px solid var(--disk-color-success-border)", padding: '2px 6px', borderRadius: '4px' }}>
                   🏆 Mais Vendas
                 </span>
               )}
               {isWinnerConv && !isWinnerSales && (
-                <span style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '10px', fontWeight: 800, background: '#EFF6FF', color: '#1D4ED8', border: '1px solid #BFDBFE', padding: '2px 6px', borderRadius: '4px' }}>
+                <span style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '10px', fontWeight: 800, background: "var(--disk-color-info-subtle)", color: "var(--disk-color-info-text)", border: "1px solid var(--disk-color-info-border)", padding: '2px 6px', borderRadius: '4px' }}>
                   🎯 Maior Conversão
                 </span>
               )}
@@ -1300,26 +1300,26 @@ function UrlComparisonMatrix({ comparedItems, onExit }: { comparedItems: Trackin
                   {getSourceIcon(item.source)}
                 </div>
                 <div>
-                  <strong style={{ fontSize: '13px', color: '#0F172A', display: 'block' }}>{item.name}</strong>
-                  <small style={{ fontSize: '10px', color: '#64748B' }}>{item.shortUrl}</small>
+                  <strong style={{ fontSize: '13px', color: "var(--disk-text-primary)", display: 'block' }}>{item.name}</strong>
+                  <small style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>{item.shortUrl}</small>
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', background: '#F8FAFC', padding: '10px', borderRadius: '6px', border: '1px solid #E2E8F0' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', background: "var(--disk-bg-muted)", padding: '10px', borderRadius: '6px', border: "1px solid var(--disk-border-default)" }}>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Visitas</span>
-                  <strong style={{ fontSize: '14px', color: '#0F172A' }}>{item.visits.toLocaleString('pt-BR')}</strong>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Visitas</span>
+                  <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)" }}>{item.visits.toLocaleString('pt-BR')}</strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Vendas</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Vendas</span>
                   <strong style={{ fontSize: '14px', color: '#16A34A' }}>{item.sales}</strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Conversão</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Conversão</span>
                   <strong style={{ fontSize: '14px', color: '#2563EB' }}>{convRate.toFixed(2).replace('.', ',')}%</strong>
                 </div>
                 <div>
-                  <span style={{ fontSize: '10px', color: '#64748B', display: 'block' }}>Receita</span>
+                  <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", display: 'block' }}>Receita</span>
                   <strong style={{ fontSize: '14px', color: '#16A34A' }}>{formatMoney(item.revenueCents)}</strong>
                 </div>
               </div>
@@ -1329,8 +1329,8 @@ function UrlComparisonMatrix({ comparedItems, onExit }: { comparedItems: Trackin
       </div>
 
       {/* Side by Side Comparative Table */}
-      <div className="utm-dash-panel" style={{ background: '#FFFFFF', border: '1px solid #E2E8F0', padding: 0, overflow: 'hidden' }}>
-        <div style={{ padding: '12px 16px', background: '#F1F5F9', borderBottom: '1px solid #E2E8F0', fontWeight: 700, fontSize: '12px', color: '#334155' }}>
+      <div className="utm-dash-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: 0, overflow: 'hidden' }}>
+        <div style={{ padding: '12px 16px', background: "var(--disk-bg-muted)", borderBottom: "1px solid var(--disk-border-default)", fontWeight: 700, fontSize: '12px', color: "var(--disk-text-secondary)" }}>
           Tabela Comparativa de Etapas do Funil
         </div>
         <table className="utm-table" style={{ width: '100%' }}>
@@ -1357,7 +1357,7 @@ function UrlComparisonMatrix({ comparedItems, onExit }: { comparedItems: Trackin
               <td><strong>2. Adicionaram ao Carrinho</strong></td>
               {comparedItems.map(item => (
                 <td key={item.id} style={{ textAlign: 'right' }}>
-                  {item.added} <small style={{ color: '#64748B' }}>({item.visits ? ((item.added / item.visits) * 100).toFixed(1) : 0}%)</small>
+                  {item.added} <small style={{ color: "var(--disk-text-muted)" }}>({item.visits ? ((item.added / item.visits) * 100).toFixed(1) : 0}%)</small>
                 </td>
               ))}
             </tr>
@@ -1365,7 +1365,7 @@ function UrlComparisonMatrix({ comparedItems, onExit }: { comparedItems: Trackin
               <td><strong>3. Checkouts Iniciados</strong></td>
               {comparedItems.map(item => (
                 <td key={item.id} style={{ textAlign: 'right' }}>
-                  {item.checkout} <small style={{ color: '#64748B' }}>({item.visits ? ((item.checkout / item.visits) * 100).toFixed(1) : 0}%)</small>
+                  {item.checkout} <small style={{ color: "var(--disk-text-muted)" }}>({item.visits ? ((item.checkout / item.visits) * 100).toFixed(1) : 0}%)</small>
                 </td>
               ))}
             </tr>
@@ -1410,11 +1410,11 @@ function UrlComparisonMatrix({ comparedItems, onExit }: { comparedItems: Trackin
 
 function DashKpi({ tone, icon, label, value, delta, isNeutral = false }: { tone: string; icon: ReactNode; label: string; value: string; delta: string; isNeutral?: boolean }) {
   return (
-    <article className={`utm-dash-kpi ${tone}`} style={{ background: '#FFFFFF', border: '1px solid #E2E8F0' }}>
+    <article className={`utm-dash-kpi ${tone}`} style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
       <div className="utm-dash-kpi-icon">{icon}</div>
       <div className="utm-dash-kpi-body">
-        <span className="kpi-title-label" style={{ color: '#64748B' }}>{label}</span>
-        <strong className="kpi-main-value" style={{ color: '#0F172A' }}>{value}</strong>
+        <span className="kpi-title-label" style={{ color: "var(--disk-text-muted)" }}>{label}</span>
+        <strong className="kpi-main-value" style={{ color: "var(--disk-text-primary)" }}>{value}</strong>
         <small className={`kpi-delta-tag ${isNeutral ? 'neutral-tag' : 'positive-tag'}`}>
           {delta}
         </small>
@@ -1430,9 +1430,9 @@ function FunnelRow({ label, count, pct, color, width }: { label: string; count: 
         <div className="funnel-trapezoid-bar" style={{ width, background: color }} />
       </div>
       <div className="funnel-text-labels">
-        <span className="funnel-step-name" style={{ color: '#334155' }}>{label}</span>
-        <strong className="funnel-step-count" style={{ color: '#0F172A' }}>{count}</strong>
-        <small className="funnel-step-pct" style={{ color: '#64748B' }}>{pct}</small>
+        <span className="funnel-step-name" style={{ color: "var(--disk-text-secondary)" }}>{label}</span>
+        <strong className="funnel-step-count" style={{ color: "var(--disk-text-primary)" }}>{count}</strong>
+        <small className="funnel-step-pct" style={{ color: "var(--disk-text-muted)" }}>{pct}</small>
       </div>
     </div>
   )
@@ -1503,8 +1503,8 @@ function NewLinkDrawer({ form, setForm, eventTitle, onClose, onSubmit }: { form:
         <div className="utm-drawer-head">
           <div>
             <span className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>UTM BUILDER OPERACIONAL</span>
-            <h3 style={{ color: '#0F172A', fontSize: '18px', margin: '2px 0' }}>{form.id ? 'Editar Parâmetros UTM' : 'Criar Nova URL Rastreável'}</h3>
-            <p style={{ color: '#64748B', fontSize: '11px', margin: 0 }}>Vinculada ao evento: <b>{eventTitle}</b></p>
+            <h3 style={{ color: "var(--disk-text-primary)", fontSize: '18px', margin: '2px 0' }}>{form.id ? 'Editar Parâmetros UTM' : 'Criar Nova URL Rastreável'}</h3>
+            <p style={{ color: "var(--disk-text-muted)", fontSize: '11px', margin: 0 }}>Vinculada ao evento: <b>{eventTitle}</b></p>
           </div>
           <button type="button" onClick={onClose} className="drawer-close-btn">✕</button>
         </div>
@@ -1614,8 +1614,8 @@ function NewLinkDrawer({ form, setForm, eventTitle, onClose, onSubmit }: { form:
 
           {/* Live Preview Box */}
           <div className="utm-live-preview-box">
-            <span style={{ fontSize: '10px', color: '#64748B', fontWeight: 800, textTransform: 'uppercase' }}>Prévia da URL Gerada</span>
-            <code style={{ fontSize: '11px', color: '#1E293B', display: 'block', wordBreak: 'break-all', margin: '4px 0' }}>{fullUrl}</code>
+            <span style={{ fontSize: '10px', color: "var(--disk-text-muted)", fontWeight: 800, textTransform: 'uppercase' }}>Prévia da URL Gerada</span>
+            <code style={{ fontSize: '11px', color: "var(--disk-text-primary)", display: 'block', wordBreak: 'break-all', margin: '4px 0' }}>{fullUrl}</code>
             <span style={{ fontSize: '11px', color: '#2563EB', fontWeight: 700 }}>URL Curta: {shortUrl}</span>
           </div>
 
@@ -1638,19 +1638,19 @@ function QrCodeModal({ modal, onClose, onCopy, notify }: { modal: { name: string
   return (
     <div className="utm-modal-backdrop" onClick={onClose}>
       <div className="utm-modal-card-v2" onClick={e => e.stopPropagation()} style={{ width: '420px', textAlign: 'center' }}>
-        <div className="utm-modal-head" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '10px' }}>
+        <div className="utm-modal-head" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '10px' }}>
           <div>
-            <h3 style={{ color: '#0F172A', fontSize: '16px', margin: 0 }}>QR Code Operacional</h3>
-            <p style={{ color: '#64748B', fontSize: '11px', margin: '2px 0 0' }}>{modal.name}</p>
+            <h3 style={{ color: "var(--disk-text-primary)", fontSize: '16px', margin: 0 }}>QR Code Operacional</h3>
+            <p style={{ color: "var(--disk-text-muted)", fontSize: '11px', margin: '2px 0 0' }}>{modal.name}</p>
           </div>
-          <button onClick={onClose} style={{ background: 'none', border: 0, cursor: 'pointer', color: '#64748B' }}>✕</button>
+          <button onClick={onClose} style={{ background: 'none', border: 0, cursor: 'pointer', color: "var(--disk-text-muted)" }}>✕</button>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px', margin: '16px 0' }}>
-          <div style={{ padding: '12px', background: '#FFFFFF', border: '1px solid #CBD5E1', borderRadius: '10px', boxShadow: '0 4px 12px rgba(0,0,0,0.06)' }}>
+          <div style={{ padding: '12px', background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", borderRadius: '10px', boxShadow: '0 4px 12px rgba(0,0,0,0.06)' }}>
             <img src={qrSvgUrl} alt="QR Code" style={{ width: '200px', height: '200px', display: 'block' }} />
           </div>
-          <div style={{ background: '#F1F5F9', border: '1px solid #CBD5E1', borderRadius: '6px', padding: '8px 12px', width: '100%' }}>
+          <div style={{ background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '6px', padding: '8px 12px', width: '100%' }}>
             <span style={{ fontSize: '11px', color: '#2563EB', fontWeight: 700 }}>https://{modal.shortUrl}</span>
           </div>
         </div>
@@ -1683,15 +1683,15 @@ function OrderAttributionModal({ order, onClose, onCopy, notify }: { order: Orde
   return (
     <div className="utm-modal-backdrop" onClick={onClose}>
       <div className="utm-modal-card-v2 wide" onClick={e => e.stopPropagation()} style={{ width: '680px' }}>
-        <div className="utm-modal-head" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '12px' }}>
+        <div className="utm-modal-head" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '12px' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span className={`utm-status-tag ${order.statusKey}`}>● {order.status}</span>
-              <h3 style={{ color: '#0F172A', fontSize: '16px', margin: 0 }}>Atribuição Completa: {order.code}</h3>
+              <h3 style={{ color: "var(--disk-text-primary)", fontSize: '16px', margin: 0 }}>Atribuição Completa: {order.code}</h3>
             </div>
-            <p style={{ color: '#64748B', fontSize: '11px', margin: '3px 0 0' }}>Origem identificada via UTM Tracking Engine</p>
+            <p style={{ color: "var(--disk-text-muted)", fontSize: '11px', margin: '3px 0 0' }}>Origem identificada via UTM Tracking Engine</p>
           </div>
-          <button onClick={onClose} style={{ background: 'none', border: 0, cursor: 'pointer', color: '#64748B' }}>✕</button>
+          <button onClick={onClose} style={{ background: 'none', border: 0, cursor: 'pointer', color: "var(--disk-text-muted)" }}>✕</button>
         </div>
 
         <div className="utm-order-attr-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px', margin: '14px 0' }}>
@@ -1741,14 +1741,14 @@ function OrderAttributionModal({ order, onClose, onCopy, notify }: { order: Orde
           </div>
           <div className="attr-card-box">
             <span>Valor Total</span>
-            <strong style={{ color: '#0F172A', fontSize: '14px' }}>{`R$ ${(order.amountCents / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}</strong>
+            <strong style={{ color: "var(--disk-text-primary)", fontSize: '14px' }}>{`R$ ${(order.amountCents / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}</strong>
           </div>
         </div>
 
-        <div className="attr-customer-strip" style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="attr-customer-strip" style={{ background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <strong style={{ color: '#0F172A', display: 'block', fontSize: '13px' }}>{order.customer} ({order.email})</strong>
-            <small style={{ color: '#64748B' }}>Tel: {order.phone} • {order.tickets} ({order.modality})</small>
+            <strong style={{ color: "var(--disk-text-primary)", display: 'block', fontSize: '13px' }}>{order.customer} ({order.email})</strong>
+            <small style={{ color: "var(--disk-text-muted)" }}>Tel: {order.phone} • {order.tickets} ({order.modality})</small>
           </div>
           <button className="btn secondary" onClick={() => onCopy(JSON.stringify(order, null, 2), 'JSON de atribuição copiado!')}>
             <Copy size={13} /> Copiar JSON
@@ -1768,25 +1768,25 @@ function ShareReportModal({ eventTitle, period, onClose, onCopy }: { eventTitle:
   return (
     <div className="utm-modal-backdrop" onClick={onClose}>
       <div className="utm-modal-card-v2" onClick={e => e.stopPropagation()} style={{ width: '480px' }}>
-        <div className="utm-modal-head" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '10px' }}>
+        <div className="utm-modal-head" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '10px' }}>
           <div>
-            <h3 style={{ color: '#0F172A', fontSize: '16px', margin: 0 }}>Compartilhar Visão UTM</h3>
-            <p style={{ color: '#64748B', fontSize: '11px', margin: '2px 0 0' }}>Gere um link protegido para sua equipe ou patrocinadores</p>
+            <h3 style={{ color: "var(--disk-text-primary)", fontSize: '16px', margin: 0 }}>Compartilhar Visão UTM</h3>
+            <p style={{ color: "var(--disk-text-muted)", fontSize: '11px', margin: '2px 0 0' }}>Gere um link protegido para sua equipe ou patrocinadores</p>
           </div>
-          <button onClick={onClose} style={{ background: 'none', border: 0, cursor: 'pointer', color: '#64748B' }}>✕</button>
+          <button onClick={onClose} style={{ background: 'none', border: 0, cursor: 'pointer', color: "var(--disk-text-muted)" }}>✕</button>
         </div>
 
         <div style={{ margin: '14px 0', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-          <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '8px', padding: '12px' }}>
-            <span style={{ fontSize: '11px', color: '#64748B', display: 'block' }}>Evento: <b>{eventTitle}</b></span>
-            <span style={{ fontSize: '11px', color: '#64748B', display: 'block', marginTop: '2px' }}>Período: <b>{period}</b></span>
+          <div style={{ background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '8px', padding: '12px' }}>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block' }}>Evento: <b>{eventTitle}</b></span>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", display: 'block', marginTop: '2px' }}>Período: <b>{period}</b></span>
           </div>
 
           <div style={{ display: 'flex', gap: '8px' }}>
             <input
               readOnly
               value={shareLink}
-              style={{ width: '100%', background: '#F1F5F9', border: '1px solid #CBD5E1', borderRadius: '6px', padding: '8px 10px', fontSize: '11px', color: '#1E293B' }}
+              style={{ width: '100%', background: "var(--disk-bg-muted)", border: "1px solid var(--disk-border-default)", borderRadius: '6px', padding: '8px 10px', fontSize: '11px', color: "var(--disk-text-primary)" }}
             />
             <button className="btn primary" onClick={() => onCopy(shareLink, 'Link de compartilhamento copiado!')}>
               <Copy size={14} /> Copiar
@@ -1805,36 +1805,36 @@ function ExportReportModal({ onClose, onExport }: { onClose: () => void; onExpor
   return (
     <div className="utm-modal-backdrop" onClick={onClose}>
       <div className="utm-modal-card-v2" onClick={e => e.stopPropagation()} style={{ width: '440px' }}>
-        <div className="utm-modal-head" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '10px' }}>
+        <div className="utm-modal-head" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '10px' }}>
           <div>
-            <h3 style={{ color: '#0F172A', fontSize: '16px', margin: 0 }}>Exportar Dados UTM</h3>
-            <p style={{ color: '#64748B', fontSize: '11px', margin: '2px 0 0' }}>Escolha o formato desejado para exportação</p>
+            <h3 style={{ color: "var(--disk-text-primary)", fontSize: '16px', margin: 0 }}>Exportar Dados UTM</h3>
+            <p style={{ color: "var(--disk-text-muted)", fontSize: '11px', margin: '2px 0 0' }}>Escolha o formato desejado para exportação</p>
           </div>
-          <button onClick={onClose} style={{ background: 'none', border: 0, cursor: 'pointer', color: '#64748B' }}>✕</button>
+          <button onClick={onClose} style={{ background: 'none', border: 0, cursor: 'pointer', color: "var(--disk-text-muted)" }}>✕</button>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', margin: '16px 0' }}>
           <button className="export-choice-card" onClick={() => onExport('csv')}>
             <FileSpreadsheet size={20} style={{ color: '#16A34A' }} />
             <div>
-              <strong style={{ color: '#0F172A', fontSize: '13px', display: 'block' }}>Exportar como CSV (Excel / Planilhas)</strong>
-              <small style={{ color: '#64748B' }}>Compatível com Microsoft Excel, Google Planilhas e BI</small>
+              <strong style={{ color: "var(--disk-text-primary)", fontSize: '13px', display: 'block' }}>Exportar como CSV (Excel / Planilhas)</strong>
+              <small style={{ color: "var(--disk-text-muted)" }}>Compatível com Microsoft Excel, Google Planilhas e BI</small>
             </div>
           </button>
 
           <button className="export-choice-card" onClick={() => onExport('xlsx')}>
             <FileSpreadsheet size={20} style={{ color: '#2563EB' }} />
             <div>
-              <strong style={{ color: '#0F172A', fontSize: '13px', display: 'block' }}>Exportar Planilha Completa (.XLSX)</strong>
-              <small style={{ color: '#64748B' }}>Com abas separadas para URLs, Pedidos e Conversões</small>
+              <strong style={{ color: "var(--disk-text-primary)", fontSize: '13px', display: 'block' }}>Exportar Planilha Completa (.XLSX)</strong>
+              <small style={{ color: "var(--disk-text-muted)" }}>Com abas separadas para URLs, Pedidos e Conversões</small>
             </div>
           </button>
 
           <button className="export-choice-card" onClick={() => onExport('pdf')}>
             <FileText size={20} style={{ color: '#EA580C' }} />
             <div>
-              <strong style={{ color: '#0F172A', fontSize: '13px', display: 'block' }}>Relatório Executivo em PDF</strong>
-              <small style={{ color: '#64748B' }}>Com gráficos, funil e indicadores para apresentação</small>
+              <strong style={{ color: "var(--disk-text-primary)", fontSize: '13px', display: 'block' }}>Relatório Executivo em PDF</strong>
+              <small style={{ color: "var(--disk-text-muted)" }}>Com gráficos, funil e indicadores para apresentação</small>
             </div>
           </button>
         </div>
@@ -1850,11 +1850,11 @@ function RecoveryOpportunitiesDrawer({ carts, selectedUrlName, onClose, onTrigge
   return (
     <div className="utm-modal-backdrop" onClick={onClose}>
       <aside className="utm-drawer-card-v2 wide" onClick={e => e.stopPropagation()} style={{ width: '640px' }}>
-        <div className="utm-drawer-head" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '12px' }}>
+        <div className="utm-drawer-head" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '12px' }}>
           <div>
             <span className="eyebrow" style={{ color: '#0284C7', fontWeight: 800 }}>REMARKETING OPERACIONAL</span>
-            <h3 style={{ color: '#0F172A', fontSize: '18px', margin: '2px 0' }}>Oportunidades de Recuperação</h3>
-            <p style={{ color: '#64748B', fontSize: '11px', margin: 0 }}>Origem: <b>{selectedUrlName}</b></p>
+            <h3 style={{ color: "var(--disk-text-primary)", fontSize: '18px', margin: '2px 0' }}>Oportunidades de Recuperação</h3>
+            <p style={{ color: "var(--disk-text-muted)", fontSize: '11px', margin: 0 }}>Origem: <b>{selectedUrlName}</b></p>
           </div>
           <button type="button" onClick={onClose} className="drawer-close-btn">✕</button>
         </div>
@@ -1864,9 +1864,9 @@ function RecoveryOpportunitiesDrawer({ carts, selectedUrlName, onClose, onTrigge
             <div key={c.id} className="recovery-cart-row-card">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 <div>
-                  <strong style={{ color: '#0F172A', fontSize: '13px', display: 'block' }}>{c.customerName}</strong>
-                  <small style={{ color: '#64748B' }}>{c.email} • {c.phone}</small>
-                  <div style={{ fontSize: '11px', color: '#334155', marginTop: '4px' }}>
+                  <strong style={{ color: "var(--disk-text-primary)", fontSize: '13px', display: 'block' }}>{c.customerName}</strong>
+                  <small style={{ color: "var(--disk-text-muted)" }}>{c.email} • {c.phone}</small>
+                  <div style={{ fontSize: '11px', color: "var(--disk-text-secondary)", marginTop: '4px' }}>
                     🛒 <b>{c.tickets}</b> — <span style={{ color: '#16A34A', fontWeight: 700 }}>{`R$ ${(c.cartValueCents / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}</span>
                   </div>
                 </div>
@@ -1875,8 +1875,8 @@ function RecoveryOpportunitiesDrawer({ carts, selectedUrlName, onClose, onTrigge
                 </span>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px', paddingTop: '8px', borderTop: '1px solid #F1F5F9' }}>
-                <small style={{ color: '#94A3B8' }}>Abandonado: {c.abandonedAt} ({c.messagesSent} msg enviada)</small>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px', paddingTop: '8px', borderTop: "1px solid var(--disk-border-default)" }}>
+                <small style={{ color: "var(--disk-text-muted)" }}>Abandonado: {c.abandonedAt} ({c.messagesSent} msg enviada)</small>
                 <div style={{ display: 'flex', gap: '6px' }}>
                   <button className="recovery-btn-action whatsapp" onClick={() => onTrigger(c.id, 'whatsapp')} title="Enviar WhatsApp">
                     <MessageCircle size={13} /> WhatsApp
@@ -1890,7 +1890,7 @@ function RecoveryOpportunitiesDrawer({ carts, selectedUrlName, onClose, onTrigge
           ))}
         </div>
 
-        <div style={{ marginTop: '14px', paddingTop: '10px', borderTop: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ marginTop: '14px', paddingTop: '10px', borderTop: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <button className="btn secondary" onClick={() => notify('Varredura concluída: 3 novos carrinhos identificados.')}>
             <RefreshCw size={14} /> Detectar novos abandonos
           </button>

@@ -12,8 +12,8 @@
 
 /* Header Premium */
 .rec-header-banner {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border: 1px solid #334155;
+  background: linear-gradient(135deg, var(--disk-legacy-dark-surface, #0f172a) 0%, var(--disk-legacy-dark-surface, #1e293b) 100%);
+  border: 1px solid var(--disk-border-default);
   border-radius: 12px;
   padding: 24px 28px;
   color: #f8fafc;
@@ -70,7 +70,7 @@
 
 .rec-header-desc {
   font-size: 13px;
-  color: #94a3b8;
+  color: var(--disk-text-muted);
   margin: 0;
   max-width: 800px;
   line-height: 1.5;
@@ -108,13 +108,13 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #1e293b;
+  background: var(--disk-legacy-dark-surface, #1e293b);
   color: #e2e8f0;
   font-size: 13px;
   font-weight: 600;
   padding: 9px 16px;
   border-radius: 8px;
-  border: 1px solid #475569;
+  border: 1px solid var(--disk-border-default);
   cursor: pointer;
   transition: all 0.15s ease;
 }
@@ -144,8 +144,8 @@
 }
 
 .rec-kpi-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--disk-bg-surface);
+  border: 1px solid var(--disk-border-default);
   border-radius: 10px;
   padding: 16px 18px;
   display: flex;
@@ -163,7 +163,7 @@
 .rec-kpi-label {
   font-size: 11px;
   font-weight: 700;
-  color: #64748b;
+  color: var(--disk-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -180,12 +180,12 @@
 .rec-kpi-val {
   font-size: 20px;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--disk-text-primary);
 }
 
 .rec-kpi-sub {
   font-size: 11px;
-  color: #64748b;
+  color: var(--disk-text-muted);
   display: flex;
   align-items: center;
   gap: 4px;
@@ -193,8 +193,8 @@
 
 /* 5-Step Pipeline */
 .rec-pipeline-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--disk-bg-surface);
+  border: 1px solid var(--disk-border-default);
   border-radius: 10px;
   padding: 18px 24px;
   box-shadow: 0 1px 3px rgba(15, 23, 42, 0.02);
@@ -210,7 +210,7 @@
 .rec-pipeline-title {
   font-size: 13px;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--disk-text-primary);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -230,8 +230,8 @@
 }
 
 .rec-step-box {
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: var(--disk-bg-muted);
+  border: 1px solid var(--disk-border-default);
   border-radius: 8px;
   padding: 12px 14px;
   display: flex;
@@ -242,7 +242,7 @@
 
 .rec-step-box.active {
   border-color: #2563eb;
-  background: #eff6ff;
+  background: var(--disk-color-info-subtle);
 }
 
 .rec-step-header {
@@ -255,7 +255,7 @@
   font-size: 10px;
   font-weight: 800;
   color: #2563eb;
-  background: #dbeafe;
+  background: var(--disk-color-info-subtle);
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -263,13 +263,13 @@
 .rec-step-title {
   font-size: 12px;
   font-weight: 700;
-  color: #1e293b;
+  color: var(--disk-text-primary);
   margin-top: 4px;
 }
 
 .rec-step-desc {
   font-size: 11px;
-  color: #64748b;
+  color: var(--disk-text-muted);
   line-height: 1.3;
 }
 
@@ -285,21 +285,21 @@
 
 /* 3-Level Badges */
 .badge-l1 {
-  background: #e0f2fe;
-  color: #0369a1;
-  border: 1px solid #bae6fd;
+  background: var(--disk-color-info-subtle);
+  color: var(--disk-color-info-text);
+  border: 1px solid var(--disk-color-info-border);
 }
 
 .badge-l2 {
-  background: #fef3c7;
-  color: #92400e;
-  border: 1px solid #fde68a;
+  background: var(--disk-color-warning-subtle);
+  color: var(--disk-color-warning-text);
+  border: 1px solid var(--disk-color-warning-border);
 }
 
 .badge-l3 {
-  background: #dcfce7;
-  color: #15803d;
-  border: 1px solid #bbf7d0;
+  background: var(--disk-color-success-subtle);
+  color: var(--disk-color-success-text);
+  border: 1px solid var(--disk-color-success-border);
 }
 
 /* Central de Divergências Table */
@@ -310,8 +310,8 @@
 }
 
 .rec-toolbar {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: var(--disk-bg-surface);
+  border: 1px solid var(--disk-border-default);
   border-radius: 10px;
   padding: 14px 18px;
   display: flex;
@@ -331,7 +331,7 @@
   width: 100%;
   padding: 8px 12px 8px 34px;
   font-size: 13px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--disk-border-default);
   border-radius: 6px;
   outline: none;
 }
@@ -346,17 +346,17 @@
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  color: #94a3b8;
+  color: var(--disk-text-muted);
 }
 
 .rec-filter-select {
   padding: 8px 12px;
   font-size: 12px;
   font-weight: 600;
-  color: #334155;
-  border: 1px solid #cbd5e1;
+  color: var(--disk-text-secondary);
+  border: 1px solid var(--disk-border-default);
   border-radius: 6px;
-  background: #ffffff;
+  background: var(--disk-bg-surface);
   cursor: pointer;
   outline: none;
 }
@@ -378,15 +378,15 @@
 }
 
 .status-pill.conciliado {
-  background: #dcfce7;
-  color: #15803d;
-  border: 1px solid #bbf7d0;
+  background: var(--disk-color-success-subtle);
+  color: var(--disk-color-success-text);
+  border: 1px solid var(--disk-color-success-border);
 }
 
 .status-pill.valor_divergente {
-  background: #fee2e2;
-  color: #b91c1c;
-  border: 1px solid #fecaca;
+  background: var(--disk-color-danger-subtle);
+  color: var(--disk-color-danger-text);
+  border: 1px solid var(--disk-color-danger-border);
 }
 
 .status-pill.taxa_divergente {
@@ -396,13 +396,13 @@
 }
 
 .status-pill.liquidacao_ausente {
-  background: #fef3c7;
-  color: #b45309;
-  border: 1px solid #fde68a;
+  background: var(--disk-color-warning-subtle);
+  color: var(--disk-color-warning-text);
+  border: 1px solid var(--disk-color-warning-border);
 }
 
 .status-pill.pedido_nao_localizado {
-  background: #f3e8ff;
+  background: var(--disk-color-purple-subtle);
   color: #7e22ce;
   border: 1px solid #e9d5ff;
 }
@@ -414,21 +414,21 @@
 }
 
 .status-pill.estorno {
-  background: #e0f2fe;
-  color: #0369a1;
-  border: 1px solid #bae6fd;
+  background: var(--disk-color-info-subtle);
+  color: var(--disk-color-info-text);
+  border: 1px solid var(--disk-color-info-border);
 }
 
 .status-pill.chargeback {
-  background: #ffe4e6;
-  color: #9f1239;
+  background: var(--disk-color-danger-subtle);
+  color: var(--disk-color-danger-text);
   border: 1px solid #fecdd3;
 }
 
 .status-pill.requer_analise {
-  background: #e2e8f0;
-  color: #334155;
-  border: 1px solid #cbd5e1;
+  background: var(--disk-bg-active);
+  color: var(--disk-text-secondary);
+  border: 1px solid var(--disk-border-default);
 }
 
 /* Modal Styling */
@@ -444,7 +444,7 @@
 }
 
 .rec-modal-container {
-  background: #ffffff;
+  background: var(--disk-bg-surface);
   border-radius: 12px;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   width: 100%;
@@ -457,7 +457,7 @@
 
 .rec-modal-header {
   padding: 20px 24px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--disk-border-default);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -466,7 +466,7 @@
 .rec-modal-header h2 {
   font-size: 16px;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--disk-text-primary);
   margin: 0;
   display: flex;
   align-items: center;
@@ -482,8 +482,8 @@
 
 .rec-modal-footer {
   padding: 16px 24px;
-  border-top: 1px solid #e2e8f0;
-  background: #f8fafc;
+  border-top: 1px solid var(--disk-border-default);
+  background: var(--disk-bg-muted);
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
   display: flex;
@@ -493,13 +493,13 @@
 
 /* Voucher Document Preview */
 .voucher-paper {
-  background: #ffffff;
-  border: 2px dashed #cbd5e1;
+  background: var(--disk-bg-surface);
+  border: 2px dashed var(--disk-border-default);
   border-radius: 8px;
   padding: 24px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 12px;
-  color: #1e293b;
+  color: var(--disk-text-primary);
   line-height: 1.5;
 }
 
@@ -507,9 +507,9 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #ecfdf5;
-  color: #047857;
-  border: 1px solid #a7f3d0;
+  background: var(--disk-color-success-subtle);
+  color: var(--disk-color-success-text);
+  border: 1px solid var(--disk-color-success-border);
   padding: 4px 10px;
   border-radius: 4px;
   font-weight: 700;

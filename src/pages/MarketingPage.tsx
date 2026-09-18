@@ -418,12 +418,12 @@ function Dashboard({ producerName, events, eventId, setEventId, period, setPerio
         {dashboardCards.map(c => {
           const I = c.icon
           return (
-            <article className="growth-kpi" key={c.title} style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+            <article className="growth-kpi" key={c.title} style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
               <div className="kpi-top">
                 <span>{c.title}</span>
                 <I size={19} />
               </div>
-              <strong style={{ color: '#0F172A' }}>{c.value}</strong>
+              <strong style={{ color: "var(--disk-text-primary)" }}>{c.value}</strong>
               <small style={{ color: '#16A34A' }}>{c.delta} vs. período anterior</small>
             </article>
           )
@@ -431,10 +431,10 @@ function Dashboard({ producerName, events, eventId, setEventId, period, setPerio
       </div>
 
       <div className="growth-grid">
-        <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+        <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
           <div className="panel-head">
             <div>
-              <h3 style={{ color: '#0F172A' }}>Funil Geral de Conversão</h3>
+              <h3 style={{ color: "var(--disk-text-primary)" }}>Funil Geral de Conversão</h3>
               <p>Da visualização da campanha até o ingresso emitido</p>
             </div>
           </div>
@@ -447,10 +447,10 @@ function Dashboard({ producerName, events, eventId, setEventId, period, setPerio
           </div>
         </article>
 
-        <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+        <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
           <div className="panel-head">
             <div>
-              <h3 style={{ color: '#0F172A' }}>Participação na Receita por Canal</h3>
+              <h3 style={{ color: "var(--disk-text-primary)" }}>Participação na Receita por Canal</h3>
               <p>Atribuição ponderada por canal ativo</p>
             </div>
           </div>
@@ -465,7 +465,7 @@ function Dashboard({ producerName, events, eventId, setEventId, period, setPerio
               <div className="channel-row" key={String(n)}>
                 <div>
                   <span style={{ fontWeight: 600 }}>{n}</span>
-                  <b style={{ color: '#0F172A' }}>{r} ({v}%)</b>
+                  <b style={{ color: "var(--disk-text-primary)" }}>{r} ({v}%)</b>
                 </div>
                 <div className="channel-track">
                   <i style={{ width: `${v}%`, background: '#2563EB' }} />
@@ -534,14 +534,14 @@ function MetaAdsManager({ events, event = defaultFallbackEvent, notify }: { even
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>META BUSINESS MANAGER & ADS CAPI</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Meta Ads — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Gerencie anúncios no Facebook e Instagram com sincronização em tempo real via Conversions API (CAPI).</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Meta Ads — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Gerencie anúncios no Facebook e Instagram com sincronização em tempo real via Conversions API (CAPI).</p>
         </div>
         <div className="page-actions" style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-          <div style={{ background: '#DCFCE7', border: '1px solid #86EFAC', borderRadius: '6px', padding: '6px 12px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 700, color: '#166534' }}>
+          <div style={{ background: "var(--disk-color-success-subtle)", border: '1px solid #86EFAC', borderRadius: '6px', padding: '6px 12px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', fontWeight: 700, color: "var(--disk-color-success-text)" }}>
             <CheckCircle size={14} /> Meta CAPI Token Ativo
           </div>
           <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#1877F2', borderColor: '#1877F2', fontSize: '12px' }}>
@@ -551,33 +551,33 @@ function MetaAdsManager({ events, event = defaultFallbackEvent, notify }: { even
       </div>
 
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Gasto Meta Ads</span><WalletCards size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>R$ {totalSpent.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>R$ {totalSpent.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong>
           <small style={{ color: '#16A34A' }}>Orçado: R$ 4.300,00</small>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>ROAS Médio</span><TrendingUp size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>5,4x</strong>
           <small style={{ color: '#16A34A' }}>↑ 18% vs média do mercado</small>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>CPA Médio</span><Target size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>R$ 16,13</strong>
-          <small style={{ color: '#64748B' }}>Custo por ingresso vendido</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>Custo por ingresso vendido</small>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Vendas Atribuídas</span><MousePointerClick size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>{totalSales}</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>{totalSales}</strong>
           <small style={{ color: '#16A34A' }}>R$ {(totalSales * 180).toLocaleString('pt-BR', { minimumFractionDigits: 2 })} em receita</small>
         </article>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: 0 }}>
-        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: 0 }}>
+        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <h3 style={{ margin: 0, color: '#0F172A', fontSize: '16px', fontWeight: 800 }}>Campanhas Meta Ads Ativas ({metaCampaigns.length})</h3>
-            <p style={{ margin: '2px 0 0', color: '#64748B', fontSize: '12px' }}>Sincronizadas com o Pixel CAPI do evento</p>
+            <h3 style={{ margin: 0, color: "var(--disk-text-primary)", fontSize: '16px', fontWeight: 800 }}>Campanhas Meta Ads Ativas ({metaCampaigns.length})</h3>
+            <p style={{ margin: '2px 0 0', color: "var(--disk-text-muted)", fontSize: '12px' }}>Sincronizadas com o Pixel CAPI do evento</p>
           </div>
           <button className="btn secondary" onClick={() => setIsModalOpen(true)} style={{ height: '32px', fontSize: '11px' }}>
             <Plus size={13} /> Novo Conjunto
@@ -633,18 +633,18 @@ function MetaAdsManager({ events, event = defaultFallbackEvent, notify }: { even
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
           <div 
             className="utm-modal-card-v2" 
-            style={{ width: 'min(580px, 94vw)', maxHeight: '90vh', overflowY: 'auto', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }}
+            style={{ width: 'min(580px, 94vw)', maxHeight: '90vh', overflowY: 'auto', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }}
             onClick={e => e.stopPropagation()}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#1877F2', textTransform: 'uppercase' }}>
                   META BUSINESS SUITE & CAPI
                 </span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
                   Criar Anúncio Meta Ads
                 </h3>
-                <p style={{ margin: '3px 0 0', fontSize: '12px', color: '#64748B' }}>
+                <p style={{ margin: '3px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                   O anúncio será configurado para o evento <strong>{eventTitle}</strong> com UTM automática.
                 </p>
               </div>
@@ -655,7 +655,7 @@ function MetaAdsManager({ events, event = defaultFallbackEvent, notify }: { even
 
             <form onSubmit={handleCreateAd} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>
                   Nome da Campanha / Criativo *
                 </label>
                 <input
@@ -664,19 +664,19 @@ function MetaAdsManager({ events, event = defaultFallbackEvent, notify }: { even
                   placeholder={`Ex: ${eventTitle} — Stories Lançamento`}
                   value={adName}
                   onChange={e => setAdName(e.target.value)}
-                  style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }}
+                  style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }}
                 />
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>
                     Formato / Posicionamento
                   </label>
                   <select 
                     value={adFormat} 
                     onChange={e => setAdFormat(e.target.value)}
-                    style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px', color: '#0F172A', fontWeight: 600 }}
+                    style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px', color: "var(--disk-text-primary)", fontWeight: 600 }}
                   >
                     <option value="Instagram Stories">Instagram Stories (9:16)</option>
                     <option value="Instagram Reels">Instagram Reels (9:16)</option>
@@ -687,7 +687,7 @@ function MetaAdsManager({ events, event = defaultFallbackEvent, notify }: { even
                 </div>
 
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>
                     Orçamento Total (R$)
                   </label>
                   <input
@@ -696,19 +696,19 @@ function MetaAdsManager({ events, event = defaultFallbackEvent, notify }: { even
                     required
                     value={adBudget}
                     onChange={e => setAdBudget(e.target.value)}
-                    style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }}
+                    style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }}
                   />
                 </div>
               </div>
 
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>
                   Público & Segmentação
                 </label>
                 <select 
                   value={adAudience} 
                   onChange={e => setAdAudience(e.target.value)}
-                  style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px', color: '#0F172A' }}
+                  style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px', color: "var(--disk-text-primary)" }}
                 >
                   <option value="Público Aberto (Curitiba + 50km)">Público Aberto (Curitiba + 50km, 18-55 anos)</option>
                   <option value="Compradores Anteriores (Lookalike 1%)">Lookalike 1% de Compradores DiskIngressos</option>
@@ -717,8 +717,8 @@ function MetaAdsManager({ events, event = defaultFallbackEvent, notify }: { even
                 </select>
               </div>
 
-              <div style={{ background: '#F8FAFC', padding: '12px', borderRadius: '8px', border: '1px solid #E2E8F0' }}>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: '#1E40AF', display: 'block', marginBottom: '4px' }}>
+              <div style={{ background: "var(--disk-bg-muted)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)" }}>
+                <span style={{ fontSize: '11px', fontWeight: 800, color: "var(--disk-color-info-text)", display: 'block', marginBottom: '4px' }}>
                   PARÂMETROS UTM & CONVERSION API
                 </span>
                 <code style={{ fontSize: '10px', color: '#2563EB', wordBreak: 'break-all', display: 'block' }}>
@@ -726,7 +726,7 @@ function MetaAdsManager({ events, event = defaultFallbackEvent, notify }: { even
                 </code>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '10px', paddingTop: '12px', borderTop: '1px solid #E2E8F0' }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '10px', paddingTop: '12px', borderTop: "1px solid var(--disk-border-default)" }}>
                 <button type="button" className="btn secondary" onClick={() => setIsModalOpen(false)} style={{ fontSize: '12px' }}>
                   Cancelar
                 </button>
@@ -775,11 +775,11 @@ function GoogleAdsManager({ events, event = defaultFallbackEvent, notify }: { ev
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>GOOGLE ADS & SEARCH ENGINE</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Google Ads — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Campanhas de intenção direta de compra na Rede de Pesquisa e YouTube Ads.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Google Ads — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Campanhas de intenção direta de compra na Rede de Pesquisa e YouTube Ads.</p>
         </div>
         <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#2563EB', borderColor: '#2563EB', fontSize: '12px' }}>
           <Plus size={15} /> Nova Palavra-Chave Google
@@ -787,27 +787,27 @@ function GoogleAdsManager({ events, event = defaultFallbackEvent, notify }: { ev
       </div>
 
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Gasto Google</span><WalletCards size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>R$ 6.840,00</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>R$ 6.840,00</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Cliques Totais</span><MousePointerClick size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>8.850</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>CPC Médio</span><Target size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>R$ 0,77</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>R$ 0,77</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>ROAS Google</span><TrendingUp size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>6,4x</strong>
         </article>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: 0 }}>
-        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div><h3 style={{ margin: 0, color: '#0F172A', fontSize: '16px', fontWeight: 800 }}>Palavras-Chave de Alta Conversão ({keywords.length})</h3></div>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: 0 }}>
+        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div><h3 style={{ margin: 0, color: "var(--disk-text-primary)", fontSize: '16px', fontWeight: 800 }}>Palavras-Chave de Alta Conversão ({keywords.length})</h3></div>
           <button className="btn secondary" onClick={() => setIsModalOpen(true)} style={{ height: '32px', fontSize: '11px' }}>
             <Plus size={13} /> Adicionar Termo
           </button>
@@ -832,22 +832,22 @@ function GoogleAdsManager({ events, event = defaultFallbackEvent, notify }: { ev
       {/* MODAL GOOGLE ADS KEYWORD */}
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>GOOGLE ADS SEARCH</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Adicionar Palavra-Chave</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Adicionar Palavra-Chave</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleAddKeyword} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Termo / Palavra-Chave *</label>
-                <input type="text" required placeholder="Ex: ingressos show marcos e belutti curitiba" value={newKw} onChange={e => setNewKw(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Termo / Palavra-Chave *</label>
+                <input type="text" required placeholder="Ex: ingressos show marcos e belutti curitiba" value={newKw} onChange={e => setNewKw(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Lance Máximo de CPC (R$)</label>
-                <input type="text" value={newCpc} onChange={e => setNewCpc(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Lance Máximo de CPC (R$)</label>
+                <input type="text" value={newCpc} onChange={e => setNewCpc(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '10px' }}>
                 <button type="button" className="btn secondary" onClick={() => setIsModalOpen(false)}>Cancelar</button>
@@ -896,46 +896,46 @@ function TikTokAdsManager({ events, event = defaultFallbackEvent, notify }: { ev
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>TIKTOK ADS & SPARK ADS</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>TikTok Ads — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Campanhas virais em vídeo com rastreamento via TikTok Pixel & Event API.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>TikTok Ads — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Campanhas virais em vídeo com rastreamento via TikTok Pixel & Event API.</p>
         </div>
-        <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#0F172A', borderColor: '#0F172A', fontSize: '12px' }}>
+        <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: "var(--disk-legacy-dark-surface, #0F172A)", borderColor: "var(--disk-border-default)", fontSize: '12px' }}>
           <Plus size={15} /> Criar Spark Ad
         </button>
       </div>
 
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Gasto TikTok</span><WalletCards size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>R$ 2.450,00</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>R$ 2.450,00</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Visualizações de Vídeo</span><Play size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>184.200</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>CPM</span><Target size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>R$ 13,30</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>R$ 13,30</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Ingressos Vendidos</span><MousePointerClick size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>94</strong>
         </article>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: 0 }}>
-        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div><h3 style={{ margin: 0, color: '#0F172A', fontSize: '16px', fontWeight: 800 }}>Spark Ads em Veiculação ({sparkAds.length})</h3></div>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: 0 }}>
+        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div><h3 style={{ margin: 0, color: "var(--disk-text-primary)", fontSize: '16px', fontWeight: 800 }}>Spark Ads em Veiculação ({sparkAds.length})</h3></div>
         </div>
         <table className="growth-table" style={{ margin: 0 }}>
           <thead><tr><th>Vídeo Spark</th><th>Gasto</th><th>Views</th><th>CPM</th><th>Vendas</th><th>Status</th></tr></thead>
           <tbody>
             {sparkAds.map(s => (
               <tr key={s.id}>
-                <td><strong>{s.name}</strong><small style={{ display: 'block', color: '#64748B' }}>{s.videoId}</small></td>
+                <td><strong>{s.name}</strong><small style={{ display: 'block', color: "var(--disk-text-muted)" }}>{s.videoId}</small></td>
                 <td>R$ {s.spent.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
                 <td>{s.views}</td>
                 <td>{s.cpm}</td>
@@ -950,30 +950,30 @@ function TikTokAdsManager({ events, event = defaultFallbackEvent, notify }: { ev
       {/* MODAL TIKTOK SPARK AD */}
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
-                <span style={{ fontSize: '11px', fontWeight: 800, color: '#0F172A', textTransform: 'uppercase' }}>TIKTOK FOR BUSINESS</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Criar Campanha Spark Ad</h3>
+                <span style={{ fontSize: '11px', fontWeight: 800, color: "var(--disk-text-primary)", textTransform: 'uppercase' }}>TIKTOK FOR BUSINESS</span>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Criar Campanha Spark Ad</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleCreateSparkAd} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Nome da Campanha *</label>
-                <input type="text" required placeholder={`Ex: ${eventTitle} — Viral Teaser`} value={adName} onChange={e => setAdName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Nome da Campanha *</label>
+                <input type="text" required placeholder={`Ex: ${eventTitle} — Viral Teaser`} value={adName} onChange={e => setAdName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Código de Autorização Spark Ad / URL do Vídeo</label>
-                <input type="text" placeholder="Ex: https://tiktok.com/@criador/video/7391823901" value={videoCode} onChange={e => setVideoCode(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Código de Autorização Spark Ad / URL do Vídeo</label>
+                <input type="text" placeholder="Ex: https://tiktok.com/@criador/video/7391823901" value={videoCode} onChange={e => setVideoCode(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Orçamento Previsto (R$)</label>
-                <input type="number" value={adBudget} onChange={e => setAdBudget(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Orçamento Previsto (R$)</label>
+                <input type="number" value={adBudget} onChange={e => setAdBudget(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '10px' }}>
                 <button type="button" className="btn secondary" onClick={() => setIsModalOpen(false)}>Cancelar</button>
-                <button type="submit" className="btn primary" style={{ background: '#0F172A', borderColor: '#0F172A' }}>Publicar no TikTok</button>
+                <button type="submit" className="btn primary" style={{ background: "var(--disk-legacy-dark-surface, #0F172A)", borderColor: "var(--disk-border-default)" }}>Publicar no TikTok</button>
               </div>
             </form>
           </div>
@@ -1028,11 +1028,11 @@ function InfluencerManager({ events, event = defaultFallbackEvent, notify }: { e
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>REDE DE INFLUENCIADORES & PARCERIAS</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Influenciadores & Promoters — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Acompanhe as vendas individuais de criadores de conteúdo com links UTM exclusivos.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Influenciadores & Promoters — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Acompanhe as vendas individuais de criadores de conteúdo com links UTM exclusivos.</p>
         </div>
         <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#7C3AED', borderColor: '#7C3AED', fontSize: '12px' }}>
           <Plus size={15} /> Cadastrar Influenciador
@@ -1040,27 +1040,27 @@ function InfluencerManager({ events, event = defaultFallbackEvent, notify }: { e
       </div>
 
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Criadores Ativos</span><Users size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>{influencers.length}</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>{influencers.length}</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Vendas por Criadores</span><MousePointerClick size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>{influencers.reduce((s, i) => s + i.sales, 0)}</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Receita Gerada</span><WalletCards size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>R$ {influencers.reduce((s, i) => s + i.revenue, 0).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>R$ {influencers.reduce((s, i) => s + i.revenue, 0).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Comissão Estimada</span><TrendingUp size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>R$ {(influencers.reduce((s, i) => s + i.revenue, 0) * 0.1).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong>
         </article>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: 0 }}>
-        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div><h3 style={{ margin: 0, color: '#0F172A', fontSize: '16px', fontWeight: 800 }}>Criadores Cadastrados ({influencers.length})</h3></div>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: 0 }}>
+        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div><h3 style={{ margin: 0, color: "var(--disk-text-primary)", fontSize: '16px', fontWeight: 800 }}>Criadores Cadastrados ({influencers.length})</h3></div>
           <button className="btn secondary" onClick={() => setIsModalOpen(true)} style={{ height: '32px', fontSize: '11px' }}>
             <Plus size={13} /> Novo Criador
           </button>
@@ -1070,10 +1070,10 @@ function InfluencerManager({ events, event = defaultFallbackEvent, notify }: { e
           <tbody>
             {influencers.map(i => (
               <tr key={i.id}>
-                <td><strong>{i.name}</strong> <small style={{ color: '#64748B' }}>({i.handle})</small></td>
-                <td><code style={{ background: '#F1F5F9', padding: '2px 6px', borderRadius: '4px', color: '#2563EB', fontSize: '11px' }}>{i.link}</code></td>
+                <td><strong>{i.name}</strong> <small style={{ color: "var(--disk-text-muted)" }}>({i.handle})</small></td>
+                <td><code style={{ background: "var(--disk-bg-muted)", padding: '2px 6px', borderRadius: '4px', color: '#2563EB', fontSize: '11px' }}>{i.link}</code></td>
                 <td><span className="badge-method" style={{ fontSize: '10px' }}>{i.commission}</span></td>
-                <td><strong style={{ color: '#0F172A' }}>{i.sales}</strong></td>
+                <td><strong style={{ color: "var(--disk-text-primary)" }}>{i.sales}</strong></td>
                 <td style={{ color: '#16A34A', fontWeight: 700 }}>R$ {i.revenue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
                 <td>
                   <button className="btn secondary" style={{ height: '28px', fontSize: '11px', display: 'inline-flex', alignItems: 'center', gap: '4px' }} onClick={() => copyLink(i.link)}>
@@ -1089,26 +1089,26 @@ function InfluencerManager({ events, event = defaultFallbackEvent, notify }: { e
       {/* MODAL INFLUENCIADOR */}
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#7C3AED', textTransform: 'uppercase' }}>CREATOR NETWORK</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Cadastrar Novo Influenciador</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Cadastrar Novo Influenciador</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleCreateInfluencer} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Nome do Criador / Perfil *</label>
-                <input type="text" required placeholder="Ex: Curitiba Comedy Show" value={name} onChange={e => setName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Nome do Criador / Perfil *</label>
+                <input type="text" required placeholder="Ex: Curitiba Comedy Show" value={name} onChange={e => setName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Handle / @Instagram ou TikTok</label>
-                <input type="text" placeholder="Ex: @curitibacomedy" value={handle} onChange={e => setHandle(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Handle / @Instagram ou TikTok</label>
+                <input type="text" placeholder="Ex: @curitibacomedy" value={handle} onChange={e => setHandle(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Regra de Comissão</label>
-                <select value={commission} onChange={e => setCommission(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }}>
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Regra de Comissão</label>
+                <select value={commission} onChange={e => setCommission(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }}>
                   <option value="10%">10% sobre o valor do ingresso</option>
                   <option value="15%">15% sobre o valor do ingresso</option>
                   <option value="R$ 15/ing">R$ 15,00 fixo por ingresso vendido</option>
@@ -1142,21 +1142,21 @@ function MarketingCrmPage({ events, event = defaultFallbackEvent, notify }: { ev
       <div className="growth-intro growth-actions">
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>CRM DE MARKETING & LEADS</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px' }}>CRM de Relacionamento — {eventTitle}</h2>
-          <p style={{ color: '#64748B' }}>Histórico completo, tags e ações 1-a-1 por WhatsApp e E-mail.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px' }}>CRM de Relacionamento — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)" }}>Histórico completo, tags e ações 1-a-1 por WhatsApp e E-mail.</p>
         </div>
         <button className="btn primary" onClick={() => notify('Exportando base de leads para CSV...')}>
           <Download size={15} /> Exportar Contatos
         </button>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
         <table className="growth-table">
           <thead><tr><th>Cliente</th><th>Estágio no Funil</th><th>Origem UTM</th><th>Compras</th><th>Valor Total</th><th>Ação Rápida</th></tr></thead>
           <tbody>
             {leads.map(l => (
               <tr key={l.id}>
-                <td><strong>{l.name}</strong><br /><small style={{ color: '#64748B' }}>{l.email} • {l.phone}</small></td>
+                <td><strong>{l.name}</strong><br /><small style={{ color: "var(--disk-text-muted)" }}>{l.email} • {l.phone}</small></td>
                 <td><span className="badge-method">{l.stage}</span></td>
                 <td><small>{l.utm}</small></td>
                 <td>{l.orders} pedido(s)</td>
@@ -1206,11 +1206,11 @@ function AudiencesPage({ events, event = defaultFallbackEvent, notify }: { event
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>AUDIÊNCIAS & SEGMENTAÇÃO</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Públicos Personalizados — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Crie listas para remarketing e sincronize com Meta Custom Audiences e Google Ads.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Públicos Personalizados — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Crie listas para remarketing e sincronize com Meta Custom Audiences e Google Ads.</p>
         </div>
         <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#2563EB', borderColor: '#2563EB', fontSize: '12px' }}>
           <Plus size={15} /> Criar Público
@@ -1219,16 +1219,16 @@ function AudiencesPage({ events, event = defaultFallbackEvent, notify }: { event
 
       <div className="module-card-grid">
         {audiences.map((a, i) => (
-          <div key={i} className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '16px' }}>
+          <div key={i} className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-              <span style={{ fontSize: '10px', fontWeight: 800, background: '#EFF6FF', color: a.color, padding: '2px 6px', borderRadius: '4px' }}>
+              <span style={{ fontSize: '10px', fontWeight: 800, background: "var(--disk-color-info-subtle)", color: a.color, padding: '2px 6px', borderRadius: '4px' }}>
                 ● {a.capi}
               </span>
-              <Users size={16} style={{ color: '#64748B' }} />
+              <Users size={16} style={{ color: "var(--disk-text-muted)" }} />
             </div>
-            <strong style={{ fontSize: '14px', color: '#0F172A', display: 'block' }}>{a.name}</strong>
-            <span style={{ fontSize: '12px', color: '#64748B', marginTop: '4px', display: 'block' }}>{a.size}</span>
-            <div style={{ marginTop: '12px', paddingTop: '8px', borderTop: '1px solid #F1F5F9', display: 'flex', gap: '6px' }}>
+            <strong style={{ fontSize: '14px', color: "var(--disk-text-primary)", display: 'block' }}>{a.name}</strong>
+            <span style={{ fontSize: '12px', color: "var(--disk-text-muted)", marginTop: '4px', display: 'block' }}>{a.size}</span>
+            <div style={{ marginTop: '12px', paddingTop: '8px', borderTop: "1px solid var(--disk-border-default)", display: 'flex', gap: '6px' }}>
               <button className="btn secondary" style={{ height: '28px', fontSize: '11px', flex: 1 }} onClick={() => notify(`Público "${a.name}" sincronizado com Meta CAPI!`)}>
                 Sincronizar Meta
               </button>
@@ -1242,22 +1242,22 @@ function AudiencesPage({ events, event = defaultFallbackEvent, notify }: { event
 
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>AUDIÊNCIA & CAPI</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Criar Público Personalizado</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Criar Público Personalizado</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleCreateAudience} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Nome do Público *</label>
-                <input type="text" required placeholder="Ex: Compradores VIP Setor Premium" value={newName} onChange={e => setNewName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Nome do Público *</label>
+                <input type="text" required placeholder="Ex: Compradores VIP Setor Premium" value={newName} onChange={e => setNewName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Regra de Segmentação</label>
-                <select value={newRule} onChange={e => setNewRule(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }}>
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Regra de Segmentação</label>
+                <select value={newRule} onChange={e => setNewRule(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }}>
                   <option value="Compradores nos últimos 90 dias">Compradores nos últimos 90 dias</option>
                   <option value="Abandonos de checkout últimos 14 dias">Abandonos de checkout últimos 14 dias</option>
                   <option value="Visitantes da página que não compraram">Visitantes da página que não compraram</option>
@@ -1309,11 +1309,11 @@ function CashbackPage({ events, event = defaultFallbackEvent, notify }: { events
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>MOTOR DE CASHBACK & RECOMPENSAS</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Cashback Promocional — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Conceda saldo promocional de volta na carteira do cliente para compras futuras.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Cashback Promocional — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Conceda saldo promocional de volta na carteira do cliente para compras futuras.</p>
         </div>
         <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#D97706', borderColor: '#D97706', fontSize: '12px' }}>
           <Plus size={15} /> Nova Regra de Cashback
@@ -1321,27 +1321,27 @@ function CashbackPage({ events, event = defaultFallbackEvent, notify }: { events
       </div>
 
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Saldo Emitido</span><WalletCards size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>R$ 14.280,00</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>R$ 14.280,00</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Saldo Resgatado</span><Coins size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>R$ 9.450,00</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Taxa de Recompra</span><TrendingUp size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>66,1%</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Regras Ativas</span><TicketPercent size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>{rules.length} vigentes</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>{rules.length} vigentes</strong>
         </article>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: 0 }}>
-        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div><h3 style={{ margin: 0, color: '#0F172A', fontSize: '16px', fontWeight: 800 }}>Regras de Cashback Configuradas ({rules.length})</h3></div>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: 0 }}>
+        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div><h3 style={{ margin: 0, color: "var(--disk-text-primary)", fontSize: '16px', fontWeight: 800 }}>Regras de Cashback Configuradas ({rules.length})</h3></div>
         </div>
         <table className="growth-table" style={{ margin: 0 }}>
           <thead><tr><th>Regra</th><th>Método de Pagamento</th><th>% Cashback</th><th>Validade</th><th>Status</th></tr></thead>
@@ -1361,31 +1361,31 @@ function CashbackPage({ events, event = defaultFallbackEvent, notify }: { events
 
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#D97706', textTransform: 'uppercase' }}>CASHBACK FIDELIDADE</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Nova Regra de Cashback</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Nova Regra de Cashback</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleCreateRule} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Nome da Regra *</label>
-                <input type="text" required placeholder="Ex: Cashback 5% Lote Especial" value={ruleName} onChange={e => setRuleName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Nome da Regra *</label>
+                <input type="text" required placeholder="Ex: Cashback 5% Lote Especial" value={ruleName} onChange={e => setRuleName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Forma de Pagamento</label>
-                  <select value={method} onChange={e => setMethod(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Forma de Pagamento</label>
+                  <select value={method} onChange={e => setMethod(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }}>
                     <option value="PIX">PIX Instantâneo</option>
                     <option value="Cartão de Crédito">Cartão de Crédito</option>
                     <option value="Todos os Métodos">Todos os Métodos</option>
                   </select>
                 </div>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Percentual (%)</label>
-                  <input type="number" min="1" max="50" value={pct} onChange={e => setPct(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Percentual (%)</label>
+                  <input type="number" min="1" max="50" value={pct} onChange={e => setPct(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
                 </div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '10px' }}>
@@ -1433,11 +1433,11 @@ function DiskCoinsPage({ events, event = defaultFallbackEvent, notify }: { event
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>PROGRAMA DE PONTOS DISKCOINS</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>DiskCoins Fidelidade — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Acúmulo automático de pontos por real gasto em ingressos.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>DiskCoins Fidelidade — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Acúmulo automático de pontos por real gasto em ingressos.</p>
         </div>
         <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#0D9488', borderColor: '#0D9488', fontSize: '12px' }}>
           <Plus size={15} /> Nova Recompensa
@@ -1445,27 +1445,27 @@ function DiskCoinsPage({ events, event = defaultFallbackEvent, notify }: { event
       </div>
 
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Coins Emitidos</span><Coins size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>345.000</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>345.000</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Coins Resgatados</span><Gift size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>210.000</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Clientes Ativos</span><Users size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>2.840</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Regra Padrão</span><Sparkles size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>10 coins / R$ 100</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>10 coins / R$ 100</strong>
         </article>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: 0 }}>
-        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div><h3 style={{ margin: 0, color: '#0F172A', fontSize: '16px', fontWeight: 800 }}>Catálogo de Resgate ({rewards.length})</h3></div>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: 0 }}>
+        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div><h3 style={{ margin: 0, color: "var(--disk-text-primary)", fontSize: '16px', fontWeight: 800 }}>Catálogo de Resgate ({rewards.length})</h3></div>
         </div>
         <table className="growth-table" style={{ margin: 0 }}>
           <thead><tr><th>Item / Recompensa</th><th>Categoria</th><th>Custo em Coins</th><th>Estoque</th><th>Ações</th></tr></thead>
@@ -1485,23 +1485,23 @@ function DiskCoinsPage({ events, event = defaultFallbackEvent, notify }: { event
 
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#0D9488', textTransform: 'uppercase' }}>CATÁLOGO DE RESGATE</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Cadastrar Nova Recompensa</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Cadastrar Nova Recompensa</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleCreateReward} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Nome da Recompensa *</label>
-                <input type="text" required placeholder="Ex: Camiseta Exclusiva do Show" value={rewardName} onChange={e => setRewardName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Nome da Recompensa *</label>
+                <input type="text" required placeholder="Ex: Camiseta Exclusiva do Show" value={rewardName} onChange={e => setRewardName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Categoria</label>
-                  <select value={rewardCategory} onChange={e => setRewardCategory(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }}>
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Categoria</label>
+                  <select value={rewardCategory} onChange={e => setRewardCategory(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }}>
                     <option value="Brinde Oficial">Brinde Oficial</option>
                     <option value="Experiência VIP">Experiência VIP</option>
                     <option value="Consumação">Consumação</option>
@@ -1509,8 +1509,8 @@ function DiskCoinsPage({ events, event = defaultFallbackEvent, notify }: { event
                   </select>
                 </div>
                 <div>
-                  <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Custo em Coins</label>
-                  <input type="number" min="50" value={rewardCost} onChange={e => setRewardCost(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                  <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Custo em Coins</label>
+                  <input type="number" min="50" value={rewardCost} onChange={e => setRewardCost(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
                 </div>
               </div>
               <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '10px' }}>
@@ -1559,11 +1559,11 @@ function GamificationPage({ events, event = defaultFallbackEvent, notify }: { ev
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>MISSÕES & GAMIFICAÇÃO</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Gamificação do Evento — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Engaje o público com desafios e libere benefícios exclusivos.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Gamificação do Evento — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Engaje o público com desafios e libere benefícios exclusivos.</p>
         </div>
         <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#D97706', borderColor: '#D97706', fontSize: '12px' }}>
           <Plus size={15} /> Criar Missão
@@ -1572,13 +1572,13 @@ function GamificationPage({ events, event = defaultFallbackEvent, notify }: { ev
 
       <div className="module-card-grid">
         {missions.map((m, idx) => (
-          <div key={idx} className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '16px' }}>
+          <div key={idx} className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '16px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
               <Trophy size={18} style={{ color: '#D97706' }} />
-              <strong style={{ color: '#0F172A', fontSize: '14px' }}>{m.title}</strong>
+              <strong style={{ color: "var(--disk-text-primary)", fontSize: '14px' }}>{m.title}</strong>
             </div>
-            <p style={{ fontSize: '11px', color: '#64748B', margin: '4px 0' }}>{m.desc}</p>
-            <div style={{ background: '#FEF3C7', border: '1px solid #FDE68A', padding: '6px 8px', borderRadius: '6px', fontSize: '11px', fontWeight: 700, color: '#92400E', marginTop: '8px' }}>
+            <p style={{ fontSize: '11px', color: "var(--disk-text-muted)", margin: '4px 0' }}>{m.desc}</p>
+            <div style={{ background: "var(--disk-color-warning-subtle)", border: "1px solid var(--disk-color-warning-border)", padding: '6px 8px', borderRadius: '6px', fontSize: '11px', fontWeight: 700, color: "var(--disk-color-warning-text)", marginTop: '8px' }}>
               🎁 Recompensa: {m.reward}
             </div>
             <small style={{ color: '#16A34A', fontWeight: 600, display: 'block', marginTop: '8px' }}>
@@ -1590,26 +1590,26 @@ function GamificationPage({ events, event = defaultFallbackEvent, notify }: { ev
 
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#D97706', textTransform: 'uppercase' }}>ENGAGEMENT & MISSÕES</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Nova Missão de Gamificação</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Nova Missão de Gamificação</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleCreateMission} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Título da Missão *</label>
-                <input type="text" required placeholder="Ex: Marque 3 amigos no Instagram Oficial" value={title} onChange={e => setTitle(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Título da Missão *</label>
+                <input type="text" required placeholder="Ex: Marque 3 amigos no Instagram Oficial" value={title} onChange={e => setTitle(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Descrição do Desafio</label>
-                <textarea rows={3} placeholder="Descreva o que o fã precisa fazer..." value={desc} onChange={e => setDesc(e.target.value)} style={{ width: '100%', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '8px 10px', fontSize: '12px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Descrição do Desafio</label>
+                <textarea rows={3} placeholder="Descreva o que o fã precisa fazer..." value={desc} onChange={e => setDesc(e.target.value)} style={{ width: '100%', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '8px 10px', fontSize: '12px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Recompensa / Benefício</label>
-                <input type="text" placeholder="Ex: 500 Coins + 10% de Desconto no Bar" value={reward} onChange={e => setReward(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Recompensa / Benefício</label>
+                <input type="text" placeholder="Ex: 500 Coins + 10% de Desconto no Bar" value={reward} onChange={e => setReward(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '10px' }}>
                 <button type="button" className="btn secondary" onClick={() => setIsModalOpen(false)}>Cancelar</button>
@@ -1639,11 +1639,11 @@ function ReferralProgramPage({ events, event = defaultFallbackEvent, notify }: {
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>PROGRAMA DE INDICAÇÃO</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Indique e Ganhe — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Transforme seus clientes em promotores ativos do evento.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Indique e Ganhe — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Transforme seus clientes em promotores ativos do evento.</p>
         </div>
         <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#2563EB', borderColor: '#2563EB', fontSize: '12px' }}>
           <Settings2 size={15} /> Configurar Programa
@@ -1651,42 +1651,42 @@ function ReferralProgramPage({ events, event = defaultFallbackEvent, notify }: {
       </div>
 
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Indicações Totais</span><Share2 size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>1.420</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>1.420</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Vendas Geradas</span><MousePointerClick size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>486</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Receita de Indicação</span><WalletCards size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>R$ 78.400,00</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Bônus Concedidos</span><Gift size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>R$ 7.840,00</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>R$ 7.840,00</strong>
         </article>
       </div>
 
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>REGRAS DE INDICAÇÃO</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Configurar Indique e Ganhe</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Configurar Indique e Ganhe</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleSaveProgram} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Bônus para o Padrinho (%)</label>
-                <input type="number" min="1" max="30" value={bonusPercent} onChange={e => setBonusPercent(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Bônus para o Padrinho (%)</label>
+                <input type="number" min="1" max="30" value={bonusPercent} onChange={e => setBonusPercent(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Desconto para o Amigo Convidado (%)</label>
-                <input type="number" min="1" max="20" value={friendDiscount} onChange={e => setFriendDiscount(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Desconto para o Amigo Convidado (%)</label>
+                <input type="number" min="1" max="20" value={friendDiscount} onChange={e => setFriendDiscount(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '10px' }}>
                 <button type="button" className="btn secondary" onClick={() => setIsModalOpen(false)}>Cancelar</button>
@@ -1735,11 +1735,11 @@ function AffiliatesManager({ events, event = defaultFallbackEvent, notify }: { e
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>REDE DE AFILIADOS OFICIAIS</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Afiliados e Promoters — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Gestão de comissionamento automático para promotores parceiros.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Afiliados e Promoters — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Gestão de comissionamento automático para promotores parceiros.</p>
         </div>
         <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#2563EB', borderColor: '#2563EB', fontSize: '12px' }}>
           <Plus size={15} /> Novo Afiliado
@@ -1747,27 +1747,27 @@ function AffiliatesManager({ events, event = defaultFallbackEvent, notify }: { e
       </div>
 
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Afiliados Ativos</span><Users size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>{affiliates.length}</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>{affiliates.length}</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Vendas dos Parceiros</span><MousePointerClick size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>{affiliates.reduce((s, a) => s + a.sales, 0)}</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Receita Gerada</span><WalletCards size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>R$ {affiliates.reduce((s, a) => s + a.revenue, 0).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>R$ {affiliates.reduce((s, a) => s + a.revenue, 0).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Comissão Paga</span><TrendingUp size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>R$ {(affiliates.reduce((s, a) => s + a.revenue, 0) * 0.08).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong>
         </article>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: 0 }}>
-        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div><h3 style={{ margin: 0, color: '#0F172A', fontSize: '16px', fontWeight: 800 }}>Promoters & Afiliados Cadastrados ({affiliates.length})</h3></div>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: 0 }}>
+        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div><h3 style={{ margin: 0, color: "var(--disk-text-primary)", fontSize: '16px', fontWeight: 800 }}>Promoters & Afiliados Cadastrados ({affiliates.length})</h3></div>
         </div>
         <table className="growth-table" style={{ margin: 0 }}>
           <thead><tr><th>Afiliado</th><th>Código UTM / Cupom</th><th>Comissão</th><th>Vendas</th><th>Receita</th><th>Status</th></tr></thead>
@@ -1775,9 +1775,9 @@ function AffiliatesManager({ events, event = defaultFallbackEvent, notify }: { e
             {affiliates.map(a => (
               <tr key={a.id}>
                 <td><strong>{a.name}</strong></td>
-                <td><code style={{ background: '#F1F5F9', padding: '2px 6px', borderRadius: '4px', color: '#2563EB', fontSize: '11px' }}>{a.code}</code></td>
+                <td><code style={{ background: "var(--disk-bg-muted)", padding: '2px 6px', borderRadius: '4px', color: '#2563EB', fontSize: '11px' }}>{a.code}</code></td>
                 <td><span className="badge-method">{a.commission}</span></td>
-                <td><strong style={{ color: '#0F172A' }}>{a.sales}</strong></td>
+                <td><strong style={{ color: "var(--disk-text-primary)" }}>{a.sales}</strong></td>
                 <td style={{ color: '#16A34A', fontWeight: 700 }}>R$ {a.revenue.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
                 <td><span className="status-badge green">● Ativo</span></td>
               </tr>
@@ -1788,26 +1788,26 @@ function AffiliatesManager({ events, event = defaultFallbackEvent, notify }: { e
 
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>AFILIADOS & PROMOTERS</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Novo Afiliado Parceiro</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Novo Afiliado Parceiro</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleCreateAffiliate} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Nome do Afiliado / Empresa *</label>
-                <input type="text" required placeholder="Ex: Promoter Curitiba VIP" value={affiliateName} onChange={e => setAffiliateName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Nome do Afiliado / Empresa *</label>
+                <input type="text" required placeholder="Ex: Promoter Curitiba VIP" value={affiliateName} onChange={e => setAffiliateName(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Código do Cupom / Slug UTM</label>
-                <input type="text" placeholder="Ex: PROMOTER_VIP" value={affiliateCode} onChange={e => setAffiliateCode(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Código do Cupom / Slug UTM</label>
+                <input type="text" placeholder="Ex: PROMOTER_VIP" value={affiliateCode} onChange={e => setAffiliateCode(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Comissão</label>
-                <select value={affiliateComm} onChange={e => setAffiliateComm(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }}>
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Comissão</label>
+                <select value={affiliateComm} onChange={e => setAffiliateComm(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }}>
                   <option value="8%">8% sobre as vendas</option>
                   <option value="10%">10% sobre as vendas</option>
                   <option value="12%">12% sobre as vendas</option>
@@ -1842,15 +1842,15 @@ function ConversionJourneyPage({ events, event = defaultFallbackEvent, notify }:
       <div className="growth-intro growth-actions">
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>JORNADA DE ATRIBUIÇÃO MULTI-TOUCH</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px' }}>Central de Conversões — {eventTitle}</h2>
-          <p style={{ color: '#64748B' }}>Mapeamento ponta a ponta desde o primeiro ponto de contato até a emissão do ingresso.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px' }}>Central de Conversões — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)" }}>Mapeamento ponta a ponta desde o primeiro ponto de contato até a emissão do ingresso.</p>
         </div>
         <button className="btn secondary" onClick={() => notify('Exportando fluxo de conversão...')}>
           <Download size={15} /> Exportar Fluxo
         </button>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
         <table className="growth-table">
           <thead><tr><th>Etapa da Jornada</th><th>Canal / Ponto de Contato</th><th>Volume</th><th>Taxa de Retenção</th></tr></thead>
           <tbody>
@@ -1896,11 +1896,11 @@ function RecoverySalesPage({ events, event = defaultFallbackEvent, notify }: { e
 
   return (
     <section className="growth-page">
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>RECUPERAÇÃO OPERACIONAL DE VENDAS</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px', margin: '2px 0 4px' }}>Recuperação de Vendas — {eventTitle}</h2>
-          <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Resgate carrinhos e checkouts abandonados com disparos automáticos de WhatsApp e e-mail.</p>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px', margin: '2px 0 4px' }}>Recuperação de Vendas — {eventTitle}</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px', margin: 0 }}>Resgate carrinhos e checkouts abandonados com disparos automáticos de WhatsApp e e-mail.</p>
         </div>
         <button className="btn primary" onClick={() => setIsModalOpen(true)} style={{ background: '#2563EB', borderColor: '#2563EB', fontSize: '12px' }}>
           <Send size={15} /> Disparar Régua de Recuperação
@@ -1908,37 +1908,37 @@ function RecoverySalesPage({ events, event = defaultFallbackEvent, notify }: { e
       </div>
 
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Carrinhos Abandonados</span><ShieldCheck size={18} /></div>
           <strong style={{ color: '#EA580C', fontSize: '20px' }}>48</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Recuperados</span><CheckCircle size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>19</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Taxa de Recuperação</span><TrendingUp size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>39,5%</strong>
         </article>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Receita Salva</span><WalletCards size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>R$ 5.890,00</strong>
         </article>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: 0 }}>
-        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div><h3 style={{ margin: 0, color: '#0F172A', fontSize: '16px', fontWeight: 800 }}>Abandonos Recentes ({abandonedList.length})</h3></div>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: 0 }}>
+        <div className="panel-head" style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)", display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div><h3 style={{ margin: 0, color: "var(--disk-text-primary)", fontSize: '16px', fontWeight: 800 }}>Abandonos Recentes ({abandonedList.length})</h3></div>
         </div>
         <table className="growth-table" style={{ margin: 0 }}>
           <thead><tr><th>Cliente</th><th>Ingressos no Carrinho</th><th>Valor Total</th><th>Tempo</th><th>Status</th><th>Ação</th></tr></thead>
           <tbody>
             {abandonedList.map(a => (
               <tr key={a.id}>
-                <td><strong>{a.name}</strong><br /><small style={{ color: '#64748B' }}>{a.phone}</small></td>
+                <td><strong>{a.name}</strong><br /><small style={{ color: "var(--disk-text-muted)" }}>{a.phone}</small></td>
                 <td>{a.items}</td>
-                <td><strong style={{ color: '#0F172A' }}>R$ {a.value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong></td>
-                <td><small style={{ color: '#64748B' }}>{a.time}</small></td>
+                <td><strong style={{ color: "var(--disk-text-primary)" }}>R$ {a.value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</strong></td>
+                <td><small style={{ color: "var(--disk-text-muted)" }}>{a.time}</small></td>
                 <td>
                   <span className={`status-badge ${a.status === 'recuperado' ? 'green' : 'orange'}`}>
                     {a.status === 'recuperado' ? '✓ Recuperado' : '⏳ Pendente'}
@@ -1961,26 +1961,26 @@ function RecoverySalesPage({ events, event = defaultFallbackEvent, notify }: { e
 
       {isModalOpen && (
         <div className="modal-backdrop" style={{ zIndex: 1200 }} onClick={() => setIsModalOpen(false)}>
-          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: '#FFFFFF', borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid #E2E8F0', paddingBottom: '14px', marginBottom: '16px' }}>
+          <div className="utm-modal-card-v2" style={{ width: 'min(500px, 94vw)', background: "var(--disk-bg-surface)", borderRadius: '12px', padding: '24px' }} onClick={e => e.stopPropagation()}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px', marginBottom: '16px' }}>
               <div>
                 <span style={{ fontSize: '11px', fontWeight: 800, color: '#2563EB', textTransform: 'uppercase' }}>RÉGUA AUTOMÁTICA</span>
-                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>Disparar Régua de Recuperação</h3>
+                <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>Disparar Régua de Recuperação</h3>
               </div>
               <button type="button" className="drawer-close-btn" onClick={() => setIsModalOpen(false)}><X size={16} /></button>
             </div>
             <form onSubmit={handleSendRecovery} style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Canal de Envio</label>
-                <select value={channel} onChange={e => setChannel(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }}>
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Canal de Envio</label>
+                <select value={channel} onChange={e => setChannel(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }}>
                   <option value="WhatsApp">WhatsApp Oficial (API Meta)</option>
                   <option value="E-mail">E-mail Marketing Transacional</option>
                   <option value="WhatsApp + E-mail">Multicanal (WhatsApp + E-mail)</option>
                 </select>
               </div>
               <div>
-                <label style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '4px' }}>Cupom de Incentivo (Opcional)</label>
-                <input type="text" placeholder="Ex: VOLTA5 (5% OFF)" value={couponCode} onChange={e => setCouponCode(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '13px' }} />
+                <label style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '4px' }}>Cupom de Incentivo (Opcional)</label>
+                <input type="text" placeholder="Ex: VOLTA5 (5% OFF)" value={couponCode} onChange={e => setCouponCode(e.target.value)} style={{ width: '100%', height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '13px' }} />
               </div>
               <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '10px' }}>
                 <button type="button" className="btn secondary" onClick={() => setIsModalOpen(false)}>Cancelar</button>
@@ -2011,17 +2011,17 @@ function ChannelPerformancePage({ events, event = defaultFallbackEvent, subMode,
       <div className="growth-intro growth-actions">
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>INTELIGÊNCIA DE PERFORMANCE & CANAIS</p>
-          <h2 style={{ color: '#0F172A', fontSize: '22px' }}>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '22px' }}>
             {subMode === 'campaign-ranking' ? 'Ranking de Campanhas' : subMode === 'funnel-insights' ? 'Diagnóstico do Funil & Insights' : 'Performance por Canal'} — {eventTitle}
           </h2>
-          <p style={{ color: '#64748B' }}>Comparação de ROI, ROAS, CPA e eficiência econômica de cada canal.</p>
+          <p style={{ color: "var(--disk-text-muted)" }}>Comparação de ROI, ROAS, CPA e eficiência econômica de cada canal.</p>
         </div>
         <button className="btn secondary" onClick={() => notify('Exportando matriz de performance...')}>
           <Download size={15} /> Exportar Matriz
         </button>
       </div>
 
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
         <table className="growth-table">
           <thead><tr><th>Posição</th><th>Canal de Marketing</th><th>Investimento</th><th>Vendas</th><th>Receita</th><th>CPA</th><th>ROI</th></tr></thead>
           <tbody>
@@ -2077,14 +2077,14 @@ function Tracking({ producerId, events, initialEventId, notify }: { producerId: 
 
 function Context({ producerName, events, eventId, setEventId, period, setPeriod }: { producerName: string; events: EventItem[]; eventId: string; setEventId: (v: string) => void; period: string; setPeriod: (v: string) => void }) {
   return (
-    <div className="growth-context" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+    <div className="growth-context" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
       <div>
-        <span style={{ color: '#64748B' }}>Produtora</span>
-        <strong style={{ color: '#0F172A' }}>{producerName}</strong>
+        <span style={{ color: "var(--disk-text-muted)" }}>Produtora</span>
+        <strong style={{ color: "var(--disk-text-primary)" }}>{producerName}</strong>
       </div>
       <label>
-        <span style={{ color: '#64748B' }}>Evento Selecionado</span>
-        <select value={eventId} onChange={e => setEventId(e.target.value)} style={{ color: '#0F172A', fontWeight: 600 }}>
+        <span style={{ color: "var(--disk-text-muted)" }}>Evento Selecionado</span>
+        <select value={eventId} onChange={e => setEventId(e.target.value)} style={{ color: "var(--disk-text-primary)", fontWeight: 600 }}>
           <option value="all">Todos os eventos ({events.length})</option>
           {events.map(e => (
             <option key={e.id} value={e.id}>{e.title}</option>
@@ -2092,8 +2092,8 @@ function Context({ producerName, events, eventId, setEventId, period, setPeriod 
         </select>
       </label>
       <label>
-        <span style={{ color: '#64748B' }}>Período de Análise</span>
-        <select value={period} onChange={e => setPeriod(e.target.value)} style={{ color: '#0F172A', fontWeight: 600 }}>
+        <span style={{ color: "var(--disk-text-muted)" }}>Período de Análise</span>
+        <select value={period} onChange={e => setPeriod(e.target.value)} style={{ color: "var(--disk-text-primary)", fontWeight: 600 }}>
           <option value="7">Últimos 7 dias</option>
           <option value="30">Últimos 30 dias</option>
           <option value="90">Últimos 90 dias</option>
@@ -2106,9 +2106,9 @@ function Context({ producerName, events, eventId, setEventId, period, setPeriod 
 
 function Funnel({ n, label, w }: { n: string; label: string; w: string }) {
   return (
-    <div className="funnel-step" style={{ width: w, background: '#EFF6FF', borderColor: '#BFDBFE' }}>
-      <span style={{ color: '#334155' }}>{label}</span>
-      <b style={{ color: '#1E40AF' }}>{n}</b>
+    <div className="funnel-step" style={{ width: w, background: "var(--disk-color-info-subtle)", borderColor: "var(--disk-color-info-border)" }}>
+      <span style={{ color: "var(--disk-text-secondary)" }}>{label}</span>
+      <b style={{ color: "var(--disk-color-info-text)" }}>{n}</b>
     </div>
   )
 }
@@ -2126,7 +2126,7 @@ function FeaturePage({ title, eventName, producerName, notify }: { title: string
           <Plus size={17} /> Nova ação
         </button>
       </div>
-      <article className="growth-panel feature-empty" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1' }}>
+      <article className="growth-panel feature-empty" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)" }}>
         <Megaphone size={34} style={{ color: '#2563EB' }} />
         <h3>{title}</h3>
         <p>Módulo operacional integrado ao contexto de eventos, produtores e atribuição de receitas.</p>

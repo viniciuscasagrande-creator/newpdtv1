@@ -135,29 +135,29 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
   }
 
   return (
-    <section className="growth-page ready-campaign-page" style={{ background: '#F8FAFC' }}>
-      <div className="growth-intro growth-actions" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '14px' }}>
+    <section className="growth-page ready-campaign-page" style={{ background: "var(--disk-bg-muted)" }}>
+      <div className="growth-intro growth-actions" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '14px' }}>
         <div>
           <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>MARKETING & GROWTH / CAMPANHAS PRONTAS</p>
-          <h2 style={{ color: '#0F172A', fontSize: '24px', fontWeight: 800 }}>Campanhas Prontas & Ativação Multicanal</h2>
-          <p style={{ color: '#64748B', fontSize: '13px' }}>
+          <h2 style={{ color: "var(--disk-text-primary)", fontSize: '24px', fontWeight: 800 }}>Campanhas Prontas & Ativação Multicanal</h2>
+          <p style={{ color: "var(--disk-text-muted)", fontSize: '13px' }}>
             Escolha uma estratégia pré-configurada, defina canais e gere automaticamente campanhas + UTMs individuais para o evento.
           </p>
         </div>
-        <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', padding: '6px 12px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '6px', color: '#1E40AF', fontSize: '12px', fontWeight: 700 }}>
+        <div style={{ background: "var(--disk-color-info-subtle)", border: "1px solid var(--disk-color-info-border)", padding: '6px 12px', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '6px', color: "var(--disk-color-info-text)", fontSize: '12px', fontWeight: 700 }}>
           <Rocket size={16} />
           <span>8 estratégias operacionais</span>
         </div>
       </div>
 
-      <div className="growth-context" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', display: 'flex', gap: '16px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
+      <div className="growth-context" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", display: 'flex', gap: '16px', alignItems: 'flex-end', flexWrap: 'wrap' }}>
         <div>
-          <span style={{ fontSize: '11px', color: '#64748B', fontWeight: 700, textTransform: 'uppercase' }}>Produtora</span>
-          <strong style={{ color: '#0F172A' }}>{producerId ? 'Produtora Selecionada' : 'DiskIngressos Produções'}</strong>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 700, textTransform: 'uppercase' }}>Produtora</span>
+          <strong style={{ color: "var(--disk-text-primary)" }}>{producerId ? 'Produtora Selecionada' : 'DiskIngressos Produções'}</strong>
         </div>
         <label style={{ minWidth: '240px' }}>
-          <span style={{ fontSize: '11px', color: '#64748B', fontWeight: 700, textTransform: 'uppercase' }}>Evento de Destino</span>
-          <select value={eventId || ''} onChange={e => setEventId(e.target.value ? Number(e.target.value) : undefined)} style={{ color: '#0F172A', fontWeight: 600, height: '38px' }}>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 700, textTransform: 'uppercase' }}>Evento de Destino</span>
+          <select value={eventId || ''} onChange={e => setEventId(e.target.value ? Number(e.target.value) : undefined)} style={{ color: "var(--disk-text-primary)", fontWeight: 600, height: '38px' }}>
             <option value="">Selecione um evento</option>
             {events.map(e => (
               <option value={e.id} key={e.id}>{e.code} · {e.title}</option>
@@ -165,7 +165,7 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
           </select>
         </label>
         <div>
-          <span style={{ fontSize: '11px', color: '#64748B', fontWeight: 700, textTransform: 'uppercase' }}>Status do Módulo</span>
+          <span style={{ fontSize: '11px', color: "var(--disk-text-muted)", fontWeight: 700, textTransform: 'uppercase' }}>Status do Módulo</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#16A34A', fontWeight: 800, fontSize: '13px' }}>
             <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#16A34A' }} /> Operacional (CAPI + UTM)
           </div>
@@ -174,27 +174,27 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
 
       {/* Top Metrics Strip */}
       <div className="growth-kpis" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px' }}>
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Modelos Disponíveis</span><Megaphone size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>{templates.length || 8}</strong>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>{templates.length || 8}</strong>
           <small style={{ color: '#2563EB' }}>Estratégias Multicanal</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Ativações no Evento</span><Play size={18} /></div>
           <strong style={{ color: '#2563EB', fontSize: '20px' }}>{activations.length}</strong>
-          <small style={{ color: '#64748B' }}>Campanhas criadas</small>
+          <small style={{ color: "var(--disk-text-muted)" }}>Campanhas criadas</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Orçamento Ativo</span><CircleDollarSign size={18} /></div>
-          <strong style={{ color: '#0F172A', fontSize: '20px' }}>
+          <strong style={{ color: "var(--disk-text-primary)", fontSize: '20px' }}>
             {money(activations.filter(a => a.status === 'ativa' || a.status === 'agendada').reduce((s, a) => s + a.budgetCents, 0) || 1850000)}
           </strong>
           <small style={{ color: '#16A34A' }}>Alocado em canais</small>
         </article>
 
-        <article className="growth-kpi" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '14px' }}>
+        <article className="growth-kpi" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '14px' }}>
           <div className="kpi-top"><span>Receita Atribuída</span><Gauge size={18} /></div>
           <strong style={{ color: '#16A34A', fontSize: '20px' }}>
             {money(activations.reduce((s, a) => s + (a.metrics?.revenueCents || 0), 0) || 9840000)}
@@ -206,10 +206,10 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
       {/* Catalog Header */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px' }}>
         <div>
-          <h3 style={{ margin: 0, fontSize: '17px', color: '#0F172A', fontWeight: 800 }}>
+          <h3 style={{ margin: 0, fontSize: '17px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
             Catálogo de Campanhas Prontas
           </h3>
-          <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748B' }}>
+          <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
             Selecione uma estratégia pronta para configurar e gerar automaticamente URLs com UTM por canal.
           </p>
         </div>
@@ -222,7 +222,7 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
             key={t.key} 
             className="growth-panel"
             style={{ 
-              background: '#FFFFFF', 
+              background: "var(--disk-bg-surface)", 
               border: `2px solid ${selected?.key === t.key ? '#2563EB' : '#CBD5E1'}`, 
               borderRadius: '8px', 
               padding: '18px',
@@ -234,7 +234,7 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
           >
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                <span style={{ fontSize: '10px', fontWeight: 800, background: '#FEF3C7', color: '#B45309', padding: '2px 8px', borderRadius: '999px', border: '1px solid #FDE68A' }}>
+                <span style={{ fontSize: '10px', fontWeight: 800, background: "var(--disk-color-warning-subtle)", color: "var(--disk-color-warning-text)", padding: '2px 8px', borderRadius: '999px', border: "1px solid var(--disk-color-warning-border)" }}>
                   {t.badge}
                 </span>
                 <span style={{ fontSize: '11px', fontWeight: 700, color: '#2563EB' }}>
@@ -242,20 +242,20 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
                 </span>
               </div>
 
-              <h4 style={{ margin: '4px 0 2px', fontSize: '16px', color: '#0F172A', fontWeight: 800 }}>{t.name}</h4>
-              <p style={{ margin: '0 0 10px', fontSize: '12px', color: '#64748B', lineHeight: '1.45' }}>{t.description}</p>
+              <h4 style={{ margin: '4px 0 2px', fontSize: '16px', color: "var(--disk-text-primary)", fontWeight: 800 }}>{t.name}</h4>
+              <p style={{ margin: '0 0 10px', fontSize: '12px', color: "var(--disk-text-muted)", lineHeight: '1.45' }}>{t.description}</p>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '10px' }}>
                 {t.recommendedChannels.map(c => (
-                  <span key={c} style={{ fontSize: '10px', fontWeight: 700, padding: '2px 6px', borderRadius: '4px', background: '#F1F5F9', color: '#334155', border: '1px solid #E2E8F0' }}>
+                  <span key={c} style={{ fontSize: '10px', fontWeight: 700, padding: '2px 6px', borderRadius: '4px', background: "var(--disk-bg-muted)", color: "var(--disk-text-secondary)", border: "1px solid var(--disk-border-default)" }}>
                     {channelLabels[c] || c}
                   </span>
                 ))}
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#64748B', borderTop: '1px solid #F1F5F9', paddingTop: '8px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: "var(--disk-text-muted)", borderTop: "1px solid var(--disk-border-default)", paddingTop: '8px' }}>
                 <span>🎯 {audienceLabels[t.audience] || t.audience}</span>
-                <strong style={{ color: '#0F172A' }}>Sugestão {money(t.suggestedBudgetCents)}</strong>
+                <strong style={{ color: "var(--disk-text-primary)" }}>Sugestão {money(t.suggestedBudgetCents)}</strong>
               </div>
             </div>
 
@@ -272,12 +272,12 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
 
       {/* Operational Configuration Drawer / Panel */}
       {selected && (
-        <article id="ready-campaign-config" className="growth-panel" style={{ background: '#FFFFFF', border: '2px solid #2563EB', padding: '20px', borderRadius: '8px' }}>
-          <div className="panel-head" style={{ borderBottom: '1px solid #E2E8F0', paddingBottom: '12px', marginBottom: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <article id="ready-campaign-config" className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: '2px solid #2563EB', padding: '20px', borderRadius: '8px' }}>
+          <div className="panel-head" style={{ borderBottom: "1px solid var(--disk-border-default)", paddingBottom: '12px', marginBottom: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
             <div>
               <p className="eyebrow" style={{ color: '#2563EB', fontWeight: 800 }}>CONFIGURAÇÃO OPERACIONAL DA CAMPANHA</p>
-              <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: '#0F172A', fontWeight: 800 }}>{selected.name}</h3>
-              <p style={{ margin: '3px 0 0', fontSize: '12px', color: '#64748B' }}>
+              <h3 style={{ margin: '2px 0 0', fontSize: '18px', color: "var(--disk-text-primary)", fontWeight: 800 }}>{selected.name}</h3>
+              <p style={{ margin: '3px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                 Ao confirmar, o sistema cria automaticamente campanhas + links UTM independentes para cada canal ativo.
               </p>
             </div>
@@ -285,28 +285,28 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px', marginBottom: '16px' }}>
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px', fontWeight: 700, color: '#0F172A' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
               Evento de Destino
-              <select value={eventId || ''} onChange={e => setEventId(e.target.value ? Number(e.target.value) : undefined)} style={{ height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }}>
+              <select value={eventId || ''} onChange={e => setEventId(e.target.value ? Number(e.target.value) : undefined)} style={{ height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }}>
                 {events.map(e => <option key={e.id} value={e.id}>{e.title}</option>)}
               </select>
             </label>
 
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px', fontWeight: 700, color: '#0F172A' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
               Público-Alvo
-              <select value={audience} onChange={e => setAudience(e.target.value)} style={{ height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }}>
+              <select value={audience} onChange={e => setAudience(e.target.value)} style={{ height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }}>
                 {Object.entries(audienceLabels).map(([v, l]) => <option key={v} value={v}>{l}</option>)}
               </select>
             </label>
 
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px', fontWeight: 700, color: '#0F172A' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
               Orçamento Total (R$)
-              <input type="number" min="0" step="0.01" value={budget} onChange={e => setBudget(e.target.value)} style={{ height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }} />
+              <input type="number" min="0" step="0.01" value={budget} onChange={e => setBudget(e.target.value)} style={{ height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }} />
             </label>
 
-            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px', fontWeight: 700, color: '#0F172A' }}>
+            <label style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)" }}>
               Status Inicial
-              <select value={status} onChange={e => setStatus(e.target.value as any)} style={{ height: '38px', borderRadius: '6px', border: '1px solid #CBD5E1', padding: '0 10px', fontSize: '12px' }}>
+              <select value={status} onChange={e => setStatus(e.target.value as any)} style={{ height: '38px', borderRadius: '6px', border: "1px solid var(--disk-border-default)", padding: '0 10px', fontSize: '12px' }}>
                 <option value="configurada">Configurada</option>
                 <option value="agendada">Agendada</option>
                 <option value="ativa">Ativa Agora</option>
@@ -316,7 +316,7 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
 
           {/* Channel Selector Pills */}
           <div style={{ marginBottom: '16px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#0F172A', display: 'block', marginBottom: '6px' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: "var(--disk-text-primary)", display: 'block', marginBottom: '6px' }}>
               Canais Selecionados para Geração de UTMs
             </span>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -349,11 +349,11 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
           </div>
 
           {/* Summary Strip */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px', background: '#F8FAFC', padding: '12px', borderRadius: '8px', border: '1px solid #E2E8F0', marginBottom: '16px' }}>
-            <div><span style={{ fontSize: '10px', color: '#64748B' }}>Evento</span><strong style={{ fontSize: '12px', display: 'block', color: '#0F172A' }}>{event?.title || '—'}</strong></div>
-            <div><span style={{ fontSize: '10px', color: '#64748B' }}>Canais</span><strong style={{ fontSize: '12px', display: 'block', color: '#2563EB' }}>{channels.length} canais</strong></div>
-            <div><span style={{ fontSize: '10px', color: '#64748B' }}>UTMs Geradas</span><strong style={{ fontSize: '12px', display: 'block', color: '#16A34A' }}>{channels.length} URLs</strong></div>
-            <div><span style={{ fontSize: '10px', color: '#64748B' }}>Orçamento</span><strong style={{ fontSize: '12px', display: 'block', color: '#0F172A' }}>{money(Math.round(Number(budget || 0) * 100))}</strong></div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '10px', background: "var(--disk-bg-muted)", padding: '12px', borderRadius: '8px', border: "1px solid var(--disk-border-default)", marginBottom: '16px' }}>
+            <div><span style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>Evento</span><strong style={{ fontSize: '12px', display: 'block', color: "var(--disk-text-primary)" }}>{event?.title || '—'}</strong></div>
+            <div><span style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>Canais</span><strong style={{ fontSize: '12px', display: 'block', color: '#2563EB' }}>{channels.length} canais</strong></div>
+            <div><span style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>UTMs Geradas</span><strong style={{ fontSize: '12px', display: 'block', color: '#16A34A' }}>{channels.length} URLs</strong></div>
+            <div><span style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>Orçamento</span><strong style={{ fontSize: '12px', display: 'block', color: "var(--disk-text-primary)" }}>{money(Math.round(Number(budget || 0) * 100))}</strong></div>
           </div>
 
           <div className="page-actions" style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
@@ -366,12 +366,12 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
       )}
 
       {/* Activated Campaigns Table */}
-      <article className="growth-panel" style={{ background: '#FFFFFF', border: '1px solid #CBD5E1', padding: '0' }}>
-        <div style={{ padding: '16px 20px', borderBottom: '1px solid #E2E8F0' }}>
-          <h3 style={{ margin: 0, fontSize: '16px', color: '#0F172A', fontWeight: 800 }}>
+      <article className="growth-panel" style={{ background: "var(--disk-bg-surface)", border: "1px solid var(--disk-border-default)", padding: '0' }}>
+        <div style={{ padding: '16px 20px', borderBottom: "1px solid var(--disk-border-default)" }}>
+          <h3 style={{ margin: 0, fontSize: '16px', color: "var(--disk-text-primary)", fontWeight: 800 }}>
             Campanhas Prontas Ativadas no Evento
           </h3>
-          <p style={{ margin: '2px 0 0', fontSize: '12px', color: '#64748B' }}>
+          <p style={{ margin: '2px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
             {loading ? 'Carregando registros...' : `${activations.length} configuração(ões) persistida(s) no banco de dados.`}
           </p>
         </div>
@@ -394,7 +394,7 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
             <tbody>
               {activations.length === 0 ? (
                 <tr>
-                  <td colSpan={9} style={{ textAlign: 'center', padding: '30px', color: '#64748B' }}>
+                  <td colSpan={9} style={{ textAlign: 'center', padding: '30px', color: "var(--disk-text-muted)" }}>
                     Nenhuma campanha pronta ativada para este evento ainda. Escolha um modelo acima para começar!
                   </td>
                 </tr>
@@ -408,7 +408,7 @@ export default function ReadyCampaignsPage({ producerId, events, notify, initial
                     <td>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3px' }}>
                         {a.channels.map(c => (
-                          <span key={c} style={{ fontSize: '9px', fontWeight: 700, padding: '1px 5px', borderRadius: '4px', background: '#EFF6FF', color: '#1E40AF', border: '1px solid #BFDBFE' }}>
+                          <span key={c} style={{ fontSize: '9px', fontWeight: 700, padding: '1px 5px', borderRadius: '4px', background: "var(--disk-color-info-subtle)", color: "var(--disk-color-info-text)", border: "1px solid var(--disk-color-info-border)" }}>
                             {channelLabels[c] || c}
                           </span>
                         ))}

@@ -332,33 +332,33 @@ export default function EventCostCentersBudgetPage({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 pt-4">
           <div>
-            <span style={{ fontSize: '11px', color: '#94a3b8' }}>RECEITA BRUTA</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>RECEITA BRUTA</span>
             <strong style={{ display: 'block', fontSize: '18px', color: '#38bdf8', marginTop: '2px' }}>
               {brl(financialResult.grossRevenueCents / 100)}
             </strong>
-            <small style={{ color: '#64748b', fontSize: '10px' }}>Vendas totais</small>
+            <small style={{ color: "var(--disk-text-muted)", fontSize: '10px' }}>Vendas totais</small>
           </div>
 
           <div>
-            <span style={{ fontSize: '11px', color: '#94a3b8' }}>CUSTOS TOTAIS</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>CUSTOS TOTAIS</span>
             <strong style={{ display: 'block', fontSize: '18px', color: '#f87171', marginTop: '2px' }}>
               {brl(financialResult.eventCostsCents / 100)}
             </strong>
-            <small style={{ color: '#64748b', fontSize: '10px' }}>Realizado + Comprometido</small>
+            <small style={{ color: "var(--disk-text-muted)", fontSize: '10px' }}>Realizado + Comprometido</small>
           </div>
 
           <div>
-            <span style={{ fontSize: '11px', color: '#94a3b8' }}>MARGEM OPERACIONAL</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>MARGEM OPERACIONAL</span>
             <strong style={{ display: 'block', fontSize: '18px', color: '#34d399', marginTop: '2px' }}>
               {indicators.currentMarginPct}%
             </strong>
-            <small style={{ color: '#64748b', fontSize: '10px' }}>
+            <small style={{ color: "var(--disk-text-muted)", fontSize: '10px' }}>
               Projetada: {indicators.projectedMarginPct}%
             </small>
           </div>
 
           <div>
-            <span style={{ fontSize: '11px', color: '#94a3b8' }}>ORÇAMENTO CONSUMIDO</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>ORÇAMENTO CONSUMIDO</span>
             <strong
               style={{
                 display: 'block',
@@ -369,23 +369,23 @@ export default function EventCostCentersBudgetPage({
             >
               {percentUsed}%
             </strong>
-            <small style={{ color: '#64748b', fontSize: '10px' }}>
+            <small style={{ color: "var(--disk-text-muted)", fontSize: '10px' }}>
               {percentUsed > 100 ? 'Excedido' : 'Dentro do teto'}
             </small>
           </div>
 
           <div>
-            <span style={{ fontSize: '11px', color: '#94a3b8' }}>PONTO DE EQUILÍBRIO</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>PONTO DE EQUILÍBRIO</span>
             <strong style={{ display: 'block', fontSize: '18px', color: '#e2e8f0', marginTop: '2px' }}>
               {brl(indicators.breakEvenCents / 100)}
             </strong>
-            <small style={{ color: '#64748b', fontSize: '10px' }}>
+            <small style={{ color: "var(--disk-text-muted)", fontSize: '10px' }}>
               {indicators.breakEvenTickets} ingressos
             </small>
           </div>
 
           <div>
-            <span style={{ fontSize: '11px', color: '#94a3b8' }}>LUCRO OPERACIONAL</span>
+            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>LUCRO OPERACIONAL</span>
             <strong
               style={{
                 display: 'block',
@@ -506,7 +506,7 @@ export default function EventCostCentersBudgetPage({
                               style={{
                                 flex: 1,
                                 height: '6px',
-                                background: '#1e293b',
+                                background: "var(--disk-legacy-dark-surface, #1e293b)",
                                 borderRadius: '99px',
                                 overflow: 'hidden',
                                 minWidth: '60px',
@@ -520,7 +520,7 @@ export default function EventCostCentersBudgetPage({
                                 }}
                               />
                             </div>
-                            <span style={{ fontSize: '11px', color: '#94a3b8' }}>{pctVal}%</span>
+                            <span style={{ fontSize: '11px', color: "var(--disk-text-muted)" }}>{pctVal}%</span>
                           </div>
                         </td>
                         <td>
@@ -559,7 +559,7 @@ export default function EventCostCentersBudgetPage({
                   DRE Gerencial por Evento (com Drilldown Contábil)
                 </h3>
               </div>
-              <p style={{ margin: '3px 0 0', fontSize: '12px', color: '#94a3b8' }}>
+              <p style={{ margin: '3px 0 0', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                 Visão executiva com cascata contábil completa: Receita Bruta → Deduções → Custos → Despesas → Resultado Líquido.
               </p>
             </div>
@@ -983,7 +983,7 @@ export default function EventCostCentersBudgetPage({
                               </span>
                             </div>
                           </td>
-                          <td style={{ textAlign: 'right', color: '#94a3b8' }}>{brl(grp.budgetedCents / 100)}</td>
+                          <td style={{ textAlign: 'right', color: "var(--disk-text-muted)" }}>{brl(grp.budgetedCents / 100)}</td>
                           <td
                             style={{
                               textAlign: 'right',
@@ -1064,7 +1064,7 @@ export default function EventCostCentersBudgetPage({
                                     </div>
                                   )}
                                 </td>
-                                <td style={{ textAlign: 'right', fontSize: '12px', color: '#94a3b8' }}>
+                                <td style={{ textAlign: 'right', fontSize: '12px', color: "var(--disk-text-muted)" }}>
                                   {brl(ch.budgetedCents / 100)}
                                 </td>
                                 <td style={{ textAlign: 'right', fontSize: '12px', color: '#f8fafc', fontWeight: 600 }}>
@@ -1076,7 +1076,7 @@ export default function EventCostCentersBudgetPage({
                                 <td style={{ textAlign: 'right', fontSize: '12px', color: '#cbd5e1' }}>
                                   {brl(ch.projectedCents / 100)}
                                 </td>
-                                <td style={{ textAlign: 'center', fontSize: '11px', color: '#94a3b8' }}>—</td>
+                                <td style={{ textAlign: 'center', fontSize: '11px', color: "var(--disk-text-muted)" }}>—</td>
                                 <td style={{ textAlign: 'center' }}>
                                   <span className="text-[10px] text-slate-500">Drilldown Ativo</span>
                                 </td>
@@ -1141,7 +1141,7 @@ export default function EventCostCentersBudgetPage({
                         key={child.code || child.name}
                         style={{
                           background: '#0c1421',
-                          border: '1px solid #1e293b',
+                          border: "1px solid var(--disk-border-default)",
                           borderRadius: '8px',
                           padding: '10px 14px',
                           display: 'flex',
@@ -1150,7 +1150,7 @@ export default function EventCostCentersBudgetPage({
                         }}
                       >
                         <span style={{ fontSize: '13px', color: '#e2e8f0' }}>{child.name}</span>
-                        <span style={{ fontSize: '10px', color: '#64748b' }}>{child.code}</span>
+                        <span style={{ fontSize: '10px', color: "var(--disk-text-muted)" }}>{child.code}</span>
                       </div>
                     ))}
                   </div>
@@ -1460,7 +1460,7 @@ export default function EventCostCentersBudgetPage({
                             <td style={{ textAlign: 'right' }}>{brl(b.priceCents / 100)}</td>
                             <td style={{ textAlign: 'center' }}>{b.issued}</td>
                             <td style={{ textAlign: 'center' }}><strong className="text-emerald-400">{b.sold}</strong></td>
-                            <td style={{ textAlign: 'center', color: '#94a3b8' }}>{b.courtesy}</td>
+                            <td style={{ textAlign: 'center', color: "var(--disk-text-muted)" }}>{b.courtesy}</td>
                             <td style={{ textAlign: 'center', color: '#f87171' }}>{b.refunded}</td>
                             <td style={{ textAlign: 'right' }}><strong className="text-cyan-400">{brl(b.totalGrossCents / 100)}</strong></td>
                           </tr>

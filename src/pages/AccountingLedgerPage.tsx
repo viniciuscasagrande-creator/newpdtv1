@@ -85,7 +85,7 @@ export default function AccountingLedgerPage({ events, notify, onNavigate }: Pro
           <span className="eyebrow">RAZONETES & CONTROLE ANALÍTICO</span>
           <div className="finance-title-row">
             <h1>Livro Razão Analítico</h1>
-            <span className="pipeline-status-badge" style={{ background: '#EFF6FF', color: '#1D4ED8', borderColor: '#BFDBFE' }}>
+            <span className="pipeline-status-badge" style={{ background: "var(--disk-color-info-subtle)", color: "var(--disk-color-info-text)", borderColor: "var(--disk-color-info-border)" }}>
               <Sparkles size={13} /> Padrão SPED ECD (Registro I350)
             </span>
           </div>
@@ -175,22 +175,22 @@ export default function AccountingLedgerPage({ events, notify, onNavigate }: Pro
         style={{
           padding: '24px',
           borderRadius: '12px',
-          background: '#FFFFFF',
-          border: '1px solid #E2E8F0'
+          background: "var(--disk-bg-surface)",
+          border: "1px solid var(--disk-border-default)"
         }}
       >
-        <div style={{ textAlign: 'center', borderBottom: '2px solid #0F172A', paddingBottom: '12px', marginBottom: '16px' }}>
+        <div style={{ textAlign: 'center', borderBottom: "2px solid var(--disk-border-default)", paddingBottom: '12px', marginBottom: '16px' }}>
           <span style={{ fontSize: '11px', fontWeight: 800, color: '#1C79EF', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
             RAZONETE CONTÁBIL EM T
           </span>
-          <h2 style={{ fontSize: '18px', fontWeight: 800, color: '#0F172A', margin: '4px 0 0 0' }}>
+          <h2 style={{ fontSize: '18px', fontWeight: 800, color: "var(--disk-text-primary)", margin: '4px 0 0 0' }}>
             {currentAccount.code} — {currentAccount.name}
           </h2>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', position: 'relative' }}>
           {/* Left Column: DEBITS */}
-          <div style={{ borderRight: '2px solid #0F172A', paddingRight: '20px' }}>
+          <div style={{ borderRight: "2px solid var(--disk-border-default)", paddingRight: '20px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 800, color: '#059669', fontSize: '14px', marginBottom: '12px' }}>
               <span>DÉBITO [D]</span>
               <span>VALOR</span>
@@ -198,16 +198,16 @@ export default function AccountingLedgerPage({ events, notify, onNavigate }: Pro
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {movements.filter(m => m.debit > 0).map(m => (
-                <div key={m.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', padding: '6px 0', borderBottom: '1px dashed #E2E8F0' }}>
+                <div key={m.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', padding: '6px 0', borderBottom: "1px dashed var(--disk-border-default)" }}>
                   <div>
                     <strong>{m.entryCode}</strong>
-                    <small style={{ display: 'block', color: '#64748B' }}>{m.description}</small>
+                    <small style={{ display: 'block', color: "var(--disk-text-muted)" }}>{m.description}</small>
                   </div>
                   <strong style={{ color: '#059669' }}>{brl(m.debit)}</strong>
                 </div>
               ))}
               {!movements.filter(m => m.debit > 0).length && (
-                <div style={{ color: '#94A3B8', fontSize: '12px', textAlign: 'center', padding: '16px' }}>
+                <div style={{ color: "var(--disk-text-muted)", fontSize: '12px', textAlign: 'center', padding: '16px' }}>
                   Nenhum lançamento a débito.
                 </div>
               )}
@@ -228,16 +228,16 @@ export default function AccountingLedgerPage({ events, notify, onNavigate }: Pro
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {movements.filter(m => m.credit > 0).map(m => (
-                <div key={m.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', padding: '6px 0', borderBottom: '1px dashed #E2E8F0' }}>
+                <div key={m.id} style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', padding: '6px 0', borderBottom: "1px dashed var(--disk-border-default)" }}>
                   <div>
                     <strong>{m.entryCode}</strong>
-                    <small style={{ display: 'block', color: '#64748B' }}>{m.description}</small>
+                    <small style={{ display: 'block', color: "var(--disk-text-muted)" }}>{m.description}</small>
                   </div>
                   <strong style={{ color: '#DC2626' }}>{brl(m.credit)}</strong>
                 </div>
               ))}
               {!movements.filter(m => m.credit > 0).length && (
-                <div style={{ color: '#94A3B8', fontSize: '12px', textAlign: 'center', padding: '16px' }}>
+                <div style={{ color: "var(--disk-text-muted)", fontSize: '12px', textAlign: 'center', padding: '16px' }}>
                   Nenhum lançamento a crédito.
                 </div>
               )}
@@ -256,14 +256,14 @@ export default function AccountingLedgerPage({ events, notify, onNavigate }: Pro
             marginTop: '20px',
             padding: '14px 20px',
             borderRadius: '8px',
-            background: '#F8FAFC',
-            border: '1px solid #E2E8F0',
+            background: "var(--disk-bg-muted)",
+            border: "1px solid var(--disk-border-default)",
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center'
           }}
         >
-          <span style={{ fontSize: '13px', fontWeight: 700, color: '#334155' }}>
+          <span style={{ fontSize: '13px', fontWeight: 700, color: "var(--disk-text-secondary)" }}>
             SALDO FINAL APURADO DA CONTA:
           </span>
           <strong style={{ fontSize: '18px', color: currentAccount.balance >= 0 ? '#059669' : '#EF4444' }}>
@@ -313,18 +313,18 @@ export default function AccountingLedgerPage({ events, notify, onNavigate }: Pro
                     {m.debit > 0 ? (
                       <strong style={{ color: '#059669' }}>{brl(m.debit)}</strong>
                     ) : (
-                      <span style={{ color: '#94A3B8' }}>—</span>
+                      <span style={{ color: "var(--disk-text-muted)" }}>—</span>
                     )}
                   </td>
                   <td style={{ textAlign: 'right' }}>
                     {m.credit > 0 ? (
                       <strong style={{ color: '#DC2626' }}>{brl(m.credit)}</strong>
                     ) : (
-                      <span style={{ color: '#94A3B8' }}>—</span>
+                      <span style={{ color: "var(--disk-text-muted)" }}>—</span>
                     )}
                   </td>
                   <td style={{ textAlign: 'right' }}>
-                    <strong style={{ color: '#0F172A', fontSize: '13px' }}>{brl(m.balance)}</strong>
+                    <strong style={{ color: "var(--disk-text-primary)", fontSize: '13px' }}>{brl(m.balance)}</strong>
                   </td>
                 </tr>
               ))}

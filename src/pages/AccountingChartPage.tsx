@@ -112,7 +112,7 @@ export default function AccountingChartPage({ events, notify, onNavigate }: Prop
           <span className="eyebrow">ESTRUTURA SOCIETÁRIA & SPED</span>
           <div className="finance-title-row">
             <h1>Plano de Contas Estruturado</h1>
-            <span className="pipeline-status-badge" style={{ background: '#EFF6FF', color: '#1D4ED8', borderColor: '#BFDBFE' }}>
+            <span className="pipeline-status-badge" style={{ background: "var(--disk-color-info-subtle)", color: "var(--disk-color-info-text)", borderColor: "var(--disk-color-info-border)" }}>
               <Sparkles size={13} /> Padrão SPED Contábil ECD (I050)
             </span>
           </div>
@@ -270,7 +270,7 @@ export default function AccountingChartPage({ events, notify, onNavigate }: Prop
                     <td>
                       <div style={{ paddingLeft: `${indentPx}px`, display: 'flex', alignItems: 'center', gap: '6px' }}>
                         {isSynthetic ? (
-                          <FolderTree size={14} style={{ color: '#64748B', flexShrink: 0 }} />
+                          <FolderTree size={14} style={{ color: "var(--disk-text-muted)", flexShrink: 0 }} />
                         ) : (
                           <FileText size={14} style={{ color: '#059669', flexShrink: 0 }} />
                         )}
