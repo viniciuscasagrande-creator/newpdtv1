@@ -28,7 +28,7 @@ async function shot(page: Page, name: string) {
 test.describe('Fase 26.x.1 — Homologação real do deploy', () => {
   test('audita o deploy publicado sem presumir eventId nem expor credenciais', async ({ page, request, baseURL }) => {
     const rows: Row[] = []
-    const target = baseURL || 'https://safesaff.vercel.app'
+    const target = baseURL || 'https://newpdtv1.vercel.app'
 
     const home = await request.get(target).catch(() => null)
     rows.push({ step: 'Disponibilidade HTTP', status: home?.ok() ? 'PASS' : 'FAIL', details: `HTTP ${home?.status() ?? 'sem resposta'}` })

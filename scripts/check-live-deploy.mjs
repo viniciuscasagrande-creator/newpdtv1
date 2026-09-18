@@ -1,4 +1,4 @@
-const baseURL = (process.env.PLAYWRIGHT_BASE_URL || process.env.DEPLOY_GUARD_BASE_URL || 'https://safesaff.vercel.app').replace(/\/$/, '')
+const baseURL = (process.env.PLAYWRIGHT_BASE_URL || process.env.DEPLOY_GUARD_BASE_URL || 'https://newpdtv1.vercel.app').replace(/\/$/, '')
 const expectedTitle = /DiskIngressos|SafeSaff|Gestão de Eventos/i
 
 async function check(path) {

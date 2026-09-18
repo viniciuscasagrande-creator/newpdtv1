@@ -10,7 +10,7 @@ const protectedModules = [
 ]
 
 test.use({
-  baseURL: process.env.PLAYWRIGHT_BASE_URL || process.env.DEPLOY_GUARD_BASE_URL || 'https://safesaff.vercel.app'
+  baseURL: process.env.PLAYWRIGHT_BASE_URL || process.env.DEPLOY_GUARD_BASE_URL || 'https://newpdtv1.vercel.app'
 })
 
 test.describe('Fase 26.x.3 • Deploy Guard pós-Vercel', () => {

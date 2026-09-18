@@ -1763,7 +1763,7 @@ function OrderAttributionModal({ order, onClose, onCopy, notify }: { order: Orde
    MODAL 4: Compartilhar Relatório com Link Seguro
    ========================================================================= */
 function ShareReportModal({ eventTitle, period, onClose, onCopy }: { eventTitle: string; period: string; onClose: () => void; onCopy: (t: string, msg?: string) => void }) {
-  const shareLink = `https://safesaff.vercel.app/relatorio-utm?token=sec_99af2810cd&event=4amigos`
+  const shareLink = `https://newpdtv1.vercel.app/relatorio-utm?token=sec_99af2810cd&event=4amigos`
 
   return (
     <div className="utm-modal-backdrop" onClick={onClose}>

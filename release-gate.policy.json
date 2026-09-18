@@ -1,6 +1,6 @@
 {
   "release": "26.x.3.8-playwright-change-impact-smart-regression-2026-09-03",
-  "baseUrl": "https://safesaff.vercel.app",
+  "baseUrl": "https://newpdtv1.vercel.app",
   "requireZeroFailures": true,
   "requireNonEmptySuite": true,
   "requiredGroups": [

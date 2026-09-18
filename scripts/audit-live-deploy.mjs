@@ -17,8 +17,9 @@ function get(url) {
 }
 
 async function audit() {
-  console.log('--- AUDITORIA AO VIVO EM PRODUÇÃO (https://safesaff.vercel.app) ---')
-  const index = await get(`https://safesaff.vercel.app/index.html?_t=${Date.now()}`)
+  const liveBase = (process.env.BASE_URL || process.env.PLAYWRIGHT_BASE_URL || 'https://newpdtv1.vercel.app').replace(/\/$/, '')
+  console.log(`--- AUDITORIA AO VIVO EM PRODUÇÃO (${liveBase}) ---`)
+  const index = await get(`${liveBase}/index.html?_t=${Date.now()}`)
   console.log('Status /:', index.status)
   
   const jsMatch = index.body.match(/src="(\/assets\/index-[^"]+\.js)"/)
@@ -29,8 +30,8 @@ async function audit() {
     process.exit(1)
   }
   
-  const jsUrl = 'https://safesaff.vercel.app' + jsMatch[1]
-  const cssUrl = 'https://safesaff.vercel.app' + cssMatch[1]
+  const jsUrl = liveBase + jsMatch[1]
+  const cssUrl = liveBase + cssMatch[1]
   console.log('JS Bundle:', jsUrl)
   console.log('CSS Bundle:', cssUrl)
   

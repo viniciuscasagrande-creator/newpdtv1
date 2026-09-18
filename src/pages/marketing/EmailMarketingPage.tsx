@@ -705,7 +705,7 @@ export default function EmailMarketingPage({ producerId, producerName, events, s
                                 </button>
                               )}
                               <button
-                                onClick={() => handleCopy(`https://safesaff.vercel.app/email/${camp.id}`, camp.id)}
+                                onClick={() => handleCopy(`https://newpdtv1.vercel.app/email/${camp.id}`, camp.id)}
                                 title="Copiar Link UTM"
                                 className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all cursor-pointer"
                               >

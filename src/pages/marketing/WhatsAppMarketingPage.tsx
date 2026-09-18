@@ -707,7 +707,7 @@ export default function WhatsAppMarketingPage({ producerId, producerName, events
                                 </button>
                               )}
                               <button
-                                onClick={() => handleCopy(`https://safesaff.vercel.app/campanha/${camp.id}`, camp.id)}
+                                onClick={() => handleCopy(`https://newpdtv1.vercel.app/campanha/${camp.id}`, camp.id)}
                                 title="Copiar Link com UTM"
                                 className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-md transition-all cursor-pointer"
                               >
